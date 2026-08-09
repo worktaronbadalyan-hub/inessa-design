@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INESSA · Daily IG Design · Taron Badalyan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0E0E;--lime:#C6F03C;--off:#F0F0EE;--grey:#8C8C88}
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Archivo,system-ui,sans-serif}
+header{padding:34px 28px 22px;border-bottom:1px solid #1e1e1e;background:
+  radial-gradient(600px 300px at 100% -30%,rgba(198,240,60,.20),transparent 60%),#0E0E0E}
+.brand{display:flex;align-items:center;gap:12px}
+.brand i{display:block;width:9px;height:30px;background:var(--lime)}
+.brand h1{font-family:Anton;font-weight:400;letter-spacing:.5px;font-size:26px;margin:0}
+.brand span{color:var(--lime);font-size:12px;letter-spacing:2px;display:block;margin-top:2px}
+.sub{color:var(--grey);font-size:14px;margin-top:14px;max-width:820px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{border:1px solid #2a2a2a;border-radius:999px;padding:5px 14px;font-size:12px;color:#ddd}
+.chip b{color:var(--lime);font-weight:700}
+main{padding:26px 28px 70px;max-width:1500px;margin:0 auto}
+h2{font-family:Anton;font-weight:400;font-size:22px;letter-spacing:.6px;margin:34px 0 4px}
+h2 em{color:var(--lime);font-style:normal}
+.hook{color:var(--grey);font-size:13.5px;margin:0 0 16px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+button{font-family:Archivo;font-weight:700;font-size:13px;border:0;border-radius:999px;
+  padding:10px 20px;background:var(--lime);color:#0E0E0E;cursor:pointer}
+button.ghost{background:transparent;border:1px solid #333;color:#ddd}
+button:active{transform:translateY(1px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:#101010;border:1px solid #1e1e1e;border-radius:14px;overflow:hidden}
+.card canvas{width:100%;display:block;background:#0E0E0E}
+.card .f{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;font-size:12px;color:var(--grey)}
+.card .f a{color:var(--lime);text-decoration:none;font-weight:700}
+footer{color:#5a5a58;font-size:12px;padding:0 28px 40px;line-height:1.6}
+#loading{padding:40px 28px;color:var(--grey)}
+</style></head>
+<body>
+<header>
+  <div class="brand"><i></i><div><h1>TARON BADALYAN</h1><span>THE VOICE OF STONE</span></div></div>
+  <div class="sub">Дашборд ИИ-дизайнера <b style="color:#fff">ИНЕССЫ</b> — готовые Instagram-карусели дня.
+  Слайды рендерятся в браузере в исходном размере 1080×1350 (4:5) и скачиваются одним кликом в PNG.</div>
+  <div class="meta">
+    <span class="chip">Дата: <b id="d"></b></span>
+    <span class="chip">Формат: <b>1080×1350 · 4:5</b></span>
+    <span class="chip">Язык: <b>EN B2</b></span>
+    <span class="chip">Карусели: <b>2 × 7 слайдов</b></span>
+    <span class="chip">Палитра: <b>#0E0E0E · #C6F03C</b></span>
+  </div>
+</header>
+<main><div id="loading">Загружаю шрифты и рендерю слайды…</div><div id="out"></div></main>
+<footer>Источник тем: месячный контент-план Мадлен (август 2026, неделя 2 — «LinkedIn EN разгон», серия
+«Armenian stone on the world stage») + собственная вирусная тема Инессы по алгоритмам Instagram.<br>
+Публикацию делает человек. Дашборд обновляется при каждом запуске Инессы.</footer>
+
+<script>
+const W=1080,H=1350,M=110,BLACK="#0E0E0E",OFF="#F0F0EE",LIME="#C6F03C",WHITE="#FFFFFF",GD="#96968C",GL="#5F5F5C";
+const F=(s,f)=>`${s}px ${f}`, ANT="Anton", ARC="Archivo";
+
+const CAR=[{
+ id:"world-stage",
+ title:"Armenian stone is going global",
+ note:"Из плана Мадлен · серия «Armenian stone on the world stage» (LinkedIn EN / IG)",
+ slides:[
+  {t:"hook",k:"THE VOICE OF STONE",h:"Armenian stone is going global",hi:["GOING","GLOBAL"],
+   b:"5 things the industry had to change first."},
+  {t:"p",n:"01",h:"Speak the buyer's language",hi:["LANGUAGE"],
+   b:"Architects abroad do not buy “beautiful stone”. They buy finish, format, tolerance and lead time. Write the spec before you show the sample."},
+  {t:"p",n:"02",h:"Show the quarry",hi:["QUARRY"],
+   b:"Origin is part of the product now. One honest video from the pit builds more trust than ten catalogue photos."},
+  {t:"p",n:"03",h:"Respect the crate",hi:["CRATE"],
+   b:"More money is lost in transit than at the negotiation table. Good packaging protects your price, not just your stone."},
+  {t:"p",n:"04",h:"One standard, not ten",hi:["STANDARD,"],
+   b:"Ten workshops with ten quality levels is not an industry. It is a risk. Shared standards turn small producers into one supplier."},
+  {t:"p",n:"05",h:"Show up every year",hi:["EVERY","YEAR"],
+   b:"One trade fair is a trip. Five years at the same fair is a reputation. Buyers remember the people who keep coming back."},
+  {t:"cta",h:"Save this for your next export talk",hi:["SAVE"],
+   b:"Building an industry is slower than building a company. It is also worth more.",q:"Which one surprised you?"}
+ ]},{
+ id:"travertine-mistakes",
+ title:"5 travertine mistakes architects make",
+ note:"Своя вирусная тема Инессы · формат «mistakes» — высокая сохраняемость",
+ slides:[
+  {t:"hook",k:"STONE MISTAKES",h:"5 travertine mistakes architects make",hi:["MISTAKES"],
+   b:"And the simple fix for each one."},
+  {t:"p",n:"01",h:"Choosing from a photo",hi:["PHOTO"],
+   b:"A 5×5 cm sample never shows the real veining. Ask for a full slab layout before you approve the material."},
+  {t:"p",n:"02",h:"Ignoring the cut",hi:["CUT"],
+   b:"Vein cut and cross cut look like two different stones. Decide which one you want before the block is sawn."},
+  {t:"p",n:"03",h:"Leaving the holes open",hi:["HOLES"],
+   b:"Unfilled travertine outdoors collects water and dirt. Fill it, or design for the patina on purpose."},
+  {t:"p",n:"04",h:"The wrong sealer",hi:["WRONG","SEALER"],
+   b:"The wrong product can darken the surface for good. Always test on an offcut from the same batch."},
+  {t:"p",n:"05",h:"Ordering too late",hi:["LATE"],
+   b:"Natural stone is not a warehouse product. Blocks, sawing, finishing and drying take weeks. Plan the stone with the structure."},
+  {t:"cta",h:"Save this before your next stone spec",hi:["SAVE"],
+   b:"Most stone problems on site started as a decision made too early or too fast.",q:"Which one cost you the most?"}
+ ]}];
+
+function glow(x,c,y,r,a){const g=x.createRadialGradient(c,y,0,c,y,r);
+ g.addColorStop(0,`rgba(198,240,60,${a})`);g.addColorStop(.45,`rgba(198,240,60,${a*.34})`);
+ g.addColorStop(1,"rgba(198,240,60,0)");x.fillStyle=g;x.beginPath();x.arc(c,y,r,0,7);x.fill();}
+function halftone(x,x0,y0,x1,y1,col){const st=18;
+ for(let yy=y0;yy<y1;yy+=st)for(let xx=x0;xx<x1;xx+=st){
+  let t=1-(xx-x0)/(x1-x0); if(t<.08)continue;
+  x.globalAlpha=.55*t;x.fillStyle=col;x.beginPath();x.arc(xx,yy,3.8*t,0,7);x.fill();}
+ x.globalAlpha=1;}
+function arcs(x,cx,cy,rs,col,a){x.save();x.strokeStyle=col;x.globalAlpha=a;x.lineWidth=2;
+ rs.forEach(r=>{x.beginPath();x.arc(cx,cy,r,0,7);x.stroke();});x.restore();}
+function wrap(x,txt,font,maxw){x.font=font;const w=txt.split(" ");let l=[],c="";
+ for(const q of w){const t=(c+" "+q).trim();
+  if(x.measureText(t).width<=maxw||!c)c=t;else{l.push(c);c=q;}}
+ if(c)l.push(c);return l;}
+function head(x,txt,size,px,py,maxw,ink,hi){
+ const font=F(size,ANT);const lines=wrap(x,txt.toUpperCase(),font,maxw);
+ const step=size*1.06;x.font=font;x.textBaseline="top";
+ for(const ln of lines){let cx=px;
+  for(const w of ln.split(" ")){x.fillStyle=hi.includes(w.replace(/[.,:;]$/,""))?LIME:ink;
+   x.fillText(w,cx,py);cx+=x.measureText(w+" ").width;}
+  py+=step;}
+ return py;}
+function body(x,txt,size,px,py,maxw,col){const font=F(size,ARC);const l=wrap(x,txt,font,maxw);
+ x.font=font;x.fillStyle=col;x.textBaseline="top";
+ for(const ln of l){x.fillText(ln,px,py);py+=size*1.48;}return py;}
+function logo(x,dark){const ink=dark?WHITE:BLACK;
+ x.fillStyle=LIME;x.fillRect(M,82,9,30);
+ x.textBaseline="top";x.font=F(27,ANT);x.fillStyle=ink;x.fillText("TARON BADALYAN",M+22,80);
+ x.font=F(15,ARC);x.fillStyle=LIME;x.fillText("THE VOICE OF STONE",M+23,113);}
+function pager(x,i,n,dark){const t=`${String(i).padStart(2,"0")}/${String(n).padStart(2,"0")}`;
+ x.font=F(24,ANT);x.textBaseline="top";x.fillStyle=dark?GD:GL;
+ const w=x.measureText(t).width;x.fillText(t,W-M-w,84);
+ x.fillStyle=LIME;x.fillRect(W-M-w,116,w,3);}
+function arrow(x,cx,cy,r=44){x.fillStyle=LIME;x.beginPath();x.arc(cx,cy,r,0,7);x.fill();
+ x.strokeStyle=BLACK;x.lineWidth=7;x.lineCap="round";const a=r*.4;
+ x.beginPath();x.moveTo(cx-a,cy);x.lineTo(cx+a*.85,cy);x.stroke();
+ x.beginPath();x.moveTo(cx+a*.15,cy-a*.62);x.lineTo(cx+a*.9,cy);x.lineTo(cx+a*.15,cy+a*.62);x.stroke();}
+function pill(x,px,py,txt){x.font=F(27,ANT);const w=x.measureText(txt).width+62,h=62;
+ x.fillStyle=LIME;x.beginPath();x.roundRect(px,py,w,h,31);x.fill();
+ x.fillStyle=BLACK;x.textBaseline="top";x.fillText(txt,px+31,py+16);}
+
+function bg(x,dark){x.fillStyle=dark?BLACK:OFF;x.fillRect(0,0,W,H);
+ if(dark){glow(x,1010,90,470,.42);glow(x,60,1290,420,.30);
+  halftone(x,700,1070,1080,1330,LIME);
+  arcs(x,1080,0,[340,470,610],LIME,.22);arcs(x,0,1350,[300,430],LIME,.16);}
+ else{glow(x,1030,1300,430,.50);glow(x,40,60,330,.28);
+  halftone(x,690,1070,1080,1330,"#282826");
+  arcs(x,0,0,[320,450,590],"#1E1E1C",.14);}}
+
+function render(cv,s,i,n){
+ const x=cv.getContext("2d");cv.width=W;cv.height=H;
+ const dark=(s.t==="p")?(i%2===1):true;const ink=dark?WHITE:BLACK,sec=dark?GD:GL;
+ bg(x,dark);logo(x,dark);pager(x,i,n,dark);
+ const maxw=W-2*M-40;
+ if(s.t==="hook"){
+  let y=300;x.font=F(26,ANT);x.fillStyle=LIME;x.textBaseline="top";x.fillText(s.k,M,y);
+  x.fillRect(M,y+40,70,4);y+=96;
+  let fs=118;while(fs>74&&wrap(x,s.h.toUpperCase(),F(fs,ANT),maxw).length>4)fs-=4;
+  y=head(x,s.h,fs,M,y,maxw,ink,s.hi);y+=36;
+  body(x,s.b,36,M,y,W-2*M-90,sec);
+  x.font=F(28,ANT);x.fillStyle=LIME;x.fillText("SWIPE →",M,H-M-42);
+  arrow(x,W-M-52,H-M-52);
+ }else if(s.t==="p"){
+  let y=320;x.font=F(112,ANT);x.fillStyle=LIME;x.textBaseline="top";x.fillText(s.n,M,y);
+  y+=140;x.fillRect(M,y,120,4);y+=52;
+  y=head(x,s.h,82,M,y,W-2*M-30,ink,s.hi);y+=42;
+  body(x,s.b,37,M,y,W-2*M-70,sec);
+  arrow(x,W-M-52,H-M-52);
+ }else{
+  arcs(x,540,700,[430,520],LIME,.18);
+  let y=340;y=head(x,s.h,104,M,y,maxw,ink,s.hi);y+=34;
+  y=body(x,s.b,37,M,y,W-2*M-90,sec);y+=24;
+  x.font=F(40,ANT);x.fillStyle=LIME;x.textBaseline="top";x.fillText(s.q,M,y);
+  pill(x,M,H-M-130,"FOLLOW →");
+  x.font=F(24,ARC);x.fillStyle=sec;x.fillText("TARON BADALYAN · THE VOICE OF STONE",M,H-M-40);
+  arrow(x,W-M-52,H-M-112);
+ }}
+
+function dl(cv,name){cv.toBlob(b=>{const a=document.createElement("a");
+ a.href=URL.createObjectURL(b);a.download=name;a.click();
+ setTimeout(()=>URL.revokeObjectURL(a.href),4000);},"image/png");}
+
+async function build(){
+ await document.fonts.load("100px Anton");await document.fonts.load("400 40px Archivo");
+ await document.fonts.load("700 40px Archivo");await document.fonts.ready;
+ document.getElementById("d").textContent=new Date().toLocaleDateString("ru-RU");
+ const out=document.getElementById("out");document.getElementById("loading").remove();
+ CAR.forEach((c,ci)=>{
+  const h2=document.createElement("h2");
+  h2.innerHTML=(ci+1)+". "+c.title.toUpperCase().replace(/(GLOBAL|MISTAKES)/,"<em>$1</em>");
+  const p=document.createElement("p");p.className="hook";p.textContent=c.note+" · 7 слайдов";
+  const bar=document.createElement("div");bar.className="bar";
+  const all=document.createElement("button");all.textContent="⬇ Скачать все 7 PNG";
+  const cvs=[];
+  all.onclick=()=>cvs.forEach((cv,k)=>setTimeout(()=>dl(cv,`${c.id}_slide_${String(k+1).padStart(2,"0")}.png`),k*450));
+  bar.appendChild(all);
+  const g=document.createElement("div");g.className="grid";
+  c.slides.forEach((s,i)=>{
+   const card=document.createElement("div");card.className="card";
+   const cv=document.createElement("canvas");render(cv,s,i+1,c.slides.length);cvs.push(cv);
+   const f=document.createElement("div");f.className="f";
+   const nm=`${c.id}_slide_${String(i+1).padStart(2,"0")}.png`;
+   f.innerHTML=`<span>${String(i+1).padStart(2,"0")}/07</span>`;
+   const a=document.createElement("a");a.href="#";a.textContent="PNG ⬇";
+   a.onclick=e=>{e.preventDefault();dl(cv,nm);};
+   f.appendChild(a);card.appendChild(cv);card.appendChild(f);g.appendChild(card);});
+  out.appendChild(h2);out.appendChild(p);out.appendChild(bar);out.appendChild(g);});
+}
+build();
+</script></body></html>
