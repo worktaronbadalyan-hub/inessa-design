@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ИНЕССА · дизайн-дашборд 18.08.2026</title>
+<title>ИНЕССА · дизайн-дашборд 19.08.2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0b0b;--lime:#C6F03C;--mut:#8b8b8b}
@@ -27,11 +27,11 @@ footer a{color:var(--lime);text-decoration:none}
 </style></head><body>
 <header>
 <h1>Инесса — дизайн-дашборд дня</h1>
-<div class="meta">18.08.2026 · формат <b>4:5 (1080×1350)</b> · язык <b>English B2</b> · 2 карусели × 7 слайдов</div>
+<div class="meta">19.08.2026 · формат <b>4:5 (1080×1350)</b> · язык <b>English B2</b> · 2 карусели × 7 слайдов</div>
 </header>
 <nav><a href="./">Карусели</a><a href="./covers.html">Обложки reels</a></nav>
 <div id="app"></div>
-<footer><a href="./archive/2026-08-17.html">← архив: 17.08.2026</a> · ИНЕССА · ИИ UI/UX-дизайнер личного бренда Тарона Бадаляна · «The Voice of Stone»</footer>
+<footer><a href="./archive/2026-08-18.html">← архив: 18.08.2026</a> · ИНЕССА · ИИ UI/UX-дизайнер личного бренда Тарона Бадаляна · «The Voice of Stone»</footer>
 
 <script>
 const W=1080,H=1350,BLACK="#0E0E0E",LIME="#C6F03C",WHITE="#FFFFFF",OFFW="#F0F0EE";
@@ -105,28 +105,28 @@ function draw(cv,s,i,n){const x=cv.getContext("2d");cv.width=W;cv.height=H;x.tex
   body(x,s.sub,84,y+60,W-250,32,dark);footer(x,dark,s.t==="cta");
  }else{
   x.font="104px Anton";x.fillStyle=LIME;x.fillText(s.num,84,330);
-  x.fillRect(84,474,104,5);
+  x.fillRect(84,474,Math.max(104,x.measureText(s.num).width),5);
   const y=head(x,s.title,84,552,W-168,100,dark,3);
   body(x,s.text,84,y+56,W-200,34,dark);footer(x,dark,false);}}
 const A=[
-{t:"hook",kicker:"Stone Talks 07 · AI x design",hook:"AI IS NOT REPLACING *INTERIOR DESIGNERS*",sub:"But it is changing the job faster than most people notice. Here are the 5 shifts I already see with our clients."},
-{t:"p",num:"01",dark:false,title:"IT DOES THE *FIRST DRAFT*",text:"Twenty layouts and ten moodboards in a few minutes. The designer no longer starts from a blank page — the work now starts at option twenty."},
-{t:"p",num:"02",dark:true,title:"IT REMOVES THE *BORING HOURS*",text:"Quantities, schedules, specification tables, endless small edits. This is where AI saves real days — not in the creative part."},
-{t:"p",num:"03",dark:false,title:"IT CANNOT TOUCH THE *MATERIAL*",text:"AI renders travertine perfectly. It has never felt the surface. Clients still decide in three seconds, with their hand on the stone."},
-{t:"p",num:"04",dark:true,title:"CLIENTS NOW ARRIVE WITH *IMAGES*",text:"They bring a beautiful render that no factory can actually build. The new skill: turning a picture into a real material, size and budget."},
-{t:"p",num:"05",dark:false,title:"VALUE MOVES TO *JUDGEMENT*",text:"Anyone can generate a hundred options. Very few can choose the right one and explain why. That is what people will pay for."},
-{t:"cta",hook:"AI GIVES YOU OPTIONS. A DESIGNER GIVES YOU A *DECISION.*",sub:"Save this if you work with design or specify materials. Follow for the view from the quarry and the factory."}];
+{t:"hook",kicker:"A day in stone · behind the scenes",hook:"*6 AM.* THE QUARRY. THIS IS HOW A DAY IN STONE STARTS",sub:"People see the finished facade. They never see the twelve hours behind one single block."},
+{t:"p",num:"06:00",dark:false,title:"THE *MOUNTAIN* IS COLD",text:"Machines start before the sun. We check the wire, the water and the cut line from yesterday. A wrong line here costs us a full block."},
+{t:"p",num:"09:00",dark:true,title:"THE FIRST *BLOCK* MOVES",text:"Twenty tons leave the mountain. From this moment every hour has a price: the loader, the truck, the saw and the people waiting at the factory."},
+{t:"p",num:"12:00",dark:false,title:"THE FACTORY *DECIDES*",text:"We open the block and see the real stone for the first time. Colour, veins, hidden cracks. The plan for the week can change in one minute."},
+{t:"p",num:"16:00",dark:true,title:"NUMBERS, NOT *FEELINGS*",text:"Orders, deadlines, square metres, delays. This is the part nobody films — and the part that decides if the client gets the stone on time."},
+{t:"p",num:"20:00",dark:false,title:"THE DAY ENDS ON *PAPER*",text:"One short report: what we cut, what we shipped, what went wrong. Tomorrow starts from that page, not from memory."},
+{t:"cta",hook:"THE FACADE TAKES A DAY TO ADMIRE. IT TOOK *YEARS* TO LEARN",sub:"Save this if you love how things are really made. Follow for the view from inside the quarry and the factory."}];
 const B=[
-{t:"hook",kicker:"Behind the scenes · block to facade",hook:"HOW A *MOUNTAIN* BECOMES A BUILDING FACADE",sub:"Five steps between the quarry and the wall you walk past. Most of them happen long before anyone sees the stone."},
-{t:"p",num:"01",dark:false,title:"THE BLOCK IS *CUT OUT*",text:"A diamond wire slices a block of around twenty tons out of the mountain. One block weighs more than a loaded truck."},
-{t:"p",num:"02",dark:true,title:"THE BLOCK BECOMES *SLABS*",text:"A large saw cuts the block into slabs, two centimetres at a time. It takes days, not hours. One bad cut and the whole block loses value."},
-{t:"p",num:"03",dark:false,title:"THE *SURFACE* IS CHOSEN",text:"Honed, brushed, polished or split. The same stone gives four completely different buildings. This choice changes the light on the wall."},
-{t:"p",num:"04",dark:true,title:"EVERY PIECE GETS A *NUMBER*",text:"A facade is a puzzle. Each panel has its size, its place and its number before it ever leaves the factory. Mistakes here are found on site."},
-{t:"p",num:"05",dark:false,title:"IT GOES UP FOR *DECADES*",text:"Anchors, joints, tolerances. Done right, the facade outlives the company that built it. Stone is the only material that ages well."},
-{t:"cta",hook:"STONE IS SLOW. THAT IS EXACTLY WHY IT *LASTS.*",sub:"Save this before your next facade project. Follow for real numbers from the quarry and the factory."}];
+{t:"hook",kicker:"Buying stone · 5 questions",hook:"*5 QUESTIONS* TO ASK YOUR STONE SUPPLIER BEFORE YOU SIGN",sub:"Ask these five and you will avoid almost every problem I have seen on real projects in fifteen years."},
+{t:"p",num:"01",dark:false,title:"IS IT YOUR *OWN* QUARRY?",text:"A trader can lose your colour halfway through the order. A producer with its own quarry can cut the same stone again next month."},
+{t:"p",num:"02",dark:true,title:"CAN I SEE THE *WHOLE BATCH?*",text:"One perfect sample proves nothing. Ask for photos of the full lot. Natural stone is a range of colours, not a single tone."},
+{t:"p",num:"03",dark:false,title:"WHAT ARE THE *TEST RESULTS?*",text:"Water absorption, density, frost resistance, strength. A serious supplier sends the technical sheet in a day, not in a week."},
+{t:"p",num:"04",dark:true,title:"WHO PAYS FOR *BREAKAGE?*",text:"Stone travels thousands of kilometres. Put packing, transport damage and replacement in writing before the first truck is loaded."},
+{t:"p",num:"05",dark:false,title:"WHAT IS THE *REAL LEAD TIME?*",text:"Quarry, cutting, drying, finishing, packing. Ask for the plan per stage. A single final date is usually a guess, not a promise."},
+{t:"cta",hook:"CHEAP STONE IS NOT CHEAP. IT IS JUST PAID *LATER*",sub:"Save this before your next order and send it to the person who signs. Follow for facts from the quarry and the factory."}];
 const SETS=[
- {id:"A",h:'Карусель ① — <span>AI IS NOT REPLACING INTERIOR DESIGNERS</span>',src:"Источник темы: фокус недели Мадлен 18–24.08 (ICE #5) — английский слой из Stone Talks 07 «AI × интерьер-дизайн»; тема месяца «Voice of Stone → Global».",data:A},
- {id:"B",h:'Карусель ② — <span>HOW A MOUNTAIN BECOMES A BUILDING FACADE</span>',src:"Источник темы: своя вирусная идея Инессы по алгоритмам IG — сохраняемый behind-the-scenes формат «block to facade» для архитекторов, дизайнеров и клиентов.",data:B}];
+ {id:"A",h:'Карусель ① — <span>6 AM. THE QUARRY. THIS IS HOW A DAY IN STONE STARTS</span>',src:"Источник темы: контент-план Мадлен, 19.08 — «Reel: Мой день — производство», хук «6 утра. Карьер. Так начинается день в камне». Переведено в сохраняемый англоязычный таймлайн-формат.",data:A},
+ {id:"B",h:'Карусель ② — <span>5 QUESTIONS TO ASK YOUR STONE SUPPLIER BEFORE YOU SIGN</span>',src:"Источник темы: своя вирусная идея Инессы по алгоритмам IG — чек-лист how-to для архитекторов, девелоперов и закупщиков. Максимальная «сохраняемость» и пересылка.",data:B}];
 function dl(cv,name){cv.toBlob(b=>{const a=document.createElement("a");
  a.href=URL.createObjectURL(b);a.download=name;a.click();URL.revokeObjectURL(a.href)},"image/png")}
 document.fonts.ready.then(()=>{const app=document.getElementById("app");
