@@ -1,1 +1,334 @@
-__PLACEHOLDER__
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stone Talks — Маркетинг-неделя</title>
+<style>
+  :root{
+    --bg:#0a0b0a; --panel:#131513; --panel2:#181b18; --line:#262b26;
+    --ink:#f2f4ef; --muted:#9aa39a; --lime:#c8f13e; --lime-dim:#9dbb33;
+    --warn:#ffcf5c; --bad:#ff7a6b; --good:#7ee787;
+    --mono:'SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;
+    --sans:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;padding-bottom:80px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding:46px 0 34px;background:
+    radial-gradient(900px 300px at 12% -10%,rgba(200,241,62,.10),transparent 60%)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.32em;color:var(--lime);
+    text-transform:uppercase;margin-bottom:16px}
+  h1{font-size:clamp(34px,6vw,64px);font-weight:800;line-height:.98;letter-spacing:-.02em;
+    text-transform:uppercase}
+  h1 span{color:var(--lime)}
+  .sub{color:var(--muted);margin-top:16px;max-width:720px;font-size:16px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--muted);background:var(--panel)}
+  .chip b{color:var(--ink);font-weight:600}
+  nav{position:sticky;top:0;z-index:20;background:rgba(10,11,10,.9);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);margin-top:0}
+  nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:11px 20px}
+  nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:8px;white-space:nowrap}
+  nav a:hover{color:var(--lime);background:var(--panel)}
+  section{padding:52px 0 8px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.28em;color:var(--lime-dim);
+    text-transform:uppercase;margin-bottom:12px}
+  h2{font-size:clamp(24px,4vw,38px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05}
+  h2 .n{color:var(--lime);font-family:var(--mono);font-size:.5em;vertical-align:super;margin-right:10px}
+  .lead{color:var(--muted);max-width:820px;margin-top:14px;font-size:15.5px}
+  h3{font-size:19px;font-weight:700;margin:30px 0 10px;letter-spacing:.01em}
+  h4{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--lime);margin:18px 0 8px}
+  p{margin:10px 0;color:#d7ddd3}
+  strong{color:#fff}
+  a{color:var(--lime)}
+  .grid{display:grid;gap:16px;margin-top:22px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card.k{border-color:rgba(200,241,62,.25)}
+  .stat{display:flex;flex-direction:column;gap:4px}
+  .stat .v{font-size:30px;font-weight:800;font-family:var(--mono);color:var(--lime);letter-spacing:-.02em}
+  .stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .stat .d{font-size:12px;color:var(--muted)}
+  .badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;padding:3px 9px;border-radius:6px;font-weight:600}
+  .b-need{background:rgba(255,207,92,.12);color:var(--warn);border:1px solid rgba(255,207,92,.3)}
+  .b-base{background:rgba(200,241,62,.1);color:var(--lime);border:1px solid rgba(200,241,62,.3)}
+  .b-est{background:rgba(255,122,107,.1);color:var(--bad);border:1px solid rgba(255,122,107,.3)}
+  .b-ok{background:rgba(126,231,135,.1);color:var(--good);border:1px solid rgba(126,231,135,.3)}
+  .tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:13.5px}
+  .tbl th,.tbl td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .tbl tr:hover td{background:rgba(255,255,255,.015)}
+  .tbl .day{font-weight:700;color:var(--lime);white-space:nowrap}
+  .pill{display:inline-block;font-size:10.5px;font-family:var(--mono);padding:2px 7px;border-radius:5px;letter-spacing:.04em}
+  .p-li{background:#0a3d5c;color:#8fd0f2}
+  .p-ig{background:#3d1435;color:#f0a6d8}
+  .p-tt{background:#1c1c1c;color:#eee;border:1px solid #333}
+  .p-yt{background:#3d0f0f;color:#ff9f9a}
+  .p-70{background:rgba(126,231,135,.14);color:var(--good)}
+  .p-20{background:rgba(255,207,92,.14);color:var(--warn)}
+  .p-10{background:rgba(200,241,62,.14);color:var(--lime)}
+  ul{margin:10px 0 10px 2px;list-style:none}
+  ul li{position:relative;padding:5px 0 5px 20px;color:#d7ddd3;font-size:14.5px}
+  ul li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;
+    background:var(--lime);border-radius:2px;transform:rotate(45deg)}
+  ol{margin:10px 0 10px 20px;color:#d7ddd3}
+  ol li{padding:4px 0}
+  .q{border-left:2px solid var(--lime);padding:4px 0 4px 14px;margin:8px 0;color:#e6ebe0;font-style:italic}
+  .note{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--panel2);
+    border:1px dashed var(--line);border-radius:10px;padding:14px 16px;margin-top:18px}
+  .tag{font-family:var(--mono);font-size:11px;color:var(--lime-dim)}
+  .who{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .who .rank{font-family:var(--mono);font-size:34px;font-weight:800;color:var(--lime);line-height:1}
+  .who .name{font-size:22px;font-weight:800}
+  .who .role{color:var(--muted);font-size:13px}
+  footer{padding:40px 0;color:var(--muted);font-size:12.5px;font-family:var(--mono);text-align:center}
+  .hook{color:#fff;font-weight:600}
+  .cta{color:var(--lime)}
+  .two{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">Мадлен · AI CMO · Маркетинг-неделя</div>
+    <h1>Голос <span>камня</span><br>стратегия недели</h1>
+    <p class="sub">Аудит присутствия, недельный контент-план по каналам, кандидаты в подкаст Stone Talks и задачи команде. Личный бренд Тарона Бадаляна — «Голос армянского камня: от карьера до мирового рынка».</p>
+    <div class="meta">
+      <span class="chip">Отчёт от <b>22.09.2026</b></span>
+      <span class="chip">Неделя <b>22–28 сент.</b></span>
+      <span class="chip">Каналы <b>LinkedIn · Instagram · TikTok · YouTube</b></span>
+      <span class="chip">Модели <b>STP · AARRR · 70/20/10 · AIDA/PAS/BAB · ICE</b></span>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#strategy">Стратегия / STP</a>
+  <a href="#audit">Текущая ситуация</a>
+  <a href="#plan">Контент-план</a>
+  <a href="#stonetalks">Stone Talks</a>
+  <a href="#team">Задачи команде</a>
+  <a href="#next">Приоритеты</a>
+</div></nav>
+
+<section id="strategy"><div class="wrap">
+  <div class="eyebrow">Позиционирование</div>
+  <h2><span class="n">01</span>Стратегическая рамка</h2>
+  <p class="lead">Прежде чем считать посты — фиксируем, для кого и о чём мы вещаем. Всё в плане ниже подчинено этой рамке STP и трём контент-столпам бренда.</p>
+  <div class="grid g3">
+    <div class="card k">
+      <h4>Segmentation — аудитории</h4>
+      <ul>
+        <li><strong>S1. Международные покупатели/спецификаторы</strong> — архитекторы, подрядчики, девелоперы (Залив, ЕС). Deep-pocket B2B.</li>
+        <li><strong>S2. Отрасль внутри Армении</strong> — переработчики, поставщики, члены Союза.</li>
+        <li><strong>S3. Диаспора и инвесторы</strong> — капитал, связи, экспортные каналы.</li>
+        <li><strong>S4. Широкая аудитория дизайна/культуры</strong> — охват, узнаваемость, репост-топливо.</li>
+      </ul>
+    </div>
+    <div class="card k">
+      <h4>Targeting — приоритет каналов</h4>
+      <ul>
+        <li><strong>LinkedIn (EN)</strong> → S1 + S3. Авторитет, лиды, сделки. <span class="badge b-base">Приоритет №1</span></li>
+        <li><strong>Instagram (HY/RU)</strong> → S4 + S2. Флагман охвата и визуального доказательства. <span class="badge b-base">Флагман</span></li>
+        <li><strong>TikTok / YouTube Shorts</strong> → S4. Мультипликация вертикали, верх воронки.</li>
+        <li><strong>YouTube (long)</strong> → дом для Stone Talks и «глубины».</li>
+      </ul>
+    </div>
+    <div class="card k">
+      <h4>Positioning — одна фраза</h4>
+      <p><strong>«Голос армянского камня»</strong> — единственный публичный эксперт, который связывает традиционное ремесло (карьер, туф, травертин, базальт) с современным глобальным бизнесом и ИИ.</p>
+      <p class="tag">Точка отстройки: не «продавец камня», а <span class="cta">проводник отрасли на мировой рынок</span>.</p>
+    </div>
+  </div>
+  <h3>Три контент-столпа (столпы = 100% тем)</h3>
+  <div class="grid g3">
+    <div class="card"><h4>① Цепочка стоимости камня</h4><p>От карьера до фасада: добыча, обработка, спецификации, экспорт, кейсы объектов. Доказательство экспертизы.</p></div>
+    <div class="card"><h4>② Бизнес без прикрас</h4><p>Реальные цифры, ошибки, переговоры, сделки, устройство отрасли. Доверие через откровенность.</p></div>
+    <div class="card"><h4>③ ИИ в традиционной индустрии</h4><p>Как ИИ-агенты, автоматизация и данные меняют «пыльную» отрасль. Уникальный для ниши угол.</p></div>
+  </div>
+  <div class="note">Воронка AARRR для персонального бренда: <b>Acquisition</b> — Reels/Shorts/TikTok (верх); <b>Activation</b> — профиль + закреп + лид-магнит; <b>Retention</b> — регулярность и серии; <b>Referral</b> — Stone Talks и совместные посты с гостями; <b>Revenue</b> — LinkedIn-DM, спикерство, экспортные лиды.</div>
+</div></section>
+
+<section id="audit"><div class="wrap">
+  <div class="eyebrow">Диагностика</div>
+  <h2><span class="n">02</span>Текущая ситуация</h2>
+  <p class="lead">Честная оговорка о данных: автоматический облачный запуск идёт <strong>без доступа к залогиненным кабинетам</strong> (Instagram/LinkedIn/TikTok/YouTube Studio), а публичный веб-скрейп этих платформ заблокирован. Поэтому <span class="badge b-need">нужен доступ</span> — метрики, которые нельзя достать без входа в кабинет; <span class="badge b-base">база 06.07</span> — зафиксированная стартовая точка. Цифры не выдумываются.</p>
+  <h3>Стартовая точка (06.07.2026) и что нужно замерить</h3>
+  <table class="tbl">
+    <thead><tr><th>Канал</th><th>База 06.07.2026</th><th>Сейчас (21.09)</th><th>Ключевые метрики к замеру</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill p-ig">Instagram</span><br>@badalyan.taron</td><td><span class="badge b-base">4 550</span> подписчиков<br>237 постов</td><td><span class="badge b-need">нужен доступ</span></td><td>Прирост/нед., охват на пост, ER (лайки+комм+сохр/охват), reach vs followers, топ-3 и слабые форматы, доля Reels в охвате</td></tr>
+      <tr><td><span class="pill p-tt">TikTok</span><br>@badalyan.taron</td><td><span class="badge b-base">579</span> подписчиков<br>5 052 лайка</td><td><span class="badge b-need">нужен доступ</span></td><td>Просмотры/видео, avg watch time, % досмотра, подписки с видео, вирусные выбросы</td></tr>
+      <tr><td><span class="pill p-yt">YouTube</span><br>@TaronBadalyanTheVoiceOfStone</td><td><span class="badge b-base">28</span> подписчиков<br>13 видео</td><td><span class="badge b-need">нужен доступ</span></td><td>Подписчики, CTR превью, удержание, watch time, источники трафика; Shorts vs long</td></tr>
+      <tr><td><span class="pill p-li">LinkedIn</span><br>Taron Badalyan</td><td><span class="badge b-need">уточнить</span></td><td><span class="badge b-need">нужен доступ</span></td><td>Подписчики/связи, impressions на пост, engagement rate, профиль-визиты, SSI, входящие DM/лиды</td></tr>
+    </tbody>
+  </table>
+  <p class="tag">Публично подтверждено (веб-поиск): LinkedIn-профиль активен, заголовок — «Founder of the Petro Stone Group»; есть посты про MOU Армения–Россия по камню и про Armenian Stone Fest.</p>
+  <h3>Структурный аудит (виден без входа в кабинет)</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Сильные стороны</h4><ul>
+      <li>Чёткая, редкая ниша — «армянский камень» без прямых конкурентов-персон.</li>
+      <li>Реальная экспертиза и доступ к производству (контент «из карьера» недостижим для конкурентов).</li>
+      <li>Instagram уже даёт базу ~4,5k — есть на чём строить охват.</li>
+      <li>Есть система: Brand Book v1.0, ИИ-агенты, визуальный код (чёрный + лайм).</li>
+    </ul></div>
+    <div class="card"><h4>Пробелы и зоны риска</h4><ul>
+      <li><strong>LinkedIn недоинвестирован</strong> — а именно там деньги (S1/S3). Приоритет №1 недели.</li>
+      <li><strong>YouTube почти пуст</strong> (28 подп./13 видео) — а это дом для Stone Talks.</li>
+      <li><strong>TikTok</strong>: 5 052 лайка / 579 подп. — контент нравится, но не конвертит в подписку.</li>
+      <li>Языки распылены (HY/RU/EN) — нужна матрица «канал → язык».</li>
+      <li>Нет публичного лид-магнита и единого CTA-маршрута к DM/сделке.</li>
+    </ul></div>
+  </div>
+  <div class="note">Что разблокирует полный аудит: доступ к Instagram Insights / TikTok Analytics / YouTube Studio / LinkedIn analytics, или выгрузка скринов ключевых экранов. Как только цифры «сейчас» появятся — блок дополняется динамикой и ER, а план перекалибруется по данным.</div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <div class="eyebrow">Исполнение</div>
+  <h2><span class="n">03</span>Контент-план · 22–28 сентября</h2>
+  <p class="lead">Распределение по правилу <strong>70/20/10</strong>: <span class="pill p-70">70% ядро</span> — надёжные форматы по трём столпам; <span class="pill p-20">20% развитие</span> — новые темы/форматы; <span class="pill p-10">10% эксперимент</span> — риск ради вирусности. LinkedIn — на английском (авторитет, S1). Instagram — HY/RU (флагман охвата). Один смысловой актив в день мультиплицируется: IG Reels → TikTok → YouTube Shorts.</p>
+  <table class="tbl">
+    <thead><tr><th>День</th><th>Канал</th><th>Столп · 70/20/10</th><th>Формат и тема</th><th>Хук</th><th>CTA</th></tr></thead>
+    <tbody>
+      <tr><td class="day">Пн 22</td><td><span class="pill p-li">LinkedIn</span></td><td>② · <span class="pill p-70">70</span></td><td>Text+carousel (EN). «The real cost breakdown of an Armenian tuff façade — from quarry to site.»</td><td class="hook">“Everyone quotes the slab price. Almost no one quotes the 6 hidden costs.” <span class="tag">(PAS)</span></td><td class="cta">“Specifying stone? DM me ‘SPEC’.”</td></tr>
+      <tr><td class="day">Пн 22</td><td><span class="pill p-ig">IG Reels</span> → <span class="pill p-tt">TikTok</span> → <span class="pill p-yt">Shorts</span></td><td>① · <span class="pill p-70">70</span></td><td>Reel 20–30с из карьера: 3 стадии туфа «камень → блок → фасад».</td><td class="hook">«Այս քարը 3 շաբաթից Դուբայի ֆասադին է լինելու» / «Через 3 недели — на фасаде в Дубае».</td><td class="cta">«Сохрани, если строишь. Пиши “ТУФ”.»</td></tr>
+      <tr><td class="day">Вт 23</td><td><span class="pill p-ig">IG Carousel</span></td><td>① · <span class="pill p-70">70</span></td><td>Карусель 6 слайдов (RU): «Туф, травертин, базальт — как не перепутать и не переплатить».</td><td class="hook">«90% заказчиков путают эти три камня — и теряют деньги.» <span class="tag">(PAS)</span></td><td class="cta">«Листай → сохрани памятку. Вопрос — в комменты.»</td></tr>
+      <tr><td class="day">Вт 23</td><td><span class="pill p-li">LinkedIn</span></td><td>③ · <span class="pill p-20">20</span></td><td>Text (EN): «I put an AI agent in charge of my stone marketing. Week 1 numbers.»</td><td class="hook">“A 4,000-year-old material meets an AI CMO.” <span class="tag">(BAB)</span></td><td class="cta">“Follow — I’m documenting it live.”</td></tr>
+      <tr><td class="day">Ср 24</td><td><span class="pill p-ig">IG Reels</span> → <span class="pill p-tt">TikTok</span> → <span class="pill p-yt">Shorts</span></td><td>② · <span class="pill p-70">70</span></td><td>Reel «Один день переговоров»: закулисье встречи с международным покупателем (без NDA).</td><td class="hook">«Самый частый вопрос иностранного заказчика об армянском камне.»</td><td class="cta">«Подпишись — отрасль изнутри.»</td></tr>
+      <tr><td class="day">Ср 24</td><td><span class="pill p-li">LinkedIn</span></td><td>① · <span class="pill p-70">70</span></td><td>Photo+text (EN): свойства туфа (плотность, водопоглощение, прочность) для спецификаторов.</td><td class="hook">“Before you approve Armenian tuff, check these 5 numbers.” <span class="tag">(AIDA)</span></td><td class="cta">“Want the full TDS? Comment ‘TDS’.”</td></tr>
+      <tr><td class="day">Чт 25</td><td><span class="pill p-ig">IG Carousel</span></td><td>② · <span class="pill p-20">20</span></td><td>Карусель (RU): «Как устроен экспорт камня из Армении: 5 барьеров».</td><td class="hook">«Армянский камень мирового класса. Почему его почти нет на фасадах?»</td><td class="cta">«Разбор своего рынка? — в директ.»</td></tr>
+      <tr><td class="day">Чт 25</td><td><span class="pill p-li">LinkedIn</span></td><td>② · <span class="pill p-70">70</span></td><td>Анонс Stone Talks (EN): запуск шоу о людях камня, дизайна и индустрии.</td><td class="hook">“Season 1 guest list is wild. First name drops Friday.” <span class="tag">(AIDA)</span></td><td class="cta">“Who should I interview? Drop a name 👇”</td></tr>
+      <tr><td class="day">Пт 26</td><td><span class="pill p-ig">IG Reels</span> → <span class="pill p-tt">TikTok</span> → <span class="pill p-yt">Shorts</span></td><td>③ · <span class="pill p-10">10</span></td><td>Эксперимент: «ИИ озвучивает камень» — говорящий травертин (persona qarapet).</td><td class="hook">«Что бы сказал камень, если бы умел говорить? Спросили у ИИ.»</td><td class="cta">«Продолжать серию? 🔥 в комменты.»</td></tr>
+      <tr><td class="day">Пт 26</td><td><span class="pill p-li">LinkedIn</span></td><td>② · <span class="pill p-20">20</span></td><td>Stone Talks — раскрытие гостя №1 (EN), тизер тем.</td><td class="hook">“Our first guest represents a national pavilion at the Venice Biennale — in stone.”</td><td class="cta">“Follow so you don’t miss the drop.”</td></tr>
+      <tr><td class="day">Сб 27</td><td><span class="pill p-ig">IG Stories</span></td><td>① · <span class="pill p-70">70</span></td><td>5–7 сторис: «карьер в выходной», опрос, backstage.</td><td class="hook">«Суббота на карьере. То, что не попадает в ленту.»</td><td class="cta">Опрос + «на профиль/закреп».</td></tr>
+      <tr><td class="day">Вс 28</td><td><span class="pill p-ig">IG</span> + <span class="pill p-li">LinkedIn</span></td><td>② · <span class="pill p-10">10</span></td><td>Рефлексивный пост: «Итоги недели голоса камня» — 1 урок отрасли + 1 личный.</td><td class="hook">«За неделю отрасль научила меня одному. Без прикрас.» <span class="tag">(BAB)</span></td><td class="cta">«Что откликнулось? Напиши — читаю все.»</td></tr>
+    </tbody>
+  </table>
+  <div class="grid g3">
+    <div class="card"><div class="stat"><span class="v">11</span><span class="l">единиц контента</span><span class="d">+ мультипликация вертикали в 3 канала</span></div></div>
+    <div class="card"><div class="stat"><span class="v">7 / 3 / 2</span><span class="l">70 / 20 / 10 (шт.)</span><span class="d">баланс ядра, развития и эксперимента</span></div></div>
+    <div class="card"><div class="stat"><span class="v">5</span><span class="l">постов LinkedIn (EN)</span><span class="d">приоритет №1 — авторитет и лиды</span></div></div>
+  </div>
+  <div class="note">Правило бренда соблюдено: <b>нет сырого инпута от Тарона → нет публикации</b>. Этот план — сценарная рамка; под каждый пункт SMM собирает пакет из реального материала Тарона. Reels-first: один съёмочный день закрывает 3–4 вертикали.</div>
+</div></section>
+
+<section id="stonetalks"><div class="wrap">
+  <div class="eyebrow">Продукт бренда · Referral-двигатель</div>
+  <h2><span class="n">04</span>Stone Talks — кандидаты в гости</h2>
+  <p class="lead">Только армяне (Армения/диаспора). Каждый кандидат закрывает один из трёх столпов и приносит свою аудиторию. Оценки соцсетей помечены <span class="badge b-est">оценка</span> — точные метрики требуют проверки в кабинетах; фактура о персонах подтверждена веб-поиском.</p>
+  <div class="note">Без повторов: ранее уже предлагались Ара Магдесян (ServiceTitan), Чахан Минасян, Алексис Оганян, а также Krisp, Storaket, Starlife, Рубен, Айк, Анжела, Инеса. Три кандидата ниже — новые.</div>
+  <div class="card k" style="margin-top:22px">
+    <div class="who"><span class="rank">01</span><div><div class="name">Армен Агоп (Armen Agop)</div><div class="role">Скульптор мирового уровня · камень и бронза · Египетский павильон на 61-й Венецианской биеннале 2026</div></div></div>
+    <div class="two" style="margin-top:16px">
+      <div>
+        <h4>Чем силён · зачем нужен</h4>
+        <p>Столп ① (цепочка стоимости, художественный «верх»). Армянского происхождения (Каир→Италия), минималистичная скульптура в камне — прямое попадание в «Голос камня». Даёт Тарону <strong>культурный авторитет</strong> и мост «ремесло ↔ высокое искусство».</p>
+        <h4>Анализ соцсетей <span class="badge b-est">оценка</span></h4>
+        <ul><li>Присутствие: Instagram (портфолио), галереи (Art Plural, Canvas), Wikipedia.</li><li>Аудитория: арт-публика, коллекционеры, кураторы — качество &gt; количество.</li><li>Точные охваты — <span class="badge b-need">нужна проверка</span>.</li></ul>
+      </div>
+      <div>
+        <h4>Темы (3–5)</h4>
+        <ul><li>Камень как язык: почему минимализм требует идеального материала.</li><li>Армянская идентичность в глобальном искусстве.</li><li>Венецианская биеннале изнутри: как камень попадает на мировую сцену.</li><li>Ремесло vs искусство: где кончается обработка и начинается смысл.</li></ul>
+        <h4>Вирусные вопросы</h4>
+        <div class="q">«Вы на ощупь отличаете хороший камень от великого — как?»</div>
+        <div class="q">«Что армянский камень знает о вечности, чего не знает мрамор?»</div>
+        <div class="q">«Если бы ваша скульптура заговорила через 1000 лет — что бы сказала?»</div>
+      </div>
+    </div>
+  </div>
+  <div class="card k" style="margin-top:18px">
+    <div class="who"><span class="rank">02</span><div><div class="name">Ованес Авоян (Hovhannes Avoyan)</div><div class="role">Основатель и CEO Picsart · один из самых известных армянских техно-предпринимателей</div></div></div>
+    <div class="two" style="margin-top:16px">
+      <div>
+        <h4>Чем силён · зачем нужен</h4>
+        <p>Столпы ② и ③ (бизнес без прикрас + ИИ). Икона армянского бизнеса с глобальным масштабом и историей «из Еревана в мир». Приносит <strong>максимальный охват и деловой авторитет</strong>, легитимизирует ИИ-угол Тарона.</p>
+        <h4>Анализ соцсетей <span class="badge b-est">оценка</span></h4>
+        <ul><li>Сильный LinkedIn (посты про ИИ и предпринимательство), Forbes Technology Council.</li><li>Аудитория: предприниматели, tech, инвесторы, диаспора — крупная и деловая.</li><li>Конкретные цифры подписчиков — <span class="badge b-need">нужна проверка</span>.</li></ul>
+      </div>
+      <div>
+        <h4>Темы (3–5)</h4>
+        <ul><li>Как строить глобальный бренд из Армении.</li><li>ИИ для «нетехнологичных» индустрий — где скрытые деньги.</li><li>Провалы и уроки: бизнес без прикрас.</li><li>Почему традиционные отрасли (камень) — следующая цель ИИ.</li></ul>
+        <h4>Вирусные вопросы</h4>
+        <div class="q">«Если бы завтра возглавили камнеобрабатывающий завод — что внедрили бы первым?»</div>
+        <div class="q">«Какой бизнес-совет все повторяют — а он вредный?»</div>
+        <div class="q">«Армения через 10 лет: сырьевая или технологическая? Ставите на что?»</div>
+      </div>
+    </div>
+  </div>
+  <div class="card k" style="margin-top:18px">
+    <div class="who"><span class="rank">03</span><div><div class="name">Артавазд Ерицян (Artavazd Yeritsyan)</div><div class="role">Основатель и CEO Podcastle · армянский ИИ-стартап в аудио/подкастинге</div></div></div>
+    <div class="two" style="margin-top:16px">
+      <div>
+        <h4>Чем силён · зачем нужен</h4>
+        <p>Столп ③ (ИИ в индустрии) + практическая польза: гость <strong>из мира подкастинга</strong> усилит запуск самого Stone Talks и даст кросс-промо. Молодой предприниматель — контраст к Авояну, «новая волна».</p>
+        <h4>Анализ соцсетей <span class="badge b-est">оценка</span></h4>
+        <ul><li>Присутствие в стартап-медиа, интервью (Medium/iFundLab), LinkedIn.</li><li>Аудитория: креаторы, подкастеры, tech-предприниматели — те, кто помогает расти новому шоу.</li><li>Точные метрики — <span class="badge b-need">нужна проверка</span>.</li></ul>
+      </div>
+      <div>
+        <h4>Темы (3–5)</h4>
+        <ul><li>Как ИИ меняет голос и звук (уместно для «Голоса камня»).</li><li>Строить продукт для мира из маленькой страны.</li><li>Личный бренд основателя как канал продаж.</li><li>Что нужно, чтобы армянский подкаст услышали в мире.</li></ul>
+        <h4>Вирусные вопросы</h4>
+        <div class="q">«Можно ли клонировать голос отрасли? И этично ли это?»</div>
+        <div class="q">«Что вы поняли о внимании людей, чего не знали до Podcastle?»</div>
+        <div class="q">«Если у идеи 60 секунд, чтобы зацепить — с чего начинать?»</div>
+      </div>
+    </div>
+  </div>
+  <div class="note">Логика подбора: три гостя закрывают все три столпа (Агоп → ①, Авоян → ②/③, Ерицян → ③), дают разные аудитории и масштаб охвата. Порядок анонсов: сначала Агоп (пятница) как культурный крючок, затем деловые тяжеловесы. Следующий шаг — выйти на контакт через общие связи/диаспору и проверить актуальные метрики каналов.</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+  <div class="eyebrow">Операционка · приоритизация по ICE</div>
+  <h2><span class="n">05</span>Задачи команде</h2>
+  <p class="lead">Trello в рабочем пространстве Zapier <strong>не подключён</strong> (доступны только Telegram и GitHub), поэтому задачи выданы списком здесь — как только Trello подключат, Мадлен создаст карточки в колонке «🤖 AI задачи». Формат карточки: язык — армянский, префикс «[Մարքեթինգ]», один ответственный, дедлайн. Порядок — по ICE (Impact · Confidence · Ease, 1–10; Score = среднее).</p>
+  <table class="tbl">
+    <thead><tr><th>#</th><th>Ответственный</th><th>Задача (арм.)</th><th>Суть</th><th>Дедлайн</th><th>ICE</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>@merikarapetyan3<br><span class="tag">SMM</span></td><td>[Մարքեթինգ] Նկարահանել քարհանքից 4 ուղղահայաց Reels (քար→բլոկ→ֆասադ)</td><td>Снять 4 вертикальных Reels из карьера (стадии камня) под план; мультипликация в TikTok/Shorts.</td><td>Ср 24.09</td><td><span class="badge b-ok">9.0</span><br><span class="tag">I9·C9·E9</span></td></tr>
+      <tr><td>2</td><td>@merikarapetyan3<br><span class="tag">SMM</span></td><td>[Մարքեթինգ] Հրապարակել LinkedIn-ի 5 գրառումները (EN) ըստ պլանի, հետևել մետրիկաներին</td><td>Опубликовать 5 постов LinkedIn (EN) по плану + снять метрики (impressions, ER, DM).</td><td>Пн–Пт</td><td><span class="badge b-ok">8.7</span><br><span class="tag">I10·C8·E8</span></td></tr>
+      <tr><td>3</td><td>@syuzannaavetyan<br><span class="tag">Координация</span></td><td>[Մարքեթինգ] Ապահովել կաբինետների մուտքը (IG/TikTok/YouTube/LinkedIn analytics)</td><td>Дать доступ/скрины аналитики всех 4 кабинетов — закрыть «нужен доступ» в аудите.</td><td>Вт 23.09</td><td><span class="badge b-ok">8.7</span><br><span class="tag">I10·C9·E7</span></td></tr>
+      <tr><td>4</td><td>@annasargsyan47<br><span class="tag">Дизайн</span></td><td>[Մարքեթինգ] Պատրաստել 2 կարուսել (RU) բրենդ-ոճով (սև+լայմ)</td><td>Сверстать 2 карусели (RU) в фирменном стиле: «3 камня» и «5 барьеров экспорта».</td><td>Ср 24.09</td><td><span class="badge b-ok">8.3</span><br><span class="tag">I8·C9·E8</span></td></tr>
+      <tr><td>5</td><td>@annasargsyan47<br><span class="tag">Дизайн</span></td><td>[Մարքեթինգ] Ձևավորել Stone Talks-ի բրենդինգը՝ լոգո, cover, հյուրի շաբլոն</td><td>Брендинг Stone Talks: лого-локап, обложка, шаблон анонса гостя.</td><td>Пт 26.09</td><td><span class="badge b-ok">7.7</span><br><span class="tag">I8·C8·E7</span></td></tr>
+      <tr><td>6</td><td>@ohanjanyanani<br><span class="tag">Реклама</span></td><td>[Մարքեթինգ] Գործարկել լավագույն Reels-ի promo-ն (IG/TikTok), թիրախ՝ դիզայն/շինարարություն</td><td>Продвижение лучшего Reels на аудиторию дизайн/стройка; тест бюджета, отчёт CPM/CPF.</td><td>Чт 25.09</td><td><span class="badge b-ok">7.3</span><br><span class="tag">I8·C7·E7</span></td></tr>
+      <tr><td>7</td><td>@syuzannaavetyan<br><span class="tag">Координация</span></td><td>[Մարքեթինգ] Կազմել Stone Talks-ի հյուրերի կոնտակտային ցուցակը (Ագոպ, Ավոյան, Երիցյան)</td><td>Контакт-лист гостей Stone Talks через общие связи/диаспору для аутрича.</td><td>Пт 26.09</td><td><span class="badge b-ok">7.0</span><br><span class="tag">I9·C6·E6</span></td></tr>
+      <tr><td>8</td><td>@taronbadalyan1<br><span class="tag">Только личное</span></td><td>[Մարքեթինգ] Ձայնագրել «հումք»՝ բանակցության backstage + շաբաթվա 1 դաս</td><td>Личный «сырой» инпут: backstage переговоров + 1 честный урок недели (без него нет публикаций).</td><td>Вт 23.09</td><td><span class="badge b-ok">9.3</span><br><span class="tag">I10·C9·E9</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note">Каждая задача: один ответственный, дедлайн, префикс «[Մարքեթինգ]». По ICE верх списка — сырьё от Тарона (№8, Score 9.3): без его инпута весь план стоит. №3 (доступы) разблокирует полноценный аудит следующей недели.</div>
+</div></section>
+
+<section id="next"><div class="wrap">
+  <div class="eyebrow">Прямой вывод</div>
+  <h2><span class="n">06</span>Приоритеты и направление</h2>
+  <div class="grid g2">
+    <div class="card k"><h4>3 приоритета недели</h4><ol>
+      <li><strong>Открыть доступы к аналитике</strong> (№3) — без цифр стратегия слепа.</li>
+      <li><strong>Разогнать LinkedIn EN</strong> — 5 постов, это канал денег (S1/S3).</li>
+      <li><strong>Запустить Stone Talks</strong> — анонс + брендинг + аутрич гостю №1 (Агоп).</li>
+    </ol></div>
+    <div class="card"><h4>Зоны самообмана — честно</h4><ul>
+      <li>«4,5k в IG — значит всё хорошо». Без ER и охвата это тщеславная метрика.</li>
+      <li>«TikTok зашёл» — лайки есть, но подписка не растёт: чиним профиль и хук-на-подписку.</li>
+      <li>«Контента много» — но LinkedIn (деньги) и YouTube (дом Stone Talks) недоинвестированы.</li>
+    </ul></div>
+  </div>
+  <div class="note">Направление верное, скорость — ниже возможной. Рычаг недели не в количестве постов, а в двух вещах: <b>данные (доступы)</b> и <b>концентрация на LinkedIn + Stone Talks</b>. Остальное — мультипликация одного съёмочного дня.</div>
+</div></section>
+
+<footer><div class="wrap">
+  Мадлен · AI CMO личного бренда Тарона Бадаляна · отчёт от 22.09.2026 · неделя 22–28 сент.<br>
+  Данные без доступа к кабинетам помечены «нужен доступ»; оценки соцсетей гостей — «оценка». Цифры не выдумываются.<br>
+  worktaronbadalyan-hub.github.io/inessa-design/stonetalks/
+</div></footer>
+</body>
+</html>
