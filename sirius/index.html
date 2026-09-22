@@ -1,269 +1,201 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="hy">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sirius · сторис-план недели 24–30.08.2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 Sirius · сторис-план недели 28.09–04.10.2026</title>
 <style>
-  :root{
-    --bg:#0B0B0B; --card:#141414; --line:#242424; --txt:#EDEDED; --mut:#9A9A9A;
-    --lime:#C6F03C;
-    --seed:#7FB3FF; --build:#C6F03C; --tease:#FFB020; --drop:#FF5C5C; --echo:#B98CFF;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--txt);
-    font-family:"Noto Sans Armenian","Inter","Segoe UI",system-ui,-apple-system,sans-serif;
-    line-height:1.55;padding:28px 18px 70px}
-  .wrap{max-width:1180px;margin:0 auto}
-  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.5px}
-  h1 .lime{color:var(--lime)}
-  .sub{color:var(--mut);font-size:14px;margin-bottom:22px}
-  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-  .chip{font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:#101010}
-  .chip b{font-weight:700}
-  .arcbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:26px}
-  .arcbox h3{margin:0 0 8px;font-size:15px;color:var(--lime);letter-spacing:.3px}
-  .arcbox ul{margin:0;padding-left:18px;font-size:13.5px;color:#CFCFCF}
-  .day{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:26px;overflow:hidden}
-  .dayhead{padding:15px 18px;border-bottom:1px solid var(--line);background:#111}
-  .dayhead .d{font-size:18px;font-weight:700}
-  .dayhead .meta{font-size:13px;color:var(--mut);margin-top:4px}
-  .tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:6px;background:var(--lime);color:#0B0B0B;font-weight:700;margin-right:6px}
-  .tag.cat{background:#2A2A2A;color:var(--lime)}
-  .dayhead a{color:var(--lime);font-size:12px;text-decoration:none;border-bottom:1px dotted #555}
-  .bridge{font-size:13px;color:#BBB;padding:11px 18px;border-bottom:1px solid var(--line);background:#0F0F0F}
-  .bridge b{color:var(--lime)}
-  .st{display:flex;gap:16px;padding:16px 18px;border-bottom:1px solid #1C1C1C}
-  .st:last-child{border-bottom:none}
-  .mock{flex:0 0 auto}
-  .mock canvas{border-radius:10px;display:block;width:132px;height:235px}
-  .info{flex:1;min-width:0}
-  .line1{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:7px}
-  .time{font-weight:700;font-size:15px;color:var(--lime)}
-  .type{font-size:11.5px;padding:3px 9px;border-radius:6px;background:#222;color:#DDD}
-  .role{font-size:11.5px;padding:3px 9px;border-radius:6px;font-weight:700;color:#0B0B0B}
-  .scr{font-size:19px;font-weight:700;margin:2px 0 7px;letter-spacing:-.2px}
-  .row{font-size:13px;color:#C4C4C4;margin:3px 0}
-  .row span{color:var(--mut);display:inline-block;min-width:74px}
-  .cta{margin-top:8px;font-size:12.5px;display:inline-block;padding:5px 11px;border-radius:7px;
-    background:rgba(198,240,60,.12);border:1px solid rgba(198,240,60,.35);color:var(--lime)}
-  .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:34px}
-  @media(max-width:640px){.st{flex-direction:column}.mock canvas{width:120px;height:213px}}
+  :root{--bg:#0E0E0E;--lime:#C6F03C;--card:#161616;--line:#262626;--muted:#8A8A8A;--txt:#F2F2F2;
+        --seed:#C6F03C;--build:#5AC8FA;--tease:#FFD60A;--drop:#FF6B6B;--echo:#B084FF;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;padding:24px 16px 80px}
+  .wrap{max-width:1200px;margin:0 auto}
+  header h1{font-size:26px;font-weight:800;letter-spacing:-.5px}
+  header h1 .lime{color:var(--lime)}
+  .sub{color:var(--muted);margin-top:6px;font-size:14px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+  .lg{display:flex;align-items:center;gap:7px;font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:5px 12px}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .note{background:#1b1a12;border:1px solid #3a3720;border-radius:12px;padding:12px 14px;font-size:13px;color:#d9d2a8;margin:16px 0 6px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:22px}
+  .dayhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:6px}
+  .dayhead .d{font-size:19px;font-weight:800}
+  .dayhead .date{color:var(--lime);font-weight:700}
+  .content{font-size:13px;color:#cfcfcf;margin:10px 0 4px;background:#101010;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+  .content b{color:#fff}
+  .content .lk{color:var(--build);text-decoration:none;word-break:break-all}
+  .arc-line{font-size:12.5px;color:var(--muted);margin:8px 2px 14px;font-style:italic}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .st{background:#101010;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .st canvas{width:100%;display:block;background:#000;border-bottom:1px solid var(--line)}
+  .st .meta{padding:11px 12px 13px}
+  .st .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+  .badge{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px}
+  .time{font-size:12px;color:var(--muted);font-weight:600}
+  .scr{font-size:12.5px;color:#d4d4d4;margin:6px 0}
+  .row{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .row b{color:#bdbdbd;font-weight:600}
+  .cta{font-size:11.5px;color:#0E0E0E;background:var(--lime);display:inline-block;padding:3px 9px;border-radius:20px;font-weight:700;margin-top:8px}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:40px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>🎬 <span class="lime">Sirius</span> · сторис-план недели 24–30.08.2026</h1>
-  <div class="sub">Личный бренд Тарона Бадаляна · «The Voice of Stone» · 45 сторис · язык экрана — армянский · съёмка/постинг: Meri</div>
+<header>
+  <h1>🎬 <span class="lime">Sirius</span> · сторис-план недели <span class="lime">28.09 – 04.10.2026</span></h1>
+  <div class="sub">Instagram Stories · «The Voice of Stone» · 5–7 сторис/день · тексты на экране — на армянском · съёмка: Meri</div>
+</header>
 
-  <div class="legend">
-    <span class="chip" style="border-color:var(--seed)"><b style="color:var(--seed)">Seed</b> — намёк за 1–2 дня</span>
-    <span class="chip" style="border-color:var(--build)"><b style="color:var(--build)">Build</b> — контекст, польза, вовлечение</span>
-    <span class="chip" style="border-color:var(--tease)"><b style="color:var(--tease)">Tease</b> — прямой тизер за часы</span>
-    <span class="chip" style="border-color:var(--drop)"><b style="color:var(--drop)">Drop</b> — в момент публикации</span>
-    <span class="chip" style="border-color:var(--echo)"><b style="color:var(--echo)">Echo</b> — реакция и мост дальше</span>
-  </div>
+<div class="legend">
+  <span class="lg"><span class="dot" style="background:var(--seed)"></span>Seed — намёк за 1–2 дня</span>
+  <span class="lg"><span class="dot" style="background:var(--build)"></span>Build — контекст/польза</span>
+  <span class="lg"><span class="dot" style="background:var(--tease)"></span>Tease — прямой тизер</span>
+  <span class="lg"><span class="dot" style="background:var(--drop)"></span>Drop — анонс/CTA</span>
+  <span class="lg"><span class="dot" style="background:var(--echo)"></span>Echo — реакция/мост</span>
+</div>
 
-  <div class="arcbox">
-    <h3>Арка недели</h3>
-    <ul>
-      <li><b>Пн 24.08</b> — Reel «Wildberries» (авто). Открываем неделю темой рынка и сервиса.</li>
-      <li><b>Вт 25.08</b> — контента нет. День-мост: сеем цену камня (для карусели чт) + Stone Talks (для ср).</li>
-      <li><b>Ср 26.08</b> — Reel Stone Talks: Ռուբեն, часть 3.</li>
-      <li><b>Чт 27.08</b> — Carousel «Why two stone quotes differ» — смысловой пик недели, «сохраняемый» контент.</li>
-      <li><b>Пт 28.08</b> — Reel Stone Talks: Հայկ, часть 3. Закрываем подкаст-линию.</li>
-      <li><b>Сб 29.08</b> — Reel «ремонт, видео 1» — личный слой, «до/после».</li>
-      <li><b>Вс 30.08</b> — контента нет. Echo недели + Seed на 31.08 (Ինեսա reel 2).</li>
-    </ul>
-  </div>
+<div class="note">⚠️ Актуальная таблица в папке — только «Օգоստос 2026». Таблицы на сентябрь/октябрь пока нет. Контент недели спроектирован как <b>шаблон по устоявшемуся августовскому ритму</b> (podcast · madlen-карусели · առорья · авто · спорт · семья) на реальных ассетах из папки. Темы дня подтвердить с Тароном, когда выйдет октябрьская планёрка.</div>
 
-  <div id="app"></div>
-  <div class="foot">Sirius · сгенерировано автоматически по планёрке «Օգոստոս 2026» · CTA максимум 1–2 в день, продажа никогда не в первом сторис</div>
+<div id="days"></div>
+<footer>Сгенерировано Sirius · обновляется каждое воскресенье · https://worktaronbadalyan-hub.github.io/inessa-design/sirius/</footer>
 </div>
 
 <script>
-const ROLE={Seed:"#7FB3FF",Build:"#C6F03C",Tease:"#FFB020",Drop:"#FF5C5C",Echo:"#B98CFF"};
-
+const ROLE={Seed:'#C6F03C',Build:'#5AC8FA',Tease:'#FFD60A',Drop:'#FF6B6B',Echo:'#B084FF'};
 const DAYS=[
-{
- day:"Понедельник · 24.08.2026", type:"Reel", cat:"մեքենա / авто", theme:"Wildberries",
- link:"https://drive.google.com/file/d/1ZcbuX5wKguFy9d23jBsU9kM55MUOLcFm/view",
- bridge:"Утро в машине → мысль о доступности товара → опрос → тизер на 20:00 → Drop → вопрос-бокс вечером.",
- st:[
- {t:"09:10",ty:"BTS",role:"Build",txt:"Առավոտ։ Ղեկին եմ։",scr:"Կարճ կադր մեքենայից․ «Լավագույն մտքերս գալիս են ճանապարհին, ոչ թե գրասենյակում»։",vis:"Кадр из машины — снять утром (Meri)"},
- {t:"11:00",ty:"Փաստ",role:"Build",txt:"Wildberries-ը դարձել է սովորական բառ։",scr:"Մեկ նախադասություն՝ ի՞նչ է դա փոխում մեր բիզնեսների համար։ Առանց գնահատականի։",vis:"Текст-карточка на тёмном фоне"},
- {t:"13:30",ty:"Հարցում",role:"Build",txt:"Գնո՞ւմ եք Wildberries-ից։",sticker:{kind:"poll",opts:["Այո","Ոչ"]},scr:"Опрос-стикер поверх кадра из машины. Простой вход в тему.",vis:"Тот же кадр из машины"},
- {t:"16:00",ty:"Միտք",role:"Build",txt:"Ամեն ապրանք վաղ թե ուշ դառնում է հասանելի։ Տարբերությունը մնում է սպասարկման մեջ։",scr:"Հիմնական օգտակար միտքը օրվա համար։ Պահպանվող կադր։",vis:"Текст-карточка, крупный шрифт"},
- {t:"18:30",ty:"Թիզեր",role:"Tease",txt:"Այսօր 20:00-ին՝ նոր reels։ Առանց գեղեցկացնելու։",scr:"Կադր reels-ից՝ 2 վայրկյան, առանց ձայնի բացահայտման։",vis:"Стоп-кадр из Reel"},
- {t:"20:00",ty:"Ռեփոստ",role:"Drop",txt:"Դուրս եկավ։ Նայեք։",scr:"Ռեփոստ + լինկ-ստիկեր Reel-ի վրա։",vis:"Репост Reel",cta:"Стикер-ссылка на Reel"},
- {t:"22:00",ty:"Հարց",role:"Echo",txt:"Մարկետփլեյսերը օգնո՞ւմ են հայկական բիզնեսին, թե՞ սեղմում։",sticker:{kind:"question"},scr:"Հարց-բոքս։ Ответы — материал для следующей недели.",vis:"Тёмный фон + стикер вопроса"}
- ]
-},
-{
- day:"Вторник · 25.08.2026", type:"—", cat:"день-мост", theme:"Контента в плане нет",
- link:"",
- bridge:"Опорный день без публикации: сеем тему цены (карусель чт) и Stone Talks (Reel ср). Ни одного прямого CTA.",
- st:[
- {t:"09:15",ty:"BTS",role:"Build",txt:"Այսօր ամբողջ օրը արտադրության մեջ եմ։ Ցույց կտամ՝ ինչպես կա։",scr:"Кадр с производства, живой звук цеха.",vis:"Съёмка на производстве (Meri)"},
- {t:"11:30",ty:"Փաստ",role:"Seed",txt:"Նույն քարը երկու տեղում կարող է տարբեր գին ունենալ։ Պատճառը հազվադեպ է հենց քարը։",scr:"Первое зерно темы четверга. Без раскрытия причин.",vis:"Кадр камня/склада крупным планом"},
- {t:"13:00",ty:"Քվիզ",role:"Build",txt:"Ի՞նչն է ամենաշատը ազդում քարի գնի վրա։",sticker:{kind:"quiz",opts:["Հանքը","Մշակումը","Տրանսպորտը"]},scr:"Քվիզ՝ առանց ճիշտ պատասխանը բացելու։ Պատասխանը՝ հինգշաբթի կարուսելում։",vis:"Кадр производства + квиз-стикер"},
- {t:"16:00",ty:"Կուլիս",role:"Seed",txt:"Ռուբենի հետ զրույցից մի միտք դեռ մտքումս է։",scr:"Կադր նկարահանումից՝ առանց ձայնի։ Բացահայտումը՝ վաղը։",vis:"BTS-кадр со съёмки Stone Talks"},
- {t:"18:00",ty:"Թիզեր",role:"Seed",txt:"Վաղը՝ Stone Talks-ի նոր հատված Ռուբենի հետ։",scr:"Стоп-кадр из Reel, 2 секунды.",vis:"Кадр из Reel «Ռուբեն 3»"},
- {t:"21:00",ty:"Հարց",role:"Echo",txt:"Ի՞նչ հարց կտայիք Ռուբենին։",sticker:{kind:"question"},scr:"Հարց-բոքս։ Լավագույն հարցը կկարդամ վաղը սթորիում։",vis:"Тёмный фон + стикер вопроса"}
- ]
-},
-{
- day:"Среда · 26.08.2026", type:"Reel", cat:"podcast", theme:"Stone Talks · Ռուբեն, часть 3",
- link:"https://drive.google.com/file/d/1z1LTOiVv02-tO2gzmA2vYb_-22KLYWqP/view",
- bridge:"Вчерашнее зерно закрывается: контекст Stone Talks → одна мысль из выпуска → опрос → тизер на 19:00 → Drop → мост к карусели четверга.",
- st:[
- {t:"09:00",ty:"BTS",role:"Build",txt:"Այսօր Ռուբենի հատվածն է դուրս գալու։",scr:"Առավոտյան կադր՝ կարճ, առանց պաթոսի։",vis:"Утренний кадр (Meri)"},
- {t:"11:00",ty:"Կոնտեքստ",role:"Build",txt:"Stone Talks-ը հարցազրույց չէ։ Զրույց է, որտեղ ոչ ոք ձև չի անում։",scr:"Կուլիսային կադր նկարահանման վայրից։",vis:"BTS со съёмки Stone Talks"},
- {t:"13:00",ty:"Միտք",role:"Build",txt:"Ռուբենն ասաց մի բան, որ ես տարիներ շարունակ սովորում էի։",scr:"Կադր զրույցից՝ առանց ամբողջ մտքը բացելու։ Բացվում է Reel-ում։",vis:"Стоп-кадр из Reel"},
- {t:"15:00",ty:"Հարցում",role:"Build",txt:"Ո՞րն է ավելի կարևոր՝ փորձը, թե՞ ճիշտ հարցերը։",sticker:{kind:"poll",opts:["Փորձը","Հարցերը"]},scr:"Опрос — сигнал алгоритму перед вечерним выходом.",vis:"Текст-карточка + опрос"},
- {t:"18:00",ty:"Թիզեր",role:"Tease",txt:"19:00-ին՝ նոր հատված։",scr:"Обратный отсчёт-стикер + кадр из Reel.",vis:"Кадр из Reel + countdown"},
- {t:"19:00",ty:"Ռեփոստ",role:"Drop",txt:"Դուրս եկավ։ Նայեք մինչև վերջ։",scr:"Ռեփոստ + լինկ-ստիկեր։",vis:"Репост Reel",cta:"Стикер-ссылка на Reel"},
- {t:"21:30",ty:"Կամուրջ",role:"Echo",txt:"Վաղը՝ ինչո՞ւ նույն քարի երկու գնային առաջարկը տարբերվում է։",scr:"Прямой мост к карусели четверга. Закрываем зерно вторника.",vis:"Текст-карточка"}
- ]
-},
-{
- day:"Четверг · 27.08.2026", type:"Carousel", cat:"madlen", theme:"WHY TWO STONE QUOTES DIFFER",
- link:"https://drive.google.com/drive/folders/1iqAzAT1ZpZbmejAoz5qEL_YcvFqFhD5i",
- bridge:"Смысловой пик недели. Зерно посеяно во вторник, мост построен в среду — сегодня выдаём «сохраняемый» контент.",
- st:[
- {t:"09:00",ty:"BTS",role:"Build",txt:"Այսօր խոսելու ենք գնի մասին։ Բաց։",scr:"Առավոտյան կադր՝ գրասենյակից կամ արտադրությունից։",vis:"Утренний кадр (Meri)"},
- {t:"11:00",ty:"Փաստ",role:"Build",txt:"Երկու գնային առաջարկ նույն քարի համար կարող են լուրջ տարբերվել։",scr:"Կադր՝ երկու տարբեր մշակման նմուշ կողք կողքի։",vis:"Два образца камня рядом — снять (Meri)"},
- {t:"13:00",ty:"Հարցում",role:"Build",txt:"Երբևէ ստացե՞լ եք երկու շատ տարբեր գին նույն քարի համար։",sticker:{kind:"poll",opts:["Այո","Ոչ"]},scr:"Опрос — прямая проверка боли аудитории.",vis:"Кадр образцов + опрос"},
- {t:"15:30",ty:"Թիզեր",role:"Tease",txt:"Այսօր 18:00-ին՝ նոր կարուսել։ 3 պատճառ, որոնք բացատրում են տարբերությունը։",scr:"Առաջին սլայդի կտոր՝ մասնակի ծածկված։",vis:"Слайд 1 карусели (папка WHY TWO STONE QUOTES DIFFER)"},
- {t:"18:00",ty:"Ռեփոստ",role:"Drop",txt:"Դուրս եկավ։ Պահպանեք՝ պետք կգա հաջորդ նախագծի ժամանակ։",scr:"Ռեփոստ կարուսելի + լինկ-ստիկեր։ «Պահպանել» ակնարկ։",vis:"Репост карусели",cta:"Стикер-ссылка + «պահպանեք»"},
- {t:"20:30",ty:"Կամուրջ",role:"Echo",txt:"Վաղը՝ Հայկի հետ զրույցի վերջին հատվածը։",scr:"Мост к пятнице. Короткий кадр из Reel «Հայկ 3».",vis:"Стоп-кадр из Reel «Հայկ 3»"}
- ]
-},
-{
- day:"Пятница · 28.08.2026", type:"Reel", cat:"podcast", theme:"Stone Talks · Հայկ, часть 3",
- link:"https://drive.google.com/file/d/1MLrT7-pAh_G7jBilzF9wWu3Kof5mHgei/view",
- bridge:"Закрываем подкаст-линию недели. Вопрос-бокс собирает темы для следующих выпусков, вечером — Seed на субботу.",
- st:[
- {t:"09:00",ty:"BTS",role:"Build",txt:"Ուրբաթ։ Շաբաթը փակում ենք Հայկով։",scr:"Առավոտյան կարճ կադր։",vis:"Утренний кадр (Meri)"},
- {t:"11:00",ty:"Կոնտեքստ",role:"Build",txt:"Հայկի հետ երեք հատված արեցինք։ Այս մեկը ամենաանկեղծն է։",scr:"BTS-кадр со съёмки.",vis:"BTS со съёмки Stone Talks"},
- {t:"13:00",ty:"Միտք",role:"Build",txt:"Բիզնեսում ամենադժվարը սկսելը չէ։ Ամենադժվարը նույն տեմպով շարունակելն է։",scr:"Օրվա օգտակար միտքը՝ պահպանվող կադր։",vis:"Текст-карточка"},
- {t:"15:00",ty:"Հարց",role:"Build",txt:"Ի՞նչ թեմա եք ուզում հաջորդ Stone Talks-ում։",sticker:{kind:"question"},scr:"Հարց-բոքս։ Реальный сбор тем для следующего сезона.",vis:"Тёмный фон + стикер вопроса"},
- {t:"18:00",ty:"Թիզեր",role:"Tease",txt:"19:00-ին՝ Հայկ, մաս 3։",scr:"Countdown-стикер + кадр из Reel.",vis:"Кадр из Reel + countdown"},
- {t:"19:00",ty:"Ռեփոստ",role:"Drop",txt:"Դուրս եկավ։",scr:"Ռեփոստ + լինկ-ստիկեր։",vis:"Репост Reel",cta:"Стикер-ссылка на Reel"},
- {t:"21:30",ty:"Կամուրջ",role:"Echo",txt:"Շաբաթ օրը մի ուրիշ բան եմ ցույց տալու։ Ոչ քարի մասին։",scr:"Seed на субботу — личный слой, ремонт дома.",vis:"Кадр стройки/ремонта, размытый"}
- ]
-},
-{
- day:"Суббота · 29.08.2026", type:"Reel", cat:"տուն / ремонт", theme:"Ремонт, видео 1",
- link:"https://drive.google.com/file/d/1HjFFySaqaOBgJjzC5C9-mi-CsdXC4FDG/view",
- bridge:"Личный слой недели. Формат «до/после» + опрос про пол — прямая связь с камнем без продажи.",
- st:[
- {t:"10:00",ty:"BTS",role:"Build",txt:"Շաբաթ։ Տանն եմ։ Ռեմոնտը շարունակվում է։",scr:"Կադր տնից՝ առանց մոնտաժի։",vis:"Кадр с ремонта (Meri)"},
- {t:"12:00",ty:"Առաջ/հետո",role:"Build",txt:"Այսպես էր։ Այսպես է հիմա։",scr:"Երկու կադր՝ նույն անկյունից։ Առանց տեքստի ավելորդության։",vis:"Два кадра одного угла — снять (Meri)"},
- {t:"14:00",ty:"Միտք",role:"Build",txt:"Ռեմոնտը սովորեցնում է նույնը, ինչ արտադրությունը՝ ժամկետը միշտ ավելի երկար է, քան պլանում։",scr:"Օգտակար միտք՝ անձնական օրինակով։",vis:"Текст-карточка на фоне ремонта"},
- {t:"16:00",ty:"Հարցում",role:"Build",txt:"Հատակին՝ քա՞ր, թե՞ սալիկ։",sticker:{kind:"poll",opts:["Քար","Սալիկ"]},scr:"Опрос — мостик к профессиональной теме без продажи.",vis:"Кадр пола + опрос"},
- {t:"18:00",ty:"Թիզեր",role:"Tease",txt:"Այսօր երեկոյան՝ ռեմոնտի առաջին վիդեոն։",scr:"Стоп-кадр из Reel.",vis:"Стоп-кадр из Reel"},
- {t:"20:00",ty:"Ռեփոստ",role:"Drop",txt:"Դուրս եկավ։",scr:"Ռեփոստ + լինկ-ստիկեր։",vis:"Репост Reel",cta:"Стикер-ссылка на Reel"},
- {t:"22:00",ty:"Հարց",role:"Echo",txt:"Ի՞նչ եք ուզում տեսնել հաջորդ մասում։",sticker:{kind:"question"},scr:"Հարց-բոքս՝ սերիալի տրամաբանություն։",vis:"Тёмный фон + стикер вопроса"}
- ]
-},
-{
- day:"Воскресенье · 30.08.2026", type:"—", cat:"итог недели", theme:"Контента в плане нет",
- link:"",
- bridge:"Спокойный день. Echo недели, опрос «что было полезнее» и Seed на 31.08 — Ինեսա reel 2. Ни одного прямого CTA.",
- st:[
- {t:"11:00",ty:"BTS",role:"Build",txt:"Կիրակի։ Ընտանիքի հետ եմ։ Հեռախոսը՝ մի կողմ։",scr:"Կարճ, հանգիստ կադր։ Առանց բիզնես թեմայի։",vis:"Спокойный воскресный кадр (Meri)"},
- {t:"13:00",ty:"Միտք",role:"Echo",txt:"Շաբաթը փակելու լավագույն ձևը՝ մեկ բան, որ սովորեցի։",scr:"Одна честная мысль по итогам недели.",vis:"Текст-карточка"},
- {t:"15:00",ty:"Հարցում",role:"Echo",txt:"Այս շաբաթ ո՞ր հատվածն էր ամենաօգտակարը։",sticker:{kind:"poll",opts:["Գների կարուսելը","Stone Talks"]},scr:"Опрос — прямая обратная связь по контенту недели.",vis:"Коллаж обложек недели"},
- {t:"18:00",ty:"Կուլիս",role:"Seed",txt:"Վաղը՝ Ինեսայի հետ զրույցի երկրորդ հատվածը։",scr:"Seed на 31.08 (Reel · podcast · Ինեսա reel 2).",vis:"BTS со съёмки — уточнить у Meri наличие"},
- {t:"20:00",ty:"Հարց",role:"Echo",txt:"Ի՞նչ թեմա եք ուզում հաջորդ շաբաթ։",sticker:{kind:"question"},scr:"Հարց-բոքս՝ նյութ հաջորդ շաբաթվա պլանի համար։",vis:"Тёмный фон + стикер вопроса"}
- ]
-}
+{d:"Понедельник",date:"28.09",content:{type:"Reel",cat:"podcast",theme:"Stone Talks — новый выпуск (серия Ինесա / Հայк)",link:"https://drive.google.com/drive/folders/1k_vszXcxhYv93poeqUIzJvLEO0hMvxYA"},
+ arc:"Прогрев к вечернему выпуску: утро-закулисье → польза → опрос → тизер → Drop-ссылка → вопрос-эхо.",
+ stories:[
+ {t:"09:00",type:"BTS",role:"Build",arm:"Այսօր նոր Stone Talks թողарկում է։ Ցույց կտամ՝ ինչպես կա",scr:"Съёмочное закулисье, коротко и по-настоящему.",vis:"Кадр со съёмки подкаста (reels)",cta:""},
+ {t:"11:00",type:"факт",role:"Build",arm:"Լավագույն զրույցները սենյակում չեն լինում։ Լինում են հանքում, ճանապարհին",scr:"Одна мысль о том, откуда рождается Stone Talks.",vis:"Фото с карьера/дороги",cta:""},
+ {t:"13:00",type:"հարցում",role:"Build",arm:"Podcast-ը լսո՞ւմ ես աշխատելիս, թե՞ ուշադիր նստած։",scr:"Опрос: 🎧 աշխ. / 👀 նստած — сигнал алгоритму.",vis:"Тёмный фон + стикер опроса",cta:""},
+ {t:"16:00",type:"тизер",role:"Tease",arm:"Այս թողарկման մի միտքը գլխից դուրս չի գալիս։ Երեկоյան կтеснес",scr:"Открываем петлю, не раскрываем.",vis:"Тизер-кадр гостя",cta:""},
+ {t:"19:00",type:"анонс",role:"Drop",arm:"Նор Stone Talks-ը արդեն դուրս է։ Հղումը այստեղ 👆",scr:"Репост поста/Reel + стикер-ссылка.",vis:"Обложка выпуска",cta:"Стикер-ссылка на Reel"},
+ {t:"21:30",type:"вопрос",role:"Echo",arm:"Ո՞ր միտքն էր քեզ ամենաշատը դիպչել։ Գրիր",scr:"Вопрос-бокс, собираем реакции.",vis:"Тёмный фон + бокс вопроса",cta:""}
+ ]},
+{d:"Вторник",date:"29.09",content:{type:"Reel",cat:"առорья / будни",theme:"Один обычный день без монтажа",link:"https://drive.google.com/file/d/19n4as6tLC0NVKuYZyhWE1PdHM9nMFtcn/view"},
+ arc:"День-как-есть: закулисье → деталь-ценность → вопрос → тизер к вечернему reels → Drop.",
+ stories:[
+ {t:"08:30",type:"BTS",role:"Build",arm:"Այսор ամբогջ որը գործի մեջ եմ։ Ցույց կտամ առանց մոնтажի",scr:"Спокойный вход в день.",vis:"Утро на заводе",cta:""},
+ {t:"10:30",type:"деталь",role:"Build",arm:"Քարը կтрелը հեշտ է թվում։ Մի սխال շարժում՝ և բլокը բрак է",scr:"Одна полезная мысль о цене ошибки.",vis:"Резка камня, крупный план",cta:""},
+ {t:"12:30",type:"հարց",role:"Build",arm:"Ո՞ր պահն է քեզ հետաքրքիր՝ արтадրությո՞ւն, թե գրասеняк",scr:"Вопрос-бокс, вовлечение.",vis:"Фон цех + бокс вопроса",cta:""},
+ {t:"15:00",type:"факт",role:"Build",arm:"Որվա կեսը որошумների մասին է, ոչ թե քարի",scr:"Инсайт про роль основателя.",vis:"Кадр за столом/на объекте",cta:""},
+ {t:"17:30",type:"тизер",role:"Tease",arm:"Երекоян нор reels՝ իմ սովорական որը, ինчպес կա",scr:"Естественный тизер, без драмы.",vis:"Стоп-кадр из reels",cta:""},
+ {t:"20:00",type:"анонс",role:"Drop",arm:"Reels-ը դуրс է։ Նайир՝ ինч է իрականում մի որը գործարանум 👆",scr:"Drop + стикер-ссылка.",vis:"Обложка reels",cta:"Стикер-ссылка на Reel"}
+ ]},
+{d:"Среда",date:"30.09",content:{type:"Carousel",cat:"madlen",theme:"Armenian Stone on the World Stage",link:"https://drive.google.com/drive/folders/1bP3Cywg38-_JjvTcfpXSzt72agz8JSGT"},
+ arc:"Карусель дня: интрига-Seed → польза → опрос → тизер → Drop-репост → «сохрани».",
+ stories:[
+ {t:"09:00",type:"интрига",role:"Seed",arm:"Այսор մի բան եմ ցույց տալու հայкական քարи մասին, որ քչерը գиտен",scr:"Seed без раскрытия.",vis:"Тёмный фон + текст",cta:""},
+ {t:"11:00",type:"факт",role:"Build",arm:"Գնордը հазvадеп է քарից սкսում։ Հарцնум է առакум, кайунуцюн, стандарт",scr:"Ценность из реального инсайта Тарона.",vis:"Фото образцов камня",cta:""},
+ {t:"13:00",type:"հարцум",role:"Build",arm:"Հайкական քարը аржани՞ է համашхарhaйин բемին։ Айо 🔥 / Դեռ ոչ",scr:"Опрос-выбор, вовлечение.",vis:"Фон + стикер опроса",cta:""},
+ {t:"15:30",type:"тизер",role:"Tease",arm:"Նор carousel՝ ինчпес է հайкական քарը դурս գалис ашхар",scr:"Прямой тизер карусели.",vis:"1-й слайд карусели",cta:""},
+ {t:"18:00",type:"репост",role:"Drop",arm:"Carousel-ը դуրс է։ Սахир минчев верջ 👉",scr:"Репост поста в сторис.",vis:"Обложка карусели",cta:"Стикер-ссылка на пост"},
+ {t:"21:00",type:"сохрани",role:"Echo",arm:"Пахир այս փостը, եթե ولортum ес։ Петք кга",scr:"Призыв сохранить/переслать.",vis:"Тёмный фон + текст",cta:""}
+ ]},
+{d:"Четверг",date:"01.10",content:{type:"Reel",cat:"мekена / авто",theme:"Мысль за рулём — разница отраслей",link:"https://drive.google.com/file/d/1B8zfJghksBL2z53lGo8vYbPAxXHvCZFO/view"},
+ arc:"Reel за рулём: закулисье → инсайт → вопрос → тизер → Drop → эхо-вопрос.",
+ stories:[
+ {t:"08:30",type:"BTS",role:"Build",arm:"Ղекин եմ։ Լավагуйն գաղափarnerə գалис են այստեղ, ոչ գрасенякում",scr:"Личное без позы.",vis:"Кадр из машины",cta:""},
+ {t:"11:00",type:"мысль",role:"Build",arm:"ولортnerə тарбер են, байц скзбունкə нуйнн է. скси хачахордиц, ոչ саркиц",scr:"Одна сильная мысль.",vis:"Дорога/руль",cta:""},
+ {t:"13:30",type:"հարց",role:"Build",arm:"Դу որտе՞ղ ес аменалав мтацум՝ ղекин, թե՞ кайлелис",scr:"Вопрос-бокс.",vis:"Фон + бокс вопроса",cta:""},
+ {t:"16:00",type:"тизер",role:"Tease",arm:"Երекоян reels՝ чанапархи ми митк, ор похец им мотэцумə",scr:"Тизер вечернего reels.",vis:"Стоп-кадр reels",cta:""},
+ {t:"19:00",type:"анонс",role:"Drop",arm:"Reels-ə айстеղ է 👆 Аса՝ хамадзайн ес, թե ոչ",scr:"Drop + ссылка.",vis:"Обложка reels",cta:"Стикер-ссылка на Reel"},
+ {t:"21:30",type:"вопрос",role:"Echo",arm:"Ко аменауж гагапарə որте՞ղ цнвец",scr:"Эхо-вопрос, диалог.",vis:"Тёмный фон + текст",cta:""}
+ ]},
+{d:"Пятница",date:"02.10",content:{type:"Carousel",cat:"madlen",theme:"5 Travertine Mistakes Architects Make",link:"https://drive.google.com/drive/folders/1OdbGmnc9A5GmrrDHVliJjq_RVI-FPPg9"},
+ arc:"Карусель для архитекторов: Seed → польза → квиз → тизер → Drop → «перешли архитектору».",
+ stories:[
+ {t:"09:00",type:"интрига",role:"Seed",arm:"Чартарапетнери 5 схалə травертини хет։ Айсор՝ амбогджə",scr:"Seed темы карусели.",vis:"Тёмный фон + текст",cta:""},
+ {t:"11:00",type:"факт",role:"Build",arm:"Мек схал əнтруцян меջ՝ և амбогдж фасадə айл теск է станум",scr:"Ценность до анонса.",vis:"Фото травертина/фасада",cta:""},
+ {t:"13:00",type:"քвиз",role:"Build",arm:"Ո՞рн է травертини #1 схалə՝ гуйн, мшакум, թе теградрум",scr:"Квиз — досматриваемость.",vis:"Фон + стикер квиза",cta:""},
+ {t:"15:30",type:"тизер",role:"Tease",arm:"Нор carousel՝ 5 схал, ор арже иманал нахагдзиц առадж",scr:"Прямой тизер.",vis:"1-й слайд карусели",cta:""},
+ {t:"18:00",type:"репост",role:"Drop",arm:"Carousel-ə դуրс է 👉 Сахир և пахир",scr:"Drop + ссылка.",vis:"Обложка карусели",cta:"Стикер-ссылка на пост"},
+ {t:"20:30",type:"поделись",role:"Echo",arm:"Угаркир айс постə айн чартарапетин, ум петк է",scr:"Переслать нужному человеку.",vis:"Тёмный фон + текст",cta:""}
+ ]},
+{d:"Суббота",date:"03.10",content:{type:"Reel",cat:"sport / бокс",theme:"Бокс и бизнес — дисциплина",link:"https://drive.google.com/drive/folders/1Iz9COtkUqJPVhtVJ7qip1utG5OvnCWyq"},
+ arc:"Спорт-параллель: закулисье → инсайт → опрос → тизер → Drop → эхо.",
+ stories:[
+ {t:"09:30",type:"BTS",role:"Build",arm:"Шабат аравот՝ марзумов։ Каргапахуцюнə нуйнн է, инч бизнесум",scr:"Живой вход выходного.",vis:"Кадр с тренировки",cta:""},
+ {t:"11:30",type:"мысль",role:"Build",arm:"Боксə соворецрец՝ харвацə че карևорə, айл кангнелə харвациц хето",scr:"Одна глубокая мысль.",vis:"Зал/перчатки",cta:""},
+ {t:"14:00",type:"հарцум",role:"Build",arm:"Спо՞ртн է соворецнум бизнесин, թе՞ хакаракə",scr:"Опрос, вовлечение.",vis:"Фон + стикер опроса",cta:""},
+ {t:"17:00",type:"тизер",role:"Tease",arm:"Երекоян reels՝ бокси ми дас, ор бизнесум шатерə бац ен тохнум",scr:"Тизер reels.",vis:"Стоп-кадр reels",cta:""},
+ {t:"19:30",type:"анонс",role:"Drop",arm:"Reels-ə айстеղ 👆",scr:"Drop + ссылка.",vis:"Обложка reels",cta:"Стикер-ссылка на Reel"},
+ {t:"21:30",type:"вопрос",role:"Echo",arm:"Ко «ринг»-ə орн է хима",scr:"Эхо-вопрос.",vis:"Тёмный фон + текст",cta:""}
+ ]},
+{d:"Воскресенье",date:"04.10",content:{type:"Reel",cat:"ընтаник / хангист",theme:"Медленное воскресенье — семья / вода",link:"https://drive.google.com/file/d/1iVxZxLrezaK_KiW8c-ZHqAG3UIAPwOWX/view"},
+ arc:"Тёплый выходной + мост к новой неделе: вход → личное → опрос → тизер → Drop → мост.",
+ stories:[
+ {t:"10:00",type:"вход",role:"Build",arm:"Кираки։ Айсор дандаг՝ əнтаников",scr:"Спокойно, по-настоящему.",vis:"Домашний/семейный кадр",cta:""},
+ {t:"12:00",type:"личное",role:"Build",arm:"Хангистə тулуцюн че։ Аранц дра орошумнерə ватанум ен",scr:"Одна мысль про восстановление.",vis:"У воды / отдых",cta:""},
+ {t:"14:00",type:"опрос",role:"Build",arm:"Киракин кез хамар՝ ханги՞ст, թе՞ нор шабати план",scr:"Опрос-выбор.",vis:"Фон + стикер опроса",cta:""},
+ {t:"16:30",type:"тизер",role:"Tease",arm:"Երекоян ми хангист reels՝ джри мот, аранц мец хоскери",scr:"Мягкий тизер.",vis:"Кадр у воды",cta:""},
+ {t:"18:30",type:"анонс",role:"Drop",arm:"Reels-ə դурс է 👆 Хангстацир индз хет ми ропе",scr:"Drop + ссылка.",vis:"Обложка reels",cta:"Стикер-ссылка на Reel"},
+ {t:"20:30",type:"мост",role:"Echo",arm:"Вагə нор шабат է։ Еркушабти՝ нор Stone Talks։ Мна мот",scr:"Мост к понедельнику.",vis:"Тёмный фон + текст",cta:""}
+ ]}
 ];
 
-function wrap(ctx,text,maxW){
-  const words=String(text).split(/\s+/); const lines=[]; let cur="";
-  for(const w of words){
-    const test=cur?cur+" "+w:w;
-    if(ctx.measureText(test).width>maxW && cur){lines.push(cur);cur=w;} else cur=test;
+function wrapText(ctx,text,x,y,maxW,lh){
+  const words=text.split(' ');let line='';let yy=y;
+  for(let n=0;n<words.length;n++){
+    const test=line+words[n]+' ';
+    if(ctx.measureText(test).width>maxW && n>0){ctx.fillText(line.trim(),x,yy);line=words[n]+' ';yy+=lh;}
+    else line=test;
   }
-  if(cur)lines.push(cur);
-  return lines;
-}
-function rr(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);
-  ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
+  ctx.fillText(line.trim(),x,yy);return yy;
 }
 function draw(cv,s){
-  const W=264,H=470,col=ROLE[s.role]||"#C6F03C";
-  cv.width=W;cv.height=H;
-  const ctx=cv.getContext("2d");
-  ctx.fillStyle="#0E0E0E";ctx.fillRect(0,0,W,H);
-  ctx.strokeStyle=col;ctx.lineWidth=5;rr(ctx,3,3,W-6,H-6,14);ctx.stroke();
-  ctx.fillStyle="#8A8A8A";ctx.font="700 11px Inter,system-ui,sans-serif";ctx.textAlign="center";
-  ctx.fillText("T A R O N   B A D A L Y A N",W/2,32);
-  ctx.font="700 12px 'Noto Sans Armenian',system-ui,sans-serif";
-  const bw=Math.min(ctx.measureText(s.ty).width+22,W-40), bh=22;
-  ctx.fillStyle=col;rr(ctx,(W-bw)/2,42,bw,bh,11);ctx.fill();
-  ctx.fillStyle="#0E0E0E";ctx.fillText(s.ty,W/2,57);
-  ctx.font="700 19px 'Noto Sans Armenian',system-ui,sans-serif";
-  const lines=wrap(ctx,s.txt,W-52);
-  const stH=s.sticker?(s.sticker.kind==="question"?58:(s.sticker.opts?s.sticker.opts.length*26+22:60)):0;
-  const blockH=lines.length*25;
-  let y=(H-blockH-stH)/2+18;
-  ctx.fillStyle="#F2F2F2";
-  lines.forEach(l=>{ctx.fillText(l,W/2,y);y+=25;});
-  if(s.sticker){
-    y+=14;
-    if(s.sticker.kind==="question"){
-      ctx.fillStyle="rgba(255,255,255,.10)";rr(ctx,26,y-16,W-52,44,10);ctx.fill();
-      ctx.strokeStyle="rgba(255,255,255,.28)";ctx.lineWidth=1.5;rr(ctx,26,y-16,W-52,44,10);ctx.stroke();
-      ctx.fillStyle="#DADADA";ctx.font="600 12px 'Noto Sans Armenian',system-ui,sans-serif";
-      ctx.fillText("Գրեք պատասխանը…",W/2,y+12);
-    } else {
-      const opts=s.sticker.opts||[];
-      opts.forEach((o,i)=>{
-        const oy=y-14+i*26;
-        ctx.fillStyle="rgba(255,255,255,.09)";rr(ctx,26,oy,W-52,22,7);ctx.fill();
-        if(i===0){ctx.fillStyle="rgba(198,240,60,.30)";rr(ctx,26,oy,(W-52)*0.58,22,7);ctx.fill();}
-        ctx.strokeStyle="rgba(255,255,255,.25)";ctx.lineWidth=1;rr(ctx,26,oy,W-52,22,7);ctx.stroke();
-        ctx.fillStyle="#EDEDED";ctx.font="600 12px 'Noto Sans Armenian',system-ui,sans-serif";
-        ctx.fillText(o,W/2,oy+15);
-      });
-      if(s.sticker.kind==="quiz"){
-        ctx.fillStyle="#8A8A8A";ctx.font="600 10px Inter,system-ui,sans-serif";
-        ctx.fillText("QUIZ",W/2,y-14+opts.length*26+13);
-      }
-    }
+  const W=cv.width,H=cv.height,ctx=cv.getContext('2d');const rc=ROLE[s.role]||'#C6F03C';
+  ctx.fillStyle='#0E0E0E';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle=rc;ctx.lineWidth=6;ctx.strokeRect(3,3,W-6,H-6);
+  // top brand + badge
+  ctx.fillStyle='#C6F03C';ctx.font='700 12px Arial';ctx.textAlign='left';
+  ctx.fillText('TARON BADALYAN',16,26);
+  ctx.textAlign='right';ctx.fillStyle=rc;ctx.font='700 10px Arial';
+  const bw=ctx.measureText(s.type.toUpperCase()).width+16;
+  ctx.fillStyle=rc;roundRect(ctx,W-16-bw,14,bw,18,9);ctx.fillStyle='#0E0E0E';
+  ctx.fillText(s.type.toUpperCase(),W-24,27);
+  // center armenian text
+  ctx.textAlign='center';ctx.fillStyle='#F2F2F2';ctx.font='700 15px Arial';
+  wrapText(ctx,s.arm,W/2,H*0.42,W-52,22);
+  // interactive sticker mock
+  const it=s.type.toLowerCase();
+  if(it.includes('հարцум')||it.includes('опрос')){
+    stickerBar(ctx,W,H*0.72,rc);
+  }else if(it.includes('հарц')||it.includes('вопрос')){
+    stickerBox(ctx,W,H*0.70,'?');
+  }else if(it.includes('քвиз')||it.includes('квиз')){
+    stickerBox(ctx,W,H*0.70,'?!');
   }
-  ctx.fillStyle=col;ctx.font="700 13px Inter,system-ui,sans-serif";
-  ctx.fillText(s.t+"  ·  "+s.role,W/2,H-24);
+  // bottom time
+  ctx.textAlign='center';ctx.fillStyle=rc;ctx.font='700 12px Arial';
+  ctx.fillText(s.t,W/2,H-16);
 }
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();ctx.fill();}
+function stickerBar(ctx,W,y,rc){const bw=W-64,x=32,h=26;ctx.fillStyle='#1c1c1c';roundRect(ctx,x,y,bw,h,13);ctx.fillStyle=rc;roundRect(ctx,x,y,bw*0.58,h,13);ctx.fillStyle='#0E0E0E';ctx.font='700 11px Arial';ctx.textAlign='center';ctx.fillText('▮ ▮',W/2,y+17);}
+function stickerBox(ctx,W,y,ch){const bw=W-80,x=40,h=34;ctx.fillStyle='#ffffff';roundRect(ctx,x,y,bw,h,10);ctx.fillStyle='#0E0E0E';ctx.font='700 14px Arial';ctx.textAlign='center';ctx.fillText(ch,W/2,y+23);}
 
-const app=document.getElementById("app");
-DAYS.forEach((d,di)=>{
-  const el=document.createElement("div");el.className="day";
-  let head='<div class="dayhead"><div class="d">'+d.day+'</div><div class="meta">'+
-    '<span class="tag">'+d.type+'</span><span class="tag cat">'+d.cat+'</span> '+d.theme;
-  if(d.link) head+=' &nbsp;·&nbsp; <a href="'+d.link+'" target="_blank">ассет ↗</a>';
-  head+='</div></div><div class="bridge"><b>Как ведёт к контенту:</b> '+d.bridge+'</div>';
-  let body="";
-  d.st.forEach((s,si)=>{
-    const col=ROLE[s.role];
-    body+='<div class="st"><div class="mock"><canvas id="c'+di+'_'+si+'"></canvas></div><div class="info">'+
-      '<div class="line1"><span class="time">'+s.t+'</span><span class="type">'+s.ty+'</span>'+
-      '<span class="role" style="background:'+col+'">'+s.role+'</span></div>'+
-      '<div class="scr">'+s.txt+'</div>'+
-      '<div class="row"><span>Сценарий:</span> '+s.scr+'</div>'+
-      '<div class="row"><span>Визуал:</span> '+s.vis+'</div>'+
-      (s.cta?'<div class="cta">CTA · '+s.cta+'</div>':'')+
-      '</div></div>';
+const root=document.getElementById('days');
+DAYS.forEach(day=>{
+  const el=document.createElement('div');el.className='day';
+  el.innerHTML='<div class="dayhead"><span class="d">'+day.d+'</span><span class="date">'+day.date+'.2026</span></div>'+
+    '<div class="content"><b>Контент дня:</b> '+day.content.type+' · '+day.content.cat+' · «'+day.content.theme+'» · <a class="lk" href="'+day.content.link+'" target="_blank">ассет ↗</a></div>'+
+    '<div class="arc-line">🎬 Арка дня: '+day.arc+'</div>';
+  const grid=document.createElement('div');grid.className='grid';
+  day.stories.forEach(s=>{
+    const c=document.createElement('div');c.className='st';const rc=ROLE[s.role];
+    const cv=document.createElement('canvas');cv.width=234;cv.height=416;
+    c.appendChild(cv);draw(cv,s);
+    const m=document.createElement('div');m.className='meta';
+    m.innerHTML='<div class="top"><span class="badge" style="background:'+rc+';color:#0E0E0E">'+s.role+'</span><span class="time">'+s.t+' · '+s.type+'</span></div>'+
+      '<div class="scr">🖥️ '+s.arm+'</div>'+
+      '<div class="row"><b>Сценарий:</b> '+s.scr+'</div>'+
+      '<div class="row"><b>Визуал:</b> '+s.vis+'</div>'+
+      (s.cta?'<div class="cta">CTA · '+s.cta+'</div>':'');
+    c.appendChild(m);grid.appendChild(c);
   });
-  el.innerHTML=head+body;
-  app.appendChild(el);
+  el.appendChild(grid);root.appendChild(el);
 });
-DAYS.forEach((d,di)=>d.st.forEach((s,si)=>draw(document.getElementById("c"+di+"_"+si),s)));
 </script>
 </body>
 </html>
