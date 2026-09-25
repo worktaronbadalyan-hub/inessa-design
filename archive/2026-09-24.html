@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ИНЕССА — Дизайн-дашборд · Taron Badalyan · 24.09.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0E0E;--lime:#C6F03C;--card:#151515;--line:#262626;--mut:#9a9a97}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#fff;font-family:Archivo,system-ui,Arial,sans-serif}
+header{padding:26px 30px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mk{width:34px;height:34px;border-radius:8px;background:var(--lime);display:grid;place-items:center}
+.mk:before{content:"";border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:12px solid #0E0E0E}
+header h1{font-size:16px;margin:0;letter-spacing:.6px;font-weight:800}
+header .d{color:var(--mut);font-size:12.5px}
+.tag{margin-left:auto;background:var(--lime);color:#0E0E0E;font-weight:800;font-size:12px;padding:5px 12px;border-radius:20px}
+.wrap{padding:24px 30px 60px;max-width:1200px;margin:0 auto}
+.car{margin:0 0 44px}
+.ch{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 4px}
+.ch h2{font-family:Anton;font-weight:400;font-size:26px;margin:0;letter-spacing:.5px}
+.ch .en{color:var(--lime);font-weight:800;font-size:14px}
+.src{color:var(--mut);font-size:12.5px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}
+canvas{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+.row{display:flex;gap:8px;margin-top:9px}
+.btn{flex:1;border:0;border-radius:8px;padding:8px 6px;font-family:Archivo;font-weight:800;font-size:11.5px;cursor:pointer;letter-spacing:.4px}
+.b1{background:var(--lime);color:#0E0E0E}
+.b2{background:transparent;color:var(--lime);border:1px solid var(--lime)}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 22px}
+.dl{background:var(--lime);color:#0E0E0E;border:0;border-radius:22px;padding:9px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.dl.alt{background:transparent;color:var(--lime);border:1px solid var(--lime)}
+a.lnk{color:var(--lime);text-decoration:none}
+footer{border-top:1px solid var(--line);padding:22px 30px;color:var(--mut);font-size:12px;line-height:1.7}
+footer b{color:#fff}
+</style></head>
+<body>
+<header>
+<div class="mk"></div>
+<div><h1>TARON BADALYAN — THE VOICE OF STONE</h1>
+<div class="d">Дизайн-дашборд дня · подготовила Инесса (ИИ UI/UX) · <b id="dt"></b></div></div>
+<div class="tag">4:5 · 1080×1350</div>
+</header>
+<div class="wrap">
+<div class="bar">
+<button class="dl" onclick="dlAll()">⬇ Скачать все PNG</button>
+<a class="dl alt" href="covers.html">Обложки Reels 9:16 →</a>
+</div>
+<div id="cars"></div>
+</div>
+<footer>
+<div>Тексты — English B2, «сохраняемый» формат. Стиль: фон #0E0E0E · лайм #C6F03C · Anton + Archivo. Слайды рисуются на &lt;canvas&gt; 1080×1350 без заливки фотографиями.</div>
+<div style="margin-top:10px">Архив: <a class="lnk" href="2026-09-23.html">23.09.2026</a> · <a class="lnk" href="2026-09-22.html">22.09.2026</a> · ИНЕССА — ИИ UI/UX-дизайнер личного бренда Тарона Бадаляна · «The Voice of Stone»</div>
+</footer>
+<script>
+var L="#C6F03C",Wt="#fff",Bk="#0E0E0E",LT="#F0F0EE";
+var CONTENT={date:"24.09.2026",cars:[
+{id:"A",name:"Экспорт армянского камня",en:"Why Armenian Stone Ships Worldwide",src:"Контент-план Мадлен · флагман Q4 (экспорт)",slides:[
+{t:"hook",k:"ARMENIAN STONE / EXPORT NOTES",tok:[["Why",0],["Armenian",0],["Stone",1],["Ships",1],["Worldwide",0]],s:"The real reasons a slab from Armenia ends up on a facade in Europe."},
+{t:"v",n:"01",h:"It starts in the mountains",b:"Volcanic geology gives Armenia travertine, tuff and basalt with a color and density you find in very few places on earth."},
+{t:"v",n:"02",h:"Buyers weigh three things",b:"Not just price. The decision is price, lead time and completeness of the order — and rarely the one you expect."},
+{t:"v",n:"03",h:"Completeness wins contracts",b:"Delivering the full volume in one tone, on schedule, beats the lowest quote. Consistency is what keeps a facade seamless."},
+{t:"v",n:"04",h:"Distance is not the barrier",b:"Europe, Russia, the Gulf — logistics are solved. The real test is holding quality across every single container."},
+{t:"v",n:"05",h:"Reputation ships first",b:"A quarry's track record travels ahead of the stone. One clean project decides who gets the next order."},
+{t:"cta",h:"Save this for your next project",b:"Follow for weekly notes on Armenian stone and export.",p:["SAVE","FOLLOW","DM “STONE”"]}]},
+{id:"B",name:"5 ошибок с натуральным камнем",en:"5 Mistakes That Ruin Natural Stone",src:"Своя вирусная тема · saveable-гайд",slides:[
+{t:"hook",k:"NATURAL STONE / BUYER'S GUIDE",tok:[["5",1],["Mistakes",1],["That",0],["Ruin",0],["Natural",0],["Stone",0]],s:"The errors that turn a premium material into an expensive regret."},
+{t:"v",n:"01",h:"Choosing by photo, not sample",b:"Screens lie about color and veining. Always approve a real slab in daylight before you commit to a single meter."},
+{t:"v",n:"02",h:"Ignoring the finish",b:"Polished, honed or brushed changes everything: grip, tone and upkeep. The finish matters as much as the stone itself."},
+{t:"v",n:"03",h:"Skipping the sealer",b:"Natural stone breathes. The right sealer, applied on time, prevents stains and keeps the surface intact for years."},
+{t:"v",n:"04",h:"Mixing batches blindly",b:"Stone is natural, so tone shifts between batches. Order one batch for one surface to keep the color truly seamless."},
+{t:"v",n:"05",h:"Treating all stone the same",b:"Travertine, marble and basalt each behave differently. Match the care and the setting to the material, not the trend."},
+{t:"cta",h:"Save this before you buy",b:"Follow for straight talk on stone, from quarry to facade.",p:["SAVE","FOLLOW","DM “GUIDE”"]}]}
+]};
+var W=1080,H=1350,M=70;
+function rr(c,x,y,w,h,r){c.beginPath();c.roundRect(x,y,w,h,r);}
+function trk(c,x,y,t,ls){c.save();c.letterSpacing=ls+"px";c.fillText(t,x,y);c.restore();}
+function tw(c,t,ls){c.save();c.letterSpacing=ls+"px";var w=c.measureText(t).width;c.restore();return w;}
+function glow(c,cx,cy,r,a){var g=c.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,W,H);}
+function halftone(c,corner,a){for(var r=0;r<7;r++)for(var col=0;col<9;col++){var x,y;var m=70;var g=34;if(corner=="br"){x=W-m-col*g;y=H-m-r*g}else{x=W-m-col*g;y=m+r*g}var f=(col+r)/16;var rad=Math.max(1,11*(1-f));c.globalAlpha=a*(1-f);c.fillStyle=L;c.beginPath();c.arc(x,y,rad,0,7);c.fill();}c.globalAlpha=1;}
+function arcs(c,a){c.save();c.strokeStyle=L;for(var i=0;i<3;i++){c.globalAlpha=a-i*0.07;c.lineWidth=3;var rr2=560+i*80;c.beginPath();c.arc(W*0.5,H+120,rr2,Math.PI*1.11,Math.PI*1.89);c.stroke();}c.restore();c.globalAlpha=1;}
+function wrapT(c,t,max){var w=t.split(" "),ln=[],cur="";for(var i=0;i<w.length;i++){var tt=(cur+" "+w[i]).trim();if(c.measureText(tt).width<=max){cur=tt}else{if(cur)ln.push(cur);cur=w[i]}}if(cur)ln.push(cur);return ln;}
+function head(c,dark){var ink=dark?Wt:Bk;c.fillStyle=L;rr(c,M,74,42,42,10);c.fill();c.fillStyle=Bk;c.beginPath();c.moveTo(M+12,74+30);c.lineTo(M+21,74+12);c.lineTo(M+30,74+30);c.fill();c.textBaseline="top";c.fillStyle=ink;c.font="800 20px Archivo";trk(c,M+62,76,"TARON BADALYAN",2.5);c.font="500 11px Archivo";c.fillStyle=dark?L:"#5a5a58";trk(c,M+62,100,"THE VOICE OF STONE",3.5);}
+function pag(c,i,dark){var ink=dark?Wt:Bk;c.textBaseline="top";c.font="800 21px Archivo";var t=(i<10?"0":"")+i;var w1=c.measureText(t).width;c.font="500 15px Archivo";var w2=c.measureText("/07").width;var x=W-M-w1-w2;c.font="800 21px Archivo";c.fillStyle=L;c.fillText(t,x,78);c.font="500 15px Archivo";c.fillStyle=ink;c.fillText("/07",x+w1,82);}
+function arrow(c){var cx=W-118,cy=H-118,r=52;c.fillStyle=L;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=Bk;c.lineWidth=7;c.lineCap="round";var a=20;c.beginPath();c.moveTo(cx-a,cy);c.lineTo(cx+a,cy);c.moveTo(cx+a-15,cy-15);c.lineTo(cx+a,cy);c.moveTo(cx+a-15,cy+15);c.lineTo(cx+a,cy);c.stroke();c.lineCap="butt";}
+function pill(c,x,cy,lab,fill){c.font="800 20px Archivo";var w=tw(c,lab,2)+68,h=30;if(fill){c.fillStyle=L;rr(c,x,cy-h/2,w,h,h/2);c.fill();c.fillStyle=Bk}else{c.strokeStyle=L;c.lineWidth=3;rr(c,x,cy-h/2,w,h,h/2);c.stroke();c.fillStyle=L}c.textBaseline="middle";trk(c,x+34,cy+1,lab,2);c.textBaseline="top";return w;}
+function bg(c,dark){c.fillStyle=dark?Bk:LT;c.fillRect(0,0,W,H);}
+function draw(cv,slide,i){var c=cv.getContext("2d");var dark=(i%2==0);bg(c,dark);c.textBaseline="top";c.textAlign="left";
+if(slide.t=="hook"){glow(c,W,0,680,dark?.28:.16);glow(c,0,H,520,dark?.18:.10);halftone(c,"br",dark?.19:.12);head(c,dark);pag(c,1,dark);var ink=dark?Wt:Bk;
+c.fillStyle=L;c.fillRect(M,286,6,48);c.font="800 19px Archivo";c.fillStyle=L;trk(c,94,300,slide.k,2.5);
+c.font="112px Anton";var sp=c.measureText(" ").width,max=W-140,lines=[],cur=[],cw=0;
+for(var t=0;t<slide.tok.length;t++){var word=slide.tok[t][0],ww=c.measureText(word).width;if(cw+ww>max&&cur.length){lines.push(cur);cur=[];cw=0}cur.push(slide.tok[t]);cw+=ww+sp}if(cur.length)lines.push(cur);
+var y=390;for(var li=0;li<lines.length;li++){var x=M;for(var k=0;k<lines[li].length;k++){c.fillStyle=lines[li][k][1]?L:ink;c.fillText(lines[li][k][0],x,y);x+=c.measureText(lines[li][k][0]).width+sp}y+=118}
+c.font="500 28px Archivo";c.fillStyle=dark?"#c8c8c6":"#464644";var sl=wrapT(c,slide.s,W-300);for(var s2=0;s2<sl.length;s2++)c.fillText(sl[s2],M,y+62+s2*42);arrow(c);}
+else if(slide.t=="cta"){glow(c,W,0,680,dark?.30:.16);glow(c,0,H,560,dark?.20:.10);halftone(c,"tr",dark?.16:.10);head(c,dark);pag(c,7,dark);var ink=dark?Wt:Bk;
+c.font="84px Anton";c.fillStyle=ink;var hl=wrapT(c,slide.h,W-150),hy=360;for(var q=0;q<hl.length;q++){c.fillText(hl[q],M,hy);hy+=92}
+c.font="500 32px Archivo";c.fillStyle=dark?"#c8c8c6":"#464644";var bl=wrapT(c,slide.b,W-220);for(var w3=0;w3<bl.length;w3++)c.fillText(bl[w3],M,hy+30+w3*48);
+var cx=M,cy=H-470;for(var p=0;p<slide.p.length;p++){cx+=pill(c,cx,cy,slide.p[p],p==0)+26}c.textBaseline="top";
+var sy=H-300;c.strokeStyle=L;c.lineWidth=4;c.beginPath();c.moveTo(M,sy);c.lineTo(W-M,sy);c.stroke();
+c.fillStyle=ink;c.font="52px Anton";trk(c,M,sy+34,"TARON BADALYAN",1);c.font="700 24px Archivo";c.fillStyle=L;trk(c,M,sy+108,"THE VOICE OF STONE",5);}
+else{glow(c,W,0,520,dark?.20:.11);arcs(c,dark?.20:.11);head(c,dark);pag(c,i+1,dark);var ink=dark?Wt:Bk,mut=dark?"#c4c4c2":"#4a4a48";
+c.font="150px Anton";c.fillStyle=L;c.fillText(slide.n,M,250);
+c.font="72px Anton";c.fillStyle=ink;var hl2=wrapT(c,slide.h,W-150),hy2=470;for(var z=0;z<hl2.length;z++){c.fillText(hl2[z],M,hy2);hy2+=80}
+c.fillStyle=L;rr(c,M,hy2+18,120,10,5);c.fill();
+c.font="500 34px Archivo";c.fillStyle=mut;var bl2=wrapT(c,slide.b,W-180);for(var b2=0;b2<bl2.length;b2++)c.fillText(bl2[b2],M,hy2+74+b2*52);arrow(c);}
+}
+function dlCanvas(cv,name){cv.toBlob(function(bl){var a=document.createElement("a");a.href=URL.createObjectURL(bl);a.download=name;a.click();});}
+function dlAll(){document.querySelectorAll("canvas").forEach(function(cv,i){setTimeout(function(){dlCanvas(cv,cv.dataset.name)},i*260)});}
+function build(){document.getElementById("dt").textContent=CONTENT.date;var root=document.getElementById("cars");
+CONTENT.cars.forEach(function(car){var wr=document.createElement("div");wr.className="car";
+wr.innerHTML='<div class="ch"><h2>'+car.name+'</h2><span class="en">'+car.en+'</span></div><div class="src">Источник: '+car.src+' · 7 слайдов</div>';
+var g=document.createElement("div");g.className="grid";
+car.slides.forEach(function(sl,i){var cell=document.createElement("div");cell.className="cell";
+var cv=document.createElement("canvas");cv.width=W;cv.height=H;var nm="Taron_"+car.id+"_"+((i<9?"0":"")+(i+1))+".png";cv.dataset.name=nm;
+cell.appendChild(cv);
+var row=document.createElement("div");row.className="row";
+row.innerHTML='<button class="btn b2">'+(sl.t=="hook"?"HOOK":sl.t=="cta"?"CTA":"0"+(i+1))+'</button>';
+var bd=document.createElement("button");bd.className="btn b1";bd.textContent="PNG ⬇";bd.onclick=function(){dlCanvas(cv,nm)};
+row.appendChild(bd);cell.appendChild(row);g.appendChild(cell);
+cars_draw.push([cv,sl,i]);});
+wr.appendChild(g);root.appendChild(wr);});}
+var cars_draw=[];
+build();
+if(document.fonts&&document.fonts.ready){document.fonts.load("112px Anton");document.fonts.load("800 20px Archivo");document.fonts.ready.then(function(){cars_draw.forEach(function(a){draw(a[0],a[1],a[2])})});}
+else{cars_draw.forEach(function(a){draw(a[0],a[1],a[2])});}
+setTimeout(function(){cars_draw.forEach(function(a){draw(a[0],a[1],a[2])})},650);
+</script>
+</body></html>
