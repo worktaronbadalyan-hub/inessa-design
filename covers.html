@@ -50,7 +50,7 @@ footer{color:#5a5a58;font-size:12px;padding:0 28px 40px;line-height:1.6}
  <nav><a href="./">Карусели</a><a class="on" href="./covers.html">Обложки reels</a></nav>
  <div class="sub">Обложки для reels от <b style="color:#fff">ИНЕССЫ</b> — 1080×1920 (9:16), английский B2,
  фирменный стиль. Рендер в браузере, скачивание в PNG. Кнопка «Safe zone» показывает пунктиром обрезку
- ленты 4:5 и красной штриховкой зону интерфейса Instagram — весь текст держим внутри пунктира.</div>
+ ленты 4:5 и красной штриховкой зону интерфейса Instagram — весь текст держим внутри пунктира (выше y≈1350).</div>
  <div class="meta">
   <span class="chip">Дата: <b id="d"></b></span>
   <span class="chip">Формат: <b>1080×1920 · 9:16</b></span>
@@ -65,23 +65,23 @@ footer{color:#5a5a58;font-size:12px;padding:0 28px 40px;line-height:1.6}
   <button class="ghost" id="sz">Safe zone: выкл</button>
  </div>
  <div class="grid" id="out"></div></main>
-<footer>Рубрики взяты из плана Мадлен (Stone Talks, «Закулисье», «AI в камне», «Сторис-дневник»,
-экспорт/Marmomac) + вирусные форматы Инессы. Обложка ставится на reels вручную при публикации.<br>
-Обновляется при каждом запуске Инессы.</footer>
+<footer>Первые две обложки — под сегодняшние карусели дня (экспорт армянского камня + гонка рынка $52 млрд).
+Дальше — вечнозелёные рубрики из плана Мадлен: Stone Talks, «Закулисье», «AI в камне», экспорт/Marmomac.
+Обложка ставится на reels вручную при публикации.<br>Обновляется при каждом запуске Инессы.</footer>
 
 <script>
 const W=1080,H=1920,M=110,BLACK="#0E0E0E",OFF="#F0F0EE",LIME="#C6F03C",WHITE="#FFFFFF",
 GD="#96968C",GL="#5F5F5C",ANT="Anton",ARC="Archivo",F=(s,f)=>`${s}px ${f}`;
 
 const C=[
-{id:"why_armenian",k:"WHY ARMENIAN STONE",dark:false,
- h:"Why architects switch to Armenian stone",hi:["ARMENIAN"],
- sub:"Five reasons specifiers keep coming back.",foot:"SEE THE 5 →",
- note:"Обложка под карусель дня ① (Why Armenian Stone). Экспорт / LinkedIn EN."},
-{id:"finishes_guide",k:"FINISHES GUIDE",dark:true,
- h:"Five stone finishes, one decision",hi:["FIVE"],
- sub:"Polished, honed, brushed, tumbled, split.",foot:"SAVE THIS →",
- note:"Обложка под карусель дня ② — гайд по финишам камня."},
+{id:"loses_name",k:"EXPORT NOTES",dark:true,
+ h:"It stops being Armenian",hi:["ARMENIAN"],
+ sub:"Somewhere between the quarry and the wall the name disappears.",foot:"SEE WHY →",
+ note:"Обложка под карусель дня ① — экспорт, флагман Q4. Рекордный пост LinkedIn (411 показов)."},
+{id:"stone_race",k:"STONE MARKET / 2030",dark:false,
+ h:"$52 billion up for grabs",hi:["$52","BILLION"],
+ sub:"The global stone market by 2030 — and whose share it becomes.",foot:"SAVE THE NUMBERS →",
+ note:"Обложка под карусель дня ② — гонка рынка камня $42.1B→$51.8B (viral / data)."},
 {id:"stone_talks_01",tag:"STONE TALKS · EP 01",dark:true,
  h:"Armenian stone is underpriced",hi:["UNDERPRICED"],
  sub:"The real reason has nothing to do with quality.",foot:"WATCH THE EPISODE →",
@@ -90,30 +90,22 @@ const C=[
  h:"From block to facade in 60 seconds",hi:["FACADE"],
  sub:"One block. Four machines. Zero shortcuts.",foot:"WATCH →",
  note:"Закулисье производства — самый сильный формат по досмотрам."},
-{id:"travertine_myth",k:"STONE MYTHS",dark:true,
- h:"Travertine is not fragile",hi:["NOT"],
- sub:"You were sold the wrong finish, not the wrong stone.",foot:"HERE IS WHY →",
- note:"Миф → правда. Провокация в хуке даёт комментарии."},
 {id:"ai_factory",k:"AI IN MANUFACTURING",dark:false,
  h:"We put AI inside a stone factory",hi:["AI"],
  sub:"What changed in the first 90 days.",foot:"WATCH →",
  note:"Рубрика «AI в камне» — уникальное отличие бренда."},
+{id:"buyers_ask",k:"EXPORT",dark:true,
+ h:"What foreign buyers ask first",hi:["FIRST"],
+ sub:"It is never the price.",foot:"WATCH →",
+ note:"Экспортная линия под LinkedIn EN и B2B-аудиторию."},
 {id:"the_cut",k:"HOW TO SPEC",dark:true,
  h:"The cut changes everything",hi:["CUT"],
  sub:"Vein cut or cross cut — decide before the saw starts.",foot:"SAVE THIS →",
  note:"How-to для архитекторов — высокий save-rate."},
-{id:"buyers_ask",k:"EXPORT",dark:false,
- h:"What foreign buyers ask first",hi:["FIRST"],
- sub:"It is never the price.",foot:"WATCH →",
- note:"Экспортная линия под LinkedIn EN и B2B-аудиторию."},
-{id:"one_slab",k:"FOUNDER DIARY",dark:true,
+{id:"one_slab",k:"FOUNDER DIARY",dark:false,
  h:"I flew 6,000 km for one slab",hi:["ONE","SLAB"],
  sub:"And I would do it again.",foot:"THE STORY →",
- note:"Личная история основателя — работает на доверие."},
-{id:"stop_sealing",k:"STOP DOING THIS",dark:true,
- h:"Stop sealing stone like this",hi:["STOP"],
- sub:"One wrong product and the colour is gone for good.",foot:"WATCH →",
- note:"Формат «ошибка» — сильный стоп-скролл."}];
+ note:"Личная история основателя — работает на доверие."}];
 
 function glow(x,cx,cy,r,a){const g=x.createRadialGradient(cx,cy,0,cx,cy,r);
  g.addColorStop(0,`rgba(198,240,60,${a})`);g.addColorStop(.45,`rgba(198,240,60,${a*.34})`);
