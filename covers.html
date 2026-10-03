@@ -44,9 +44,9 @@ label.sz{display:inline-flex;gap:6px;align-items:center;color:var(--mut);font-si
 </footer>
 <script>
 const COVERS=[
-{id:"A",kicker:"EXPORT NOTES",h:[["PRICE","lime"],["RARELY","fg"],["WINS","fg"],["THE DEAL","lime"]],s:"5 things buyers weigh first",note:"Карусель дня ① · экспорт (план Мадлен)"},
-{id:"B",kicker:"STONE GUIDE",h:[["5","lime"],["STONE","fg"],["MISTAKES","lime"]],s:"Save before you renovate",note:"Карусель дня ② · сохраняемый гайд"},
-{id:"C",kicker:"STONE TALKS · EP",h:[["ARMENIAN","fg"],["STONE IS","fg"],["UNDERPRICED","lime"]],s:"The real reason isn't quality",note:"Рубрика Stone Talks"},
+{id:"A",kicker:"EXPORT NOTES",h:[["ONE","fg"],["STONE,","fg"],["FIVE","lime"],["MARKETS","lime"]],s:"Where Armenian stone travels",note:"Карусель дня ① · экспорт (план Мадлен)"},
+{id:"B",kicker:"HOW IT'S MADE",h:[["HOW","fg"],["TRAVERTINE","lime"],["IS MADE","fg"]],s:"Quarry block to finished slab",note:"Карусель дня ② · how-it's-made"},
+{id:"C",kicker:"STONE TALKS · 08",h:[["GEN Z","lime"],["&","fg"],["STONE","fg"]],s:"Why the next generation values stone",note:"Рубрика Stone Talks · выпуск 08"},
 {id:"D",kicker:"BEHIND THE SCENES",h:[["BLOCK","fg"],["TO","fg"],["FACADE","lime"]],s:"One block, four machines",note:"Закулисье производства"},
 {id:"E",kicker:"AI IN THE PLANT",h:[["AI","lime"],["INSIDE A","fg"],["STONE PLANT","fg"]],s:"What changed in 90 days",note:"Рубрика «AI в камне»"},
 {id:"F",kicker:"HOW TO SPEC",h:[["THE","fg"],["CUT","lime"],["CHANGES ALL","fg"]],s:"Vein cut or cross cut?",note:"How-to для архитекторов"},
@@ -78,7 +78,7 @@ function draw(cv,c,guide){let x=cv.getContext("2d");x.fillStyle=DK;x.fillRect(0,
  x.font="700 24px Archivo";x.fillStyle=LIME;x.textBaseline="top";tracked(x,"THE VOICE OF STONE",M,H-150,5);}
 function dl(cv,nm){cv.toBlob(b=>{let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=nm;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);},"image/png");}
 let cvs=[];
-function build(){document.getElementById("date").textContent="2026-10-02".split("-").reverse().join(".");
+function build(){document.getElementById("date").textContent="2026-10-03".split("-").reverse().join(".");
  let app=document.getElementById("app");cvs=[];
  COVERS.forEach(c=>{let nm="taron_cover_"+c.id+".png";let w=document.createElement("div");w.className="cardw";
   let cv=document.createElement("canvas");cv.width=W;cv.height=H;draw(cv,c,true);
