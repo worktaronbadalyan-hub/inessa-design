@@ -1,122 +1,107 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ИНЕССА · Дизайн-дашборд · Taron Badalyan — The Voice of Stone</title>
+<title>INESSA · Дизайн-дашборд · 04.10.2026</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--lime:#C6F03C;--bg:#0E0E0E;--card:#161616;--line:#262626;--mut:#8a8a8a}
+:root{--bg:#0B0B0B;--pan:#141414;--line:#262626;--lime:#C6F03C;--ink:#fff;--dim:#9a9a9a}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#fff;font-family:Archivo,system-ui,Arial,sans-serif}
-header{padding:26px 30px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.06em}
-.dmd{width:20px;height:20px;border:3px solid var(--lime);transform:rotate(45deg);position:relative}
-.dmd:after{content:"";position:absolute;inset:5px;background:var(--lime)}
-h1{font-size:15px;margin:0;font-weight:800}.sub{color:var(--mut);font-size:12px;margin-top:3px;font-weight:500}
-.tag{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.14em}
-.wrap{max-width:1180px;margin:0 auto;padding:26px 20px 60px}
-.sec{margin:34px 0}
-.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-left:4px solid var(--lime);padding:4px 0 4px 16px;margin-bottom:18px}
-.sh h2{margin:0;font-family:Anton;font-weight:400;font-size:30px;letter-spacing:.01em}
-.sh .meta{color:var(--mut);font-size:12.5px;max-width:560px;line-height:1.5;margin-top:6px}
-.sh .cnt{color:var(--lime);font-weight:800;font-size:12px;white-space:nowrap}
-.btns{display:flex;gap:8px;flex-wrap:wrap}
-button{font-family:Archivo;font-weight:700;font-size:12px;border-radius:30px;border:1px solid var(--line);background:#1d1d1d;color:#fff;padding:9px 16px;cursor:pointer;transition:.15s}
-button:hover{border-color:var(--lime)}
-button.pri{background:var(--lime);color:#0E0E0E;border-color:var(--lime)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-.cardw{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:9px}
-canvas{width:100%;height:auto;border-radius:7px;display:block;background:#0E0E0E}
-.cardw .row{display:flex;justify-content:space-between;align-items:center}
-.cardw .nm{font-size:11px;color:var(--mut);font-weight:700;letter-spacing:.08em}
-footer{border-top:1px solid var(--line);padding:24px 30px;color:var(--mut);font-size:12px;line-height:1.8}
-footer a{color:var(--lime);text-decoration:none}footer a:hover{text-decoration:underline}
-.arch{margin-top:8px}
-.note{color:#6f6f6f;font-size:11px;margin-top:10px;max-width:760px;line-height:1.5}
-</style>
-</head>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--lime)}
+header{padding:26px 30px;border-bottom:1px solid var(--line);background:#0E0E0E}
+.brandrow{display:flex;align-items:center;gap:12px}
+.dmk{width:22px;height:22px;background:var(--lime);transform:rotate(45deg);border-radius:4px}
+h1{font-family:"Anton";font-weight:400;font-size:26px;letter-spacing:.5px;margin:0;line-height:1}
+.sub{color:var(--dim);font-size:13px;margin-top:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 24px 60px}
+.car{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:20px 20px 24px;margin-bottom:26px}
+.car h2{font-family:"Anton";font-weight:400;font-size:22px;margin:0 0 4px;letter-spacing:.4px}
+.car .hook{color:var(--lime);font-size:14px;font-weight:600;margin:0 0 6px}
+.car .src{color:var(--dim);font-size:12px;margin:0 0 16px;line-height:1.5}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.row{grid-template-columns:1fr 1fr}}
+.cell{display:flex;flex-direction:column;gap:7px}
+.cvwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000;aspect-ratio:1080/1350}
+canvas{width:100%;display:block}
+.btn{appearance:none;border:1px solid var(--lime);background:transparent;color:var(--lime);font-family:"Archivo";font-weight:700;font-size:12px;padding:7px 0;border-radius:8px;cursor:pointer;letter-spacing:.3px}
+.btn:hover{background:var(--lime);color:#111}
+.btn.solid{background:var(--lime);color:#111}
+.tools{display:flex;gap:10px;margin:2px 0 16px;flex-wrap:wrap}
+.tools .btn{padding:9px 16px;font-size:13px}
+.foot{color:var(--dim);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding:18px 30px 40px;max-width:1180px;margin:0 auto}
+.foot a{text-decoration:none}
+.nav{margin-left:auto;font-size:13px}
+</style></head>
 <body>
-<header>
-  <div class="brand"><div class="dmd"></div>
-    <div><h1>TARON BADALYAN</h1><div class="sub">ИНЕССА · дизайн-дашборд дня</div></div>
-  </div>
-  <div style="text-align:right"><div class="tag">THE VOICE OF STONE</div><div class="sub" id="date">—</div></div>
-</header>
+<header><div class="brandrow"><div class="dmk"></div><h1>INESSA — ДИЗАЙН-ДАШБОРД</h1>
+<span class="nav"><a href="covers.html">Обложки Reels 9:16 →</a></span></div>
+<div class="sub">Taron Badalyan · «The Voice of Stone» · комплект дня <b>04.10.2026</b> · 2 карусели × 7 слайдов (4:5, 1080×1350). Нажмите «PNG», чтобы скачать слайд.</div></header>
 <div class="wrap" id="app"></div>
-<footer>
-  <div><b style="color:#fff">Дашборд дня</b> · карусели 4:5 (1080×1350) · рендер на &lt;canvas&gt; · шрифты Anton + Archivo (Google Fonts)</div>
-  <div class="arch">Обложки Reels 9:16 → <a href="covers.html">covers.html</a></div>
-  <div class="arch"><b style="color:#fff">Архив:</b> <a href="archive/2026-10-02.html">02.10.2026</a> · <a href="archive/2026-10-01.html">01.10.2026</a> · <a href="archive/2026-09-30.html">30.09.2026</a> · <a href="archive/2026-09-29.html">29.09.2026</a> · <a href="archive/2026-09-28.html">28.09.2026</a> · <a href="archive/2026-09-27.html">27.09.2026</a> · <a href="archive/2026-09-25.html">25.09.2026</a> · <a href="archive/2026-09-24.html">24.09.2026</a> · <a href="archive/2026-09-23.html">23.09.2026</a></div>
-  <div class="note">Текст каруселей — реальные темы бренда. Карусель A построена по контент-плану Мадлен (флагман Q4 — экспорт армянского камня). Фотоматериалы Тарона/камня/производства из Google Drive не заливаются в слайды (дизайн текстовый, по брифу).</div>
-</footer>
-<script>
-const DATA={date:"2026-10-03",carousels:[
-{id:"A",title:"Where Armenian Stone Ships",hookEN:"One stone, five very different buyers",src:"По контент-плану Мадлен · флагман Q4: экспорт армянского камня (направления экспорта · формат-победитель — отраслевой факт)",kicker:"EXPORT NOTES",slides:[
-{t:"hook",kicker:"EXPORT NOTES",h:[["ONE","fg"],["STONE,","fg"],["FIVE","lime"],["MARKETS","lime"]],s:"Where Armenian stone travels — and what each buyer is really after."},
-{t:"v",n:"01",h:[["EUROPE","lime"],["WANTS","fg"],["PROOF","fg"]],b:"EU architects specify on certificates and traceability. The paperwork opens the door before the sample does."},
-{t:"v",n:"02",h:[["THE GULF","lime"],["WANTS","fg"],["WARMTH","fg"]],b:"Hotels and villas choose travertine and tuff for a warm, natural luxury that marble cannot fake."},
-{t:"v",n:"03",h:[["THE CIS","lime"],["WANTS","fg"],["VOLUME","fg"]],b:"Large repeat projects need a supplier who holds one colour and keeps shipping, month after month."},
-{t:"v",n:"04",h:[["THE US","lime"],["WANTS","fg"],["A STORY","fg"]],b:"The American market pays for provenance — a stone with a named quarry and a real origin."},
-{t:"v",n:"05",h:[["ALL FIVE","fg"],["WANT","fg"],["TRUST","lime"]],b:"Different tastes, one rule: a partner who delivers the same quality on every single order."},
-{t:"cta",h:[["SAVE","lime"],["THE EXPORT","fg"],["MAP","fg"]],a:["SAVE","FOLLOW","SHARE"],s:"Follow for weekly notes on Armenian stone & export."}
-]},
-{id:"B",title:"How Travertine Is Made",hookEN:"From a mountain block to your floor",src:"Вирусная тема Инессы · сохраняемый how-it's-made (цепочка создания камня: карьер → слэб)",kicker:"HOW IT'S MADE",slides:[
-{t:"hook",kicker:"HOW IT'S MADE",h:[["HOW A","fg"],["MOUNTAIN","lime"],["BECOMES","fg"],["A FLOOR","lime"]],s:"From a raw quarry block to a finished slab, in five stages."},
-{t:"v",n:"01",h:[["CUT,","fg"],["NOT","fg"],["BLASTED","lime"]],b:"Blocks are sliced from the quarry with diamond wire. Precision starts at the very first cut."},
-{t:"v",n:"02",h:[["ONE BLOCK,","fg"],["DOZENS","lime"],["OF SLABS","fg"]],b:"A single block meets the gangsaw and leaves as dozens of slabs, each only millimetres apart."},
-{t:"v",n:"03",h:[["FILLING","fg"],["THE","fg"],["PORES","lime"]],b:"Travertine's natural pores are filled and the surface reinforced, so it lasts decades outdoors."},
-{t:"v",n:"04",h:[["THE FINISH","lime"],["IS THE","fg"],["DESIGN","fg"]],b:"Honed, polished, brushed or tumbled — the same stone gets its final character right here."},
-{t:"v",n:"05",h:[["NUMBERED","lime"],["FOR THE","fg"],["WALL","fg"]],b:"Slabs are cut to exact tiles and panels, numbered by position, then crated for the site."},
-{t:"cta",h:[["SAVE","lime"],["HOW STONE","fg"],["IS BORN","fg"]],a:["SAVE","FOLLOW",'DM “STONE”'],s:"Follow for the full story — from quarry to global market."}
-]}
-]};
-const LIME="#C6F03C",DK="#0E0E0E",LT="#F0F0EE",W=1080,H=1350,M=92;
-const col=(c,d)=>c=="lime"?LIME:(d?"#fff":"#111");
-function rr(x,p,y,w,h,r){x.beginPath();x.moveTo(p+r,y);x.arcTo(p+w,y,p+w,y+h,r);x.arcTo(p+w,y+h,p,y+h,r);x.arcTo(p,y+h,p,y,r);x.arcTo(p,y,p+w,y,r);x.closePath();}
-function glow(x,cx,cy,r,a){let g=x.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");x.fillStyle=g;x.fillRect(0,0,W,H);}
-function half(x,ox,oy,c,r,d){for(let i=0;i<r;i++)for(let j=0;j<c;j++){let t=j/(c-1),rr=5*(1-t)+1;x.fillStyle="rgba(198,240,60,"+(.55*(1-t))+")";x.beginPath();x.arc(ox+j*25,oy+i*25,rr,0,7);x.fill();}}
-function tracked(x,s,px,py,ls){let cx=px;for(const ch of s){x.fillText(ch,cx,py);cx+=x.measureText(ch).width+ls;}return cx;}
-function logo(x,px,py){x.save();x.translate(px+17,py+17);x.strokeStyle=LIME;x.lineWidth=4;x.beginPath();x.moveTo(0,-15);x.lineTo(15,0);x.lineTo(0,15);x.lineTo(-15,0);x.closePath();x.stroke();x.fillStyle=LIME;x.beginPath();x.arc(0,0,4,0,7);x.fill();x.restore();return px+50;}
-function lw(x,ln){let w=0,sp=x.measureText(" ").width;ln.forEach((o,i)=>{w+=x.measureText(o[0]).width+(i?sp:0);});return w;}
-function wrap(x,words,mw){let ls=[],cur=[],cw=0,sp=x.measureText(" ").width;for(const o of words){let ww=x.measureText(o[0]).width,add=cur.length?cw+sp+ww:ww;if(cur.length&&add>mw){ls.push(cur);cur=[o];cw=ww;}else{cur.push(o);cw=add;}}if(cur.length)ls.push(cur);return ls;}
-function fit(x,words,mw,mh,start){let s=start;for(;s>34;s-=3){x.font=s+"px Anton";let ls=wrap(x,words,mw),lh=s*1.02;if(ls.length*lh<=mh&&ls.every(l=>lw(x,l)<=mw))return{s,ls,lh};}x.font="40px Anton";return{s:40,ls:wrap(x,words,mw),lh:42};}
-function head(x,words,px,py,mw,mh,d,start){let{s,ls,lh}=fit(x,words,mw,mh,start);x.font=s+"px Anton";x.textBaseline="top";let y=py,sp=x.measureText(" ").width;for(const ln of ls){let cx=px;for(const o of ln){x.fillStyle=col(o[1],d);x.fillText(o[0],cx,y);cx+=x.measureText(o[0]).width+sp;}y+=lh;}return y;}
-function body(x,t,px,py,mw,c,sz){x.font=sz+"px Archivo";x.fillStyle=c;x.textBaseline="top";let words=t.split(" "),cur="",y=py,step=sz*1.46;for(const w of words){let tt=(cur+" "+w).trim();if(x.measureText(tt).width<=mw)cur=tt;else{x.fillText(cur,px,y);y+=step;cur=w;}}if(cur)x.fillText(cur,px,y);return y+step;}
-function pill(x,px,py,t,fs,fg,bg,bd){x.font="700 "+fs+"px Archivo";x.textBaseline="top";let tw=x.measureText(t).width,w=tw+56,h=fs+30;if(bg){x.fillStyle=bg;rr(x,px,py,w,h,h/2);x.fill();}if(bd){x.strokeStyle=bd;x.lineWidth=2;rr(x,px,py,w,h,h/2);x.stroke();}x.fillStyle=fg;x.fillText(t,px+28,py+14);return w;}
-function arrow(x,cx,cy,r){x.fillStyle=LIME;x.beginPath();x.arc(cx,cy,r,0,7);x.fill();x.strokeStyle=DK;x.lineWidth=7;x.lineCap="round";x.beginPath();x.moveTo(cx-r*.34,cy);x.lineTo(cx+r*.30,cy);x.moveTo(cx+r*.05,cy-r*.3);x.lineTo(cx+r*.32,cy);x.moveTo(cx+r*.05,cy+r*.3);x.lineTo(cx+r*.32,cy);x.stroke();}
-function chrome(x,d,i,tot,rl){let fg=d?"#fff":"#111",mu=d?"#8f8f8f":"#787878";x.textBaseline="top";let px=logo(x,M,66);x.fillStyle=fg;x.font="800 23px Archivo";tracked(x,"TARON BADALYAN",px,72,2);x.font="700 18px Archivo";let rw=x.measureText(rl).width+2*(rl.length-1);x.fillStyle=d?LIME:"#111";tracked(x,rl,W-M-rw,74,2);let by=H-92,bx=M;for(let k=0;k<tot;k++){x.fillStyle=k<=i?LIME:(d?"#3a3a3a":"#cdcdcb");rr(x,bx,by,34,6,3);x.fill();bx+=44;}x.font="800 26px Archivo";x.fillStyle=LIME;let ps=String(i+1).padStart(2,"0"),tail=" / "+String(tot).padStart(2,"0"),tw=x.measureText(ps).width,tw2=x.measureText(tail).width;x.textBaseline="top";x.fillText(ps,W-M-tw-tw2,by-16);x.fillStyle=mu;x.fillText(tail,W-M-tw2,by-16);}
-function draw(cv,sl,i,tot,kick){let x=cv.getContext("2d"),d=sl.t=="hook"||sl.t=="cta"||(sl.t=="v"&&i%2==1);if(sl.t=="v")d=i%2==1;x.clearRect(0,0,W,H);x.fillStyle=d?DK:LT;x.fillRect(0,0,W,H);
-if(d){glow(x,W-60,120,560,.14);glow(x,40,H-40,440,.10);}
-let mu=d?"#8f8f8f":"#787878";
-if(sl.t=="hook"){half(x,W-230,250,10,7,6,d);x.fillStyle=d?"#fff":"#111";pill(x,M,150,sl.kicker,22,DK,LIME);let e=head(x,sl.h,M,300,W-2*M,620,d,176);body(x,sl.s,M,e+30,W-2*M-120,mu,33);x.strokeStyle="rgba(198,240,60,.5)";x.lineWidth=6;x.beginPath();x.arc(W+40,H-320,300,2.6,4.4);x.stroke();arrow(x,W-M-46,H-250,50);x.font="700 20px Archivo";x.fillStyle=mu;tracked(x,"SWIPE",W-M-168,H-168,3);chrome(x,d,i,tot,"THE VOICE OF STONE");}
-else if(sl.t=="v"){x.save();x.font="270px Anton";x.textBaseline="top";x.globalAlpha=.09;x.fillStyle=d?LIME:"#111";x.fillText(sl.n,W-300,118);x.restore();if(d)half(x,M,H-250,9,4,6,d);x.font="700 22px Archivo";x.fillStyle=d?LIME:"#111";x.textBaseline="top";tracked(x,"STEP "+sl.n,M,205,3);x.strokeStyle=LIME;x.lineWidth=4;x.beginPath();x.moveTo(M,250);x.lineTo(M+120,250);x.stroke();let e=head(x,sl.h,M,312,W-2*M-40,420,d,140);body(x,sl.b,M,Math.max(e+42,800),W-2*M-70,d?"#e2e2e0":"#2a2a2a",34);chrome(x,d,i,tot,kick);}
-else{glow(x,60,120,560,.16);half(x,W-250,H-360,10,6,6,d);x.fillStyle="#fff";pill(x,M,190,"YOUR MOVE",22,DK,LIME);let e=head(x,sl.h,M,320,W-2*M,470,d,168);body(x,sl.s,M,e+22,W-2*M-140,"#e2e2e0",33);let ax=M,ay=e+150;sl.a.forEach((a,k)=>{let w=k==0?pill(x,ax,ay,a,26,DK,LIME):pill(x,ax,ay,a,26,"#fff",null,"#5a5a5a");ax+=w+18;});let sy=H-232;x.strokeStyle="#464646";x.lineWidth=2;x.beginPath();x.moveTo(M,sy);x.lineTo(W-M,sy);x.stroke();logo(x,M,sy+34);x.fillStyle="#fff";x.font="800 30px Archivo";x.textBaseline="top";tracked(x,"TARON BADALYAN",M+54,sy+40,1);x.font="700 22px Archivo";x.fillStyle=LIME;tracked(x,"THE VOICE OF STONE",M+54,sy+86,4);chrome(x,d,i,tot,"THE VOICE OF STONE");}}
-function dl(cv,nm){cv.toBlob(b=>{let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=nm;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);},"image/png");}
-function build(){document.getElementById("date").textContent=DATA.date.split("-").reverse().join(".");
-let app=document.getElementById("app");
-DATA.carousels.forEach(car=>{
- let sec=document.createElement("div");sec.className="sec";
- sec.innerHTML='<div class="sh"><div><h2>'+car.id+' · '+car.title+'</h2><div class="meta"><b style="color:#C6F03C">HOOK:</b> “'+car.hookEN+'” &nbsp;·&nbsp; '+car.src+'</div></div><div style="text-align:right"><div class="cnt">'+car.slides.length+' слайдов · 1080×1350</div><div class="btns" style="margin-top:8px;justify-content:flex-end"><button class="pri" data-all="'+car.id+'">Скачать все PNG</button></div></div></div>';
- let grid=document.createElement("div");grid.className="grid";
- car.slides.forEach((sl,i)=>{
-   let nn=String(i+1).padStart(2,"0");
-   let nm="taron_carousel_"+car.id+"_"+nn+".png";
-   let lbl=sl.t=="hook"?"ХУК":sl.t=="cta"?"CTA":"STEP "+sl.n;
-   let w=document.createElement("div");w.className="cardw";
-   let cv=document.createElement("canvas");cv.width=W;cv.height=H;
-   draw(cv,sl,i,car.slides.length,car.kicker);
-   let row=document.createElement("div");row.className="row";
-   row.innerHTML='<span class="nm">'+car.id+" · "+nn+"/0"+car.slides.length+" · "+lbl+'</span>';
-   let b=document.createElement("button");b.textContent="PNG ↓";b.onclick=()=>dl(cv,nm);
-   row.appendChild(b);w.appendChild(cv);w.appendChild(row);grid.appendChild(w);
-   cv.dataset.nm=nm;
+<div class="foot" id="foot"></div>
+<script>const DATA={"date":"2026-10-04","carousels":[{"id":"A","source":"Контент-план Мадлен · флагманская тема Q4 «экспорт армянского камня» (дизайн-задача №7: EN-карусели по экспорту)","title_en":"Armenian Stone Goes Global","hook_en":"Armenian stone ships worldwide — most buyers never hear the real story.","slides":[{"type":"hook","theme":"dark","kicker":"EXPORT NOTES","head":[["ARMENIAN",""],["STONE",""],["GOES","g"],["GLOBAL","g"]],"sub":"5 export truths most buyers never hear"},{"type":"value","theme":"light","num":"01","head":[["We export the ",""],["block","g"],[", not the ",""],["brand",""],[".",""]],"body":"Stone leaves Armenia as a raw block. The cutting, the finish and the name are added abroad — and that is where the value stays."},{"type":"value","theme":"dark","num":"02","head":[["Buyers don't buy ",""],["stone",""],[". They buy ",""],["certainty","g"],[".",""]],"body":"Across borders the deal is won on steady colour, on-time delivery and full documents — not on the lowest price per square metre."},{"type":"value","theme":"light","num":"03","head":[["Distance isn't the ",""],["barrier",""],[". ",""],["Logistics","g"],[" is.",""]],"body":"A container clears a border on paper in a day. Matching volume, lead time and spec from one batch to the next is the real export test."},{"type":"value","theme":"dark","num":"04","head":[["One quarry is a ",""],["supplier",""],[". A ",""],["union","g"],[" is a market.",""]],"body":"Scattered producers undercut each other. Organised supply turns a country into a recognised origin — a name architects can specify."},{"type":"value","theme":"light","num":"05","head":[["‘Natural’ is no longer ",""],["enough","g"],[".",""]],"body":"Global projects now ask where the stone was cut, how, and at what footprint. Traceability is quietly becoming the new premium."},{"type":"cta","theme":"dark","head":[["FOLLOW",""],["THE","g"],["VOICE OF","g"],["STONE",""]],"cta":"Follow for weekly notes on Armenian stone & export.","pill":"SAVE  ·  FOLLOW  ·  DM «STONE»"}]},{"id":"B","source":"Своя вирусная тема · сохраняемый гайд покупателя (эвергрин)","title_en":"5 Mistakes When Buying Natural Stone","hook_en":"5 mistakes that quietly ruin a natural-stone project.","slides":[{"type":"hook","theme":"dark","kicker":"BUYER'S GUIDE","head":[["5","g"],["MISTAKES","g"],["BUYING",""],["NATURAL STONE",""]],"sub":"Save this before you pick a single slab"},{"type":"value","theme":"light","num":"01","head":[["Judging a slab by a ",""],["sample chip","g"],[".",""]],"body":"A 10×10 cm sample hides the veining, colour shift and movement of a full slab. Always approve the real block — never the swatch."},{"type":"value","theme":"dark","num":"02","head":[["Overlooking the ",""],["finish","g"],[".",""]],"body":"Polished, honed, brushed or tumbled: one stone becomes four colours, four textures, four upkeep levels. The finish is half the decision."},{"type":"value","theme":"light","num":"03","head":[["Skipping ",""],["porosity","g"],[" & ",""],["sealing","g"],[".",""]],"body":"Marble and travertine drink liquids. Without the right sealer, a single spill of wine or oil can stain the surface for good."},{"type":"value","theme":"dark","num":"04","head":[["Mixing ",""],["batches","g"],[".",""]],"body":"Stone is natural, so no two lots match. Order one space from one block or lot — or the colour will jump halfway across the wall."},{"type":"value","theme":"light","num":"05","head":[["Ignoring ",""],["hardness","g"],[" vs. use.",""]],"body":"Granite shrugs off a busy kitchen; marble scratches and etches. Match the stone's hardness to where it will actually live."},{"type":"cta","theme":"dark","head":[["SAVE","g"],["IT.",""],["BUILD","g"],["IN STONE.",""]],"cta":"Follow for how real stone is chosen, cut & shipped.","pill":"SAVE  ·  SHARE  ·  FOLLOW"}]}],"covers":[{"id":"C1","theme":"dark","series":"STONE TALKS","num":"08","head":[["GEN Z",""],["& THE VALUE","g"],["OF STONE",""]],"sub":"Why the next generation reads a quarry differently","tag":"NEW EPISODE"},{"id":"C2","theme":"dark","series":"EXPORT NOTES","head":[["ARMENIAN",""],["STONE",""],["GOES","g"],["GLOBAL","g"]],"sub":"What the world really buys from Armenia","tag":"REEL"}]};
+const LIME='#C6F03C',DARK='#0E0E0E',LIGHT='#F0F0EE',WHITE='#ffffff',BLACK='#111111';
+function tc(t){return t=='dark'?[DARK,WHITE,'#aeaeae']:[LIGHT,BLACK,'#5c5c5c'];}
+function F(w,s,fam){return (w?w+' ':'')+s+'px "'+fam+'"';}
+function tw(ctx,txt,trk){ctx.save();ctx.letterSpacing=trk+'px';var w=ctx.measureText(txt).width;ctx.restore();return w;}
+function trk(ctx,x,y,txt,fill,t){ctx.save();ctx.letterSpacing=t+'px';ctx.fillStyle=fill;ctx.textBaseline='top';ctx.fillText(txt,x,y);var w=ctx.measureText(txt).width;ctx.restore();return x+w;}
+function glow(ctx,c,st,r,W,H){var cx,cy;if(c=='tr'){cx=W+40;cy=-40;}else if(c=='bl'){cx=-40;cy=H+40;}else if(c=='br'){cx=W+40;cy=H+40;}else{cx=-40;cy=-40;}var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,'rgba(198,240,60,'+st+')');g.addColorStop(1,'rgba(198,240,60,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
+function half(ctx,c,cols,rows,gap,rmax,al,W,H){var span=(cols-1)*gap,ox,oy;if(c=='br'){ox=W-70-span;oy=H-70-span;}else if(c=='tr'){ox=W-70-span;oy=150;}else if(c=='bl'){ox=70;oy=H-70-span;}else{ox=70;oy=150;}for(var i=0;i<cols;i++)for(var j=0;j<rows;j++){var t=(i+j)/(cols+rows-2),r=rmax*(.25+.75*t),a=al*(.2+.8*t)/255;ctx.globalAlpha=a;ctx.fillStyle=LIME;ctx.beginPath();ctx.arc(ox+i*gap,oy+j*gap,r,0,7);ctx.fill();}ctx.globalAlpha=1;}
+function arc(ctx,cx,cy,r,a0,a1,wd,al){ctx.save();ctx.globalAlpha=al;ctx.strokeStyle=LIME;ctx.lineWidth=wd;ctx.beginPath();ctx.arc(cx,cy,r,a0*Math.PI/180,a1*Math.PI/180);ctx.stroke();ctx.restore();}
+function words(tok){var w=[],pr='';for(var k=0;k<tok.length;k++){var tx=tok[k][0],fl=tok[k][1];if(w.length&&pr&&!/ $/.test(pr)&&!/^ /.test(tx)&&".,;:!?)'’".indexOf(tx[0])<0)w.push([' ',null]);var ps=tx.split(' ');for(var q=0;q<ps.length;q++){if(ps[q]!=='')w.push([ps[q],fl]);if(q<ps.length-1)w.push([' ',null]);}pr=tx;}return w;}
+function wrap(ctx,tok,maxW){var ws=words(tok),sp=ctx.measureText(' ').width,lines=[],cur=[],cw=0;for(var k=0;k<ws.length;k++){var wd=ws[k][0],fl=ws[k][1];if(wd==' '){if(cur.length){cur.push([' ',null]);cw+=sp;}continue;}var ww=ctx.measureText(wd).width;if(cw+ww>maxW&&cur.length){while(cur.length&&cur[cur.length-1][0]==' ')cur.pop();lines.push(cur);cur=[];cw=0;}cur.push([wd,fl]);cw+=ww;}if(cur.length){while(cur.length&&cur[cur.length-1][0]==' ')cur.pop();lines.push(cur);}return lines;}
+function rich(ctx,tok,x,y,maxW,lh,base,align){var lines=wrap(ctx,tok,maxW);ctx.textBaseline='top';for(var i=0;i<lines.length;i++){var ln=lines[i],lw=0;for(var k=0;k<ln.length;k++)lw+=ctx.measureText(ln[k][0]).width;var cx=align=='center'?x+(maxW-lw)/2:x;for(var k=0;k<ln.length;k++){ctx.fillStyle=ln[k][1]=='g'?LIME:base;ctx.fillText(ln[k][0],cx,y);cx+=ctx.measureText(ln[k][0]).width;}y+=lh;}return y;}
+function fit(ctx,tok,fam,st,mn,maxW,maxL){var s=st;while(s>mn){ctx.font=F('400',s,fam);if(wrap(ctx,tok,maxW).length<=maxL)return s;s-=3;}return mn;}
+function logo(ctx,th,ink){var x=90,yy=86,s=30,cx=x+s*.5,cy=yy+16;ctx.fillStyle=LIME;ctx.beginPath();ctx.moveTo(cx,cy-s*.6);ctx.lineTo(cx+s*.52,cy);ctx.lineTo(cx,cy+s*.6);ctx.lineTo(cx-s*.52,cy);ctx.closePath();ctx.fill();ctx.fillStyle=th=='dark'?DARK:LIGHT;ctx.beginPath();ctx.moveTo(cx,cy-s*.28);ctx.lineTo(cx+s*.24,cy);ctx.lineTo(cx,cy+s*.28);ctx.lineTo(cx-s*.24,cy);ctx.closePath();ctx.fill();ctx.font=F('800',25,'Archivo');trk(ctx,x+52,yy+2,'TARON BADALYAN',ink,3);ctx.font=F('500',18,'Archivo');trk(ctx,x+52,yy+34,'THE VOICE OF STONE',th=='dark'?LIME:'#787878',4);}
+function pageno(ctx,i,n,dim,align,H){ctx.font=F('400',30,'Anton');var s=('0'+i).slice(-2),t='/'+('0'+n).slice(-2);var sw=ctx.measureText(s).width;ctx.font=F('700',24,'Archivo');var twd=ctx.measureText(t).width;var x=align=='left'?90:1080-90-sw-4-twd;ctx.textBaseline='top';ctx.font=F('400',30,'Anton');ctx.fillStyle=LIME;ctx.fillText(s,x,H-120);ctx.font=F('700',24,'Archivo');ctx.fillStyle=dim;ctx.fillText(t,x+sw+4,H-116+4);}
+function arrow(ctx,cx,cy,r){ctx.fillStyle=LIME;ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.fill();var a=r*.42;ctx.strokeStyle=DARK;ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(cx-a,cy);ctx.lineTo(cx+a,cy);ctx.moveTo(cx+a-2,cy);ctx.lineTo(cx+a-a*.7,cy-a*.7);ctx.moveTo(cx+a-2,cy);ctx.lineTo(cx+a-a*.7,cy+a*.7);ctx.stroke();ctx.lineCap='butt';}
+function pill(ctx,cx,cy,txt,bg,fg,fs,h,pad){ctx.font=F('800',fs,'Archivo');var w=tw(ctx,txt,2)+pad*2,x0=cx-w/2,y0=cy-h/2;ctx.fillStyle=bg;rr(ctx,x0,y0,w,h,h/2);ctx.fill();trk(ctx,x0+pad,y0+(h-fs)/2-2,txt,fg,2);}
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function drawSlide(ctx,s,i,n){var W=1080,H=1350,T=tc(s.theme),bg=T[0],ink=T[1],dim=T[2],M=90;ctx.clearRect(0,0,W,H);ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+ if(s.type=='hook'){glow(ctx,'tr',.5,760,W,H);glow(ctx,'bl',.30,620,W,H);half(ctx,'br',9,9,34,7,120,W,H);logo(ctx,s.theme,ink);
+  ctx.font=F('800',23,'Archivo');var kw=tw(ctx,s.kicker,4)+52;ctx.strokeStyle=LIME;ctx.lineWidth=3;rr(ctx,M,300,kw,56,28);ctx.stroke();trk(ctx,M+26,313,s.kicker,LIME,4);
+  var fs=fit(ctx,s.head,'Anton',150,96,W-2*M,4);ctx.font=F('400',fs,'Anton');var lh=Math.round(fs*.98);var th=lh*wrap(ctx,s.head,W-2*M).length;var yend=rich(ctx,s.head,M,400,W-2*M,lh,ink);
+  ctx.font=F('500',38,'Archivo');ctx.fillStyle=dim;ctx.textBaseline='top';ctx.fillText(s.sub,M,400+th+34);
+  arrow(ctx,W-M-46,H-150,50);ctx.font=F('700',22,'Archivo');trk(ctx,W-M-46-50-120,H-150-14,'SWIPE',dim,4);pageno(ctx,i,n,dim,'left',H);}
+ else if(s.type=='value'){if(s.theme=='dark')glow(ctx,'tr',.28,640,W,H);else glow(ctx,'br',.16,560,W,H);half(ctx,s.theme=='light'?'tr':'br',7,7,34,7,s.theme=='light'?90:110,W,H);logo(ctx,s.theme,ink);
+  ctx.font=F('400',210,'Anton');ctx.fillStyle=LIME;ctx.textBaseline='top';ctx.fillText(s.num,M-6,250);ctx.fillStyle=ink;ctx.fillRect(M,492,150,8);
+  var fs=fit(ctx,s.head,'Anton',92,62,W-2*M,4);ctx.font=F('400',fs,'Anton');var lh=Math.round(fs*1.02);var yend=rich(ctx,s.head,M,560,W-2*M,lh,ink);
+  ctx.font=F('400',41,'Archivo');rich(ctx,[[s.body,null]],M,yend+34,W-2*M,56,dim);
+  arrow(ctx,W-M-46,H-150,46);pageno(ctx,i,n,dim,'left',H);}
+ else{glow(ctx,'tr',.5,780,W,H);glow(ctx,'bl',.34,640,W,H);half(ctx,'br',9,9,34,7,130,W,H);arc(ctx,W,0,260,90,200,7,.7);logo(ctx,s.theme,ink);
+  var fs=fit(ctx,s.head,'Anton',140,92,W-2*M,4);ctx.font=F('400',fs,'Anton');var lh=Math.round(fs*.99);var yend=rich(ctx,s.head,M,360,W-2*M,lh,ink);
+  ctx.font=F('500',40,'Archivo');var cend=rich(ctx,[[s.cta,null]],M,yend+30,W-2*M,54,dim);
+  pill(ctx,540,cend+80,s.pill,LIME,BLACK,27,76,40);
+  ctx.font=F('800',30,'Archivo');ctx.fillStyle=ink;ctx.textBaseline='top';ctx.fillText('TARON BADALYAN',M,H-220);ctx.font=F('500',24,'Archivo');trk(ctx,M,H-180,'THE VOICE OF STONE',LIME,5);pageno(ctx,i,n,dim,'right',H);}}
+function drawCover(ctx,cv){var W=1080,H=1920;ctx.clearRect(0,0,W,H);ctx.fillStyle=DARK;ctx.fillRect(0,0,W,H);glow(ctx,'tr',.5,820,W,H);glow(ctx,'tl',.22,620,W,H);half(ctx,'tr',8,8,34,7,120,W,H);logo(ctx,'dark',WHITE);
+ ctx.font=F('800',30,'Archivo');trk(ctx,90,300,cv.series,LIME,6);var hy;if(cv.num){ctx.font=F('400',150,'Anton');ctx.fillStyle=WHITE;ctx.textBaseline='top';ctx.fillText(cv.num,90,344);hy=530;}else hy=370;
+ ctx.font=F('800',24,'Archivo');var tt=cv.tag,twd=tw(ctx,tt,3)+48;ctx.fillStyle=LIME;rr(ctx,W-90-twd,300,twd,56,28);ctx.fill();trk(ctx,W-90-twd+24,313,tt,BLACK,3);
+ var fs=fit(ctx,cv.head,'Anton',140,96,900,4);ctx.font=F('400',fs,'Anton');var lh=Math.round(fs*1.0);var yend=rich(ctx,cv.head,90,hy,900,lh,WHITE);
+ ctx.font=F('500',38,'Archivo');rich(ctx,[[cv.sub,null]],90,Math.min(yend+40,1180),900,52,'#b4b4b4');}
+function dl(cv,name){cv.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},1500);},'image/png');}
+
+const app=document.getElementById('app');
+function build(){
+ DATA.carousels.forEach(function(car){
+  var sec=document.createElement('div');sec.className='car';
+  sec.innerHTML='<h2>'+(car.id)+'. '+car.title_en+'</h2><div class="hook">“'+car.hook_en+'”</div><div class="src">Источник: '+car.source+' · '+car.slides.length+' слайдов</div><div class="tools"><button class="btn solid" data-all="'+car.id+'">↓ Скачать все PNG ('+car.slides.length+')</button></div>';
+  var row=document.createElement('div');row.className='row';
+  car.slides.forEach(function(s,ix){
+   var cell=document.createElement('div');cell.className='cell';
+   var cw=document.createElement('div');cw.className='cvwrap';
+   var cv=document.createElement('canvas');cv.width=1080;cv.height=1350;cw.appendChild(cv);
+   var b=document.createElement('button');b.className='btn';b.textContent='PNG · '+String(ix+1).padStart(2,'0');
+   var nm=car.id+'_'+String(ix+1).padStart(2,'0')+'_'+DATA.date+'.png';
+   b.onclick=function(){dl(cv,nm);};
+   cell.appendChild(cw);cell.appendChild(b);row.appendChild(cell);
+   var ctx=cv.getContext('2d');drawSlide(ctx,s,ix+1,car.slides.length);cv._nm=nm;cv._draw=function(){drawSlide(ctx,s,ix+1,car.slides.length);};
+  });
+  sec.appendChild(row);app.appendChild(sec);
+  sec.querySelector('[data-all]').onclick=function(){var cvs=row.querySelectorAll('canvas');var k=0;(function nx(){if(k>=cvs.length)return;dl(cvs[k],cvs[k]._nm);k++;setTimeout(nx,450);})();};
  });
- sec.appendChild(grid);app.appendChild(sec);
- sec.querySelector("[data-all]").onclick=()=>{let cvs=grid.querySelectorAll("canvas");cvs.forEach((cv,k)=>setTimeout(()=>dl(cv,cv.dataset.nm),k*450));};
-});}
-(async()=>{try{await document.fonts.load("70px Anton");await document.fonts.load("900 30px Archivo");await document.fonts.load("400 30px Archivo");await document.fonts.ready;}catch(e){}build();})();
-</script>
-</body>
-</html>
+}
+document.getElementById('foot').innerHTML='Сгенерировано Инессой — ИИ UI/UX-дизайнером личного бренда Тарона Бадаляна. Рендер слайдов — на &lt;canvas&gt; 1080×1350, шрифты Anton / Archivo (Google Fonts). Стиль: фон #0E0E0E, акцент #C6F03C. · <b style="color:#fff">Архив:</b> <a href="archive/2026-10-03.html">03.10.2026</a> · <a href="archive/2026-10-02.html">02.10.2026</a> · <a href="archive/2026-10-01.html">01.10.2026</a> · <a href="archive/2026-09-30.html">30.09.2026</a> · <a href="archive/2026-09-29.html">29.09.2026</a> · <a href="archive/2026-09-28.html">28.09.2026</a> · <a href="archive/2026-09-27.html">27.09.2026</a> · <a href="archive/2026-09-25.html">25.09.2026</a> · <a href="archive/2026-09-24.html">24.09.2026</a> · <a href="archive/2026-09-23.html">23.09.2026</a>';
+function redrawAll(){document.querySelectorAll('canvas').forEach(function(c){if(c._draw)c._draw();});}
+Promise.all([document.fonts.load('400 120px "Anton"'),document.fonts.load('400 40px "Archivo"'),document.fonts.load('500 40px "Archivo"'),document.fonts.load('700 24px "Archivo"'),document.fonts.load('800 25px "Archivo"')]).then(build).catch(build);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(redrawAll);
+</script></body></html>
