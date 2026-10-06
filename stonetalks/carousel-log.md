@@ -7,3 +7,6 @@
 # 2026-10-05: брифа Мадлен на сегодня нет — обе карусели сделаны на свои темы.
 2026-10-05 | а | Demo Walkthrough | Value/Curiosity | A FLOOR IS WON AT THE QUARRY | производство / how-it's-made | архитектор, специфаер | подписка (Follow)
 2026-10-05 | б | Rant Callout | Warning | STOP BUYING STONE BY THE SQUARE METRE | закупка камня / рынок | девелопер, дистрибьютор | подписка (Follow)
+# 2026-10-06: брифа Мадлен на сегодня нет — обе карусели сделаны на свои темы.
+2026-10-06 | а | Value-Stack | Value | 5 TRAVERTINE FINISHES AND WHERE EACH BELONGS | спецификация / выбор отделки | архитектор, дизайнер интерьера | сохранения (Save)
+2026-10-06 | б | Hack List | Bold claim | TRAVERTINE DOESN'T CRACK. THE INSTALL DOES. | монтаж камня | девелопер, подрядчик | сохранения (Save)
