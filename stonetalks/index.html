@@ -1,1 +1,344 @@
-CONTENT_PLACEHOLDER
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Voice of Stone — Маркетинг-неделя 05–11.10.2026</title>
+<meta name="description" content="Еженедельный маркетинговый дашборд личного бренда Тарона Бадаляна: аудит, контент-план, Stone Talks. Автор — Мадлен, AI CMO.">
+<style>
+:root{
+  --bg:#0e0c0a; --bg2:#161311; --card:#1b1714; --line:#2c2723;
+  --ink:#f3ede4; --mut:#a89c8c; --dim:#7d7264;
+  --gold:#c8a86b; --gold2:#e6cf9a; --stone:#8d8577;
+  --ok:#7fae7a; --warn:#d8a24a; --bad:#c8776a; --info:#8aa6bf;
+  --rad:16px; --mx:1120px;
+  --f:"Georgia","Times New Roman",serif;
+  --s:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--s);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--gold2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--mx);margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--f);font-weight:600;letter-spacing:.2px}
+h2{font-size:26px;margin:0 0 6px}
+h3{font-size:18px;margin:0 0 6px}
+h4{font-size:15px;margin:0 0 4px}
+.eyebrow{font-family:var(--s);text-transform:uppercase;letter-spacing:3px;font-size:11px;color:var(--gold);font-weight:700}
+.hero{background:radial-gradient(1200px 500px at 70% -10%,rgba(200,168,107,.16),transparent 60%),linear-gradient(180deg,#100e0c,#0e0c0a);border-bottom:1px solid var(--line);padding:56px 0 40px}
+.hero h1{font-size:40px;line-height:1.12;margin:12px 0 8px;background:linear-gradient(90deg,#fff,#e6cf9a 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .k{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.chip{border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--mut)}
+.lead{color:var(--mut);max-width:760px;font-size:17px}
+section{padding:42px 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+.card.lg{padding:24px}
+.card.accent{border-color:rgba(200,168,107,.35);background:linear-gradient(180deg,rgba(200,168,107,.07),var(--card))}
+.kpi{display:flex;flex-direction:column;gap:3px}
+.kpi .n{font-family:var(--f);font-size:30px;color:var(--gold2)}
+.kpi .l{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.kpi .d{font-size:12.5px;color:var(--mut)}
+.small{font-size:13.5px}
+.muted{color:var(--mut)}
+.dim{color:var(--dim)}
+ul.clean{margin:8px 0 0;padding-left:18px}
+ul.clean li{margin:5px 0}
+ul.clean.small li{font-size:13.5px;color:var(--mut)}
+.note{border-left:3px solid var(--gold);background:var(--bg2);padding:12px 16px;border-radius:0 10px 10px 0;font-size:14px;color:var(--mut)}
+.note b{color:var(--ink)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.4px;padding:2px 9px;border-radius:999px;border:1px solid var(--line)}
+.t-need{color:var(--warn);border-color:rgba(216,162,74,.45);background:rgba(216,162,74,.08)}
+.t-ok{color:var(--ok);border-color:rgba(127,174,122,.45);background:rgba(127,174,122,.08)}
+.t-fact{color:var(--bad);border-color:rgba(200,119,106,.45);background:rgba(200,119,106,.08)}
+.t-est{color:var(--info);border-color:rgba(138,166,191,.45);background:rgba(138,166,191,.08)}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px}
+.p-li{color:#bcd;background:rgba(120,150,190,.14)}
+.p-ig{color:#e9b;background:rgba(210,120,170,.14)}
+.p-tt{color:#9dd;background:rgba(120,200,200,.12)}
+.p-yt{color:#e99;background:rgba(210,110,100,.14)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-family:var(--s);text-transform:uppercase;letter-spacing:.6px;font-size:11px;font-weight:700}
+td b{color:var(--ink)}
+.scroll{overflow-x:auto}
+.bar{height:12px;border-radius:999px;overflow:hidden;display:flex;border:1px solid var(--line)}
+.bar i{display:block;height:100%}
+.sc{display:inline-flex;gap:3px}
+.sc i{width:11px;height:11px;border-radius:2px;background:var(--line)}
+.sc i.on{background:var(--gold)}
+.foot{padding:34px 0;color:var(--dim);font-size:12.5px}
+.hk{font-family:var(--f);color:var(--gold2);font-style:italic}
+.q{border-left:2px solid var(--gold);padding-left:12px;margin:7px 0;font-size:13.5px;color:var(--mut)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Voice of Stone · Маркетинг-дирекция (Мадлен, AI CMO)</div>
+    <h1>Маркетинг-неделя &amp; Stone Talks</h1>
+    <p class="lead">Еженедельный стратегический дашборд личного бренда Тарона Бадаляна: аудит каналов, контент-план по столпам и 70/20/10, короткий лист гостей Stone Talks и раздача задач команде.</p>
+    <div class="k">
+      <span class="chip">Неделя: 05.10 – 11.10.2026</span>
+      <span class="chip">Приоритет: LinkedIn (EN, авторитет)</span>
+      <span class="chip">Флагман охвата: Instagram</span>
+      <span class="chip">Обновлено: 2026-10-05</span>
+    </div>
+    <div class="dim" style="margin-top:12px;font-size:12.5px">Данные без доступа к залогиненным кабинетам помечены «нужен доступ». Оценки помечены [оценка]. Пробелы фактов — [НУЖЕН ФАКТ ОТ ТАРОНА].</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · Позиционирование &amp; стратегическая рамка</div>
+    <h2>STP · кто мы и для кого</h2>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card">
+        <h3>Segmentation</h3>
+        <ul class="clean small">
+          <li><b>Архитекторы</b> — боль: найти камень, которому можно доверять по качеству и срокам.</li>
+          <li><b>Девелоперы</b> — боль: предсказуемость партии, бюджет, риск брака на фасаде.</li>
+          <li><b>Дистрибьюторы</b> — боль: маржа, стабильность поставок, отстройка от конкурентов.</li>
+          <li><b>Люди отрасли</b> — боль: как вести каменный бизнес без иллюзий и расти.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Targeting</h3>
+        <ul class="clean small">
+          <li>ЛПР в камне / стройке / девелопменте (B2B-ядро).</li>
+          <li>Профессионалы отрасли, ищущие экспертизу и честный взгляд.</li>
+          <li>Диаспора и ценители армянского наследия (туф, травертин, базальт).</li>
+          <li>Ранние последователи ИИ в традиционных отраслях.</li>
+        </ul>
+      </div>
+      <div class="card accent">
+        <h3>Positioning</h3>
+        <p class="small muted">«Голос камня» — лидер, который показывает всю цепочку создания ценности камня: от карьера до объекта, без лака и с ИИ в руках. Не продавец камня, а проводник в отрасль.</p>
+        <p class="small dim" style="margin-top:8px">Отстройка: прозрачность процесса + честность бизнеса + технологичность — редкое сочетание в каменной отрасли.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:30px">Воронка AARRR · роли каналов на неделю</h2>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card small"><h4>Acquisition</h4><p class="muted">TikTok, IG Reels, YouTube Shorts — вирусный охват вертикали 9:16, хук в первые 1–2 сек.</p></div>
+      <div class="card small"><h4>Activation</h4><p class="muted">Профиль IG + карусели Инессы (столп «цепочка ценности»), закреплённые Reels, посещения профиля.</p></div>
+      <div class="card small"><h4>Retention</h4><p class="muted">LinkedIn — регулярный авторитет (3–5 постов) + серия Stone Talks как причина возвращаться.</p></div>
+      <div class="card small"><h4>Referral</h4><p class="muted">Гости Stone Talks, репосты партнёров и диаспоры, коллаборации с отраслью.</p></div>
+      <div class="card small"><h4>Revenue</h4><p class="muted">Лиды через LinkedIn/DM → переговоры и контракты. <span class="tag t-fact">НУЖЕН ФАКТ</span> целевой продукт/оффер.</p></div>
+      <div class="card accent small"><h4 style="color:var(--gold2)">Узкое место недели</h4><p class="muted">Acquisition↔Activation: трафик есть, но без доступа к аналитике не видно, что конвертирует. Приоритет — открыть кабинеты.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 · Аудит «текущая ситуация»</div>
+    <h2>Каналы: динамика от базовой точки 06.07.2026</h2>
+    <div class="note" style="margin:14px 0 18px">
+      <b>О данных.</b> На этом запуске нет доступа к залогиненным кабинетам (Meta Business, LinkedIn, TikTok, YouTube Studio), а прямое чтение публичных профилей было заблокировано (в автоматическом облачном запуске запрос доступа к URL некому подтвердить). Поэтому фактические цифры за неделю — <span class="tag t-need">нужен доступ</span>. Единственные твёрдые цифры — базовая точка 06.07.2026 из брифа. Ничего не выдумано.
+    </div>
+
+    <div class="grid g4">
+      <div class="card kpi"><span class="l"><span class="pill p-ig">IG</span></span><span class="n">4 550</span><span class="d">подписчиков · 237 постов <span class="dim">(база 06.07)</span></span></div>
+      <div class="card kpi"><span class="l"><span class="pill p-tt">TikTok</span></span><span class="n">579</span><span class="d">подписчиков · 5 052 лайка <span class="dim">(база 06.07)</span></span></div>
+      <div class="card kpi"><span class="l"><span class="pill p-yt">YouTube</span></span><span class="n">28</span><span class="d">подписчиков · 13 видео <span class="dim">(база 06.07)</span></span></div>
+      <div class="card kpi"><span class="l"><span class="pill p-li">LinkedIn</span></span><span class="n">—</span><span class="d">база не зафиксирована · <span class="tag t-need">уточнить</span></span></div>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <tr><th>Канал</th><th>База 06.07.2026</th><th>Сейчас</th><th>Охват / ER</th><th>Регулярность</th><th>Роль &amp; вывод</th></tr>
+        <tr><td><b>Instagram</b></td><td>4 550 / 237 постов</td><td><span class="tag t-need">нужен доступ</span></td><td><span class="tag t-need">нужен доступ</span></td><td>2 карусели/день (Инесса)</td><td class="small muted"><b>Флагман охвата/лидов.</b> Большой архив; без доступа не видно, какие форматы растят профиль. Приоритет на открытие статистики.</td></tr>
+        <tr><td><b>TikTok</b></td><td>579 / 5 052 лайка</td><td><span class="tag t-need">нужен доступ</span></td><td><span class="tag t-need">нужен доступ</span></td><td>нерегулярно <span class="tag t-est">[оценка]</span></td><td class="small muted"><b>Канал холодного охвата.</b> Низкая база при хорошем лайк/подписчик — потенциал есть, нужна частота и системные хуки 1–2 сек.</td></tr>
+        <tr><td><b>YouTube</b></td><td>28 / 13 видео</td><td><span class="tag t-need">нужен доступ</span></td><td><span class="tag t-need">нужен доступ</span></td><td>редко</td><td class="small muted"><b>Актив длинного хвоста + Shorts.</b> Текстовый слой (заголовок-вопрос, главы, субтитры) важнее просмотров — его читают ИИ-ассистенты.</td></tr>
+        <tr><td><b>LinkedIn</b></td><td>—</td><td><span class="tag t-need">нужен доступ</span></td><td><span class="tag t-need">нужен доступ</span></td><td>запускаем</td><td class="small muted"><b>Канал авторитета и лидов (приоритет).</b> Базу надо зафиксировать сейчас, чтобы со следующей недели считать динамику.</td></tr>
+      </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <h3>Что мерим (3 группы метрик)</h3>
+        <ul class="clean small">
+          <li><b>Охват:</b> показы, охват, прирост подписчиков по дням.</li>
+          <li><b>Вовлечение:</b> ER, <b>комментарии</b> (весят больше лайков), репосты, сохранения.</li>
+          <li><b>Конверсия:</b> клики, визиты профиля, входящие DM, лиды.</li>
+          <li>Карусели судим по сохранениям/репостам, видео — по досматриваемости и подпискам.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Обязательные выводы недели</h3>
+        <ul class="clean small">
+          <li>Топ-3 / худшие-3 публикации — <span class="tag t-need">нужен доступ</span></li>
+          <li>Тренд подписчиков и ER vs прошлая неделя — <span class="tag t-need">нужен доступ</span></li>
+          <li>Лучшее время публикации по данным — <span class="tag t-need">нужен доступ</span></li>
+          <li>Сверка с журналом Инессы <code>carousel-log.md</code> — <b>файла в репозитории нет</b>, данных о результатах каруселей нет → выводов не делаю.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h3>Сильные стороны</h3><ul class="clean small"><li>Редкое позиционирование «The Voice of Stone» — ниша почти свободна.</li><li>Готовый конвейер контента: 2 карусели/день от Инессы.</li><li>Большой архив IG (237 постов) — есть что переупаковать.</li><li>Тема «ИИ в камне» даёт отстройку и цитируемость у ИИ-ассистентов.</li></ul></div>
+      <div class="card"><h3>Пробелы &amp; что чинить</h3><ul class="clean small"><li>Нет доступа к аналитике → решения вслепую. <b>Задача №1.</b></li><li>LinkedIn как приоритет ещё не разогнан; базу не зафиксировали.</li><li>Нет журнала каруселей с результатами → нечему учить следующую неделю.</li><li>TikTok/YouTube нерегулярны; хуки и частота не систематизированы.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · Контент-стратегия</div>
+    <h2>Три контент-столпа &amp; баланс 70/20/10</h2>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><h3>P1 · Цепочка ценности камня</h3><p class="small muted">Карьер → блок → слэб → обработка → объект. Провенанс, качество, прослеживаемость. Для архитекторов и девелоперов.</p><p class="small dim" style="margin-top:6px">Ядро авторитета — <b>70%</b>.</p></div>
+      <div class="card"><h3>P2 · Бизнес без лака</h3><p class="small muted">Реальность каменного бизнеса: логистика, брак, переговоры, экспорт, маржа. Для предпринимателей и партнёров.</p><p class="small dim" style="margin-top:6px">Доверие/личность — <b>20%</b>.</p></div>
+      <div class="card"><h3>P3 · ИИ в традиционной отрасли</h3><p class="small muted">ИИ для подбора, контроля качества, визуализации, учёта камня. Для прогрессивных девелоперов и дистрибьюторов.</p><p class="small dim" style="margin-top:6px">Смелый эксперимент — <b>10%</b>.</p></div>
+    </div>
+
+    <div class="card accent" style="margin-top:16px">
+      <h3 style="color:var(--gold2)">Баланс 70/20/10</h3>
+      <div class="bar" style="margin-top:8px">
+        <i style="width:70%;background:linear-gradient(90deg,#c8a86b,#e6cf9a)"></i>
+        <i style="width:20%;background:#8d8577"></i>
+        <i style="width:10%;background:#6f6457"></i>
+      </div>
+      <p class="small dim" style="margin-top:8px">70% P1 (проверенное ядро) · 20% P2 (смежное, личное) · 10% P3 (высоко-вариативный эксперимент).</p>
+    </div>
+
+    <h2 style="margin-top:32px">Флагман недели → мультипликация</h2>
+    <div class="card" style="margin-top:12px">
+      <p class="small"><b>Флагман (P1):</b> «Путь одного слэба травертина — от карьера до фасада». Один сюжет, из которого собирается вся неделя: 3–5 постов, карусели, 4 коротких клипа, карточка с цифрой. <span class="tag t-fact">НУЖЕН ФАКТ</span> конкретный карьер/объект, сроки стадий, % брака, вес партии.</p>
+    </div>
+
+    <h2 style="margin-top:28px">Недельный план · 05.10 – 11.10.2026</h2>
+    <p class="small dim">Один CTA на единицу. LinkedIn: 200–300 слов, целевая фраза в первых словах, без внешних ссылок в теле, без длинного тире, технические детали и названные сущности. IG-ленту закрывают 2 карусели Инессы в день (по брифу) — ниже план Reels/Stories и остальных каналов.</p>
+    <div class="scroll">
+      <table>
+        <tr><th>День</th><th>Канал</th><th>Столп</th><th>Формат</th><th>Хук (черновик)</th><th>CTA</th></tr>
+        <tr><td><b>Пн 05.10</b></td><td><span class="pill p-ig">IG</span></td><td>P1</td><td>Stories (анонс+опрос)</td><td class="hk">Which facade stone would you trust for 50 years?</td><td>Ответь в опросе</td></tr>
+        <tr><td></td><td colspan="5" class="small dim">Съёмочный день: материал для флагмана (5 стадий). Брифы команде отправлены.</td></tr>
+        <tr><td><b>Вт 06.10</b></td><td><span class="pill p-li">LinkedIn</span></td><td>P1</td><td>Пост #1 · 250 слов</td><td class="hk">A travertine block passes 5 checks before it reaches a facade.</td><td>Сохрани чек-лист</td></tr>
+        <tr><td></td><td><span class="pill p-ig">IG</span></td><td>P1</td><td>Reel 1 · 20с</td><td class="hk">From quarry to facade in 5 stages</td><td>Смотри карусель в профиле</td></tr>
+        <tr><td></td><td><span class="pill p-tt">TikTok</span> <span class="pill p-yt">Shorts</span></td><td>P1</td><td>Клип 1 · 9:16</td><td class="hk">This is where your facade actually starts</td><td>Подпишись за цепочку</td></tr>
+        <tr><td><b>Ср 07.10</b></td><td><span class="pill p-li">LinkedIn</span></td><td>P3</td><td>Пост #2 · 240 слов (10%)</td><td class="hk">We asked AI to grade 40 travertine slabs. It missed 6.</td><td>Напиши в DM свой кейс</td></tr>
+        <tr><td></td><td><span class="pill p-ig">IG</span></td><td>P3</td><td>Reel 2 · 25с</td><td class="hk">AI graded this slab. A master disagreed.</td><td>Сохрани, если работаешь с камнем</td></tr>
+        <tr><td></td><td><span class="pill p-tt">TikTok</span></td><td>P3</td><td>Клип 2 · 9:16</td><td class="hk">AI vs a 30-year stone master</td><td>Подпишись</td></tr>
+        <tr><td><b>Чт 08.10</b></td><td><span class="pill p-li">LinkedIn</span></td><td>P2</td><td>Пост #3 · 260 слов (20%)</td><td class="hk">A 12-ton shipment we rejected taught us 1 sourcing rule.</td><td>Поделись своим правилом в комментариях</td></tr>
+        <tr><td></td><td><span class="pill p-ig">IG</span></td><td>P2</td><td>Reel 3 · 25с + Stories Q&amp;A</td><td class="hk">The day we sent back 12 tons of stone</td><td>Задай вопрос в Stories</td></tr>
+        <tr><td></td><td><span class="pill p-yt">Shorts</span></td><td>P2</td><td>Клип 3 · 9:16</td><td class="hk">Why we rejected a full truck of stone</td><td>Подпишись</td></tr>
+        <tr><td><b>Пт 09.10</b></td><td><span class="pill p-li">LinkedIn</span></td><td>P1</td><td>Пост #4 · 220 слов</td><td class="hk">3 signs a slab will crack on site, not in the showroom.</td><td>Сохрани перед закупкой</td></tr>
+        <tr><td></td><td><span class="pill p-ig">IG</span></td><td>P1</td><td>Reel 4 · 20с</td><td class="hk">How to read a slab in 10 seconds</td><td>Сохрани карусель</td></tr>
+        <tr><td></td><td><span class="pill p-yt">YouTube</span></td><td>P1</td><td>Длинное видео <span class="tag t-fact">НУЖЕН ФАКТ</span></td><td class="hk">How does a travertine block become a facade?</td><td>Главы + субтитры обязательны</td></tr>
+        <tr><td><b>Сб 10.10</b></td><td><span class="pill p-ig">IG</span></td><td>P2</td><td>Reel 5 · карточка-цитата</td><td class="hk">The quote I wrote on my first quarry visit</td><td>Сохрани</td></tr>
+        <tr><td></td><td><span class="pill p-tt">TikTok</span></td><td>P1</td><td>Клип 4 · 9:16</td><td class="hk">One slab, three totally different facades</td><td>Подпишись</td></tr>
+        <tr><td><b>Вс 11.10</b></td><td><span class="pill p-ig">IG</span></td><td>P3</td><td>Stories recap + карусель</td><td class="hk">5 things stone taught me about AI this week</td><td>Листай итоги недели</td></tr>
+        <tr><td></td><td><span class="pill p-li">LinkedIn</span></td><td>—</td><td>День вовлечения</td><td class="small dim">Без поста: ответы на комментарии, 5–7 осмысленных комментариев в лентах архитекторов/девелоперов.</td><td>—</td></tr>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Правила хуков соблюдены:</b> конкретный факт/цифра/история в каждом; число в хуке = числу пунктов; запрещены «It's not X, it's Y», списки отрицаний, длинное тире в EN, эмодзи-буллеты и концовки «Agree?/Thoughts?». Цифры в хуках — черновые, требуют подтверждения фактом от Тарона.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 · Stone Talks — шорт-лист гостей</div>
+    <h2>3 кандидата · только армяне (Армения / диаспора)</h2>
+    <p class="small muted" style="max-width:780px">Главный критерий — совпадение аудитории с аудиторией Тарона (кто подписан, а не сколько). Оценки соцсетей — качественные <span class="tag t-est">[оценка]</span>, цифры подписчиков/ER не верифицированы: нет доступа к аналитике и прямому чтению профилей. Подтверждение контактов и метрик — задача Тарону.</p>
+
+    <div class="scroll">
+      <table>
+        <tr><th>Кандидат</th><th>Аудитория</th><th>Вовлечение</th><th>Бренд</th><th>Выгода</th><th>Орг.</th><th>Σ</th></tr>
+        <tr><td><b>Вага Сафарян</b> (Armenian Basalt Company)</td><td>5</td><td>3</td><td>5</td><td>4</td><td>4</td><td><b>21</b></td></tr>
+        <tr><td><b>Рубен Аракелян</b> (бюро WALL)</td><td>4</td><td>4</td><td>4</td><td>5</td><td>3</td><td><b>20</b></td></tr>
+        <tr><td><b>Studio HETANOS</b> (армянская дизайн-линия)</td><td>4</td><td>4</td><td>5</td><td>3</td><td>4</td><td><b>20</b></td></tr>
+      </table>
+      <p class="small dim">Шкала 1–5: соответствие аудитории · качество вовлечения · совместимость с брендом · взаимная выгода · простота организации. Оценки — экспертное суждение Мадлен на публичных данных <span class="tag t-est">[оценка]</span>.</p>
+    </div>
+
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <h3>Вага Сафарян</h3>
+        <p class="small dim" style="margin-top:-2px">Основатель / управляющий, Armenian Basalt Company (ABC)</p>
+        <p class="small muted"><b>Чем силён:</b> основатель производителя армянского базальта, экспорт и работа с карьером — живое воплощение «цепочки ценности». Профиль на LinkedIn подтверждён.</p>
+        <p class="small"><b>Соцсети <span class="tag t-est">[оценка]</span>:</b> LinkedIn — B2B-аудитория камня/стройки/экспорта, точное попадание в ядро Тарона; метрики не верифицированы.</p>
+        <h4 style="margin-top:10px">Темы</h4>
+        <ul class="clean small"><li>Базальт: от вулкана до фасада.</li><li>Экспорт армянского камня: барьеры и рынки.</li><li>Контроль качества на карьере.</li><li>Почему мир недооценивает армянский камень.</li></ul>
+        <h4 style="margin-top:8px">Вирусные вопросы</h4>
+        <div class="q">Сколько тонн породы нужно, чтобы получить один «идеальный» слэб?</div>
+        <div class="q">Какой самый дорогой брак был на твоём карьере?</div>
+        <div class="q">Чем армянский базальт реально отличается — на срезе, не на словах?</div>
+        <div class="q">Что иностранный заказчик видит первым и всегда ошибается?</div>
+        <h4 style="margin-top:8px">План нарезки</h4>
+        <p class="small muted">4 клипа (базальт-факт, брак, экспорт-инсайт, личная история) · 2 поста LinkedIn (экспорт; контроль качества) · 1 карусель «базальт за 6 стадий».</p>
+        <p class="small dim" style="margin-top:6px"><b>Самопродвижение:</b> репост клипа о своём карьере + тег ABC; взаимный анонс в stories.</p>
+      </div>
+      <div class="card">
+        <h3>Рубен Аракелян</h3>
+        <p class="small dim" style="margin-top:-2px">Архитектор, основатель бюро WALL (среди проектов — БЦ «STONE»)</p>
+        <p class="small muted"><b>Чем силён:</b> публичный архитектор, спикер (РБК, archi.ru, форумы), говорит о материале, пустоте и смысле. Аудитория — архитекторы и девелоперы, ядро Тарона.</p>
+        <p class="small"><b>Соцсети <span class="tag t-est">[оценка]</span>:</b> силён в профессиональных медиа и на сцене; охваты стоит брать через публикации и выступления, соц-метрики не верифицированы.</p>
+        <h4 style="margin-top:10px">Темы</h4>
+        <ul class="clean small"><li>Камень как материал смысла в современной архитектуре.</li><li>Как архитектор выбирает камень и кому доверяет.</li><li>Диалог архитектора и производителя.</li><li>Что такое «честная» фактура фасада.</li></ul>
+        <h4 style="margin-top:8px">Вирусные вопросы</h4>
+        <div class="q">Какой камень ты никогда не поставишь на фасад и почему?</div>
+        <div class="q">Что архитекторы врут себе про натуральный камень?</div>
+        <div class="q">Проект, где камень спас плохую идею?</div>
+        <div class="q">Чего ты ждёшь от поставщика, но почти не получаешь?</div>
+        <h4 style="margin-top:8px">План нарезки</h4>
+        <p class="small muted">5 клипов (выбор камня, честная фактура, спор с заказчиком, ошибка молодого архитектора, про «STONE») · 2 поста LinkedIn (выбор камня; архитектор↔поставщик) · 1 карусель «5 правил камня на фасаде».</p>
+        <p class="small dim" style="margin-top:6px"><b>Самопродвижение:</b> анонс выпуска в профессиональной ленте + репост клипа о проекте.</p>
+      </div>
+      <div class="card">
+        <h3>Studio HETANOS</h3>
+        <p class="small dim" style="margin-top:-2px">Армянская дизайн-студия · мебель и объекты из камня/туфа</p>
+        <p class="small muted"><b>Чем силён:</b> превращает армянское наследие (туф, камень) в современные объекты — буквально финал «цепочки ценности». Сильная визуальная история для IG/Reels.</p>
+        <p class="small"><b>Соцсети <span class="tag t-est">[оценка]</span>:</b> визуально-ориентированная аудитория дизайна/архитектуры; высокая совместимость с эстетикой бренда; метрики не верифицированы.</p>
+        <h4 style="margin-top:10px">Темы</h4>
+        <ul class="clean small"><li>Туф из наследия в современный объект.</li><li>Как камень диктует форму.</li><li>Ремесло vs производство: где граница.</li><li>Армянская идентичность в мировом дизайне.</li></ul>
+        <h4 style="margin-top:8px">Вирусные вопросы</h4>
+        <div class="q">Что камень разрешает сделать, а что запрещает?</div>
+        <div class="q">Сколько камня уходит в отход на один объект?</div>
+        <div class="q">Почему туф — это не «дёшево и сердито»?</div>
+        <div class="q">Какой объект заставил вас переосмыслить материал?</div>
+        <h4 style="margin-top:8px">План нарезки</h4>
+        <p class="small muted">4 клипа (рождение объекта, отход/честность, туф-миф, процесс) · 1 пост LinkedIn (ремесло↔производство) · 1 карусель «от туфа к объекту».</p>
+        <p class="small dim" style="margin-top:6px"><b>Самопродвижение:</b> IG-коллаб (совместный Reel), репост процесса с тегом студии.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Проверка перед приглашением (Тарону):</b> подтвердить контакты и актуальные соц-метрики (ER важнее числа подписчиков), просмотреть публикации за 3 месяца на предмет конфликтов/неуместного контента. Вопросы спроектированы под нарезку — каждый даёт самостоятельный ответ на 15–60 сек.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 · Задачи команде · Trello «🤖 AI задачи»</div>
+    <h2>Раздача недели · префикс [Маркетинг], один ответственный, дедлайн</h2>
+    <p class="small dim">Задачи на армянском в колонке «🤖 AI задачи». На этом запуске Trello-подключение вернуло ошибку (аккаунт не распознан) — задачи ниже как список; поставить в доску, когда подключение восстановится.</p>
+    <div class="scroll">
+      <table>
+        <tr><th>Ответственный</th><th>Задача</th><th>Дедлайн</th></tr>
+        <tr><td><b>@merikarapetyan3</b><br><span class="dim small">SMM</span></td><td>[Маркетинг] Опубликовать 4 поста LinkedIn (Вт–Пт) и 5 Reels по контент-плану недели; хук в первом кадре, один CTA.</td><td>Пт 09.10</td></tr>
+        <tr><td><b>@merikarapetyan3</b><br><span class="dim small">SMM</span></td><td>[Маркетинг] Нарезать 4 клипа 9:16 для TikTok/Shorts из флагмана, субтитры 2 строки по 3–5 слов, хук 1–2 сек.</td><td>Чт 08.10</td></tr>
+        <tr><td><b>@annasargsyan47</b><br><span class="dim small">Дизайн</span></td><td>[Маркетинг] Сделать 2 карточки-цитаты и обложку YouTube-видео «цепочка травертина» в стиле бренда.</td><td>Чт 08.10</td></tr>
+        <tr><td><b>@ohanjanyanani</b><br><span class="dim small">Реклама</span></td><td>[Маркетинг] Запустить тест продвижения 2 лучших Reels на аудиторию «архитекторы/девелоперы», бюджет согласовать, снять первые данные.</td><td>Пт 09.10</td></tr>
+        <tr><td><b>@syuzannaavetyan</b><br><span class="dim small">Координация</span></td><td>[Маркетинг] Получить доступ к кабинетам аналитики (Meta/LinkedIn/TikTok/YouTube) и зафиксировать базу LinkedIn; собрать результаты каруселей для журнала.</td><td>Ср 07.10</td></tr>
+        <tr><td><b>@taronbadalyan1</b><br><span class="dim small">Личное</span></td><td>[Маркетинг] Прислать факты для флагмана (карьер, сроки стадий, % брака, вес партии) и подтвердить 3 гостей Stone Talks + контакты.</td><td>Вт 06.10</td></tr>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px"><b>[НУЖЕН ФАКТ ОТ ТАРОНА]</b> — закрывает задача @taronbadalyan1: реальные цифры для цепочки травертина, целевой оффер/продукт для Revenue, подтверждение гостей и их контактов. Без этих фактов цифры в хуках остаются черновыми и не публикуются как факт.</div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    The Voice of Stone · Маркетинг-дашборд · Мадлен (AI CMO) · неделя 05.10–11.10.2026 · Обновлено 2026-10-05.<br>
+    Принцип фактов: только реальные данные; оценки помечены [оценка]; пробелы — [НУЖЕН ФАКТ ОТ ТАРОНА]; ничего не выдумано. Бриф Инессы — <code>stonetalks/brief.md</code>.
+  </div>
+</footer>
+
+</body>
+</html>
