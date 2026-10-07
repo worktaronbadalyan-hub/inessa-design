@@ -10,3 +10,6 @@
 # 2026-10-06: брифа Мадлен на сегодня нет — обе карусели сделаны на свои темы.
 2026-10-06 | а | Value-Stack | Value | 5 TRAVERTINE FINISHES AND WHERE EACH BELONGS | спецификация / выбор отделки | архитектор, дизайнер интерьера | сохранения (Save)
 2026-10-06 | б | Hack List | Bold claim | TRAVERTINE DOESN'T CRACK. THE INSTALL DOES. | монтаж камня | девелопер, подрядчик | сохранения (Save)
+# 2026-10-07: бриф Мадлен на сегодня есть — A по брифу (ВТ→ПН), B своя тема.
+2026-10-07 | а | Hack List | список ошибок | 5 MISTAKES BUYERS MAKE WITH STONE | P2 — бизнес без лака | дистрибьюторы | репосты (Reposts)
+2026-10-07 | б | Value-Stack | value (ways to) | 5 WAYS TO SPOT FAKE STONE | P1 — цепочка ценности камня | архитекторы/клиенты | сохранения (Save)
