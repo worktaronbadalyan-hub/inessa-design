@@ -13,3 +13,6 @@
 # 2026-10-07: бриф Мадлен на сегодня есть — A по брифу (ВТ→ПН), B своя тема.
 2026-10-07 | а | Hack List | список ошибок | 5 MISTAKES BUYERS MAKE WITH STONE | P2 — бизнес без лака | дистрибьюторы | репосты (Reposts)
 2026-10-07 | б | Value-Stack | value (ways to) | 5 WAYS TO SPOT FAKE STONE | P1 — цепочка ценности камня | архитекторы/клиенты | сохранения (Save)
+# 2026-10-08: бриф Мадлен на сегодня есть — A по брифу (ЧТ), B своя тема.
+2026-10-08 | а | Demo Walkthrough | пошаговый путь | FROM QUARRY TO FACADE IN 5 STEPS | P1 — цепочка создания ценности камня | Девелоперы | подписка (Follow)
+2026-10-08 | б | Hack List | миф/Warning | 5 NATURAL STONE MYTHS THAT COST YOU MONEY | P1 — цепочка создания ценности камня | Архитекторы/дизайнеры | сохранения (Save)
