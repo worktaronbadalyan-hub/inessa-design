@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INESSA · Дизайн-дашборд · 08.10.2026</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#0B0B0B;--pan:#141414;--line:#262626;--lime:#C6F03C;--ink:#fff;--dim:#9a9a9a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--lime)}
+header{padding:26px 30px;border-bottom:1px solid var(--line);background:#0E0E0E}
+.brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dmk{width:22px;height:22px;background:var(--lime);transform:rotate(45deg);border-radius:4px}
+h1{font-family:"Anton";font-weight:400;font-size:26px;letter-spacing:.5px;margin:0;line-height:1}
+.sub{color:var(--dim);font-size:13px;margin-top:8px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 24px 60px}
+.car{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:20px 20px 24px;margin-bottom:26px}
+.car h2{font-family:"Anton";font-weight:400;font-size:23px;margin:0 0 4px;letter-spacing:.4px}
+.car .hook{color:var(--lime);font-size:14px;font-weight:600;margin:0 0 8px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.3px;color:#cdd6c0;border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+.tag b{color:var(--lime);font-weight:700}
+.car .src{color:var(--dim);font-size:12px;margin:0 0 16px;line-height:1.5}
+.cap{color:#cfcfcf;font-size:12.5px;line-height:1.6;background:#0E0E0E;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 16px;white-space:pre-wrap}
+.cap b{color:#fff}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.row{grid-template-columns:1fr 1fr}}
+.cell{display:flex;flex-direction:column;gap:7px}
+.cvwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000;aspect-ratio:1080/1350}
+canvas{width:100%;display:block}
+.btn{appearance:none;border:1px solid var(--lime);background:transparent;color:var(--lime);font-family:"Archivo";font-weight:700;font-size:12px;padding:7px 0;border-radius:8px;cursor:pointer;letter-spacing:.3px}
+.btn:hover{background:var(--lime);color:#111}
+.btn.solid{background:var(--lime);color:#111}
+.tools{display:flex;gap:10px;margin:2px 0 16px;flex-wrap:wrap}
+.tools .btn{padding:9px 16px;font-size:13px}
+.foot{color:var(--dim);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding:18px 30px 40px;max-width:1180px;margin:0 auto}
+.foot a{text-decoration:none}
+.nav{margin-left:auto;font-size:13px}</style></head>
+<body>
+<header><div class="brandrow"><div class="dmk"></div><h1>INESSA — ДИЗАЙН-ДАШБОРД</h1>
+<span class="nav"><a href="covers.html">Обложки Reels 9:16 →</a></span></div>
+<div class="sub">Taron Badalyan · «The Voice of Stone» · комплект дня <b>08.10.2026</b> · 2 карусели × 7 слайдов (4:5, 1080×1350). Карусель A — по брифу Мадлен (08.10), B — своя тема. Нажмите «PNG», чтобы скачать слайд.</div></header>
+<div class="wrap" id="app"></div>
+<div class="foot">Сгенерировано Инессой — ИИ UI/UX-дизайнером личного бренда Тарона Бадаляна. Рендер — на &lt;canvas&gt; 1080×1350, шрифты Anton / Archivo (Google Fonts). · <b style="color:#fff">Архив:</b> <a href="archive/2026-10-07.html">07.10.2026</a> · <a href="archive/2026-10-06.html">06.10.2026</a> · <a href="archive/2026-10-05.html">05.10.2026</a> · <a href="archive/2026-10-04.html">04.10.2026</a> · <a href="archive/2026-10-03.html">03.10.2026</a> · <a href="archive/2026-10-02.html">02.10.2026</a> · <a href="archive/2026-10-01.html">01.10.2026</a> · <a href="archive/2026-09-30.html">30.09.2026</a> · <a href="archive/2026-09-29.html">29.09.2026</a> · <a href="archive/2026-09-28.html">28.09.2026</a> · <a href="archive/2026-09-27.html">27.09.2026</a> · <a href="archive/2026-09-25.html">25.09.2026</a> · <a href="archive/2026-09-24.html">24.09.2026</a></div>
+<script>var DATA={"date":"2026-10-08","carousels":[{"id":"A","title_en":"From Quarry to Facade in 5 Steps","hook_en":"From quarry to facade in 5 steps. The path a slab takes before it reaches the wall.","framework":"Demo Walkthrough","pillar":"P1 — the value chain of stone","segment":"Developers","goal":"follows","src":"brief Madlen 08.10 (a)","source":"Карусель по брифу Мадлен (08.10) · каркас Demo Walkthrough · столп P1 — цепочка создания ценности камня · сегмент: Девелоперы · цель: подписка · показано как общий метод (бриф это разрешает): реальный объект [НУЖЕН ФАКТ ОТ ТАРОНА] не подтверждён в материалах, конкретный проект не называем","caption_en":"A stone facade is decided long before install day. This is the path a slab travels from the quarry block to the wall, in five steps.\n\nFollow if you are planning one.\n\n#naturalstone #travertine #facade #architecture #stonefacade","slides":[{"type":"hook","theme":"dark","seg":"DEVELOPERS","lines":[[["FROM",0],["QUARRY",1]],[["TO",0],["FACADE",1]],[["IN",0],["5",0],["STEPS",0]]],"size":150,"lh":150,"sub":["The path a facade takes before it","reaches the wall."]},{"type":"step","theme":"light","tag":"STEP 1","counter":"1 of 5","tsize":92,"title":["Pick the block"],"body":["At the quarry the block is chosen","for the project's size and","geometry, not just its colour."]},{"type":"step","theme":"dark","tag":"STEP 2","counter":"2 of 5","tsize":92,"title":["Cut to the pattern"],"body":["The block is sawn into slabs.","The cut follows how the veining","should read across the facade."]},{"type":"step","theme":"light","tag":"STEP 3","counter":"3 of 5","tsize":92,"title":["Finish for the job"],"body":["Polished, honed, thermal or","bush-hammered. Each finish changes","grip, glare and how the wall ages."]},{"type":"step","theme":"dark","tag":"STEP 4","counter":"4 of 5","tsize":92,"title":["Mark every slab"],"body":["Each slab is checked and numbered","for its exact place in the layout,","so the wall goes up in order."]},{"type":"step","theme":"light","tag":"STEP 5","counter":"5 of 5","tsize":92,"title":["Ship and install"],"body":["The batch is packed and sequenced","so it arrives whole and on time,","ready to hang to the plan."]},{"type":"cta","theme":"dark","kicker":"ONE THING TO DO","lines":["Planning a stone","facade? Follow for","more like this."],"size":104,"lh":104,"action":"FOLLOW  →","brandTop":"TARON BADALYAN","brandBot":"The Voice of Stone"}]},{"id":"B","title_en":"5 Natural Stone Myths That Cost You Money","hook_en":"5 natural stone myths that cost you money. Repeated on site, believed in showrooms.","framework":"Hack List","pillar":"P1 — the value chain of stone","segment":"Architects and designers","goal":"saves","src":"own viral topic (b)","source":"Своя вирусная тема · каркас Hack List (миф vs факт) · столп P1 — цепочка создания ценности камня · сегмент: Архитекторы/дизайнеры · цель: сохранения · опора: реальные свойства натурального камня (впитывание, травление кислотой, финишы); без выдуманных цифр. Не дублирует темы/каркас за 7 дней","caption_en":"Most stone problems start as myths repeated on site. Five of them quietly cost projects money, and the facts that fix each one are inside.\n\nSave it before your next spec.\n\n#naturalstone #travertine #stonecare #architecture #interiordesign","slides":[{"type":"hook","theme":"dark","seg":"ARCHITECTS AND DESIGNERS","lines":[[["5",0],["STONE",0],["MYTHS",1]],[["THAT",0],["COST",0]],[["YOU",0],["MONEY",1]]],"size":150,"lh":150,"sub":["Repeated on site, believed in showrooms.","Here are the facts."]},{"type":"value","theme":"light","tag":"MYTH 1","counter":"1 of 5","tsize":76,"title":["Sealing makes stone","stainproof"],"bad":["A sealer only slows how fast the","stone drinks liquid."],"good":["It buys time to wipe spills. It does","nothing against acid etching."]},{"type":"value","theme":"dark","tag":"MYTH 2","counter":"2 of 5","tsize":80,"title":["Etch marks are stains"],"bad":["A stain is colour the stone","absorbed."],"good":["An etch is a dull spot where acid","ate the surface. Different fixes."]},{"type":"value","theme":"light","tag":"MYTH 3","counter":"3 of 5","tsize":80,"title":["All stone needs the","same care"],"bad":["One cleaner for everything can dull","or mark the wrong stone."],"good":["Travertine, marble and granite differ","in hardness and absorption."]},{"type":"value","theme":"dark","tag":"MYTH 4","counter":"4 of 5","tsize":80,"title":["Stone is too","high-maintenance"],"bad":["Neglect and the wrong finish make","it look worse fast."],"good":["With a honed finish and the odd","reseal, stone takes daily use."]},{"type":"value","theme":"light","tag":"MYTH 5","counter":"5 of 5","tsize":80,"title":["Polished beats honed"],"bad":["Polished shows every etch and","scratch under light."],"good":["Finish is a style choice. Honed hides","wear; polished shows it."]},{"type":"cta","theme":"dark","kicker":"ONE THING TO DO","lines":["Know the real stone.","Save this before your","next spec."],"size":104,"lh":104,"action":"SAVE  →","brandTop":"TARON BADALYAN","brandBot":"The Voice of Stone"}]}]};
+
+var LIME='#C6F03C',DARK='#0E0E0E',LIGHT='#F0F0EE',WHITE='#fff',DIMD='#969696',DIML='#6e6e6e',BK='#111';
+var M=84,W=1080,H=1350;
+function FN(w,s,f){return (w?w+' ':'')+s+'px "'+f+'"';}
+function tw(c,t){return c.measureText(t).width;}
+function trk(c,x,y,t,fill,ls){c.save();c.letterSpacing=ls+'px';c.fillStyle=fill;c.textBaseline='top';c.fillText(t,x,y);c.restore();}
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function glow(c,cx,cy,r,a,W,H){var g=c.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,'rgba(198,240,60,'+a+')');g.addColorStop(1,'rgba(198,240,60,0)');c.fillStyle=g;c.fillRect(0,0,W,H);}
+function halftone(c,x0,y0,x1,y1,rgb,maxa,W,H){var step=27,nx=Math.floor((x1-x0)/step),ny=Math.floor((y1-y0)/step);for(var i=0;i<=nx;i++)for(var j=0;j<=ny;j++){var t=((i/Math.max(nx,1))+(j/Math.max(ny,1)))/2,rad=1.2+t*6,a=maxa*t;c.fillStyle='rgba('+rgb+','+a+')';c.beginPath();c.arc(x0+i*step,y0+j*step,rad,0,7);c.fill();}}
+function pill(c,x,y,t,size,wt,fg,bg,padx,pady,stroke){c.font=FN(wt,size,'Archivo');var w=tw(c,t)+padx*2,h=size+pady*2;rr(c,x,y,w,h,h/2);if(stroke){c.strokeStyle=bg;c.lineWidth=3;c.stroke();}else{c.fillStyle=bg;c.fill();}c.fillStyle=fg;c.textBaseline='middle';c.fillText(t,x+padx,y+h/2+1);c.textBaseline='top';return [w,h];}
+function logo(c,ink){var lx=M,ly=58;c.fillStyle=LIME;rr(c,lx,ly,38,38,9);c.fill();c.fillStyle=DARK;c.beginPath();c.moveTo(lx+10,ly+28);c.lineTo(lx+19,ly+9);c.lineTo(lx+28,ly+28);c.closePath();c.fill();c.font=FN('700',25,'Archivo');trk(c,lx+54,ly+7,'TARON BADALYAN',ink,0.3);}
+function pageno(c,i,ink,W){c.font=FN('700',25,'Archivo');var cur=('0'+i).slice(-2),tot='/07',wt0=tw(c,tot),wc=tw(c,cur);trk(c,W-M-wt0-wc,65,cur,LIME,0);trk(c,W-M-wt0,65,tot,ink,0);}
+function arrowC(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();var s=r*0.5,lw=Math.max(5,r/9);c.strokeStyle=DARK;c.lineWidth=lw;c.lineCap='round';c.beginPath();c.moveTo(cx-s*0.7,cy);c.lineTo(cx+s*0.6,cy);c.moveTo(cx+s*0.1,cy-s*0.55);c.lineTo(cx+s*0.6,cy);c.moveTo(cx+s*0.1,cy+s*0.55);c.lineTo(cx+s*0.6,cy);c.stroke();c.lineCap='butt';}
+function marker(c,cx,cy,r,good){if(good){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=BK;c.lineWidth=Math.max(4,r/4);c.lineCap='round';c.beginPath();c.moveTo(cx-r*0.45,cy+r*0.05);c.lineTo(cx-r*0.1,cy+r*0.4);c.lineTo(cx+r*0.5,cy-r*0.35);c.stroke();c.lineCap='butt';}else{c.strokeStyle='#5a5a5a';c.lineWidth=Math.max(3,r/6);c.beginPath();c.arc(cx,cy,r,0,7);c.stroke();c.beginPath();c.moveTo(cx-r*0.4,cy-r*0.4);c.lineTo(cx+r*0.4,cy+r*0.4);c.moveTo(cx-r*0.4,cy+r*0.4);c.lineTo(cx+r*0.4,cy-r*0.4);c.stroke();}}
+function base(c,theme,W,H){var dark=theme=='dark';c.fillStyle=dark?DARK:LIGHT;c.fillRect(0,0,W,H);if(dark){glow(c,W+40,-40,460,0.22,W,H);glow(c,-60,H+60,520,0.17,W,H);halftone(c,W-360,H-360,W-30,H-120,'198,240,60',0.32,W,H);}else{glow(c,W+60,H+60,420,0.12,W,H);halftone(c,W-360,H-360,W-30,H-120,'120,120,120',0.24,W,H);}}
+function drawSlide(c,s,idx){var dark=s.theme=='dark',ink=dark?WHITE:BK,dim=dark?DIMD:DIML;base(c,s.theme,W,H);logo(c,ink);pageno(c,idx,ink,W);
+ if(s.type=='hook'){pill(c,M,172,s.seg,23,'700',BK,LIME,28,14,false);c.font=FN('400',s.size,'Anton');c.textBaseline='top';var y=300,sp=tw(c,' ');for(var i=0;i<s.lines.length;i++){var ln=s.lines[i],x=M;for(var k=0;k<ln.length;k++){c.fillStyle=ln[k][1]?LIME:ink;c.fillText(ln[k][0],x,y);x+=tw(c,ln[k][0])+sp;}y+=s.lh;}y+=46;c.font=FN('500',40,'Archivo');c.fillStyle=dim;for(var j=0;j<s.sub.length;j++){c.fillText(s.sub[j],M,y);y+=54;}arrowC(c,W-M-46,H-118,46);c.font=FN('700',24,'Archivo');c.fillStyle=ink;c.fillText('SWIPE',M,H-140);c.font=FN('500',24,'Archivo');c.fillStyle=dim;c.fillText('5 fast points',M,H-108);}
+ else if(s.type=='value'){var ph=pill(c,M,196,s.tag,24,'700',BK,LIME,28,16,false)[1];c.font=FN('700',26,'Archivo');c.fillStyle=dim;c.textBaseline='middle';c.fillText(s.counter,W-M-tw(c,s.counter),196+ph/2+1);c.textBaseline='top';c.font=FN('400',s.tsize,'Anton');c.fillStyle=ink;var y=300;for(var i=0;i<s.title.length;i++){c.fillText(s.title[i],M,y);y+=Math.round(s.tsize*1.04);}y+=48;c.strokeStyle=LIME;c.lineWidth=6;c.beginPath();c.moveTo(M,y-20);c.lineTo(M+120,y-20);c.stroke();c.font=FN('500',43,'Archivo');var r=26,tx=M+r*2+34;var rows=[[s.bad,false,dim],[s.good,true,ink]];for(var q=0;q<rows.length;q++){marker(c,M+r,y+r,r,rows[q][1]);c.fillStyle=rows[q][2];var ty=y;for(var m=0;m<rows[q][0].length;m++){c.fillText(rows[q][0][m],tx,ty);ty+=56;}y=ty+42;}arrowC(c,W-M-46,H-118,46);c.font=FN('700',24,'Archivo');c.fillStyle=ink;c.fillText('KEEP SWIPING',M,H-126);}
+ else if(s.type=='step'){var ph=pill(c,M,196,s.tag,24,'700',BK,LIME,28,16,false)[1];c.font=FN('700',26,'Archivo');c.fillStyle=dim;c.textBaseline='middle';c.fillText(s.counter,W-M-tw(c,s.counter),196+ph/2+1);c.textBaseline='top';c.font=FN('400',s.tsize,'Anton');c.fillStyle=ink;var y=300;for(var i=0;i<s.title.length;i++){c.fillText(s.title[i],M,y);y+=Math.round(s.tsize*1.04);}y+=46;c.strokeStyle=LIME;c.lineWidth=6;c.beginPath();c.moveTo(M,y-22);c.lineTo(M+120,y-22);c.stroke();y+=8;c.font=FN('500',44,'Archivo');c.fillStyle=ink;for(var b=0;b<s.body.length;b++){c.fillText(s.body[b],M,y);y+=60;}arrowC(c,W-M-46,H-118,46);c.font=FN('700',24,'Archivo');c.fillStyle=ink;c.fillText('KEEP SWIPING',M,H-126);}
+ else{pill(c,M,196,s.kicker,23,'700',BK,LIME,28,14,false);c.font=FN('400',s.size,'Anton');c.fillStyle=ink;c.textBaseline='top';var y=320;for(var i=0;i<s.lines.length;i++){c.fillText(s.lines[i],M,y);y+=s.lh;}y+=44;pill(c,M,y,s.action,34,'700',BK,LIME,40,22,false);c.strokeStyle=LIME;c.lineWidth=3;c.beginPath();c.moveTo(M,H-170);c.lineTo(W-M,H-170);c.stroke();c.font=FN('700',30,'Archivo');c.fillStyle=ink;c.fillText(s.brandTop,M,H-142);c.font=FN('500',28,'Archivo');c.fillStyle=LIME;c.fillText(s.brandBot,M,H-104);c.fillStyle=LIME;c.beginPath();c.arc(W-M-40,H-118,40,0,7);c.fill();c.fillStyle=DARK;c.beginPath();c.moveTo(W-M-54,H-104);c.lineTo(W-M-40,H-134);c.lineTo(W-M-26,H-104);c.closePath();c.fill();}}
+function dl(cv,name){cv.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},1500);},'image/png');}
+var app=document.getElementById('app');
+function build(){DATA.carousels.forEach(function(car){
+ var sec=document.createElement('div');sec.className='car';
+ var meta='<span class="tag"><b>'+car.id+'</b></span><span class="tag">каркас: '+car.framework+'</span><span class="tag">'+car.pillar+'</span><span class="tag">сегмент: '+car.segment+'</span><span class="tag">цель: '+car.goal+'</span>';
+ sec.innerHTML='<h2>'+car.id+'. '+car.title_en+'</h2><div class="hook">“'+car.hook_en+'”</div><div class="tags">'+meta+'</div><div class="src">Источник: '+car.source+'</div><div class="cap"><b>Подпись (caption):</b>\n'+car.caption_en+'</div><div class="tools"><button class="btn solid" data-all="'+car.id+'">↓ Скачать все PNG ('+car.slides.length+')</button></div>';
+ var row=document.createElement('div');row.className='row';
+ car.slides.forEach(function(s,ix){
+  var cell=document.createElement('div');cell.className='cell';
+  var cw=document.createElement('div');cw.className='cvwrap';
+  var cv=document.createElement('canvas');cv.width=1080;cv.height=1350;cw.appendChild(cv);
+  var b=document.createElement('button');b.className='btn';b.textContent='PNG · '+String(ix+1).padStart(2,'0');
+  var nm=car.id+'_'+String(ix+1).padStart(2,'0')+'_'+DATA.date+'.png';
+  b.onclick=function(){dl(cv,nm);};
+  cell.appendChild(cw);cell.appendChild(b);row.appendChild(cell);
+  var ctx=cv.getContext('2d');cv._nm=nm;cv._draw=function(){drawSlide(ctx,s,ix+1);};cv._draw();
+ });
+ sec.appendChild(row);app.appendChild(sec);
+ sec.querySelector('[data-all]').onclick=function(){var cvs=row.querySelectorAll('canvas'),k=0;(function nx(){if(k>=cvs.length)return;dl(cvs[k],cvs[k]._nm);k++;setTimeout(nx,500);})();};
+});}
+function redraw(){document.querySelectorAll('canvas').forEach(function(c){if(c._draw)c._draw();});}
+Promise.all([document.fonts.load('400 120px "Anton"'),document.fonts.load('400 40px "Archivo"'),document.fonts.load('500 40px "Archivo"'),document.fonts.load('600 25px "Archivo"'),document.fonts.load('700 30px "Archivo"')]).then(build).catch(build);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(redraw);
+</script></body></html>
