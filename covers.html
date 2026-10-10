@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>INESSA · Обложки Reels 9:16 · 09.10.2026</title>
+<title>INESSA · Обложки Reels 9:16 · 10.10.2026</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
 <style>:root{--bg:#0B0B0B;--pan:#141414;--line:#262626;--lime:#C6F03C;--ink:#fff;--dim:#9a9a9a}
@@ -25,22 +25,22 @@ canvas{width:100%;display:block}
 <body>
 <header><div class="brandrow"><div class="dmk"></div><h1>INESSA — ОБЛОЖКИ REELS 9:16</h1>
 <span class="nav"><a href="index.html">← К каруселям</a></span></div>
-<div class="sub">Taron Badalyan · «The Voice of Stone» · <b>09.10.2026</b> · 1080×1920, текст в верхней зоне (выше нижнего UI reels). Нажмите «PNG», чтобы скачать.</div></header>
+<div class="sub">Taron Badalyan · «The Voice of Stone» · <b>10.10.2026</b> · 1080×1920, текст в верхней зоне (выше нижнего UI reels). Нажмите «PNG», чтобы скачать.</div></header>
 <div class="wrap"><div class="row" id="app"></div></div>
 <div class="foot">Сгенерировано Инессой. Рендер на &lt;canvas&gt; 1080×1920, Anton / Archivo. Обложки ведут на одноимённые карусели дня.</div>
-<script>var DATA={"date":"2026-10-09","covers":[
-{"id":"A","seg":"DEVELOPERS","lines":["AI CAN'T FEEL","A HIDDEN CRACK"],"accent":1,"size":150,"sub":["Why a master still beats the model.","Full carousel on the page."],"from":"к карусели A (Rant / ИИ)"},
-{"id":"B","seg":"ARCHITECTS","lines":["OUTDOOR STONE","5 RULES THAT LAST"],"accent":1,"size":130,"sub":["Frost, rain and salt break the rest.","Save the full list."],"from":"к карусели B (Value-Stack / outdoor)"}
+<script>var DATA={"date":"2026-10-10","covers":[
+{"id":"A","seg":"STONE QUALITY","lines":["SPOT A WEAK SLAB","BEFORE IT SHIPS"],"accent":1,"size":126,"sub":["Five checks that need only your eyes.","Full carousel on the page."],"from":"к карусели A (Value-Stack / признаки)"},
+{"id":"B","seg":"HOW IT IS MADE","lines":["ROUGH BLOCK","TO A MIRROR"],"accent":1,"size":140,"sub":["The shine is ground in, not sprayed.","Save the full list."],"from":"к карусели B (Demo / полировка)"}
 ]};
-var LIME='#C6F03C',DARK='#0E0E0E',WHITE='#fff',DIM='#969696',BK='#111',M=84,W=1080,H=1920;
+var LIME='#C6F03C',DARK='#0E0E0E',WHITE='#fff',DIM='#b8b8b8',BK='#111',M=84,W=1080,H=1920;
 function FN(w,s,f){return (w?w+' ':'')+s+'px "'+f+'"';}
 function tw(c,t){return c.measureText(t).width;}
 function trk(c,x,y,t,fill,ls){c.save();c.letterSpacing=ls+'px';c.fillStyle=fill;c.textBaseline='top';c.fillText(t,x,y);c.restore();}
 function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
 function glow(c,cx,cy,r,a){var g=c.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,'rgba(198,240,60,'+a+')');g.addColorStop(1,'rgba(198,240,60,0)');c.fillStyle=g;c.fillRect(0,0,W,H);}
-function halftone(c,x0,y0,x1,y1,maxa){var step=27,nx=Math.floor((x1-x0)/step),ny=Math.floor((y1-y0)/step);for(var i=0;i<=nx;i++)for(var j=0;j<=ny;j++){var t=((i/Math.max(nx,1))+(j/Math.max(ny,1)))/2,rad=1.2+t*6,a=maxa*t;c.fillStyle='rgba(198,240,60,'+a+')';c.beginPath();c.arc(x0+i*step,y0+j*step,rad,0,7);c.fill();}}
+function halftone(c,x0,y0,x1,y1,maxa){var step=27,nx=Math.floor((x1-x0)/step),ny=Math.floor((y1-y0)/step);for(var i=0;i<=nx;i++)for(var j=0;j<=ny;j++){var t=((i/Math.max(nx,1))+((ny-j)/Math.max(ny,1)))/2,rad=1.2+t*6,a=maxa*t;c.fillStyle='rgba(198,240,60,'+a+')';c.beginPath();c.arc(x0+i*step,y0+j*step,rad,0,7);c.fill();}}
 function pill(c,x,y,t,size,fg,bg,padx,pady){c.font=FN('700',size,'Archivo');var w=tw(c,t)+padx*2,h=size+pady*2;rr(c,x,y,w,h,h/2);c.fillStyle=bg;c.fill();c.fillStyle=fg;c.textBaseline='middle';c.fillText(t,x+padx,y+h/2+1);c.textBaseline='top';}
-function draw(c,s){c.fillStyle=DARK;c.fillRect(0,0,W,H);glow(c,W+40,-60,560,0.20);glow(c,-80,H*0.42,620,0.14);halftone(c,W-380,H-1100,W-30,H-820,0.30);
+function draw(c,s){c.fillStyle=DARK;c.fillRect(0,0,W,H);glow(c,W+40,-60,560,0.20);glow(c,-80,H*0.42,620,0.13);halftone(c,W-380,H-1100,W-30,H-820,0.30);
 var lx=M,ly=86;c.fillStyle=LIME;rr(c,lx,ly,40,40,10);c.fill();c.fillStyle=DARK;c.beginPath();c.moveTo(lx+11,ly+30);c.lineTo(lx+20,ly+9);c.lineTo(lx+29,ly+30);c.closePath();c.fill();c.font=FN('700',27,'Archivo');trk(c,lx+58,ly+8,'TARON BADALYAN',WHITE,1.3);
 pill(c,M,250,s.seg,26,BK,LIME,30,16);
 c.font=FN('400',s.size,'Anton');c.textBaseline='top';var y=470;for(var i=0;i<s.lines.length;i++){c.fillStyle=i==s.accent?LIME:WHITE;c.fillText(s.lines[i],M,y);y+=Math.round(s.size*1.02);}
@@ -54,7 +54,7 @@ var cw=document.createElement('div');cw.className='cvwrap';var cv=document.creat
 var mt=document.createElement('div');mt.className='meta';mt.textContent='Обложка '+s.id+' — '+s.from;
 var b=document.createElement('button');b.className='btn';var nm='COVER_'+s.id+'_'+DATA.date+'.png';b.textContent='↓ PNG '+s.id+' (1080×1920)';b.onclick=function(){dl(cv,nm);};
 cell.appendChild(cw);cell.appendChild(mt);cell.appendChild(b);app.appendChild(cell);
-var ctx=cv.getContext('2d');cv._d=function(){draw(ctx,s);};cv._d();});}
+var ctx=cv.getContext('2d');cv._nm=nm;cv._d=function(){draw(ctx,s);};cv._d();});}
 function redraw(){document.querySelectorAll('canvas').forEach(function(c){if(c._d)c._d();});}
 Promise.all([document.fonts.load('400 120px "Anton"'),document.fonts.load('500 40px "Archivo"'),document.fonts.load('700 30px "Archivo"')]).then(build).catch(build);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(redraw);
