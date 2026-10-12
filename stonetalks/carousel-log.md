@@ -25,3 +25,6 @@
 # 2026-10-11: бриф Мадлен на сегодня есть — A по брифу (ВС), B своя тема.
 2026-10-11 | а | Demo Walkthrough | пошаговый путь | How we check a stone shipment in 5 steps | P2 — бизнес без лака | люди отрасли (приёмка) | подписка (Follow) | @badalyan.taron | EN
 2026-10-11 | б | Hack List | список ошибок | 5 AI mistakes teams keep making | Личный — ИИ в бизнесе для собственников | собственники и директора | лид / бесплатный AI-review | @badalyan.taron | EN
+# 2026-10-12: бриф Мадлен на сегодня есть — A по брифу (ПН 12.10), B своя тема.
+2026-10-12 | а | Hack List | список способов | 5 WAYS AI SPEEDS STONE SALES | P3 — ИИ в традиционной отрасли | Дистрибьюторы | сохранения (Save) | @badalyan.taron | EN
+2026-10-12 | б | Rant Callout | bold claim (мнение) | MARBLE BELONGS IN THE KITCHEN | Личный — камень/отрасль | дизайнеры интерьера / ремонт | подписка (Follow) | @badalyan.taron | EN
