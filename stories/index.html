@@ -1,125 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>СТОРИС · 17.10.2026, суббота</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сторис · 18.10.2026, воскресенье</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0E0E0E;--lime:#C6F03C;--fg:#FFFFFF;--mut:#9A9A9A;--card:#171717;--line:#2A2A2A}
+:root{--bg:#0E0E0E;--lime:#C6F03C;--w:#FFFFFF;--g:#9A9A9A;--card:#171717;--line:#2A2A2A}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:Archivo,Arial,sans-serif;font-size:16px;line-height:1.45;padding:16px}
-h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.02em;margin:0 0 8px}
-h1{font-size:34px;line-height:1.05}
-h2{font-size:26px;color:var(--lime);margin-top:36px;padding-top:12px;border-top:2px solid var(--lime)}
-h3{font-size:20px}
+body{margin:0;background:var(--bg);color:var(--w);font-family:Archivo,Arial,sans-serif;font-size:16px;line-height:1.45}
+.wrap{max-width:960px;margin:0 auto;padding:16px}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.5px;margin:0 0 8px}
+h1{font-size:34px;color:var(--lime);line-height:1.1}
+h2{font-size:26px;margin-top:36px;padding-top:12px;border-top:2px solid var(--lime)}
+h3{font-size:21px;color:var(--lime)}
+p{margin:6px 0}
 a{color:var(--lime)}
-.mut{color:var(--mut);font-size:14px}
-.tag{display:inline-block;background:var(--lime);color:#0E0E0E;font-weight:700;font-size:12px;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
-.head{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}
-.nav{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--lime);border-radius:8px;text-decoration:none;font-weight:700}
+.muted{color:var(--g);font-size:14px}
+.tag{display:inline-block;background:var(--lime);color:#0E0E0E;font-weight:700;font-size:12px;padding:2px 8px;border-radius:4px;margin-right:6px}
+.warn{display:inline-block;background:#3a2a00;color:#FFD66B;font-weight:600;font-size:13px;padding:2px 8px;border-radius:4px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+nav a{display:inline-block;min-height:44px;line-height:44px;padding:0 16px;background:var(--card);border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
-.acc{border-left:4px solid var(--lime)}
-.feed .card{display:grid;grid-template-columns:1fr;gap:4px}
-.t{font-family:Anton,Impact,sans-serif;font-size:22px;color:var(--lime)}
-.t small{font-family:Archivo;font-size:14px;color:var(--fg);margin-left:8px}
-.row{font-size:15px}
-.row b{color:var(--lime);font-weight:600}
-.frame{background:#111;border:1px dashed #3a3a3a;border-radius:10px;padding:12px;margin:10px 0}
-.frame .t{font-size:18px}
-.q{font-size:17px;font-weight:600;background:#0E0E0E;border-left:3px solid var(--lime);padding:8px 10px;margin:6px 0;border-radius:4px}
-.st{background:#111;border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}
-.st .q{user-select:all}
-button{min-height:44px;min-width:44px;padding:0 16px;background:var(--lime);color:#0E0E0E;border:0;border-radius:8px;font-weight:700;font-family:Archivo;font-size:15px;cursor:pointer;margin-top:6px}
-button.ok{background:#fff}
-.hook{border-left:4px solid #3a3a3a}
-.hook .t{font-size:17px;color:#fff}
-.score{font-family:monospace;font-size:14px;color:var(--lime)}
-.warn{color:#FFB347;font-weight:600}
-.grid{display:grid;grid-template-columns:1fr;gap:12px}
-table{width:100%;border-collapse:collapse;display:none}
-footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--mut)}
-@media(min-width:900px){body{max-width:1100px;margin:0 auto}.grid{grid-template-columns:1fr 1fr}.feed .cards{display:none}table{display:table}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}th{color:var(--lime)}}
+.feed .card{padding:12px 14px}
+.feed .t{font-family:Anton,Impact,sans-serif;font-size:22px;color:var(--lime)}
+.feed .t small{font-family:Archivo;font-size:15px;color:var(--w);margin-left:8px}
+.feed .row{margin-top:4px}
+.feed .row b{color:var(--g);font-weight:600}
+.acc{border-color:#3a3a3a}
+.acc .head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.frame{background:#101010;border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:10px;padding:12px;margin:10px 0}
+.frame .n{font-family:Anton,Impact,sans-serif;font-size:19px}
+.frame .n span{color:var(--lime);margin-right:8px}
+.frame dl{margin:6px 0 0;display:grid;grid-template-columns:110px 1fr;gap:4px 10px}
+.frame dt{color:var(--g);font-size:14px}
+.frame dd{margin:0}
+.screen{font-weight:700;background:#0E0E0E;padding:6px 10px;border-radius:6px;display:block;margin:2px 0}
+.stk{background:#101010;border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}
+.stk .type{color:var(--lime);font-weight:700}
+.stk .txt{font-weight:700;display:block;margin:6px 0;background:#0E0E0E;padding:8px 10px;border-radius:6px;word-break:break-word}
+button.copy{min-height:44px;min-width:44px;padding:0 16px;background:var(--lime);color:#0E0E0E;border:0;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer}
+button.copy.ok{background:#fff}
+.hook{border-left:4px solid var(--lime)}
+.hook .f{font-family:Anton,Impact,sans-serif;font-size:19px;color:var(--lime)}
+.hook .say{font-size:18px;font-weight:700;margin:6px 0}
+.hook .scr{display:inline-block;background:#fff;color:#0E0E0E;font-weight:700;padding:3px 10px;border-radius:4px}
+ul{padding-left:20px;margin:6px 0}
+li{margin:4px 0}
+footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--line);color:var(--g);font-size:14px}
+table.wide{display:none}
+@media(min-width:900px){
+ .feed .cards{display:none}
+ table.wide{display:table;width:100%;border-collapse:collapse;font-size:14px}
+ table.wide th,table.wide td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+ table.wide th{color:var(--lime)}
+}
 </style>
 </head>
-<body>
+<body><div class="wrap">
 
-<div class="head">
-<span class="tag">Агент сторис и хуков</span>
-<h1>СТОРИС · 17.10.2026, суббота</h1>
-<p class="row"><b>Публикации дня по плану Мадлен:</b> личный Instagram — Reels «что мне сдают ИИ-агенты утром» (хук: экран телефона с отчётами агентов, CTA — экспресс-анализ), время в плане не задано → по сетке 19:00; сторис — серия «первый тренинг», финал — ссылка на экспресс-анализ. StoneMarket и Союз: публикаций сегодня нет. Флагман недели — «ИИ-отдел в реальном бизнесе».</p>
-<p class="mut">Писем «[Отдел]» за 8 дней нет — результаты вчерашних стикеров и факты Тарона не получены. Бриф Инессы покрывает 06–12.10, каруселей на сегодня в нём нет. В папке съёмок на Google Drive кадров производства терраццо нет (папка «Ai training» от 14.10 пуста). Время — ереванское.</p>
-<div class="nav"><a href="#feed">Лента дня</a><a href="#acc">Сторис по аккаунтам</a><a href="#hooks">Банк хуков</a><a href="archive/">Архив</a></div>
-</div>
+<h1>СТОРИС · 18.10.2026, воскресенье</h1>
+<p><b>Публикации дня по плану Мадлен:</b> личный — Reels «путь слэба» (экран: макро фактуры камня, CTA подписка; в плане помечен как «СБ 18.10»), по сетке 19:00 · StoneMarket — карусель Инессы «Терраццо слэб за 5 шагов» (CTA «Сохранить», условие плана: только при съёмке производства), по сетке 12:00 · Союз — пост «Stone Talks» в Instagram и LinkedIn EN (нужен факт: дата или гость выпуска).</p>
+<p class="muted">Писем «[Отдел]» за 8 дней нет: результатов стикеров 14–17.10 и фактов Тарона не получено. Бриф Инессы по ссылке покрывает 06–12.10; карусели на 18.10 в дашборде Инессы на 08:20 нет — её запуск в 09:00. Воскресенье: Союз по норме без сторис (пн/ср/пт) — одна условная сторис только если выйдет пост. Время — Ереван. Всё — черновик, выходит после «да» Тарона.</p>
+<nav><a href="#feed">Лента дня</a><a href="#acc">Сторис по аккаунтам</a><a href="#hooks">Банк хуков</a><a href="archive/">Архив</a></nav>
 
 <h2 id="feed">Лента дня — чек-лист Мери</h2>
 <div class="feed">
 <div class="cards">
 
-<div class="card"><div class="t">09:30 <small>Тарон · сторис 1</small></div>
-<div class="row"><b>Мери:</b> взять готовое — видео Тарона 10–15 с с ответом на лучший вчерашний вопрос (Тарон снимает до 09:15)</div>
+<div class="card"><div class="t">11:00 <small>Тарон · сторис 1</small></div>
+<div class="row"><b>Мери:</b> взять готовое — запись экрана каталога stonemarket.am, 8–10 с, листание плит</div>
+<div class="row"><b>Стикер:</b> Опрос · «Ինչպե՞ս եք ընտրում քարը»</div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба» 19:00</div></div>
+
+<div class="card"><div class="t">11:00 <small>StoneMarket · сторис 1</small></div>
+<div class="row"><b>Мери:</b> взять готовое — фото слэба терраццо со съёмки 13.10 (если нет — слайд 1 карусели Инессы или текстовый фон)</div>
+<div class="row"><b>Стикер:</b> Квиз · «Տերացո սալի առաջին քայլը»</div>
+<div class="row"><b>Поддерживает:</b> карусель «Терраццо слэб за 5 шагов» 12:00</div></div>
+
+<div class="card"><div class="t">12:45 <small>StoneMarket · сторис 2</small></div>
+<div class="row"><b>Мери:</b> репост карусели Инессы (если вышла; иначе текстовый фон «5 քայլ»)</div>
+<div class="row"><b>Стикер:</b> Упоминание · @badalyan.taron</div>
+<div class="row"><b>Поддерживает:</b> карусель «Терраццо слэб за 5 шагов» 12:00</div></div>
+
+<div class="card"><div class="t">12:45 <small>Союз · сторис 1 (условно)</small></div>
+<div class="row"><b>Мери:</b> репост поста Союза «Stone Talks» — только если пост вышел</div>
+<div class="row"><b>Стикер:</b> Упоминание · @badalyan.taron</div>
+<div class="row"><b>Поддерживает:</b> пост Союза «Stone Talks» 12:00</div></div>
+
+<div class="card"><div class="t">13:00 <small>Тарон · сторис 2</small></div>
+<div class="row"><b>Мери:</b> взять готовое — фото блока со склада/карьера из архива StoneMarket (в Drive-папке кадра нет; иначе текстовый фон)</div>
 <div class="row"><b>Стикер:</b> без стикера</div>
-<div class="row"><b>Поддерживает:</b> серию «первый тренинг» → Reels 19:00</div></div>
-
-<div class="card"><div class="t">11:00 <small>Тарон · сторис 2</small></div>
-<div class="row"><b>Мери:</b> взять готовое — запись экрана Telegram Тарона: утренние отчёты агентов (Тарон снимает до 10:30)</div>
-<div class="row"><b>Стикер:</b> Опрос · Քանի՞ հաշվետվություն եք կարդում առավոտյան / Сколько отчётов читаете утром?</div>
-<div class="row"><b>Поддерживает:</b> Reels «что мне сдают агенты утром» 19:00</div></div>
-
-<div class="card"><div class="t">11:30 <small>StoneMarket · сторис 1</small></div>
-<div class="row"><b>Мери:</b> снять — вода на шлифованном слэбе терраццо, 10–15 с (до 11:00); нет кадра → текстовый фон</div>
-<div class="row"><b>Стикер:</b> без стикера (ответ на вчерашний квиз)</div>
-<div class="row"><b>Поддерживает:</b> подпись Редактора «Вода на терраццо» (если выйдет) → карусель «Терраццо слэб за 5 шагов» 18.10</div></div>
-
-<div class="card"><div class="t">14:30 <small>StoneMarket · сторис 2</small></div>
-<div class="row"><b>Мери:</b> снять — 5–10 с шлифовки или фото процесса (до 14:00); нет кадра → текстовый фон</div>
-<div class="row"><b>Стикер:</b> Опрос · Ո՞ր քայլն է ամենադժվարը</div>
-<div class="row"><b>Поддерживает:</b> карусель «Терраццо слэб за 5 шагов» 18.10</div></div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба» 19:00</div></div>
 
 <div class="card"><div class="t">15:00 <small>Тарон · сторис 3</small></div>
-<div class="row"><b>Мери:</b> снять — скриншот этого дашборда с телефона</div>
-<div class="row"><b>Стикер:</b> Квиз · Ի՞նչ եմ անում առաջինը / Что я делаю первым?</div>
-<div class="row"><b>Поддерживает:</b> Reels 19:00 (правило «агент готовит, человек решает»)</div></div>
+<div class="row"><b>Мери:</b> взять готовое — 5–10 с воды на шлифованном слэбе (кадр Редактора со съёмки 13.10; иначе фото слэба)</div>
+<div class="row"><b>Стикер:</b> Упоминание · @stonemarket.am</div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба» 19:00; связка с StoneMarket</div></div>
 
 <div class="card"><div class="t">17:30 <small>StoneMarket · сторис 3</small></div>
-<div class="row"><b>Мери:</b> взять готовое — слайд карусели Инессы «5 мест для терраццо» (14.10) или текстовый фон</div>
-<div class="row"><b>Стикер:</b> Ссылка · Կայք → stonemarket.am</div>
-<div class="row"><b>Поддерживает:</b> карусель 18.10; действие — слово «նմուշ» в Direct</div></div>
+<div class="row"><b>Мери:</b> взять готовое — крупный план полированного слэба или образец в руке (съёмка 13.10)</div>
+<div class="row"><b>Стикер:</b> Опрос · «Հաջորդ նախագծում՝»</div>
+<div class="row"><b>Поддерживает:</b> карусель 12:00 → слово «նմուշ» в Direct</div></div>
 
 <div class="card"><div class="t">18:00 <small>Тарон · сторис 4</small></div>
-<div class="row"><b>Мери:</b> взять готовое — обложка Reels из covers.html Инессы или текстовый фон</div>
-<div class="row"><b>Стикер:</b> Обратный отсчёт · Reels: առավոտ գործակալների հետ · 17.10.2026 19:00</div>
-<div class="row"><b>Поддерживает:</b> подводка к Reels 19:00</div></div>
+<div class="row"><b>Мери:</b> взять готовое — 3 с макро-фактуры из монтажа Reels</div>
+<div class="row"><b>Стикер:</b> Обратный отсчёт · «Reels՝ սալի ճանապարհը» 18.10.2026 19:00</div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба» 19:00</div></div>
 
 <div class="card"><div class="t">19:45 <small>Тарон · сторис 5</small></div>
-<div class="row"><b>Мери:</b> репост — Reels «что мне сдают агенты утром» в сторис</div>
+<div class="row"><b>Мери:</b> репост Reels «путь слэба»</div>
 <div class="row"><b>Стикер:</b> без стикера</div>
-<div class="row"><b>Поддерживает:</b> Reels 19:00 — «вышел»</div></div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба» 19:00</div></div>
 
 <div class="card"><div class="t">21:00 <small>Тарон · сторис 6</small></div>
-<div class="row"><b>Мери:</b> взять готовое — текстовый фон (тёмный, лайм)</div>
-<div class="row"><b>Стикер:</b> Ссылка · Экспресс-анализ → лендинг</div>
-<div class="row"><b>Поддерживает:</b> финал серии «первый тренинг» — заявка на экспресс-анализ</div></div>
-
-<div class="card"><div class="t">— <small>Союз</small></div>
-<div class="row">Сторис сегодня нет (норма: пн, ср, пт). Завтра 18.10 — публикация Союза (анонс Stone Talks / ценность подкаста): подводку и репост даст завтрашний запуск; нужны факты (см. «Нужно от Тарона»).</div></div>
+<div class="row"><b>Мери:</b> снять — Тарон на телефон, 10 с (снять до 20:30); иначе текстовый фон</div>
+<div class="row"><b>Стикер:</b> Вопрос · «Հարց քարի մասին՝ գրեք»</div>
+<div class="row"><b>Поддерживает:</b> Reels «путь слэба»; вопросы — ответ в сторис 19.10 и сырьё для H14</div></div>
 
 </div>
-
-<table>
-<tr><th>Время</th><th>Аккаунт · №</th><th>Что делает Мери</th><th>Стикер</th><th>Поддерживает</th></tr>
-<tr><td>09:30</td><td>Тарон · 1</td><td>Готовое: видео-ответ Тарона 10–15 с (снять до 09:15)</td><td>без стикера</td><td>серия «первый тренинг» → Reels 19:00</td></tr>
-<tr><td>11:00</td><td>Тарон · 2</td><td>Готовое: запись экрана Telegram с отчётами агентов (снять до 10:30)</td><td>Опрос: сколько отчётов читаете утром</td><td>Reels 19:00</td></tr>
-<tr><td>11:30</td><td>StoneMarket · 1</td><td>Снять: вода на слэбе 10–15 с (до 11:00) / текстовый фон</td><td>без стикера</td><td>подпись «Вода на терраццо» → карусель 18.10</td></tr>
-<tr><td>14:30</td><td>StoneMarket · 2</td><td>Снять: шлифовка 5–10 с (до 14:00) / текстовый фон</td><td>Опрос: Ո՞ր քայլն է ամենադժվարը</td><td>карусель 18.10</td></tr>
-<tr><td>15:00</td><td>Тарон · 3</td><td>Снять: скриншот дашборда</td><td>Квиз: что я делаю первым</td><td>Reels 19:00</td></tr>
-<tr><td>17:30</td><td>StoneMarket · 3</td><td>Готовое: слайд Инессы (14.10) / текстовый фон</td><td>Ссылка: Կայք → stonemarket.am</td><td>карусель 18.10</td></tr>
-<tr><td>18:00</td><td>Тарон · 4</td><td>Готовое: обложка Reels (covers.html) / текстовый фон</td><td>Обратный отсчёт: Reels 19:00</td><td>подводка к Reels</td></tr>
-<tr><td>19:45</td><td>Тарон · 5</td><td>Репост Reels</td><td>без стикера</td><td>Reels вышел</td></tr>
-<tr><td>21:00</td><td>Тарон · 6</td><td>Готовое: текстовый фон</td><td>Ссылка: Экспресс-анализ</td><td>финал серии</td></tr>
-<tr><td>—</td><td>Союз</td><td>Сторис нет (норма пн/ср/пт)</td><td>—</td><td>публикация Союза 18.10</td></tr>
+<table class="wide"><tr><th>Время</th><th>Аккаунт · №</th><th>Что делает Мери</th><th>Стикер</th><th>Поддерживает</th></tr>
+<tr><td>11:00</td><td>Тарон · 1</td><td>Запись экрана каталога stonemarket.am, 8–10 с</td><td>Опрос · Ինչպե՞ս եք ընտրում քարը</td><td>Reels «путь слэба» 19:00</td></tr>
+<tr><td>11:00</td><td>StoneMarket · 1</td><td>Фото слэба терраццо (13.10) / слайд Инессы / текст</td><td>Квиз · Տերացո սալի առաջին քայլը</td><td>Карусель «5 шагов» 12:00</td></tr>
+<tr><td>12:45</td><td>StoneMarket · 2</td><td>Репост карусели (если вышла)</td><td>Упоминание · @badalyan.taron</td><td>Карусель «5 шагов» 12:00</td></tr>
+<tr><td>12:45</td><td>Союз · 1 (условно)</td><td>Репост поста «Stone Talks», только если вышел</td><td>Упоминание · @badalyan.taron</td><td>Пост Союза 12:00</td></tr>
+<tr><td>13:00</td><td>Тарон · 2</td><td>Фото блока из архива StoneMarket / текст</td><td>—</td><td>Reels «путь слэба»</td></tr>
+<tr><td>15:00</td><td>Тарон · 3</td><td>5–10 с воды на слэбе (13.10) / фото слэба</td><td>Упоминание · @stonemarket.am</td><td>Reels «путь слэба»; StoneMarket</td></tr>
+<tr><td>17:30</td><td>StoneMarket · 3</td><td>Крупный план полированного слэба</td><td>Опрос · Հաջորդ նախագծում՝</td><td>Карусель → «նմուշ» в Direct</td></tr>
+<tr><td>18:00</td><td>Тарон · 4</td><td>3 с макро из монтажа Reels</td><td>Обратный отсчёт · 19:00</td><td>Reels «путь слэба» 19:00</td></tr>
+<tr><td>19:45</td><td>Тарон · 5</td><td>Репост Reels</td><td>—</td><td>Reels «путь слэба»</td></tr>
+<tr><td>21:00</td><td>Тарон · 6</td><td>Тарон на телефон 10 с (до 20:30) / текст</td><td>Вопрос · Հարց քարի մասին</td><td>Ответ 19.10; хуки H14</td></tr>
 </table>
 </div>
 
@@ -127,238 +137,219 @@ footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--line);font-si
 
 <!-- ТАРОН -->
 <div class="card acc">
-<span class="tag">@badalyan.taron · HY + RU</span>
-<h3>Тарон: утро, которое сдают агенты</h3>
-<p class="row"><b>Тема дня:</b> ответ на вчерашний вопрос зрителя → реальное субботнее утро с отчётами ИИ-агентов → правило «агент готовит, человек решает» → Reels 19:00 → заявка на экспресс-анализ.</p>
-<p class="row"><b>Цель:</b> заявка на экспресс-анализ (стикер «Ссылка»); данные опроса и квиза — для хуков H9/H14 следующей недели.</p>
-<p class="row"><b>Поддерживает:</b> Reels «что мне сдают ИИ-агенты утром» (хук — экран телефона с отчётами, CTA — экспресс-анализ), 19:00 по сетке; серия сторис «первый тренинг» — финал с ссылкой (план Мадлен, 17.10).</p>
-<p class="row"><b>Это недельная серия про ИИ в реальном бизнесе</b> (норма: одна в неделю по будням — закрывается сегодня, т.к. в пн–пт серии шли по тренингу). Кадры Тарона — два, оба до 10:30 (выходной).</p>
+<div class="head"><span class="tag">ЛИЧНЫЙ</span><h3>Тарон · @badalyan.taron · HY + RU</h3></div>
+<p><b>Тема дня:</b> путь слэба — что фото каталога не показывает: блок, вода, шлифовка — и выход на вечерний Reels; финал собирает вопросы про камень.</p>
+<p><b>Цель:</b> просмотры и подписка с Reels (CTA плана) + вопросы в окно «Вопрос» — ответ в сторис 19.10 и сырьё для хуков H14.</p>
+<p><b>Поддерживает:</b> Reels «путь слэба» (экранный хук плана «Макро фактуры камня», CTA подписка), 19:00 по сетке. <span class="warn">Снят ли Reels во вторник — неизвестно; материала в Drive нет. Если Reels сегодня не выходит — сторис 4 и 5 переносятся на день выхода, 1–3 и 6 остаются.</span></p>
+<p class="muted">Серия из 6, 11:00–21:00 (10 часов). Первая сторис — H9. Кадров Тарона — один (воскресенье). Серия про ИИ с лендингом на этой неделе уже была (14–17.10), сегодня — камень, как в плане Мадлен.</p>
 
-<h3>Сюжет</h3>
-<div class="frame"><div class="t">1 · 09:30 — ответ на вчерашний вопрос (H14)</div>
-<div class="row"><b>Кадр:</b> Тарон на телефон, 10–15 с, вертикально, днём у окна. Мери заранее (до 09:00) присылает Тарону лучший вопрос из вчерашнего окна «Какой вопрос про ИИ в бизнесе задать Тарону?» дословно, без имени автора. Снять до 09:15. Если вопросов не было — Тарон задаёт вопрос недели сам: «„С чего начать, если у нас производство?“».</div>
-<div class="row"><b>Текст на экране (верх):</b></div><div class="q">Ձեր հարցը՝ պատասխանում եմ / Ваш вопрос — отвечаю</div>
-<div class="row"><b>Вопрос зрителя</b> — поверх как скрин ответа из окна (имя закрыто).</div>
-<div class="row"><b>Стикер:</b> без стикера.</div>
-<div class="row"><b>Переход:</b> Тарон заканчивает фразой «…а утром это выглядит вот так» — следующая сторис показывает экран.</div></div>
+<div class="frame"><div class="n"><span>1 · 11:00</span>Хук H9</div><dl>
+<dt>В кадре</dt><dd>Запись экрана: Мери листает каталог плит на stonemarket.am, 8–10 с. Мери, без съёмки.</dd>
+<dt>Текст</dt><dd><span class="screen">Քարն ընտրում ես լուսանկարո՞վ։ Հաջորդ 5 սթորին քեզ են։</span><span class="screen">Выбираешь камень по фото? Следующие 5 сторис — тебе.</span></dd>
+<dt>Где</dt><dd>Верх</dd>
+<dt>Стикер</dt><dd>Опрос (низ) — см. блок стикеров</dd>
+<dt>Переход</dt><dd>Обещано 5 сторис о том, чего не видно на фото — первое: блок.</dd></dl></div>
 
-<div class="frame"><div class="t">2 · 11:00 — экран: кто уже сдал (H16)</div>
-<div class="row"><b>Кадр:</b> запись экрана телефона Тарона, 10 с: Telegram, чат с ботом @MadlenCMO_bot, сегодняшние утренние сообщения агентов (Агент сторис 08:20, Инесса 09:00), палец листает. Имён клиентов и цифр продаж в кадре быть не должно — Тарон проверяет перед отправкой. Снять до 10:30.</div>
-<div class="row"><b>Текст на экране (низ):</b></div><div class="q">Շաբաթ, 08:20։ Երկու գործակալ հանձնել են / Суббота, 08:20. Два агента сдали</div>
-<div class="row"><b>Стикер:</b> Опрос (центр, под текстом) — см. блок «Стикеры».</div>
-<div class="row"><b>Переход:</b> «Что я с этим делаю — в 15:00».</div></div>
+<div class="frame"><div class="n"><span>2 · 13:00</span>Блок</div><dl>
+<dt>В кадре</dt><dd>Фото блока на складе или карьере. Готовое фото из архива StoneMarket у Мери; в Drive-папке «Фото/видео» кадров производства нет. Нет фото — текстовый фон лайм.</dd>
+<dt>Текст</dt><dd><span class="screen">Սա բլոկն է։ Սալը դեռ ներսում է։</span><span class="screen">Это блок. Слэб ещё внутри.</span></dd>
+<dt>Где</dt><dd>Низ (над подписью — не выше объекта)</dd>
+<dt>Стикер</dt><dd>Без стикера</dd>
+<dt>Переход</dt><dd>«Что отделяет блок от слэба» — ответ в следующей.</dd></dl></div>
 
-<div class="frame"><div class="t">3 · 15:00 — что происходит с отчётом</div>
-<div class="row"><b>Кадр:</b> скриншот этого дашборда с телефона (раздел «Лента дня»), Мери делает сама; поверх — одна строка обведена маркером в редакторе сторис.</div>
-<div class="row"><b>Текст на экране (верх):</b></div><div class="q">Սա գործակալի աշխատանքն է։ Հիմա՝ ի՞նչ / Это сдал агент. Что дальше?</div>
-<div class="row"><b>Стикер:</b> Квиз (центр) — ответ раскрывается в сторис 4.</div>
-<div class="row"><b>Переход:</b> правильный ответ — через час, вместе с временем Reels.</div></div>
+<div class="frame"><div class="n"><span>3 · 15:00</span>Вода</div><dl>
+<dt>В кадре</dt><dd>Видео 5–10 с: вода на шлифованном слэбе, рисунок проявляется (кадр Редактора «Вода на терраццо» со съёмки 13.10, если снят). Нет видео — фото полированного слэба.</dd>
+<dt>Текст</dt><dd><span class="screen">Ջուրը բացում է այն, ինչ լուսանկարը թաքցնում է։</span><span class="screen">Вода открывает то, что фото скрывает.</span></dd>
+<dt>Где</dt><dd>Верх</dd>
+<dt>Стикер</dt><dd>Упоминание @stonemarket.am (низ)</dd>
+<dt>Переход</dt><dd>«Сколько дней от блока до этого — в Reels в 19:00».</dd></dl></div>
 
-<div class="frame"><div class="t">4 · 18:00 — ответ квиза + подводка к Reels</div>
-<div class="row"><b>Кадр:</b> обложка Reels серии тренинга из covers.html Инессы (готово) или текстовый фон тёмный с лаймом.</div>
-<div class="row"><b>Текст на экране (центр):</b></div><div class="q">Ճիշտն է՝ ստուգում եմ։ 19:00՝ առավոտը 30 վրկ-ում / Верно: проверяю. 19:00 — утро за 30 секунд</div>
-<div class="row"><b>Стикер:</b> Обратный отсчёт (низ).</div>
-<div class="row"><b>Переход:</b> таймер сам возвращает зрителя в 19:00.</div></div>
+<div class="frame"><div class="n"><span>4 · 18:00</span>Подводка к Reels</div><dl>
+<dt>В кадре</dt><dd>3 с макро-фактуры камня из монтажа Reels (первый кадр). Мери берёт из проекта.</dd>
+<dt>Текст</dt><dd><span class="screen">Հանքից մինչև սալ՝ 1 ժամից։</span><span class="screen">От карьера до слэба — через час.</span></dd>
+<dt>Где</dt><dd>Центр</dd>
+<dt>Стикер</dt><dd>Обратный отсчёт (низ)</dd>
+<dt>Переход</dt><dd>Таймер — зритель ставит напоминание.</dd></dl></div>
 
-<div class="frame"><div class="t">5 · 19:45 — Reels вышел</div>
-<div class="row"><b>Кадр:</b> репост Reels «что мне сдают ИИ-агенты утром» в сторис (Мери).</div>
-<div class="row"><b>Текст на экране (верх, не на лице):</b></div><div class="q">Ահա իմ առավոտը / Вот моё утро</div>
-<div class="row"><b>Стикер:</b> без стикера (репост открывается тапом).</div>
-<div class="row"><b>Переход:</b> «С какого отдела начать у вас — в следующей».</div></div>
+<div class="frame"><div class="n"><span>5 · 19:45</span>Вышел Reels</div><dl>
+<dt>В кадре</dt><dd>Репост Reels «путь слэба» в сторис. Мери.</dd>
+<dt>Текст</dt><dd><span class="screen">Սալի ճանապարհը։ Դիտե՛ք մինչև վերջ։</span><span class="screen">Путь слэба. Смотрите до конца.</span></dd>
+<dt>Где</dt><dd>Верх, над плиткой репоста</dd>
+<dt>Стикер</dt><dd>Без стикера — тап по репосту</dd>
+<dt>Переход</dt><dd>После просмотра — вопрос в финальной сторис.</dd></dl></div>
 
-<div class="frame"><div class="t">6 · 21:00 — действие дня</div>
-<div class="row"><b>Кадр:</b> текстовый фон (тёмный, лайм), без лица.</div>
-<div class="row"><b>Текст на экране (центр):</b></div><div class="q">Ո՞ր բաժնից սկսել ձեզ մոտ։ 5 հարց, անվճար / С какого отдела начать у вас? 5 вопросов, бесплатно</div>
-<div class="row"><b>Стикер:</b> Ссылка (низ, под текстом).</div></div>
+<div class="frame"><div class="n"><span>6 · 21:00</span>Действие</div><dl>
+<dt>В кадре</dt><dd>Тарон на телефон, 10 с, одной фразой: «Какой у вас вопрос про камень — от карьера до слэба? В понедельник отвечу». Снять до 20:30. Не снято — текстовый фон с тем же текстом.</dd>
+<dt>Текст</dt><dd><span class="screen">Ի՞նչ հարց ունեք քարի մասին՝ հանքից մինչև սալ։</span><span class="screen">Какой у вас вопрос про камень — от карьера до слэба?</span></dd>
+<dt>Где</dt><dd>Верх (лицо — центр)</dd>
+<dt>Стикер</dt><dd>Вопрос (низ)</dd>
+<dt>Переход</dt><dd>Финал. Ответы — первая сторис 19.10.</dd></dl></div>
 
 <h3>Стикеры</h3>
-<div class="st"><div class="row"><b>Опрос · сторис 2 · центр</b></div>
-<div class="q" id="s1">Քանի՞ հաշվետվություն եք կարդում առավոտյան / Сколько отчётов читаете утром?</div>
-<div class="row">Варианты: <span id="s1a">0</span> · <span id="s1b">1–3</span> · <span id="s1c">4 և ավել / 4+</span></div>
-<div class="row mut">Зачем: голоса + данные для хука H9 «если по субботам сводишь отчёты сам»; кто выбрал «4+» — Лилит пишет первым.</div>
-<button onclick="cp('s1')">Скопировать</button></div>
-
-<div class="st"><div class="row"><b>Квиз · сторис 3 · центр</b></div>
-<div class="q" id="s2">Ի՞նչ եմ անում առաջինը / Что я делаю первым?</div>
-<div class="row">Варианты: Հրապարակում / Публикую · <u>Ստուգում / Проверяю</u> (верно) · Ուղարկում թիմին / Пересылаю команде</div>
-<div class="row mut">Зачем: удержание до 18:00; закрепляет правило «агент готовит, человек решает» перед Reels.</div>
-<button onclick="cp('s2')">Скопировать</button></div>
-
-<div class="st"><div class="row"><b>Обратный отсчёт · сторис 4 · низ</b></div>
-<div class="q" id="s3">Reels: առավոտ գործակալների հետ / утро с агентами</div>
-<div class="row">Дата и время: 17.10.2026 19:00</div>
-<div class="row mut">Зачем: напоминание подписчикам в момент выхода Reels. Ставить только если Reels подтверждён на 19:00.</div>
-<button onclick="cp('s3')">Скопировать</button></div>
-
-<div class="st"><div class="row"><b>Ссылка · сторис 6 · низ</b></div>
-<div class="q" id="s4">Экспресс-анализ</div>
-<div class="row">URL: <span id="s4u">https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/</span></div>
-<div class="row mut">Зачем: действие дня — заявка на бесплатный экспресс-анализ.</div>
-<button onclick="cp('s4')">Скопировать текст</button> <button class="ok" onclick="cp('s4u')">Скопировать URL</button></div>
+<div class="stk"><span class="type">Опрос</span> · сторис 1 · низ<span class="txt" id="s1">Ինչպե՞ս եք ընտրում քարը — Լուսանկարով / Նմուշով ձեռքում / Վստահում եմ վարպետին</span><button class="copy" data-t="s1">Скопировать</button><p class="muted">Зачем: голоса + понимание, сколько аудитории выбирает «по фото» — тема для Reels H2 следующей недели.</p></div>
+<div class="stk"><span class="type">Упоминание</span> · сторис 3 · низ<span class="txt" id="s3">@stonemarket.am</span><button class="copy" data-t="s3">Скопировать</button><p class="muted">Зачем: переходы на StoneMarket в день карусели «5 шагов»; связка аккаунтов.</p></div>
+<div class="stk"><span class="type">Обратный отсчёт</span> · сторис 4 · низ<span class="txt" id="s4">Reels՝ սալի ճանապարհը · 18.10.2026 19:00</span><button class="copy" data-t="s4">Скопировать</button><p class="muted">Зачем: напоминания на выход Reels. Только если Reels подтверждён на сегодня.</p></div>
+<div class="stk"><span class="type">Вопрос</span> · сторис 6 · низ<span class="txt" id="s6">Հարց քարի մասին՝ գրեք, երկուշաբթի կպատասխանեմ / Вопрос про камень — отвечу в понедельник</span><button class="copy" data-t="s6">Скопировать</button><p class="muted">Зачем: вопросы дословно — ответ в сторис 19.10 и хуки H14. Результат — письмом «[Отдел]».</p></div>
 
 <h3>Нужно снять</h3>
-<div class="row">• Тарон, до 09:15: видео-ответ 10–15 с на лучший вопрос (вопрос присылает Мери до 09:00).</div>
-<div class="row">• Тарон, до 10:30: запись экрана Telegram с утренними отчётами агентов, 10 с, без клиентских данных.</div>
-<div class="row">• Мери, до 14:30: скриншот дашборда с телефона.</div>
-<div class="row warn">• Если Reels «что мне сдают агенты утром» к 19:00 не смонтирован: сторис 4 без обратного отсчёта, текст «Վաղը՝ սալի ճանապարհը / Завтра — путь слэба»; сторис 5 — не выходит; сторис 6 — остаётся.</div>
+<ul>
+<li>Мери, до 10:30 — запись экрана каталога stonemarket.am, 8–10 с (сторис 1).</li>
+<li>Мери, до 12:30 — фото блока из архива StoneMarket (сторис 2); в Drive-папке «Фото/видео» (1ye9…) такого файла нет.</li>
+<li>Мери, до 14:30 — 5–10 с воды на шлифованном слэбе со съёмки 13.10 (сторис 3); если не снято — фото слэба.</li>
+<li>Мери, до 17:30 — 3 с макро из монтажа Reels (сторис 4).</li>
+<li>Тарон, до 20:30 — 10 с на телефон: вопрос про камень (сторис 6).</li>
+</ul>
 </div>
 
 <!-- STONEMARKET -->
 <div class="card acc">
-<span class="tag">@stonemarket.am · HY</span>
-<h3>StoneMarket: что прячет серая плита</h3>
-<p class="row"><b>Тема дня:</b> ответ на вчерашний квиз (вода проявляет рисунок и цвет) → 5 шагов от крошки до слэба как анонс завтрашней карусели → слово «նմուշ» в Direct.</p>
-<p class="row"><b>Цель:</b> сообщение «նմուշ» в Direct от дизайнеров; голоса опроса — какой шаг показать крупнее в карусели.</p>
-<p class="row"><b>Публикации сегодня нет</b> по плану Мадлен; условно — подпись Редактора «Вода на терраццо» (H16), если Мери сняла кадр. <b>Ведёт к:</b> карусель Инессы «Терраццо слэб за 5 шагов», 18.10 (выходит только после реальной съёмки производства).</p>
+<div class="head"><span class="tag">STONEMARKET</span><h3>StoneMarket · @stonemarket.am · HY</h3></div>
+<p><b>Тема дня:</b> терраццо слэб за 5 шагов — квиз о первом шаге, ответ в карусели, выход на слово «նմուշ» в Direct.</p>
+<p><b>Цель:</b> сохранения карусели и сообщения «նմուշ» в Direct от дизайнеров.</p>
+<p><b>Поддерживает:</b> карусель Инессы «Терраццо слэб за 5 шагов» (производство, CTA «Сохранить»), 12:00 по сетке. <span class="warn">На 08:20 карусели на 18.10 у Инессы нет (запуск 09:00); условие плана — съёмка производства. Если карусели нет — сторис 2 идёт текстовым фоном с 5 шагами, серия остаётся.</span></p>
 
-<h3>Сюжет</h3>
-<div class="frame"><div class="t">1 · 11:30 — вода на слэбе (H16, ответ на квиз 16.10)</div>
-<div class="row"><b>Кадр:</b> видео Мери 10–15 с: рука льёт воду на шлифованный, ещё не полированный слэб, крупно; звук цеха, без голоса. Снять до 11:00 на производстве. На Google Drive такого файла нет — если кадра нет, текстовый фон цвета мокрого камня.</div>
-<div class="row"><b>Текст на экране (верх):</b></div><div class="q">Երեկվա պատասխանը՝ նախշը և գույնը</div>
-<div class="row"><b>Стикер:</b> без стикера.</div>
-<div class="row"><b>Переход:</b> «Ինչպե՞ս է ստացվում՝ 5 քայլ» — в 14:30.</div></div>
+<div class="frame"><div class="n"><span>1 · 11:00</span>Подводка · квиз</div><dl>
+<dt>В кадре</dt><dd>Фото слэба терраццо (съёмка Мери 13.10, если есть). Нет — слайд 1 карусели Инессы; нет и его — текстовый фон.</dd>
+<dt>Текст</dt><dd><span class="screen">Տերացո սալը՝ 5 քայլ։ Ո՞րն է առաջինը։</span></dd>
+<dt>Где</dt><dd>Верх</dd>
+<dt>Стикер</dt><dd>Квиз (центр-низ)</dd>
+<dt>Переход</dt><dd>Ответ раскрывается в 12:45 вместе с каруселью.</dd></dl></div>
 
-<div class="frame"><div class="t">2 · 14:30 — 5 шагов, анонс карусели</div>
-<div class="row"><b>Кадр:</b> 5–10 с шлифовки или фото процесса (Мери, до 14:00); нет кадра — текстовый фон с пятью словами: Փշուր · Ձուլում · Հղկում · Փայլեցում · Սալ.</div>
-<div class="row"><b>Текст на экране (центр):</b></div><div class="q">Փշուրից մինչև սալ՝ 5 քայլ։ Վաղը՝ ամբողջը</div>
-<div class="row"><b>Стикер:</b> Опрос (низ).</div>
-<div class="row"><b>Переход:</b> «Նմուշ՝ երեկոյան» — в 17:30.</div></div>
+<div class="frame"><div class="n"><span>2 · 12:45</span>Вышел пост</div><dl>
+<dt>В кадре</dt><dd>Репост карусели «Տերացո սալը 5 քայլով» в сторис. Если карусель не вышла — текстовый фон: Քարի փշուր → Ձև → Ձուլում → Հղկում → Փայլեցում.</dd>
+<dt>Текст</dt><dd><span class="screen">Պատասխանը՝ առաջինը փշուրն է։ Բացե՛ք բոլոր 5 քայլը։</span></dd>
+<dt>Где</dt><dd>Верх, над плиткой репоста</dd>
+<dt>Стикер</dt><dd>Упоминание @badalyan.taron (низ): «Տարոնն այսօր՝ քարի սալի ճանապարհը»</dd>
+<dt>Переход</dt><dd>Тап по карусели; вечером — вопрос про проект.</dd></dl></div>
 
-<div class="frame"><div class="t">3 · 17:30 — действие</div>
-<div class="row"><b>Кадр:</b> слайд карусели Инессы «5 мест для терраццо в интерьере» (14.10) с изделием или текстовый фон. Фото готовой столешницы на Drive нет.</div>
-<div class="row"><b>Текст на экране (центр):</b></div><div class="q">Նախագիծ ունե՞ք՝ գրեք «նմուշ» Direct-ում</div>
-<div class="row"><b>Стикер:</b> Ссылка (низ).</div></div>
+<div class="frame"><div class="n"><span>3 · 17:30</span>Действие</div><dl>
+<dt>В кадре</dt><dd>Крупный план полированного слэба или образец в руке, 5 с (съёмка 13.10). Нет — фото со склада.</dd>
+<dt>Текст</dt><dd><span class="screen">Նախագիծ ունե՞ք։ Գրեք «նմուշ» Direct-ում։</span></dd>
+<dt>Где</dt><dd>Верх</dd>
+<dt>Стикер</dt><dd>Опрос (низ)</dd>
+<dt>Переход</dt><dd>Финал: голос в опросе + слово «նմուշ» в Direct — отвечает Лилит.</dd></dl></div>
 
 <h3>Стикеры</h3>
-<div class="st"><div class="row"><b>Опрос · сторис 2 · низ</b></div>
-<div class="q" id="m1">Ո՞ր քայլն է ամենադժվարը</div>
-<div class="row">Варианты: Ձուլում · Հղկում · Փայլեցում</div>
-<div class="row mut">Зачем: голоса показывают, какой шаг разворачивать крупнее в карусели 18.10 и в Reels.</div>
-<button onclick="cp('m1')">Скопировать</button></div>
-
-<div class="st"><div class="row"><b>Ссылка · сторис 3 · низ</b></div>
-<div class="q" id="m2">Կայք</div>
-<div class="row">URL: <span id="m2u">https://stonemarket.am</span></div>
-<div class="row mut">Зачем: переход на сайт; основное действие — слово «նմուշ» в Direct (отвечает Лилит).</div>
-<button onclick="cp('m2')">Скопировать текст</button> <button class="ok" onclick="cp('m2u')">Скопировать URL</button></div>
+<div class="stk"><span class="type">Квиз</span> · сторис 1 · центр-низ<span class="txt" id="m1">Տերացո սալի առաջին քայլը — Հղկում / Քարի փշուրի ընտրություն / Ձուլում (ճիշտը՝ Քարի փշուրի ընտրություն)</span><button class="copy" data-t="m1">Скопировать</button><p class="muted">Зачем: удержание до 12:45; ответ раскрывает карусель.</p></div>
+<div class="stk"><span class="type">Упоминание</span> · сторис 2 · низ<span class="txt" id="m2">@badalyan.taron</span><button class="copy" data-t="m2">Скопировать</button><p class="muted">Зачем: связка с личным аккаунтом в день «пути слэба».</p></div>
+<div class="stk"><span class="type">Опрос</span> · сторис 3 · низ<span class="txt" id="m3">Հաջորդ նախագծում՝ — Տերացո / Մարմար / Երկուսն էլ</span><button class="copy" data-t="m3">Скопировать</button><p class="muted">Зачем: голоса дизайнеров и повод Лилит написать первым тем, кто выбрал терраццо.</p></div>
 
 <h3>Нужно снять</h3>
-<div class="row">• Мери, до 11:00: вода на шлифованном слэбе терраццо, 10–15 с (тот же кадр — для подписи Редактора «Вода на терраццо»).</div>
-<div class="row">• Мери, до 14:00: шлифовка 5–10 с или фото процесса.</div>
-<div class="row">• Мери, до 17:00: фото готовой столешницы или стола (на Drive нет).</div>
-<div class="row warn">• Если Мери сегодня не на производстве: сторис 1 и 2 — на текстовых фонах, сторис 3 — слайд Инессы; подпись Редактора переносится.</div>
+<ul>
+<li>Мери, до 10:30 — фото слэба терраццо и крупный план полировки со съёмки 13.10 (сторис 1 и 3). В Drive: папка «Ai training» (14.10, Мери) пуста или без доступа, кадров производства в папке «Фото/видео» нет.</li>
+<li>Если карусель Инессы на 18.10 не выйдет — Мери делает текстовый фон «5 քայլ» (сторис 2).</li>
+</ul>
 </div>
 
 <!-- СОЮЗ -->
 <div class="card acc">
-<span class="tag">@unionofstonemanufacturers · HY</span>
-<h3>Союз: сегодня без сторис</h3>
-<p class="row"><b>Публикации сегодня нет; сторис нет</b> (норма — понедельник, среда, пятница). <b>Ведёт к:</b> публикация Союза 18.10 (Instagram HY: анонс Stone Talks или ценность подкаста; LinkedIn EN) — завтрашний запуск даст подводку 10:00 и репост.</p>
-<p class="row">Для завтрашней сторис-поддержки нужны факты: дата следующего выпуска Stone Talks (для «Обратного отсчёта»), гость и его аккаунт (для «Упоминания»), число членов Союза. Без них завтра — мнение и ссылка на YouTube Stone Talks, без цифр.</p>
-<div class="row"><b>Стикеры:</b> нет. <b>Нужно снять:</b> ничего.</div>
+<div class="head"><span class="tag">СОЮЗ</span><h3>Союз · @unionofstonemanufacturers · HY</h3></div>
+<p><b>Тема дня:</b> Stone Talks — 9 выпусков с людьми отрасли; одна сторис-репост поста, если пост выйдет.</p>
+<p><b>Цель:</b> переходы на пост и на @badalyan.taron.</p>
+<p><b>Поддерживает:</b> пост Союза «Stone Talks» (Instagram HY + LinkedIn EN, CTA «Смотреть выпуски на YouTube»), 12:00 по сетке. <span class="warn">По норме воскресенье — без сторис Союза. Пост в плане требует факта: дата или гость следующего выпуска, ссылка на YouTube. Нет факта — ни поста, ни сторис.</span></p>
+
+<div class="frame"><div class="n"><span>1 · 12:45</span>Вышел пост (условно)</div><dl>
+<dt>В кадре</dt><dd>Репост поста Союза в сторис. Мери.</dd>
+<dt>Текст</dt><dd><span class="screen">Stone Talks․ 9 թողարկում ոլորտի մարդկանց հետ։</span></dd>
+<dt>Где</dt><dd>Верх</dd>
+<dt>Стикер</dt><dd>Упоминание @badalyan.taron (низ)</dd>
+<dt>Переход</dt><dd>Тап по посту → YouTube из подписи.</dd></dl></div>
+
+<h3>Стикеры</h3>
+<div class="stk"><span class="type">Упоминание</span> · сторис 1 · низ<span class="txt" id="u1">@badalyan.taron</span><button class="copy" data-t="u1">Скопировать</button><p class="muted">Зачем: ведущий подкаста — переход на личный аккаунт. Стикер «Ссылка» на YouTube не поставлен: адрес канала Stone Talks в документах не найден — нужен от Тарона.</p></div>
+
+<h3>Нужно снять</h3>
+<ul><li>Ничего. Понедельник 19.10 — сторис Союза 10:00 и 17:00 по норме; к ним нужны дата выпуска Stone Talks и число членов Союза.</li></ul>
 </div>
 
-<h2 id="hooks">Банк хуков · 17.10</h2>
-<p class="mut">4 про ИИ и тренинги, 3 про камень, 3 про терраццо. Оценка: длина · конкретика · ставка · фронт · адрес (0–2), слабейшее ограничивает. Хуков из журнала нет; формул сегодня 8, H9 — дважды.</p>
-<div class="grid">
+<h2 id="hooks">Банк хуков · 18.10</h2>
+<p class="muted">10 новых: 4 ИИ и тренинги, 3 камень, 3 терраццо. Оценка: длина · конкретика · ставка · фронт · адрес (0–2), слабейшее ограничивает. Хуки журнала 14–17.10 не повторены. Цифры — только реальные; {{N}} — факта нет.</p>
 
-<div class="card hook"><span class="tag">1 · H11 · ИИ</span>
-<div class="t">«У нас производство, не IT». Хорошо. Мой ИИ-отдел работает в камне.</div>
-<div class="row"><b>Экран:</b> «МЫ НЕ IT»</div>
-<div class="row"><b>Первый кадр:</b> рука кладёт телефон с открытым Telegram на слэб травертина, камера едет вдоль камня.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·2·2·1</span> — слабее всего адрес.</div>
-<div class="row"><b>Куда:</b> личный · Reels (HY/RU); LinkedIn (RU/EN). <b>Тема плана:</b> флагман «ИИ-отдел в реальном бизнесе».</div>
-<div class="row warn">Возражение из разговоров не подтверждено — [НУЖЕН ФАКТ ОТ ТАРОНА: говорят ли так директора].</div></div>
+<div class="card hook"><div class="f">1 · H11 · Возражение дословно</div>
+<p class="say">«Сначала закроем вакансии». Хорошо. А кто сейчас делает их работу?</p>
+<p>Экран: <span class="scr">«СНАЧАЛА ЗАКРОЕМ ВАКАНСИИ»</span></p>
+<p><b>Первый кадр:</b> палец листает список вакансий на job.am на телефоне, 2 с.</p>
+<p><b>Оценка:</b> 2·1·1·2·2 → слабейшее: конкретика и ставка (нет числа). <b>Источник:</b> таблица возражений Агента продаж 15.10 — ожидаемое возражение (оценка), заменить дословным, когда Лилит пришлёт.</p>
+<p><b>Куда:</b> личный · Reels (HY/RU), LinkedIn (RU/EN). <b>Тема плана:</b> флагман «ИИ-отдел в реальном бизнесе» → экспресс-анализ.</p></div>
 
-<div class="card hook"><span class="tag">2 · H16 · ИИ</span>
-<div class="t">Смотри, что два агента сдали мне в субботу в 08:20.</div>
-<div class="row"><b>Экран:</b> «СУББОТА. 08:20. ДВА ОТЧЁТА»</div>
-<div class="row"><b>Первый кадр:</b> палец листает чат с ботом, уведомления падают сверху.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·1·2·1</span> — ставка и адрес.</div>
-<div class="row"><b>Куда:</b> личный · Reels «что мне сдают агенты утром» (17.10); первая сторис. <b>Тема плана:</b> Reels 17.10, P3.</div></div>
+<div class="card hook"><div class="f">2 · H8 · Забирай</div>
+<p class="say">Забери схему моего ИИ-отдела: 7 агентов, один результат, один человек.</p>
+<p>Экран: <span class="scr">ЗАБИРАЙ СХЕМУ: 7 АГЕНТОВ</span></p>
+<p><b>Первый кадр:</b> рука ведёт по таблице агентов на планшете (колонки: агент · результат · кто принимает).</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка. Число 7 — по архитектуре v2 (в документах встречается и 9, 12) — [ПОДТВЕРДИТЬ ТАРОНУ].</p>
+<p><b>Куда:</b> карусель Инессы (обложка = экран), личный · Reels, LinkedIn RU. <b>Тема плана:</b> «ИИ-агент — это должность».</p></div>
 
-<div class="card hook"><span class="tag">3 · H3 · ИИ</span>
-<div class="t">Директор, один агент заменил {{N}} часов сводок в неделю. Проверка — минуты.</div>
-<div class="row"><b>Экран:</b> «{{N}} ЧАСОВ → ОДИН АГЕНТ»</div>
-<div class="row"><b>Первый кадр:</b> стопка распечаток падает на стол, рядом телефон с отчётом.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·1·1·2·2</span> — конкретика и ставка (до цифры).</div>
-<div class="row"><b>Куда:</b> личный · Reels; LinkedIn RU. <b>Тема плана:</b> флагман; LinkedIn «ИИ-агент — это должность».</div>
-<div class="row warn">{{N}} — [НУЖЕН ФАКТ ОТ ТАРОНА: сколько часов в неделю уходило на сводки до агентов].</div></div>
+<div class="card hook"><div class="f">3 · H13 · Обращение к узкой группе</div>
+<p class="say">Директор, чей бухгалтер сводит таблицы руками: ИИ начинается с её таблицы.</p>
+<p>Экран: <span class="scr">НАЧНИ С ТАБЛИЦЫ БУХГАЛТЕРА</span></p>
+<p><b>Первый кадр:</b> экран Excel, курсор копирует числа из ячейки в ячейку.</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка.</p>
+<p><b>Куда:</b> личный · Reels (HY/RU), LinkedIn RU. <b>Тема плана:</b> с чего начать ИИ в традиционной компании.</p></div>
 
-<div class="card hook"><span class="tag">4 · H9 · ИИ</span>
-<div class="t">Если по субботам ты сам сводишь отчёты, следующие 30 секунд твои.</div>
-<div class="row"><b>Экран:</b> «СУББОТА. ОТЧЁТЫ. САМ?»</div>
-<div class="row"><b>Первый кадр:</b> ноутбук открывается на кухонном столе, рядом кофе, время на экране 08:1x.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·1·2·2</span> — ставка.</div>
-<div class="row"><b>Куда:</b> личный · Reels (HY/RU); LinkedIn RU. <b>Тема плана:</b> Reels 17.10; экспресс-анализ.</div></div>
+<div class="card hook"><div class="f">4 · H22 · Самый быстрый способ</div>
+<p class="say">Самый дорогой ИИ в твоей компании — тот, чьи ответы никто не проверяет.</p>
+<p>Экран: <span class="scr">САМЫЙ ДОРОГОЙ ИИ — НЕПРОВЕРЕННЫЙ</span></p>
+<p><b>Первый кадр:</b> ручка обводит красным число в распечатке КП.</p>
+<p><b>Оценка:</b> 2·1·2·2·2 → слабейшее: конкретика (механизм без числа).</p>
+<p><b>Куда:</b> личный · Reels, первая сторис, LinkedIn (RU/EN). <b>Тема плана:</b> флагман — «агент готовит, человек решает».</p></div>
 
-<div class="card hook"><span class="tag">5 · H14 · камень</span>
-<div class="t">«Травертин под дождём не потемнеет?» — каждую неделю.</div>
-<div class="row"><b>Экран:</b> «А ПОД ДОЖДЁМ?»</div>
-<div class="row"><b>Первый кадр:</b> вода из лейки льётся на травертиновую плиту на улице, крупно.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·2·2·1</span> — адрес.</div>
-<div class="row"><b>Куда:</b> личный · Reels «путь слэба» 18.10; первая сторис; LinkedIn EN. <b>Тема плана:</b> Reels 18.10, P2.</div>
-<div class="row warn">Вопрос должен быть дословным — [НУЖЕН ФАКТ ОТ ТАРОНА: как его реально спрашивают].</div></div>
+<div class="card hook"><div class="f">5 · H16 · Демо с середины</div>
+<p class="say">Смотри, что диск делает с блоком травертина за первые 10 секунд.</p>
+<p>Экран: <span class="scr">10 СЕКУНД. ДИСК. ТРАВЕРТИН</span></p>
+<p><b>Первый кадр:</b> диск входит в блок, вода брызгами — снять во вторник 20.10.</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка.</p>
+<p><b>Куда:</b> личный · Reels «путь камня»; StoneMarket · Reels (HY); первая сторис. <b>Тема плана:</b> P2 «путь слэба».</p></div>
 
-<div class="card hook"><span class="tag">6 · H12 · камень</span>
-<div class="t">Это блок на карьере. Это он же — слэб. Между ними {{N}} дней.</div>
-<div class="row"><b>Экран:</b> «БЛОК / СЛЭБ. {{N}} ДНЕЙ»</div>
-<div class="row"><b>Первый кадр:</b> склейка: кран поднимает блок → рука проводит по полированному слэбу.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·1·1·2·1</span> — до цифры; с цифрой конкретика 2.</div>
-<div class="row"><b>Куда:</b> личный · Reels «путь слэба» 18.10; StoneMarket · Reels (HY). <b>Тема плана:</b> Reels 18.10.</div>
-<div class="row warn">{{N}} — [НУЖЕН ФАКТ ОТ ТАРОНА: дней от блока до слэба]; кадры карьера и слэба — есть ли в архиве StoneMarket.</div></div>
+<div class="card hook"><div class="f">6 · H20 · Перевёрнутая истина</div>
+<p class="say">Архитектор, твёрдый камень — не значит долговечный фасад. Решает вода.</p>
+<p>Экран: <span class="scr">ТВЁРДЫЙ ≠ ДОЛГОВЕЧНЫЙ</span></p>
+<p><b>Первый кадр:</b> вода льётся на два образца рядом — один впитывает, второй нет.</p>
+<p><b>Оценка:</b> 2·2·2·2·2.</p>
+<p><b>Куда:</b> личный · Reels, карусель, LinkedIn EN. <b>Тема плана:</b> P2 камень; продолжение темы «водопоглощение» (17.10).</p></div>
 
-<div class="card hook"><span class="tag">7 · H13 · камень</span>
-<div class="t">Девелопер с фасадом из туфа, вот число, которое ты не спросил: водопоглощение.</div>
-<div class="row"><b>Экран:</b> «ТУФ. ВОДОПОГЛОЩЕНИЕ»</div>
-<div class="row"><b>Первый кадр:</b> капля впитывается в туф за секунды, таймер в углу.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·2·2·2</span></div>
-<div class="row"><b>Куда:</b> личный · Reels «путь камня»; LinkedIn EN. <b>Тема плана:</b> P2 камень; спикерство (тема «путь армянского камня»).</div></div>
+<div class="card hook"><div class="f">7 · H9 · Если у тебя</div>
+<p class="say">Если фасад принимали по образцу 10×10 — следующие 30 секунд про тебя.</p>
+<p>Экран: <span class="scr">ОБРАЗЕЦ 10×10 ≠ ФАСАД</span></p>
+<p><b>Первый кадр:</b> ладонь с маленьким образцом поднимается к большой плите другого рисунка.</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка.</p>
+<p><b>Куда:</b> личный · Reels «путь камня», LinkedIn EN. <b>Тема плана:</b> P2.</p></div>
 
-<div class="card hook"><span class="tag">8 · H21 · терраццо</span>
-<div class="t">Это новый стол из терраццо. Второго такого рисунка не будет.</div>
-<div class="row"><b>Экран:</b> «ВТОРОГО ТАКОГО НЕ БУДЕТ»</div>
-<div class="row"><b>Первый кадр:</b> ткань стягивается со столешницы, камера сверху.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·2·2·1</span> — адрес.</div>
-<div class="row"><b>Куда:</b> StoneMarket · Reels (HY); первая сторис. <b>Тема плана:</b> терраццо, карусель 18.10.</div>
-<div class="row warn">[НУЖЕН ФАКТ ОТ ТАРОНА: есть ли готовый стол и правда ли рисунок партии не повторяется].</div></div>
+<div class="card hook"><div class="f">8 · H13 · Обращение к узкой группе</div>
+<p class="say">Дизайнеры ресторанов Еревана: вы собираете зал из трёх камней. Хватит одной партии.</p>
+<p>Экран: <span class="scr">ОДНА ПАРТИЯ НА ВЕСЬ ЗАЛ</span></p>
+<p><b>Первый кадр:</b> панорама от стойки к столу из одного терраццо (образец + слэб с производства).</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка.</p>
+<p><b>Куда:</b> StoneMarket · Reels / карусель (HY); личный · LinkedIn RU (к посту 3 Редактора 21.10). <b>Тема плана:</b> терраццо для дизайнеров.</p></div>
 
-<div class="card hook"><span class="tag">9 · H15 · терраццо</span>
-<div class="t">Дизайнер, терраццо против мрамора на кухне. Берём терраццо — вот почему.</div>
-<div class="row"><b>Экран:</b> «ТЕРРАЦЦО vs МРАМОР. КУХНЯ»</div>
-<div class="row"><b>Первый кадр:</b> две руки ставят рядом два образца, лимон падает на оба.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·1·2·2</span> — ставка.</div>
-<div class="row"><b>Куда:</b> StoneMarket · Reels / карусель для дизайнеров (HY); личный · LinkedIn RU. <b>Тема плана:</b> терраццо для дизайнеров.</div>
-<div class="row warn">Причина выбора — [НУЖЕН ФАКТ ОТ ТАРОНА: один аргумент за терраццо на кухне из практики].</div></div>
+<div class="card hook"><div class="f">9 · H12 · Было / стало</div>
+<p class="say">Дизайнер, это слэб в день заливки. Это он после полировки. Одна операция.</p>
+<p>Экран: <span class="scr">ДЕНЬ 1 / ДЕНЬ {{N}}</span> — [НУЖЕН ФАКТ ОТ ТАРОНА]: дней от заливки до полировки.</p>
+<p><b>Первый кадр:</b> склейка: серый слэб → полированный, 1 с на кадр.</p>
+<p><b>Оценка:</b> 2·1·1·2·2 → слабейшее: конкретика ({{N}}) и ставка.</p>
+<p><b>Куда:</b> StoneMarket · Reels (HY), первая сторис; подпись 2 Редактора 21.10. <b>Тема плана:</b> карусель «Терраццо слэб за 5 шагов».</p></div>
 
-<div class="card hook"><span class="tag">10 · H9 · терраццо</span>
-<div class="t">Если столешница и стойка у тебя из разных камней — следующие 20 секунд твои.</div>
-<div class="row"><b>Экран:</b> «ТРИ КАМНЯ В ОДНОМ ОБЪЕКТЕ?»</div>
-<div class="row"><b>Первый кадр:</b> рука кладёт три разных образца на один чертёж, затем один слэб терраццо накрывает их.</div>
-<div class="row"><b>Оценка:</b> <span class="score">2·2·1·2·2</span> — ставка.</div>
-<div class="row"><b>Куда:</b> StoneMarket · Reels / карусель (HY); личный · LinkedIn (пост 3 Редактора «Дизайнеры Еревана», 21.10). <b>Тема плана:</b> терраццо — одна партия на объект.</div></div>
+<div class="card hook"><div class="f">10 · H8 · Забирай</div>
+<p class="say">Дизайнер, забери 5 вопросов производителю терраццо до заказа столешницы.</p>
+<p>Экран: <span class="scr">5 ВОПРОСОВ ДО ЗАКАЗА</span></p>
+<p><b>Первый кадр:</b> лист с 5 строками заполняется на камеру (порода крошки, фракция, связующее, толщина, срок).</p>
+<p><b>Оценка:</b> 2·2·1·2·2 → слабейшее: ставка. Ответы StoneMarket на эти 5 вопросов — [НУЖЕН ФАКТ ОТ ТАРОНА].</p>
+<p><b>Куда:</b> карусель Инессы для StoneMarket (HY, обложка = экран); LinkedIn RU. <b>Тема плана:</b> терраццо для дизайнеров.</p></div>
 
-</div>
-<p class="mut">Формулы за последние 7 дней по журналу (14–16.10, 40 хуков): H11 — 5; H2 — 4; H6, H13, H18, H20 — по 3; H1, H4, H10, H15, H16, H21, H22 — по 2; H5, H7, H8, H9, H12 — по 1.</p>
+<p class="muted"><b>Формулы за 7 дней (журнал 14–17.10):</b> H11 — 6; H13, H2 — 4; H15, H16, H18, H20, H21, H6, H9 — 3; H1, H10, H12, H22, H4 — 2; H3, H5, H7, H8, H14 — 1. Сегодня: H11, H8×2, H13×2, H22, H16, H20, H9, H12 — 8 формул.</p>
 
 <h2>Нужно от Тарона</h2>
-<div class="card">
-<div class="row">1. Лучший вопрос из вчерашнего окна «Какой вопрос про ИИ в бизнесе задать Тарону?» — Мери присылает до 09:00; Тарон отвечает видео до 09:15.</div>
-<div class="row">2. Выходит ли сегодня в 19:00 Reels «что мне сдают агенты утром» (смонтирован ли)? Без него серия укорачивается.</div>
-<div class="row">3. Говорят ли директора «у нас производство, не IT» — или как звучит реальное возражение (хук 1).</div>
-<div class="row">4. Цифры: сколько часов в неделю уходило на сводки до агентов (хук 3); сколько дней от блока до слэба (хук 6); один аргумент за терраццо на кухне (хук 9); есть ли готовый стол из терраццо (хук 8).</div>
-<div class="row">5. Союз на завтра: дата следующего выпуска Stone Talks, гость и его аккаунт, число членов Союза.</div>
-<div class="row">6. Мери сегодня на производстве терраццо? От этого зависят 3 сторис StoneMarket и подпись Редактора.</div>
-<div class="row mut">Ответ — письмом на Gmail с темой «[Отдел] …» или голосовым Сюзи. Писем «[Отдел]» за 8 дней нет.</div>
+<ul>
+<li>Снят ли Reels «путь слэба» во вторник 13.10 и выходит ли сегодня? Иначе сторис 4–5 личного аккаунта переносятся.</li>
+<li>Сколько дней от блока до готового слэба и от заливки терраццо до полировки — {{N}} для хуков H12 и ответа в сторис.</li>
+<li>Союз: дата или гость следующего выпуска Stone Talks и адрес YouTube-канала — без них пост и сторис Союза не выходят.</li>
+<li>Результаты стикеров 14–17.10 (опросы, вопросы из окна «Вопрос») — письмом «[Отдел]» от Мери; пятый запуск без входных данных.</li>
+<li>Один вопрос дословно от директора после тренинга 13.10 — для хука H14 следующей недели.</li>
+<li>Число ИИ-агентов в отделе для хука 2 (7 / 9 / 12 — в документах расходится).</li>
+</ul>
+
+<footer>Архив: <a href="archive/2026-10-18.html">18.10</a> · <a href="archive/2026-10-17.html">17.10</a> · <a href="archive/2026-10-16.html">16.10</a> · <a href="archive/2026-10-15.html">15.10</a> · <a href="archive/2026-10-14.html">14.10</a> · <a href="log.md">журнал</a><br>Агент сторис и хуков · маркетинговый отдел Тарона Бадаляна · черновик, публикует Мери после «да» Тарона</footer>
 </div>
-
-<footer>
-Архив: <a href="archive/2026-10-17.html">17.10</a> · <a href="archive/2026-10-16.html">16.10</a> · <a href="archive/2026-10-15.html">15.10</a> · <a href="archive/2026-10-14.html">14.10</a> · <a href="archive/">все дни</a><br>
-Источники: план Мадлен (13–19.10), дашборд и бриф Инессы, Редактор_2026-10-15, журнал stories/log.md. Ничего не опубликовано: всё выходит после «да» Тарона.
-</footer>
-
 <script>
-function cp(id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(function(){var b=event.target;var o=b.innerText;b.innerText='Скопировано';setTimeout(function(){b.innerText=o},1200)})}
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.t).textContent;navigator.clipboard.writeText(t).then(function(){b.textContent='Скопировано';b.classList.add('ok');setTimeout(function(){b.textContent='Скопировать';b.classList.remove('ok')},1500)})})});
 </script>
-</body>
-</html>
+</body></html>
