@@ -3,273 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Мадлен — план недели</title>
+<title>Маркетинг · неделя 20–26.10</title>
 <style>
-  :root{
-    --bg:#0e1013; --panel:#16191e; --panel2:#1c2027; --line:#2a2f38;
-    --ink:#eef1f5; --mut:#9aa3b0; --soft:#c6cdd8;
-    --accent:#c8a24a; --accent2:#7ea6c9; --good:#6fce9f; --warn:#e2b35b; --bad:#e08a7a;
-    --r:14px;
+:root{
+  --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
+  --ink:#eef1f6; --mut:#9aa3b2; --mut2:#6f7788;
+  --accent:#c6a35b; --accent2:#7ea6c9; --ok:#5fb37a; --warn:#d8a24a; --bad:#cf6a5a;
+  --p1:#7ea6c9; --p2:#c6a35b; --p3:#9a86c4;
+}
+:root:not([data-theme="light"]) { color-scheme: dark; }
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f4f1ea; --panel:#ffffff; --panel2:#faf8f3; --line:#e2ddd1;
+    --ink:#1c1f26; --mut:#5b6472; --mut2:#8a93a2;
+    --accent:#a87f2e; --accent2:#2f6fa0; --ok:#2f7d4e; --warn:#a9751f; --bad:#b0463a;
+    --p1:#2f6fa0; --p2:#a87f2e; --p3:#6a559e;
   }
-  @media (prefers-color-scheme: light){
-    :root:not([data-theme="dark"]){
-      --bg:#f3f1ec; --panel:#ffffff; --panel2:#faf8f3; --line:#e2ddd2;
-      --ink:#1c1e22; --mut:#6b7280; --soft:#3a3f48;
-      --accent:#9a7a2a; --accent2:#3d6b93;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0e1013; --panel:#16191e; --panel2:#1c2027; --line:#2a2f38;
-    --ink:#eef1f5; --mut:#9aa3b0; --soft:#c6cdd8;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1040px;margin:0 auto;padding:28px 16px 80px}
-  header.top{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
-  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
-  h1{font-size:30px;margin:10px 0 6px;font-weight:700;letter-spacing:-.01em}
-  .sub{color:var(--mut);font-size:15px}
-  h2{font-size:21px;margin:40px 0 4px;font-weight:700;letter-spacing:-.01em}
-  h2 .n{color:var(--accent);font-variant-numeric:tabular-nums}
-  h3{font-size:16px;margin:24px 0 8px;font-weight:700;color:var(--soft)}
-  .lead{color:var(--mut);margin:4px 0 16px;font-size:14.5px}
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin:14px 0}
-  .grid{display:grid;gap:12px}
-  @media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}.grid.c4{grid-template-columns:repeat(4,1fr)}}
-  .kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .kpi .big{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
-  .kpi .lbl{color:var(--mut);font-size:12.5px;margin-top:2px}
-  table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:14px}
-  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{color:var(--mut);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
-  td .mut{color:var(--mut)}
-  .tag{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--soft);background:var(--panel2);white-space:nowrap}
-  .tag.p1{color:var(--accent2);border-color:var(--accent2)}
-  .tag.need{color:var(--warn);border-color:var(--warn)}
-  .tag.no{color:var(--bad);border-color:var(--bad)}
-  .tag.ok{color:var(--good);border-color:var(--good)}
-  ul{margin:8px 0 8px;padding-left:20px}
-  li{margin:4px 0}
-  .flag{border-left:3px solid var(--accent);background:var(--panel2);padding:10px 14px;border-radius:0 10px 10px 0;margin:10px 0;font-size:14.5px}
-  .need-list li{color:var(--soft)}
-  a{color:var(--accent2)}
-  .prio{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
-  .prio:last-child{border-bottom:0}
-  .prio .num{font-size:20px;font-weight:700;color:var(--accent);min-width:26px;font-variant-numeric:tabular-nums}
-  .foot{margin-top:40px;color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
-  .arm{font-size:14px}
-  .daycol{white-space:nowrap;font-weight:600}
-  code{background:var(--panel2);border:1px solid var(--line);padding:1px 6px;border-radius:6px;font-size:13px}
+}
+:root[data-theme="dark"]{ color-scheme:dark; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 80px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:28px;line-height:1.2;margin:8px 0 4px;font-weight:800;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:14.5px}
+.meta{color:var(--mut2);font-size:12.5px;margin-top:8px}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+nav.toc a{font-size:12.5px;color:var(--mut);text-decoration:none;border:1px solid var(--line);
+  padding:5px 10px;border-radius:999px;background:var(--panel)}
+nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
+section{margin-top:34px}
+h2{font-size:20px;margin:0 0 4px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px}
+h2 .n{color:var(--accent);font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+h3{font-size:15.5px;margin:20px 0 6px;color:var(--ink);font-weight:700}
+.lead{color:var(--mut);margin:6px 0 14px;font-size:14.5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+.panel.tight{padding:12px 14px}
+p{margin:8px 0}
+ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.card .lbl{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut2);font-weight:700}
+.card .big{font-size:22px;font-weight:800;margin-top:3px}
+.card .note{font-size:12.5px;color:var(--mut);margin-top:3px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--panel2);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td .hook{color:var(--ink);font-weight:600}
+td .scr{color:var(--accent);font-size:11.5px;letter-spacing:.03em}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px;border:1px solid var(--line)}
+.p1{color:var(--p1);border-color:var(--p1)}
+.p2{color:var(--p2);border-color:var(--p2)}
+.p3{color:var(--p3);border-color:var(--p3)}
+.h{color:var(--accent2);border-color:var(--accent2);font-size:11px}
+.flag{color:var(--warn);font-weight:700}
+.cond{color:var(--bad);font-weight:600}
+.ok{color:var(--ok)}
+.muted{color:var(--mut)}
+.callout{border-left:3px solid var(--accent);background:var(--panel2);padding:12px 15px;border-radius:0 10px 10px 0;margin:12px 0}
+.callout.warn{border-left-color:var(--warn)}
+.callout.bad{border-left-color:var(--bad)}
+.hl{color:var(--accent);font-weight:700}
+ol.q{padding-left:22px}
+ol.q li{margin:7px 0}
+.small{font-size:12.5px;color:var(--mut)}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--mut)}
+footer{margin-top:50px;border-top:1px solid var(--line);padding-top:16px;color:var(--mut2);font-size:12px}
+.arm{font-family:"Segoe UI","Noto Sans Armenian",sans-serif}
+@media(max-width:640px){
+  h1{font-size:23px} table{font-size:12px} th,td{padding:6px 7px}
+  .wrap{padding:20px 14px 60px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <header class="top">
-  <div class="eyebrow">Мадлен · ИИ-директор по маркетингу</div>
-  <h1>План недели отдела маркетинга</h1>
-  <div class="sub">Тарон Бадалян · StoneMarket · Союз камнеобработчиков Армении &nbsp;|&nbsp; неделя 13–19.10.2026 &nbsp;|&nbsp; обновлено 12.10.2026</div>
-  <div class="flag" style="margin-top:16px">
-    Всё ниже — подготовка. Наружу ничего не публикуется и не отправляется: каждая единица выходит только после «да» Тарона. Где факта нет — стоит пометка <span class="tag need">нужен факт от Тарона</span>, выдумок нет.
-  </div>
+  <div class="kicker">The Voice of Stone · отдел маркетинга</div>
+  <h1>План недели и аудит · 20–26 октября 2026</h1>
+  <div class="sub">Готовит Мадлен (ИИ-директор по маркетингу). Утверждает Сюзи. Ничего не опубликовано и не отправлено наружу — всё выходит только после «да» Тарона.</div>
+  <div class="meta">Обновлено: 2026-10-19 · понедельник · данные: документы агентов (Google Drive, 11–15.10), журналы carousel-log.md и stories/log.md. Писем «[Отдел]» за 8 дней нет.</div>
 </header>
 
-<section>
-  <h2>Флагман недели</h2>
-  <p class="lead">Неделю строим от одной темы, а не от постов на каждую площадку.</p>
-  <div class="panel">
-    <h3 style="margin-top:4px">«ИИ-отдел в реальном бизнесе» — на примере первого тренинга</h3>
-    <p>Во вторник 13.10 проходит первый тренинг для реальной компании (транспортная отрасль, пакет START). Это даёт честный материал под приоритет №1 — продажу тренингов. Из флагмана на неделю: 4 Reels для личного аккаунта, 3 поста LinkedIn, карусели Инессы, серия Stories, короткие клипы под TikTok и Shorts. Камень и терраццо идут второй линией — под приоритет №2.</p>
-  </div>
-  <div class="panel">
-    <div class="prio"><div class="num">1</div><div><b>ИИ-тренинги для команд</b> — приоритет №1. Контент личного аккаунта и LinkedIn ведёт сюда. Цель сделки: заявка на бесплатный экспресс-анализ. Первый тренинг — 13.10.</div></div>
-    <div class="prio"><div class="num">2</div><div><b>StoneMarket и терраццо</b> — ребрендинг и рост оборота. Первый приоритет — дизайнеры интерьера. Контент терраццо выходит только при наличии реальных фото и видео с производства.</div></div>
-    <div class="prio"><div class="num">3</div><div><b>Спикерство</b> — договориться о выступлениях (Продюсер ведёт заявки: DevFest 21.11, DigiTec 20–22.11, Surface Design Show Лондон 02.2027).</div></div>
-    <div class="prio"><div class="num">4</div><div><b>Союз и подкаст Stone Talks</b> — вес перед государством и новые члены; 2 выпуска в месяц. При нехватке времени Тарона подкаст ждёт.</div></div>
-  </div>
-</section>
+<nav class="toc">
+  <a href="#situ">1 · Текущая ситуация</a>
+  <a href="#report">2 · Отчёт за неделю</a>
+  <a href="#flagship">3 · Флагман недели</a>
+  <a href="#plan">4 · План по дням и часам</a>
+  <a href="#accounts">5 · План по аккаунтам</a>
+  <a href="#shoot">6 · Темы съёмки (вторник)</a>
+  <a href="#tasks">7 · Задачи команде</a>
+  <a href="#need">8 · Нужно от Тарона</a>
+</nav>
 
-<section>
-  <h2><span class="n">1.</span> Текущая ситуация (аудит)</h2>
-  <p class="lead">Первый аудит отдела. К залогиненным кабинетам (Instagram, TikTok, LinkedIn) доступа на этом запуске нет — там, где цифр нет, стоит «нужен доступ», цифры не выдумываются.</p>
+<section id="situ">
+  <h2><span class="n">1</span> Текущая ситуация</h2>
+  <p class="lead">Аудит этой недели — без цифр: доступа к залогиненным кабинетам (Instagram/Meta, YouTube Studio, LinkedIn, TikTok) и к аналитике на этом запуске нет. Все метрики ниже помечены «нужен доступ». Цифры не выдумываю — ставлю базовую точку и жду скриншоты.</p>
 
+  <div class="callout warn">
+    <b>Главный вывод недели — не про контент, а про замер.</b> Отдел четвёртую неделю работает вслепую: ни одного письма «[Отдел]» за 8 дней, нет ни аналитики публикаций, ни статусов продаж, ни подтверждения, что хоть что-то вышло. Шесть агентов производят материал каждый день, но проверить, что из этого работает, нельзя. До первых цифр аудит остаётся формальным, а решения — на ощупь.
+  </div>
+
+  <h3>Аккаунты — базовая точка и что известно</h3>
   <table>
-    <thead><tr><th>Аккаунт</th><th>Базовая точка</th><th>Сейчас</th><th>Статус данных</th></tr></thead>
-    <tbody>
-      <tr><td><b>Личный Instagram</b> @badalyan.taron<br><span class="mut">арм + рус</span></td><td>06.07.2026: 4550 подписчиков, 237 постов</td><td class="mut">нет доступа к кабинету</td><td><span class="tag need">нужен доступ</span></td></tr>
-      <tr><td><b>Личный TikTok</b> @badalyan.taron</td><td>06.07.2026: 579 подписчиков, 5052 лайка</td><td class="mut">нет доступа</td><td><span class="tag need">нужен доступ</span></td></tr>
-      <tr><td><b>YouTube</b> The Voice of Stone</td><td>06.07.2026: 28 подписчиков, 13 видео</td><td>≈59 подписчиков, ≈21 838 просмотров, 30 загрузок <span class="mut">(оценка, Social Blade, 11.10)</span></td><td><span class="tag ok">открытая оценка</span></td></tr>
-      <tr><td><b>Личный LinkedIn</b> Тарона<br><span class="mut">рус + англ</span></td><td class="mut">не зафиксирована</td><td class="mut">нет доступа</td><td><span class="tag need">нужен доступ + база</span></td></tr>
-      <tr><td><b>Instagram StoneMarket</b> @stonemarket.am<br><span class="mut">арм</span></td><td class="mut">первый замер</td><td class="mut">закрыт для авточтения; почти не ведётся</td><td><span class="tag need">нужен доступ</span></td></tr>
-      <tr><td><b>Instagram Союза</b> @unionofstonemanufacturers<br><span class="mut">арм</span></td><td class="mut">первый замер</td><td class="mut">закрыт для авточтения; почти не ведётся</td><td><span class="tag need">нужен доступ</span></td></tr>
-      <tr><td><b>LinkedIn Союза</b><br><span class="mut">англ</span></td><td class="mut">первый замер</td><td class="mut">нет доступа</td><td><span class="tag need">нужен доступ</span></td></tr>
-    </tbody>
+    <tr><th>Аккаунт</th><th>База 06.07.2026</th><th>Сейчас</th><th>Что видно без доступа</th></tr>
+    <tr><td>Instagram <span class="muted">@badalyan.taron</span></td><td>4550 подп. / 237 постов</td><td class="flag">нужен доступ</td><td>Основной рабочий аккаунт. Карусели Инессы (2/день) и Reels идут сюда. Прирост и ER — только из кабинета.</td></tr>
+    <tr><td>TikTok <span class="muted">@badalyan.taron</span></td><td>579 подп. / 5052 лайка</td><td class="flag">нужен доступ</td><td>Ведётся слабо. Нарезка Stone Talks и вертикаль туда не доходят системно.</td></tr>
+    <tr><td>YouTube <span class="muted">The Voice of Stone</span></td><td>28 подп. / 13 видео</td><td class="flag">нужен доступ</td><td>Stone Talks не индексируется поиском: на выпуски нельзя выйти, не зная канала. Для спонсора и гостей это минус.</td></tr>
+    <tr><td>LinkedIn <span class="muted">Тарон</span></td><td>уточнить</td><td class="flag">нужен доступ</td><td>Посты Тарона — главный канал под тренинги и спикерство. Базовую точку по подписчикам ещё не зафиксировали.</td></tr>
+    <tr><td>Instagram <span class="muted">@stonemarket.am</span></td><td class="flag">нужен доступ</td><td class="flag">нужен доступ</td><td>Почти не ведётся. Закрыт для автоматического чтения — базовую точку снять не удалось.</td></tr>
+    <tr><td>Instagram/LinkedIn <span class="muted">Союз</span></td><td class="flag">нужен доступ</td><td class="flag">нужен доступ</td><td>Почти не ведётся. Базовую точку снять не удалось.</td></tr>
   </table>
-
-  <h3>Что уже видно</h3>
-  <ul>
-    <li><b>YouTube растёт</b> с базовой точки: подписчики примерно удвоились (28 → ≈59), загрузок 30 против 13. Цифры — внешняя оценка (Social Blade), для точного разбора нужен доступ к YouTube Studio.</li>
-    <li><b>StoneMarket и Союз практически не ведутся</b> — это главный пробел по охвату. У StoneMarket в каталоге и в Instagram нет ни одного образца терраццо (проверено по stonemarket.am, 11.10): дизайнер, получив сообщение, не найдёт продукт, который мы продаём.</li>
-    <li><b>Топ-3 и худшие-3 публикации недели определить нельзя:</b> нет доступа к аналитике и нет записанных результатов постов. Как появится доступ (сохранения, репосты, охват, досматриваемость) — разбор будет по данным. Это же касается тренда ER и лучшего времени публикации: <span class="tag need">нужен доступ</span>.</li>
-  </ul>
+  <p class="small">Чтобы аудит заработал: Мери один раз присылает скриншот «Профессионального кабинета» по каждому аккаунту (подписчики, охват за 30 дней, топ-посты) — это и станет базовой точкой для StoneMarket и Союза. Дальше — еженедельно.</p>
 
   <h3>Сверка с журналом Инессы (carousel-log.md)</h3>
-  <div class="panel">
-    <p>В журнале 14 каруселей за 05–11.10 (хук, каркас, тип хука, столп, сегмент, цель CTA). <b>Результатов (сохранения, репосты, охват) в журнале нет, доступа к Instagram нет</b> — сопоставить хуки с реальным результатом и назвать лучший/худший каркас нельзя. Выводов по эффективности не выдумываю.</p>
-    <p>Что видно по <i>составу</i> (это не про результат):</p>
-    <ul>
-      <li>Почти все 14 каруселей — про цепочку ценности камня (P1), для архитекторов и девелоперов, на английском, только на личном аккаунте.</li>
-      <li>Про ИИ и тренинги (приоритет №1) — всего 2 карусели. Про терраццо и StoneMarket (приоритет №2) — ни одной.</li>
-      <li>Язык хуков — английский, хотя для личного аккаунта по умолчанию армянский и русский.</li>
-    </ul>
-    <p class="flag" style="margin-bottom:0"><b>Вывод в план:</b> состав каруселей смещён от приоритетов отдела. На этой неделе сдвигаем: 3 из 4 каруселей личного аккаунта — про ИИ и тренинги, 2 карусели — терраццо для дизайнеров. Решение по языку хуков — за Тароном (см. «Нужно от Тарона»).</p>
+  <div class="panel tight">
+    <p>В журнале <b>16 каруселей за 05–18.10</b> (текст хука, каркас, формула, столп, сегмент, цель). Результатов (сохранения, репосты, охват) в журнале нет, доступа к аналитике нет — <b>сопоставить хуки с результатом нельзя, выводов не выдумываю.</b></p>
+    <p>Что видно по <i>составу</i> (не по результату): ранние карусели (05–11.10) почти все — цепочка ценности камня (P1) для архитекторов, на английском, только на личном аккаунте. С 13.10 состав осознанно сдвинут к приоритетам отдела: добавились ИИ/тренинги (P3) и терраццо/StoneMarket (P2). Формулы к 15.10 начали проставляться по номерам (H4, H20, H8, H2, H6, H10, H18) — это правильно, продолжаем.</p>
+  </div>
+
+  <h3>Сторис (stories/log.md)</h3>
+  <p>Агент сторис строит серии каждое утро (личный, StoneMarket, Союз) с опросами, слайдерами, цепочками «добавь своё» и стикерами-ссылками на экспресс-анализ. Какие стикеры дали ответы и какие серии вели к публикациям — <span class="flag">нужен доступ</span> к статистике сторис. Вывод по составу: серии правильно привязаны к публикациям дня и к съёмке вторника; механика интерактива заложена, осталось снять отклик.</p>
+
+  <div class="callout">
+    <b>Правило диагностики на будущее (когда появятся цифры):</b> ранжируем по кратности (просмотры ÷ медиана) и пересылкам на охват, не по просмотрам. Reels с просмотрами без подписок — проблема профиля, а не ролика; Reels без просмотров — проблема хука. Карусели судим по сохранениям и репостам. С 30 публикациями закономерность видна, с 6 — нет.
   </div>
 </section>
 
-<section>
-  <h2><span class="n">2.</span> Отчёт за прошлую неделю</h2>
-  <p class="lead">Сравнение с планом 05–11.10. Писем с темой «[Отдел]» за 8 дней нет — статусов продаж от Лилит и цифр рекламы от Мери не поступало, поэтому по многим целям «данных нет».</p>
-  <div class="grid c4">
-    <div class="kpi"><div class="big">14</div><div class="lbl">каруселей сделала Инесса (публикация не подтверждена)</div></div>
-    <div class="kpi"><div class="big">6</div><div class="lbl">агентов дали первые документы 11.10</div></div>
-    <div class="kpi"><div class="big">1</div><div class="lbl">тренинг забронирован (START, 13.10)</div></div>
-    <div class="kpi"><div class="big">0</div><div class="lbl">писем «[Отдел]» с цифрами</div></div>
+<section id="report">
+  <h2><span class="n">2</span> Отчёт за прошлую неделю (13–19.10)</h2>
+  <p class="lead">Что из плана вышло — подтверждения нет (нет писем «[Отдел]», нет аналитики). Ниже — что подготовили агенты и что известно по фактам.</p>
+
+  <div class="grid">
+    <div class="card"><div class="lbl">Тренинги · приоритет №1</div><div class="big">1 продажа</div><div class="note">Первый проданный тренинг (START) состоялся 13.10 — по контексту отдела. Анкет «после» и согласия клиента на публикацию в почте нет.</div></div>
+    <div class="card"><div class="lbl">Реклама</div><div class="big">не запущена</div><div class="note">Кампании тренингов и терраццо готовы с 11.10, «да» Тарона не было. Ни одного дня открутки.</div></div>
+    <div class="card"><div class="lbl">Выступления</div><div class="big">0 из 4</div><div class="note">8 событий в статусе «не подано». Ближайший твёрдый дедлайн — DevFest Armenia 08.11.</div></div>
+    <div class="card"><div class="lbl">Stone Talks</div><div class="big">данных нет</div><div class="note">Со слов — 9 выпусков. Новых за неделю не подтверждено. Список выпусков от Тарона не получен.</div></div>
+    <div class="card"><div class="lbl">StoneMarket · оборот</div><div class="big">данных нет</div><div class="note">Статусов продаж от Лилит нет. Терраццо-производство принимает заказы.</div></div>
+    <div class="card"><div class="lbl">Контент</div><div class="big">готов</div><div class="note">Карусели, Reels-хуки, тексты LinkedIn, сторис — подготовлены. Факт публикации не подтверждён.</div></div>
   </div>
-  <h3>Что сделали агенты (всё — черновики, наружу ничего не ушло)</h3>
+
+  <h3>Что сделали агенты</h3>
   <ul>
-    <li><b>Агент продаж:</b> подготовил 8 компаний-лидов в 6 отраслях с первыми сообщениями (арм + рус). Статусов от Лилит нет.</li>
-    <li><b>Агент StoneMarket:</b> 10 дизайнеров/студий интерьера Еревана; главный вывод — нет образцов терраццо на сайте и в Instagram.</li>
-    <li><b>Продюсер:</b> заявки на DevFest (срок 08.11), DigiTec и Surface Design Show; кандидат в гости Stone Talks №1 — архитектор из крупной студии. Список 9 выпусков публично не подтверждён.</li>
-    <li><b>Рекламный аналитик:</b> две кампании в Meta готовы (тренинги и терраццо), не запущены, бюджет недели в пределах лимита. Ждут рекламный аккаунт, политику конфиденциальности для формы и фото терраццо.</li>
-    <li><b>Спичрайтер:</b> два базовых выступления — «ИИ-отдел в производственной компании» и «путь армянского камня».</li>
-    <li><b>Агент сторис:</b> серии на личный аккаунт, StoneMarket и Союз.</li>
+    <li><b>Инесса (дизайн):</b> по журналу — 2 карусели в день 13–18.10 (личный, StoneMarket, Союз), формулы проставлены.</li>
+    <li><b>Редактор:</b> 3 поста LinkedIn Тарона (RU+EN), пост и подписи Союза и StoneMarket, идеи сторис, вопросы Тарону. Пост-кейс «первого клиента» не написан — нет цифр, цитат и согласия.</li>
+    <li><b>Агент сторис:</b> ежедневные серии + банк хуков с номерами формул (H2–H22) — из него взяты хуки в этот план.</li>
+    <li><b>Агент продаж:</b> 8 новых компаний (итого ~32 за 4 запуска + ~40 в резерве). Предлагает с понедельника перейти от наращивания списка к дожиму.</li>
+    <li><b>Агент StoneMarket:</b> 10 новых дизайнеров интерьера, аудит сайта stonemarket.am (покупатель не может купить — нет наличия, срока, доставки, продавца).</li>
+    <li><b>Продюсер:</b> гость №2 — Татевик Гюлхасян (CEO THINK Architectural Bureau, дизайнер интерьеров — попадание в терраццо). DevFest дедлайн 08.11. 0 заявок подано.</li>
+    <li><b>Рекламный аналитик:</b> недельный набор кампаний готов (бюджет 266 $). Нашёл 2 ошибки на лендинге тренинга (см. блок «Нужно от Тарона»).</li>
   </ul>
-  <div class="flag">Цифры к целям отдела (продажи, выручка, охваты, стоимость заявки) — <b>данных нет</b>: нужны письма «[Отдел]» от Лилит и Мери и доступ к аналитике. Первый измеримый результат по тренингам появится после 13.10.</div>
+  <p class="small">Примечание: внутренние документы проекта (marketing/*) на этом запуске были недоступны — работала по документам агентов в Google Drive и журналам в репозитории. При расхождении приоритет у документов проекта.</p>
 </section>
 
-<section>
-  <h2><span class="n">3.</span> План недели по направлениям</h2>
-  <p class="lead">По приоритету. Вторник 13.10 — съёмка (материал выходит со среды); пятница 17.10 — у Тарона продажи и встречи. Один CTA на единицу контента.</p>
+<section id="flagship">
+  <h2><span class="n">3</span> Флагман недели</h2>
+  <p class="lead">Неделя строится от одной темы, а не от отдельных постов. Самый сильный реальный факт, который не требует согласований: <b>маркетинг каменной компании ведёт отдел ИИ-агентов</b> — и это и есть живое доказательство для тренингов (приоритет №1).</p>
 
-  <h3>Личный Instagram — Reels (минимум 4) + карусели Инессы</h3>
-  <table>
-    <thead><tr><th>День</th><th>Формат / тема</th><th>Хук (первый кадр)</th><th>CTA</th><th>Столп · отв.</th></tr></thead>
-    <tbody>
-      <tr><td class="daycol">СР 15.10</td><td>Reels — как прошёл первый тренинг</td><td>Тарон у экрана перед залом</td><td>Заявка на экспресс-анализ</td><td>Тренинги · Мери</td></tr>
-      <tr><td class="daycol">ЧТ 16.10</td><td>Reels — одна задача: вручную vs с ИИ</td><td>Секундомер и сравнение времени</td><td>Ссылка на лендинг</td><td>Тренинги · Мери</td></tr>
-      <tr><td class="daycol">ПТ 17.10</td><td>Reels — что мне сдают ИИ-агенты утром</td><td>Экран телефона с отчётами агентов</td><td>Экспресс-анализ</td><td>P3 · Мери</td></tr>
-      <tr><td class="daycol">СБ 18.10</td><td>Reels — путь слэба (камень)</td><td>Макро фактуры камня</td><td>Подписка</td><td>P2 · Мери</td></tr>
-    </tbody>
-  </table>
-  <p class="mut" style="font-size:13.5px">Эти же Reels репакуются под TikTok и YouTube Shorts: 9:16, хук в первые 1–2 секунды, субтитры ≤2 строки по 3–5 слов, для Shorts — поисковый заголовок. Карусели — по брифу Инессы (ссылка внизу). Stories — серия «первый тренинг» со вторника, финал с ссылкой на экспресс-анализ.</p>
-
-  <h3>LinkedIn Тарона — 3 поста (вт–чт, 200–300 слов, целевая фраза в первых словах)</h3>
-  <table>
-    <thead><tr><th>День</th><th>Язык</th><th>Тема · целевая фраза в начале</th><th>CTA</th></tr></thead>
-    <tbody>
-      <tr><td class="daycol">ВТ 14.10</td><td>рус</td><td>«ИИ-агент — это должность, а не программа»: одна задача, один результат, один принимающий</td><td>Один вопрос к читателю</td></tr>
-      <tr><td class="daycol">СР 15.10</td><td>англ</td><td>«A stone company runs an AI department» — how a traditional business started with one task</td><td>Один вопрос к читателю</td></tr>
-      <tr><td class="daycol">ЧТ 16.10</td><td>рус</td><td>«С чего начать ИИ в традиционной компании» — кейс калькулятора цен</td><td>Один вопрос к читателю</td></tr>
-    </tbody>
-  </table>
-  <p class="mut" style="font-size:13.5px">Правила: оригинальный обучающий текст (не репост), технические детали и названные сущности (агенты Мадлен, Педро; правило «агент готовит — человек решает»), цифры с источником и датой, без внешних ссылок в теле, без Unicode-жирного, без концовок «Agree?/Thoughts?». Для числа агентов — <span class="tag need">нужен факт</span>.</p>
-
-  <h3>StoneMarket — 3 публикации (минимум 2 про терраццо)</h3>
-  <table>
-    <thead><tr><th>День</th><th>Формат / тема</th><th>CTA</th><th>Условие</th></tr></thead>
-    <tbody>
-      <tr><td class="daycol">СР 14.10</td><td>Карусель Инессы — «5 мест для терраццо в интерьере» (терраццо)</td><td>DM: под какой проект нужен образец</td><td><span class="tag no">только при реальных фото</span></td></tr>
-      <tr><td class="daycol">ВС 18.10</td><td>Карусель Инессы — «Терраццо слэб за 5 шагов» (терраццо, производство)</td><td>Сохранить</td><td><span class="tag no">только при съёмке производства</span></td></tr>
-      <tr><td class="daycol">по готовности</td><td>Reels/пост — процесс производства слэба терраццо</td><td>DM / вопрос в Stories</td><td><span class="tag no">только при реальном видео</span></td></tr>
-    </tbody>
-  </table>
-  <p class="mut" style="font-size:13.5px">Пустой аккаунт лучше чужих или случайных картинок. Если фото и видео терраццо нет — Мери снимает запас на производстве во вторник, публикации сдвигаются.</p>
-
-  <h3>Союз — 2 публикации</h3>
-  <table>
-    <thead><tr><th>День</th><th>Площадка · язык</th><th>Тема</th><th>CTA</th></tr></thead>
-    <tbody>
-      <tr><td class="daycol">ПТ 16.10</td><td>Instagram · арм</td><td>«Зачем отрасли Союз» — вес перед государством, новые члены</td><td>Подписка</td></tr>
-      <tr><td class="daycol">ВС 18.10</td><td>LinkedIn (англ) + IG</td><td>Stone Talks — анонс следующего выпуска или ценность подкаста для отрасли</td><td>Смотреть выпуски на YouTube</td></tr>
-    </tbody>
-  </table>
-  <p class="mut" style="font-size:13.5px">Союзу нужны факты: число членов, одна конкретная задача перед государством, дата события или выпуска Stone Talks и гость — <span class="tag need">нужен факт</span>. Без них ведём как мнение, без выдуманных цифр. Выпуск с гостем из отрасли выходит совместным постом с аккаунтом Союза.</p>
-
-  <h3>8 тем для съёмки вторника (для Редактора)</h3>
-  <table>
-    <thead><tr><th>#</th><th>Тема</th><th>Аккаунт · цель</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Тарон у экрана перед залом — «первый тренинг для компании»</td><td>Личный IG / Reels · заявки на тренинг</td></tr>
-      <tr><td>2</td><td>Демонстрация «одна задача: вручную vs с ИИ» — экран, сравнение времени</td><td>Личный IG / Reels · тренинги</td></tr>
-      <tr><td>3</td><td>Селфи-видео 30 сек: «что я понял за первый тренинг» — одна мысль</td><td>Личный IG / Reels + LinkedIn · P3</td></tr>
-      <tr><td>4</td><td>Закулисье: зал до начала, руки участников на ноутбуках (без лиц без согласия)</td><td>Личный IG / Stories · тренинги</td></tr>
-      <tr><td>5</td><td>Тарон на камеру 60 сек: «агент — это должность» (тезис для видео-поста)</td><td>LinkedIn · ИИ-отдел</td></tr>
-      <tr><td>6</td><td>Производство: слэб терраццо крупно + шлифовка</td><td>StoneMarket IG · терраццо</td></tr>
-      <tr><td>7</td><td>Готовое изделие терраццо (стол/столешница) с двух ракурсов</td><td>StoneMarket IG · терраццо</td></tr>
-      <tr><td>8</td><td>Тарон 30 сек: «зачем отрасли Союз» или анонс Stone Talks</td><td>Союз IG / YouTube · Союз <span class="tag need">нужен факт</span></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section>
-  <h2><span class="n">4.</span> Задачи команде <span class="mut" style="font-size:14px;font-weight:400">(на армянском; раздаёт Сюзи)</span></h2>
-  <p class="lead">Trello пока не подключён — задачи списком. Каждая с одним ответственным и дедлайном, префикс [Маркетинг].</p>
-  <div class="panel arm">
-    <h3 style="margin-top:4px">Սյուզի (ղեկավար · համակարգում, ընդունում, հասանելիություն)</h3>
-    <ul>
-      <li>[Մարքեթինգ] Ստանալ առաջին հաճախորդի (տրանսպորտային Ընկերություն) տնօրենի համաձայնությունը նկարահանման և հիշատակման համար — <b>12.10</b>։</li>
-      <li>[Մարքեթինգ] Հաստատել շաբաթվա պլանը և Ինեսսայի brief-ը — <b>12.10</b>։</li>
-      <li>[Մարքեթինգ] Հավաքել հասանելիությունը աքաունթների անալիտիկային (Instagram, TikTok, LinkedIn) և փոխանցել Մադլենին — <b>15.10</b>։</li>
-      <li>[Մարքեթինգ] Ստուգել հայերեն տեքստերը (գովազդ, սթորիս) մինչև հրապարակումը — ընթացիկ։</li>
-    </ul>
-    <h3>Մերի (նկարահանում, մոնտաժ, հրապարակում)</h3>
-    <ul>
-      <li>[Մարքեթինգ] Երեքշաբթի նկարահանել 8 թեմաները (ցանկը՝ պլանում) — <b>13.10</b>։</li>
-      <li>[Մարքեթինգ] Արտադրամասում նկարահանել տերացոյի պաշար (սալ, հղկում, պատրաստի իրեր) — <b>13.10</b>։</li>
-      <li>[Մարքեթինգ] Մոնտաժել 4 Reels-ը և պատրաստել հրապարակման ժամանակացույցը — <b>15.10</b>։</li>
-      <li>[Մարքեթինգ] Լիլիթի հետ գործարկել Meta գովազդը՝ Թարոնի «այո»-ից հետո — ընթացիկ։</li>
-      <li>[Մարքեթինգ] Ուղարկել «[Отдел] Реклама цифры» նամակը Gmail-ին — <b>20.10</b> երեկոյան։</li>
-    </ul>
-    <h3>Լիլիթ (վաճառք, գովազդի գործարկում Մերիի հետ)</h3>
-    <ul>
-      <li>[Մարքեթինգ] Անցկացնել/ուղեկցել առաջին թրենինգը և գրանցել արդյունքը — <b>13.10</b>։</li>
-      <li>[Մարքեթինգ] Թարոնի «այո»-ից հետո ուղարկել առաջին հաղորդագրությունները 8 ընկերություններին — <b>17.10</b>-ից։</li>
-      <li>[Մարքեթինգ] Ուղարկել «[Отдел]» նամակ՝ վաճառքի ստատուսներով (զանգեր, հանդիպումներ) — <b>17.10</b>։</li>
-      <li>[Մարքեթինգ] Մերիի հետ գործարկել Meta գովազդը՝ հաստատումից հետո — ընթացիկ։</li>
-    </ul>
-    <h3>Թարոն (միայն անձնական)</h3>
-    <ul>
-      <li>[Մարքեթինգ] Երեքշաբթի նկարահանում — 8 թեմաները (13.10)։</li>
-      <li>[Մարքեթինգ] Տալ փաստերը՝ ԱԲ-գործակալների ճշգրիտ թիվը, գնացուցակ-կալկուլյատորի պատմությունը, Stone Talks 9 թողարկումների ցանկը, հաջորդ հյուրի ամսաթիվը — <b>14.10</b>-ից շուտ։</li>
-      <li>[Մարքեթինգ] Որոշել hook-երի լեզուն (հայ/րուս թե անգլերեն) անձնական աքաունթի համար — <b>13.10</b>։</li>
-      <li>[Մարքեթինգ] Ուրբաթ՝ հանդիպումներ և վաճառք (17.10)։</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Нужно от Тарона</h2>
   <div class="panel">
-    <ul class="need-list">
-      <li><b>Число ИИ-агентов в отделе</b> — одна цифра (в документах 7, 9 и 12). Нужна для LinkedIn и выступлений.</li>
-      <li><b>Язык хуков и каруселей личного аккаунта</b> — армянский+русский (по умолчанию) или оставляем английский, как раньше.</li>
-      <li><b>Согласие директора первого клиента</b> на съёмку и упоминание тренинга (иначе кадры без лиц, вывесок и названия).</li>
-      <li><b>Кейс калькулятора цен</b> — что было до него (время расчёта, какая ошибка), без себестоимости. Для LinkedIn и карусели ЧТ.</li>
-      <li><b>Терраццо:</b> какие изделия уже реально произведены и сняты — иначе публикации StoneMarket по терраццо не выходят.</li>
-      <li><b>Союз:</b> число членов, одна задача перед государством, дата ближайшего события или выпуска Stone Talks и гость.</li>
-      <li><b>Stone Talks:</b> список 9 вышедших выпусков с гостями (скопировать названия из YouTube Studio).</li>
-      <li><b>Доступ к аналитике</b> Instagram, TikTok, LinkedIn — без него аудит по цифрам (топ-посты, ER, лучшее время) делать не на чем.</li>
-    </ul>
+    <h3 style="margin-top:0">«Мою каменную компанию в маркетинге ведут ИИ-агенты»</h3>
+    <p class="small">Выжимка из флагмана (из чего нарезаем неделю):</p>
+    <table>
+      <tr><th>Тип</th><th>Материал</th></tr>
+      <tr><td>Утверждения (3)</td><td>Агент — это должность, а не программа · Ошибка ИИ — хорошая новость, если есть кто проверяет · IT-отдел ≠ маркетинг</td></tr>
+      <tr><td>Истории (2)</td><td>Агент перепутал дни недели — поймали дважды (сценарист + Сюзи), наружу не ушло · первый проданный тренинг (без деталей клиента)</td></tr>
+      <tr><td>Механизмы (3)</td><td>Одна задача → один агент → один человек, который принимает · «Агент готовит — человек решает» · Отдел в ноутбуке, по расписанию, сдаёт работу к 09:00 понедельника</td></tr>
+      <tr><td>Ошибки (2)</td><td>Запуск ИИ без проверяющего = работа в стол · Доверие цифрам ИИ без сверки</td></tr>
+      <tr><td>Цитата</td><td>«Агент — это должность, а не программа: одна задача, один результат и один человек, который его принимает.»</td></tr>
+    </table>
+    <p class="small"><span class="flag">[НУЖЕН ФАКТ ОТ ТАРОНА]</span> одна цифра — сколько агентов в отделе (в документах 7 / 9 / 12). Без неё флагман идёт без числа.</p>
+    <p class="small">Порядок недели: сильное утверждение первым (вт–ср), история в середине (чт), механизм в конце (пн). Параллельно — вторая линия P2 (камень/терраццо) под дизайнеров и StoneMarket.</p>
   </div>
 </section>
 
-<div class="foot">
-  <p>Бриф для Инессы (карусель дня, 7 дней): <a href="brief.md">brief.md</a> · Журнал каруселей: <a href="carousel-log.md">carousel-log.md</a></p>
-  <p>Дашборд публичный: выручка, цены сделок, имена клиентов и лидов и контакты сюда не выносятся. Подготовил ИИ-директор по маркетингу «Мадлен» · 12.10.2026.</p>
-</div>
+<section id="plan">
+  <h2><span class="n">4</span> План по дням и часам</h2>
+  <p class="lead">Время — по Еревану. Это главная таблица для Агента сторис (строит подводки и обратные отсчёты вокруг этих публикаций) и для Мери (свой день съёмки и монтажа). Стандартные слоты: карусель 12:00, Reels 19:00, LinkedIn 10:00, StoneMarket 13:00, Союз 11:00 (данных о лучшем времени пока нет).</p>
 
+  <div class="callout warn">Ритм недели: <b>вторник 20.10 — съёмочный день</b> (материал выходит со среды). <b>Пятница 23.10 — продажи и встречи Тарона.</b> Публикации StoneMarket помечены <span class="cond">[если есть съёмка]</span> — без реальных фото/видео терраццо не выпускаем, чужие картинки не ставим.</div>
+
+  <table>
+    <tr><th>День</th><th>Время</th><th>Аккаунт</th><th>Формат</th><th>Тема / хук</th><th>Формула</th><th>CTA</th><th>Столп</th></tr>
+
+    <tr><td rowspan="4"><b>ВТ 20.10</b><br><span class="small">съёмка</span></td><td class="t">—</td><td>Личный</td><td>Съёмка</td><td>8 тем (раздел 6). Публикаций ленты нет.</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td class="t">10:00</td><td>LinkedIn Тарон</td><td>Пост RU+EN</td><td class="hook">«ИИ наврёт в цифрах, если некому проверить»</td><td><span class="tag h">H11</span></td><td>экспресс-анализ (1-й комм.)</td><td><span class="tag p3">P3</span></td></tr>
+    <tr><td class="t">10:00</td><td>LinkedIn Союз</td><td>Пост EN</td><td class="hook">Голос отрасли: зачем армянскому камню общие стандарты</td><td><span class="tag h">H7</span></td><td>подписка на страницу</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">12:00</td><td>Личный</td><td>Карусель (Инесса)</td><td class="hook">«Забери: 5 задач, которые отдать ИИ первыми»</td><td><span class="tag h">H8</span></td><td>сохранения</td><td><span class="tag p3">P3</span></td></tr>
+
+    <tr><td rowspan="4"><b>СР 21.10</b></td><td class="t">10:00</td><td>LinkedIn Тарон</td><td>Пост RU+EN</td><td class="hook">«Агент — это должность, а не программа»</td><td><span class="tag h">H13</span></td><td>экспресс-анализ (1-й комм.)</td><td><span class="tag p3">P3</span></td></tr>
+    <tr><td class="t">12:00</td><td>StoneMarket</td><td>Карусель (Инесса)</td><td class="hook arm">Терраццо под твой размер — 5 шагов <span class="cond">[если есть съёмка]</span></td><td><span class="tag h">H4</span></td><td>DM</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">13:00</td><td>StoneMarket</td><td>Reels (HY)</td><td class="hook">Было/стало: слэб терраццо <span class="scr">«60×60 РВЁТ РИСУНОК»</span> <span class="cond">[если есть съёмка]</span></td><td><span class="tag h">H12</span></td><td>DM</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">19:00</td><td>Личный</td><td>Reels</td><td class="hook">«У вас есть IT-отдел? Кто из них пишет письма клиентам?» <span class="scr">«IT ≠ МАРКЕТИНГ»</span></td><td><span class="tag h">H11</span></td><td>экспресс-анализ (1-й комм.)</td><td><span class="tag p3">P3</span></td></tr>
+
+    <tr><td rowspan="3"><b>ЧТ 22.10</b></td><td class="t">10:00</td><td>LinkedIn Тарон</td><td>Пост RU+EN</td><td class="hook">«Что дизайнер интерьера в Ереване хочет от поставщика камня»</td><td><span class="tag h">H14</span></td><td>—</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">12:00</td><td>Личный</td><td>Карусель (Инесса)</td><td class="hook arm">5 отделов, где ИИ окупается первым. №3 не ждёшь</td><td><span class="tag h">H10</span></td><td>подписка</td><td><span class="tag p3">P3</span></td></tr>
+    <tr><td class="t">19:00</td><td>Личный</td><td>Reels</td><td class="hook">«План недели мне в 9 утра понедельника сдаёт агент» <span class="scr">«ПЛАН — ОТ АГЕНТА»</span></td><td><span class="tag h">H13</span></td><td>экспресс-анализ</td><td><span class="tag p3">P3</span></td></tr>
+
+    <tr><td><b>ПТ 23.10</b><br><span class="small">продажи</span></td><td class="t">11:00</td><td>Союз</td><td>Карусель (Инесса, HY)</td><td class="hook arm">Քարագործ, ահա ինչ ես անտեսում (вот что ты игнорируешь)</td><td><span class="tag h">H13</span></td><td>подписка</td><td><span class="tag p2">P2</span></td></tr>
+
+    <tr><td rowspan="2"><b>СБ 24.10</b></td><td class="t">12:00</td><td>Личный</td><td>Карусель (Инесса)</td><td class="hook">«Тебе не нужен лучший камень. Нужен проверенный — 5 проверок»</td><td><span class="tag h">H18</span></td><td>сохранения</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">19:00</td><td>Личный</td><td>Reels</td><td class="hook">«Вода находит трещину в блоке, которую сухим не видно» <span class="scr">«ВОДА НАХОДИТ ТРЕЩИНУ»</span></td><td><span class="tag h">H16</span></td><td>подписка</td><td><span class="tag p2">P2</span></td></tr>
+
+    <tr><td rowspan="2"><b>ВС 25.10</b></td><td class="t">12:00</td><td>StoneMarket</td><td>Карусель (Инесса, HY)</td><td class="hook">Плитка 60×60 vs слэб терраццо — разница не близкая <span class="cond">[если есть фото]</span></td><td><span class="tag h">H15</span></td><td>DM</td><td><span class="tag p2">P2</span></td></tr>
+    <tr><td class="t">13:00</td><td>StoneMarket</td><td>Reels (HY)</td><td class="hook">«Столешница терраццо под размер, не из каталога» <span class="cond">[если есть съёмка]</span></td><td><span class="tag h">H21</span></td><td>DM</td><td><span class="tag p2">P2</span></td></tr>
+
+    <tr><td rowspan="2"><b>ПН 26.10</b></td><td class="t">12:00</td><td>Личный</td><td>Карусель (Инесса)</td><td class="hook">«КП менеджера: раньше день — теперь 2 минуты, 5 шагов»</td><td><span class="tag h">H4</span></td><td>DM</td><td><span class="tag p3">P3</span></td></tr>
+    <tr><td class="t">19:00</td><td>Личный</td><td>Reels</td><td class="hook">«КП менеджера: раньше день — теперь 2 минуты» <span class="scr">«РУКАМИ / КАЛЬКУЛЯТОР»</span></td><td><span class="tag h">H12</span></td><td>экспресс-анализ</td><td><span class="tag p3">P3</span></td></tr>
+  </table>
+
+  <p class="small">Карусель дня (Инесса, 2-я своя тема) не расписана здесь — она по брифу <code>stonetalks/brief.md</code>. «Линия сторис дня» Агент сторис строит сам каждое утро вокруг публикаций этой таблицы. Событие для обратных отсчётов: <b>вторник 20.10 — съёмка</b> (запись Stone Talks на 20.10 не подтверждена).</p>
+</section>
+
+<section id="accounts">
+  <h2><span class="n">5</span> План по аккаунтам</h2>
+
+  <h3>Личный Instagram @badalyan.taron — <span class="muted">4 Reels + карусели Инессы</span></h3>
+  <p>Reels 15–30 с, первый кадр = хук, в первом кадре движение. СР «IT ≠ маркетинг» (H11), ЧТ «план от агента» (H13), СБ «вода находит трещину» (H16, камень), ПН «руками/калькулятор» (H12). Язык по умолчанию — армянский и русский. Линия сторис — к экспресс-анализу.</p>
+
+  <h3>LinkedIn Тарона — <span class="muted">3 поста, ВТ–ЧТ</span></h3>
+  <p>200–300 слов, оригинальный обучающий текст, целевая фраза в первых словах, первый абзац отвечает на вопрос темы без остального текста. Ссылки — в первый комментарий. Без хэштегов, без жирного Unicode.</p>
+  <ul>
+    <li><b>ВТ 20.10 (RU+EN):</b> «ИИ наврёт в цифрах, если некому проверить» — что в тренинге главное не промпт, а правило проверки. Деталь: калькулятор цен Stone Holding. <span class="flag">[НУЖЕН ФАКТ]</span> подтвердить пример калькулятора.</li>
+    <li><b>СР 21.10 (RU+EN):</b> «Агент — это должность, а не программа» — роли агентов, правило «агент готовит, человек решает», история с перепутанными днями.</li>
+    <li><b>ЧТ 22.10 (RU+EN):</b> «Что дизайнер интерьера в Ереване хочет от поставщика камня» — из материалов Продюсера (к гостю Гюлхасян и терраццо). Технические сущности: образцы, сроки, визуализации.</li>
+  </ul>
+
+  <h3>StoneMarket @stonemarket.am — <span class="muted">3 публикации, минимум 2 про терраццо</span> <span class="cond">[всё при наличии реальных фото/видео]</span></h3>
+  <p>СР «было/стало» слэба (H12), ПТ карусель «куда ставить терраццо» (H10), ВС «под размер, не из каталога» (H21). Язык — армянский. Если вторник не снят — публикации ждут съёмки, чужие картинки не ставим. <span class="flag">[НУЖЕН ФАКТ]</span> что из терраццо реально произведено и снято, как StoneMarket пишет «терраццо» по-армянски.</p>
+
+  <h3>Союз — <span class="muted">2 публикации</span></h3>
+  <p>ВТ пост LinkedIn Союза (EN) — голос отрасли и стандарты. ПТ карусель Instagram Союза (HY) — «вот что ты игнорируешь» (H13). Выпуски Stone Talks с гостями из отрасли выходят совместным постом с аккаунтом Союза. <span class="flag">[НУЖЕН ФАКТ]</span> число членов Союза, одна задача перед государством.</p>
+</section>
+
+<section id="shoot">
+  <h2><span class="n">6</span> Темы для съёмки · вторник 20.10 <span class="small" style="font-weight:400">(Редактору — на сценарии)</span></h2>
+  <p class="lead">8 тем. У каждой — аккаунт, цель и предпочтительная формула хука. Reels 15–30 с, вертикаль 9:16, движение в первом кадре. Хуки — из банка Агента сторис.</p>
+  <table>
+    <tr><th>#</th><th>Аккаунт · цель</th><th>Хук (произносимая фраза)</th><th>Формула</th></tr>
+    <tr><td>1</td><td>Личный · заявки (тренинги)</td><td class="hook">«У вас есть IT-отдел? Прекрасно. Кто из них пишет письма клиентам?»</td><td><span class="tag h">H11</span></td></tr>
+    <tr><td>2</td><td>Личный + LinkedIn · заявки</td><td class="hook">«Директор, который сам пишет план маркетинга: мне его сдаёт агент в 9 утра понедельника»</td><td><span class="tag h">H13</span></td></tr>
+    <tr><td>3</td><td>Личный · заявки</td><td class="hook">«Самый дорогой человек в офисе — тот, кто переносит цифры из 1С в Excel руками»</td><td><span class="tag h">H22</span></td></tr>
+    <tr><td>4</td><td>Личный · заявки/подписка</td><td class="hook">«Твоя команда пользуется ChatGPT тайком — и это не твоя вина: правил нет»</td><td><span class="tag h">H6</span></td></tr>
+    <tr><td>5</td><td>Личный + StoneMarket · подписка/DM</td><td class="hook">«Смотри, как вода находит трещину в блоке, которую на сухом камне не видно»</td><td><span class="tag h">H16</span></td></tr>
+    <tr><td>6</td><td>StoneMarket · DM <span class="flag">[нужны реальные стадии]</span></td><td class="hook">«Было/стало: слэб терраццо после заливки и после шлифовки»</td><td><span class="tag h">H12</span></td></tr>
+    <tr><td>7</td><td>StoneMarket · DM <span class="flag">[нужно готовое изделие]</span></td><td class="hook">«Новая столешница терраццо под размер дизайнера — не из каталога»</td><td><span class="tag h">H21</span></td></tr>
+    <tr><td>8</td><td>Личный + LinkedIn · заявки <span class="flag">[нужен калькулятор в кадре]</span></td><td class="hook">«КП менеджера руками — и оно же через калькулятор. Одна таблица, вся разница»</td><td><span class="tag h">H12</span></td></tr>
+  </table>
+  <p class="small">Для каждого Reels экранная надпись (до 6 слов) — в разделе 4 и в сценарии Редактора. В кадре нет лиц сотрудников клиента, вывесок и названия компании-клиента, пока кейс не согласован письменно.</p>
+</section>
+
+<section id="tasks">
+  <h2><span class="n">7</span> Задачи команде <span class="small" style="font-weight:400">(на армянском · раздаёт Сюзи)</span></h2>
+  <div class="panel">
+  <p class="arm"><b>[Մարքեթինգ] Սյուզի</b> — Հաստատել շաբաթվա պլանը և բրիֆը, բաժանել առաջադրանքները թիմին։ Կարգավորել մուտքերը գովազդի կաբինետ, Instagram-ի և YouTube-ի վիճակագրությանը (Մերիի սքրինշոթերի համար)։ Ստուգել հայերեն տեքստերը հրապարակումից առաջ։ <span class="muted">Ժ. մինչև երեքշաբթի 20.10, 12:00։</span></p>
+  <p class="arm"><b>[Մարքեթինգ] Մերի</b> — Երեքշաբթի 20.10 նկարահանել 8 թեմաները (բաժին 6)։ Մինչև ուրբաթ՝ մոնտաժել շաբաթվա Reels-երը (9:16, ենթագրեր), հրապարակել ըստ ժամացույցի (բաժին 4)։ Ուղարկել յուրաքանչյուր հաշվի կաբինետի սքրինշոթը (բազային կետ)՝ [Отдел] թեմայով նամակ։ <span class="muted">Նկարահանում՝ 20.10, Reels՝ մինչև 23.10, սքրինշոթ՝ մինչև 21.10։</span></p>
+  <p class="arm"><b>[Մարքեթինգ] Լիլիթ</b> — Պատասխանել «էքսպրես-վերլուծություն»/Direct հարցումներին 1 ժամում (աշխատանքային ժամ)։ Մերիի հետ՝ գովազդ գործարկել Տարոնի «այո»-ից հետո (ձև կամ Direct)։ Ուղարկել վաճառքի կարգավիճակները՝ [Отдел] թեմայով (քանի հայտ, զանգ, հանդիպում)։ <span class="muted">Կարգավիճակ՝ մինչև երեքշաբթի 20.10 երեկո։</span></p>
+  <p class="arm"><b>[Մարքեթинг] Տարոն</b> — Երեքշաբթի 20.10՝ նկարահանում (8 թեմա)։ Ուրբաթ 23.10՝ վաճառք և հանդիպումներ։ Պատասխանել «Ինչ է պետք Տարոնից» բաժնի հարցերին՝ [Отдел] թեմայով նամակ (հատկապես՝ գործակալների թիվը և «Լուսար»-ի համաձայնությունը)։ <span class="muted">Ժ. մինչև չորեքշաբթի 21.10։</span></p>
+  </div>
+  <p class="small">Trello пока не подключён — задачи идут списком. Анне и Ани задач не ставим (в команде не работают).</p>
+</section>
+
+<section id="need">
+  <h2><span class="n">8</span> Нужно от Тарона</h2>
+  <p class="lead">Без этих фактов и решений часть плана стоит. Ответ — письмом с темой «[Отдел]».</p>
+  <ol class="q">
+    <li><b>Одна цифра — сколько ИИ-агентов в отделе</b> (в документах 7 / 9 / 12). Нужна для всего контента про тренинги и флагмана.</li>
+    <li><b>Согласие первого клиента на кейс</b> (письменно). Разблокирует самый сильный контент (реальный результат) и кадры с тренинга в рекламу.</li>
+    <li><b>«Да» на запуск рекламы тренингов.</b> Через форму (нужна политика конфиденциальности) или через Instagram Direct (без неё, можно запускаться сразу). Реклама не запускалась ни разу.</li>
+    <li><b>Что реально снято</b> (терраццо-изделия, селфи-видео, «вручную vs ИИ») и где файлы. Определяет публикации StoneMarket и рекламу терраццо.</li>
+    <li><b>Лендинг тренинга — 3 правки:</b> ссылка Instagram ведёт на несуществующий @taronbadalyan (нужен @badalyan.taron); калькулятор считает по числу участников, а не единой ценой за группу; добавить политику конфиденциальности.</li>
+    <li><b>5 вопросов экспресс-анализа дословно</b> + что человек получает после и в какой срок.</li>
+    <li><b>Продюсер — 3 решения:</b> подавать на DevFest Armenia (дедлайн 08.11, единственный твёрдый шанс); гость Татевик Гюлхасян да/нет и дата записи; список 9 вышедших выпусков Stone Talks.</li>
+    <li><b>Факты для спикерства и биографии:</b> должность и компания (StoneMarket / Stone Holding или Petro Stone Armenia), годы в отрасли, один экспортный проект, который можно назвать публично.</li>
+    <li><b>Язык каруселей личного аккаунта:</b> по умолчанию армянский и русский, но прошлые шли на английском — оставляем или переключаем.</li>
+  </ol>
+</section>
+
+<footer>
+  Мадлен · ИИ-директор по маркетингу · отдел Тарона Бадаляна · The Voice of Stone.
+  Публичная страница: без выручки, цен сделок, имён клиентов и контактов. Реальные данные; оценки помечены; пробелы — «[НУЖЕН ФАКТ ОТ ТАРОНА]».
+</footer>
 </div>
 </body>
 </html>
