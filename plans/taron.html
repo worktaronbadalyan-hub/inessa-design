@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Контент-план Тарона Бадаляна</title>
 <style>body{margin:0;background:#0E0F0E;color:#F1F0EA;font:15px/1.5 Inter,system-ui,sans-serif}#l{padding:40px 16px;text-align:center}</style></head>
 <body><div id="l">Загрузка дашборда…</div><script>
-(async()=>{try{const parts=await Promise.all([0,1,2,3,4].map(async i=>{const r=await fetch('t4/taron.'+i+'.bin?v=4',{cache:'no-cache'});if(!r.ok)throw new Error(r.status);return r.blob();}));
+(async()=>{try{const parts=await Promise.all([0,1,2,3,4,5].map(async i=>{const r=await fetch('t5/taron.'+i+'.bin?v=5',{cache:'no-cache'});if(!r.ok)throw new Error(r.status);return r.blob();}));
 const html=await new Response(new Blob(parts).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text();
 document.open();document.write(html);document.close();}
 catch(e){document.getElementById('l').textContent='Не удалось загрузить дашборд. Обновите страницу в Chrome, Safari или Edge последней версии.';console.error(e);}})();
