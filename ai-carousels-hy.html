@@ -1,0 +1,116 @@
+<!doctype html><html lang='ru'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Инесса · AI-карусели (hy) · 3 шт.</title>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@500;700;900&family=Noto+Serif+Armenian:wght@400;500;700;900&display=swap' rel='stylesheet'>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b0b;color:#eaeae6;font-family:system-ui,'Segoe UI',Arial,sans-serif;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+.kick{color:#C6F03C;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+h1{font-weight:800;font-size:38px;margin:6px 0 4px}
+.sub{color:#9a9a93;font-size:15px;margin-bottom:10px}
+h2{font-size:23px;margin:34px 0 4px}
+h2 .n{color:#9a9a93;font-weight:400;font-size:15px}
+.note{font-size:13.5px;color:#a7a7a0;background:#141412;border-left:3px solid #C6F03C;padding:10px 14px;border-radius:4px;margin:8px 0 12px}
+.cap{white-space:pre-wrap;font-size:13.5px;color:#d6d6d0;background:#121210;border-radius:8px;padding:12px 14px;margin:8px 0}
+.cap b{display:block;color:#C6F03C;margin-bottom:6px}
+.row{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px}
+.card{flex:0 0 auto;width:250px;display:flex;flex-direction:column;gap:8px}
+.card canvas{width:250px;height:auto;border-radius:10px;border:1px solid #222;background:#0d0d0d}
+.card button{background:#C6F03C;color:#111;border:0;border-radius:999px;font-weight:700;padding:7px 0;cursor:pointer;font-size:13px}
+.dlall{background:#1b1b18;color:#C6F03C;border:1px solid #333;border-radius:999px;font-weight:700;padding:8px 16px;cursor:pointer;font-size:13px;margin:4px 0 2px}
+a{color:#C6F03C}
+footer{margin-top:40px;border-top:1px solid #222;padding-top:16px;font-size:13px;color:#8f8f88}
+</style></head><body><div class='wrap'>
+<header>
+<div class='kick'>Инесса · AI-дизайн отдела</div>
+<h1>AI-карусели · армянский · 3 шт.</h1>
+<div class='sub'>Образовательные, цель — охват/подписка (CTA ՀԵՏԵՎԵԼ). Шрифт Noto Serif Armenian. Под каждым слайдом — кнопка «Скачать PNG».</div>
+</header>
+<div id='app'></div>
+<footer>Реальный контент · премиальный тон · публикует Мери после согласования с Тароном. Инесса в Instagram не публикует.<br>
+Слайды рисуются на canvas (1080×1350) шрифтом Noto Serif Armenian; подписи интерфейса — Noto Sans Armenian; акцент лайм #C6F03C.<br>
+Дневной дашборд: <a href='index.html'>index.html</a></footer>
+</div>
+<script>
+var LIME='#C6F03C', NL=String.fromCharCode(10);
+var CAP_C1=['Գործիքը նույնն է բոլորի մոտ — տարբերությունը նրանում է, թե ինչպես ես օգտագործում։','Թիմերի մեծ մասը նոր սկսելիս նույն հինգ սխալն է անում, և դրանք կապ ունեն ոչ թե AI-ի, այլ սովորության հետ։','Այս կարուսելում՝ հինգ սխալը և ամեն մեկի դիմաց՝ ճիշտ քայլը, պարզ բառերով։','Հետևիր՝ ամեն շաբաթ նոր օրինակ, թե ինչպես է AI-ն աշխատում իրական բիզնեսում։','#AIբիզնեսում #արհեստականբանականություն #թվայինգործիքներ'].join(NL+NL);
+var CAP_C2=['AI սկսելու համար ամենից քիչ պետք եղածը հենց ծրագրավորողն է։','Շատերը կարծում են՝ նախ պետք է IT բաժին, նոր ծրագիր, մեծ բյուջե։ Իրականում պետք է հինգ պարզ բան, որ հաճախ արդեն ունես։','Մեկ կրկնվող խնդիր, պատրաստ գործիք, հստակ կանոններ, ստուգող մարդ և փոքր փորձարկում մեկ շաբաթում։','Հետևիր՝ ցույց կտանք, թե ինչպես է թիմը AI գործարկում առանց IT բաժնի։','#AIբիզնեսում #թվայնացում #ավտոմատացում'].join(NL+NL);
+var CAP_C3=['Ռուտինը չի վերանում ինքնին — բայց կարող է անցնել ագենտի ձեռքը։','AI-ագենտը մեկ կրկնվող առաջադրանք ստանձնում է հինգ քայլով. ընտրում ես խնդիրը, գրում կանոնները, ագենտը պատրաստում է սևագիրը, մարդը ստուգում է, հետո նույնը՝ հաջորդ խնդրի համար։','Կարևորը մնում է մարդու մոտ. ագենտը պատրաստում է, որոշումը՝ քոնն է։','Հետևիր՝ ավելի շատ իրական օրինակ, թե ինչպես է AI-ն ստանձնում ռուտինը բիզնեսում։','#AIբիզնեսում #AIագենտ #թվայինգործիքներ'].join(NL+NL);
+var DATA={
+'C1':{'title':'Карусель C1 · «5 AI սխալ»','meta':'08.11 · @badalyan.taron · hy · Hack List · образовательная · CTA Follow',
+'note':'По контент-плану на 08.11. Образовательная, цель — привлечь новую аудиторию (не лид/продажа). CTA — подписка.','cap':CAP_C1,'slides':[
+{'role':'hook','kicker':'P3 · AI ԻՐԱԿԱՆ ԲԻԶՆԵՍ','text':'5 AI ՍԽԱԼ, ՈՐ ԹԻՄԵՐԸ ԴԵՌ ԱՆՈՒՄ ԵՆ','hl':['AI','ՍԽԱԼ'],'sub':'Պարզ ուղեցույց՝ ի՞նչ է խանգարում AI-ն ճիշտ օգտագործելուն'},
+{'role':'value','num':'01','kicker':'ՍԽԱԼ 01','text':'Անորոշ հարցեր','detail':'Անորոշ առաջադրանք՝ անորոշ պատասխան։ Ճիշտը՝ հստակ խնդիր և մեկ օրինակ։'},
+{'role':'value','num':'02','kicker':'ՍԽԱԼ 02','text':'Չստուգած արդյունք','detail':'Պատասխանն ուղարկում են առանց ստուգելու։ Ճիշտը՝ մարդը ստուգում է, հետո՝ հաճախորդին։'},
+{'role':'value','num':'03','kicker':'ՍԽԱԼ 03','text':'Ամեն ինչ միանգամից','detail':'AI-ն ներդնում են բոլոր բաժիններում միասին՝ քաոս։ Ճիշտը՝ սկսիր մեկ կրկնվող խնդրից։'},
+{'role':'value','num':'04','kicker':'ՍԽԱԼ 04','text':'Թվեր՝ առանց աղբյուրի','detail':'AI-ն երբեմն «հորինում է»։ Ճիշտը՝ պահանջիր աղբյուր և ստուգիր թվերը։'},
+{'role':'value','num':'05','kicker':'ՍԽԱԼ 05','text':'«AI-ն փոխարինում է մարդուն»','detail':'Այսպես կորչում է վերահսկողությունը։ Ճիշտը՝ AI-ն պատրաստում է, մարդը որոշում։'},
+{'role':'cta','kicker':'ՀԵՏԵՎԻՐ','text':'Ավելին՝ AI-ի մասին իրական բիզնեսում','hl':['AI-ի'],'sub':'Ամեն շաբաթ՝ պարզ օրինակներ, թե ինչպես է AI-ն աշխատում բիզնեսում։','action':'ՀԵՏԵՎԵԼ','sign':'Taron Badalyan — The Voice of Stone','handle':'@badalyan.taron'}
+]},
+'C2':{'title':'Карусель C2 · «IT բաժին պետք չի»','meta':'16.11 · @badalyan.taron · hy · Value-Stack (H18) · образовательная · CTA Follow',
+'note':'По контент-плану на 16.11 (H18 «вам не нужен X»). Образовательная, CTA — подписка.','cap':CAP_C2,'slides':[
+{'role':'hook','kicker':'P3 · AI-Ն ՍԿՍԵԼՈՒ ՀԱՄԱՐ','text':'IT ԲԱԺԻՆ ՊԵՏՔ ՉԻ','hl':['ՊԵՏՔ','ՉԻ'],'sub':'Ծրագրավորող պետք չէ՝ պետք է այս 5 բանը'},
+{'role':'value','num':'01','kicker':'ՊԵՏՔ Է 01','text':'Մեկ կրկնվող խնդիր','detail':'Ընտրիր մեկ առաջադրանք, որ ամեն օր ժամանակ է ուտում։'},
+{'role':'value','num':'02','kicker':'ՊԵՏՔ Է 02','text':'Պատրաստ AI-գործիք','detail':'Օգտվիր պատրաստ գործիքից, ոչ թե սեփական ծրագիր գրիր։'},
+{'role':'value','num':'03','kicker':'ՊԵՏՔ Է 03','text':'Հստակ կանոններ','detail':'Գրիր՝ ինչպես է որոշումը կայացվում, քայլ առ քայլ։'},
+{'role':'value','num':'04','kicker':'ՊԵՏՔ Է 04','text':'Ստուգող մարդ','detail':'Մեկը, որ նայում է արդյունքը նախքան ուղարկելը։'},
+{'role':'value','num':'05','kicker':'ՊԵՏՔ Է 05','text':'Փոքր փորձարկում','detail':'Փորձիր մեկ շաբաթ՝ մեկ խնդրի վրա, հետո ընդլայնիր։'},
+{'role':'cta','kicker':'ՀԵՏԵՎԻՐ','text':'Ինչպես սկսել առանց ծրագրավորողի','hl':['ծրագրավորողի'],'sub':'Ցույց կտանք՝ ինչպես թիմը AI է գործարկում առանց IT բաժնի։','action':'ՀԵՏԵՎԵԼ','sign':'Taron Badalyan — The Voice of Stone','handle':'@badalyan.taron'}
+]},
+'C3':{'title':'Карусель C3 · «AI-ագентը 5 քայլով»','meta':'своя тема · @badalyan.taron · hy · Demo Walkthrough · образовательная · CTA Follow',
+'note':'Своя тема (не повторяет C1/C2 по каркасу и формуле). Как AI-агент берёт на себя рутину за 5 шагов. CTA — подписка.','cap':CAP_C3,'slides':[
+{'role':'hook','kicker':'P3 · ԻՆՉՊԵՍ Է ԱՇԽԱՏՈՒՄ','text':'AI-ԱԳԵՆՏԸ 5 ՔԱՅԼՈՎ ՍՏԱՆՁՆՈՒՄ Է ՌՈՒՏԻՆԸ','hl':['5','ՔԱՅԼՈՎ'],'sub':'Մեկ կրկնվող առաջադրանք՝ ագենտի ձեռքում, 5 քայլով'},
+{'role':'value','num':'01','kicker':'ՔԱՅԼ 01','text':'Ընտրում ես խնդիրը','detail':'Մեկ կրկնվող առաջադրանք, օրինակ՝ շաբաթական հաշվետվություն։'},
+{'role':'value','num':'02','kicker':'ՔԱՅԼ 02','text':'Գրում ես կանոնները','detail':'Ինչ անել՝ քայլ առ քայլ. ագենտն այսքանով է առաջնորդվում։'},
+{'role':'value','num':'03','kicker':'ՔԱՅԼ 03','text':'Ագենտը պատրաստում է','detail':'Սևագիրը ստանում ես ինքնաշխատ, առանց ձեռքի աշխատանքի։'},
+{'role':'value','num':'04','kicker':'ՔԱՅԼ 04','text':'Մարդը ստուգում է','detail':'Նայում ես արդյունքը, ուղղում և հաստատում։'},
+{'role':'value','num':'05','kicker':'ՔԱՅԼ 05','text':'Կրկնում ես հաջորդի վրա','detail':'Նույն ձևը տեղափոխում ես մյուս կրկնվող խնդրին։'},
+{'role':'cta','kicker':'ՀԵՏԵՎԻՐ','text':'Ավելի շատ օրինակ AI-ի մասին','hl':['AI-ի'],'sub':'Իրական օրինակներ՝ ինչպես է AI-ն ստանձնում ռուտինը բիզնեսում։','action':'ՀԵՏԵՎԵԼ','sign':'Taron Badalyan — The Voice of Stone','handle':'@badalyan.taron'}
+]}
+};
+var W=1080,Hh=1350,MX=80,MAXW=W-2*MX,SERIF='"Noto Serif Armenian"',SANS='"Noto Sans Armenian"';
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function glow(c,cx,cy,rad,a){var g=c.createRadialGradient(cx,cy,0,cx,cy,rad);g.addColorStop(0,'rgba(198,240,60,'+a+')');g.addColorStop(1,'rgba(198,240,60,0)');c.fillStyle=g;c.fillRect(0,0,W,Hh);}
+function bg(c,dark){c.fillStyle=dark?'#0d0d0d':'#f0f0ed';c.fillRect(0,0,W,Hh);if(dark){glow(c,W+30,70,560,0.20);glow(c,60,Hh-30,560,0.17);}else{glow(c,W+30,Hh-20,540,0.16);glow(c,40,70,420,0.10);}}
+function dots(c){for(var r=0;r<6;r++){for(var col=0;col<6;col++){var t=(col/5)*0.6+((5-r)/5)*0.4,a=0.1+t*0.66,rad=2.2+t*2.6;c.beginPath();c.fillStyle='rgba(198,240,60,'+a.toFixed(3)+')';c.arc(820+col*34,300+r*34,rad,0,6.283);c.fill();}}}
+function diamond(c,x,y,s){c.beginPath();c.moveTo(x,y-s);c.lineTo(x+s,y);c.lineTo(x,y+s);c.lineTo(x-s,y);c.closePath();c.fillStyle=LIME;c.fill();}
+function header(c,idx,dark){var tx=dark?'#fff':'#101010';diamond(c,88,100,13);c.textBaseline='top';c.fillStyle=tx;c.font='700 30px '+SANS;c.fillText('TARON BADALYAN',116,86);c.font='700 28px '+SANS;c.fillStyle=dark?'#969691':'#787876';var s=(idx<10?'0'+idx:idx)+' / 07';c.fillText(s,W-80-c.measureText(s).width,88);c.strokeStyle=dark?'#3c3c38':'#cdcdc8';c.lineWidth=2;c.beginPath();c.moveTo(80,142);c.lineTo(W-80,142);c.stroke();}
+function outPill(c,x,y,text){c.font='700 26px '+SANS;var w=c.measureText(text).width+56,h=56;c.strokeStyle=LIME;c.lineWidth=3;rr(c,x,y,w,h,h/2);c.stroke();c.fillStyle=LIME;c.textBaseline='top';c.fillText(text,x+28,y+15);return h;}
+function wrapT(c,text,font,maxw){c.font=font;var out=[],cur='';text.split(' ').forEach(function(w){var t=(cur+' '+w).trim();if(c.measureText(t).width<=maxw||!cur)cur=t;else{out.push(cur);cur=w;}});if(cur)out.push(cur);return out;}
+function fitLines(c,text,fam,start,maxw,maxh,mins,lead){for(var s=start;s>=mins;s-=2){var L=wrapT(c,text,'900 '+s+'px '+fam,maxw),lh=Math.round(s*lead);if(lh*L.length<=maxh)return{size:s,lines:L,lh:lh};}return{size:mins,lines:wrapT(c,text,'900 '+mins+'px '+fam,maxw),lh:Math.round(mins*lead)};}
+function drawHL(c,lines,font,x,y,lh,fill,hl){c.font=font;c.textBaseline='top';lines.forEach(function(ln){if(hl&&hl.length){var cx=x;ln.split(' ').forEach(function(word){var clean=word.replace(/[,.։:՝«»]/g,''),ishl=hl.some(function(h){return h===clean||(h.length>2&&word.indexOf(h)>=0);});c.fillStyle=ishl?LIME:fill;c.fillText(word,cx,y);cx+=c.measureText(word+' ').width;});}else{c.fillStyle=fill;c.fillText(ln,x,y);}y+=lh;});return y;}
+function swipe(c,label,dark){var r=46,cx=80+r,cy=Hh-150+r;c.save();c.shadowColor='rgba(198,240,60,0.6)';c.shadowBlur=22;c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,6.283);c.fill();c.restore();c.strokeStyle='#0d0d0d';c.lineWidth=8;c.lineCap='round';c.beginPath();c.moveTo(cx-16,cy);c.lineTo(cx+15,cy);c.moveTo(cx+2,cy-15);c.lineTo(cx+16,cy);c.moveTo(cx+2,cy+15);c.lineTo(cx+16,cy);c.stroke();c.lineCap='butt';c.fillStyle=dark?'#969691':'#787876';c.font='700 30px '+SANS;c.textBaseline='top';c.fillText(label,cx+r+26,cy-16);}
+function draw(c,sl,idx){var dark=(idx%2===1),tx=dark?'#fff':'#101010';bg(c,dark);dots(c);header(c,idx,dark);
+ if(sl.role==='hook'){outPill(c,MX,210,sl.kicker);var f=fitLines(c,sl.text,SERIF,94,MAXW,430,46,1.1);drawHL(c,f.lines,'900 '+f.size+'px '+SERIF,MX,560,f.lh,tx,sl.hl);
+  if(sl.sub){var L=wrapT(c,sl.sub,'500 33px '+SERIF,MAXW-120);c.font='500 33px '+SERIF;c.fillStyle=dark?'#c3c3be':'#505050';c.textBaseline='top';var yy=1000;L.forEach(function(ln){c.fillText(ln,MX,yy);yy+=Math.round(33*1.3);});}
+  swipe(c,'ԹԵՐԹԻՐ',dark);
+ }else if(sl.role==='value'){outPill(c,MX,210,sl.kicker);c.font='900 150px '+SERIF;c.fillStyle=LIME;c.textBaseline='top';c.fillText(sl.num,MX,330);
+  var f=fitLines(c,sl.text,SERIF,62,MAXW,250,40,1.1),y=drawHL(c,f.lines,'700 '+f.size+'px '+SERIF,MX,520,f.lh,tx,null);
+  if(sl.detail){y+=26;var dl=wrapT(c,sl.detail,'400 34px '+SERIF,MAXW);c.font='400 34px '+SERIF;c.textBaseline='top';dl.forEach(function(ln){if(ln.indexOf('Ճիշտը՝')>=0){var cx=MX;ln.split(' ').forEach(function(word){c.fillStyle=(word.indexOf('Ճիշտը')===0)?LIME:(dark?'#c3c3be':'#464646');c.fillText(word,cx,y);cx+=c.measureText(word+' ').width;});}else{c.fillStyle=dark?'#c3c3be':'#464646';c.fillText(ln,MX,y);}y+=Math.round(34*1.34);});}
+  swipe(c,'ԹԵՐԹԻՐ',dark);
+ }else{outPill(c,MX,210,sl.kicker);var f=fitLines(c,sl.text,SERIF,66,MAXW,360,40,1.12),y=drawHL(c,f.lines,'900 '+f.size+'px '+SERIF,MX,470,f.lh,tx,sl.hl);
+  if(sl.sub){var s2=wrapT(c,sl.sub,'400 32px '+SERIF,MAXW);c.font='400 32px '+SERIF;c.fillStyle=dark?'#c3c3be':'#464646';c.textBaseline='top';s2.forEach(function(ln){c.fillText(ln,MX,y+22);y+=Math.round(32*1.32);});}
+  c.font='700 42px '+SERIF;var bw=c.measureText(sl.action).width+80,bh=86,by=y+64;c.save();c.shadowColor='rgba(198,240,60,0.6)';c.shadowBlur=24;c.fillStyle=LIME;rr(c,MX,by,bw,bh,bh/2);c.fill();c.restore();c.fillStyle='#0d0d0d';c.textBaseline='top';c.fillText(sl.action,MX+40,by+22);
+  c.fillStyle=tx;c.font='700 32px '+SANS;c.fillText(sl.sign,MX,Hh-150);c.fillStyle=dark?'#a0a09b':'#6e6e6e';c.font='500 28px '+SANS;c.fillText(sl.handle,MX,Hh-150+44);}
+}
+function build(){var app=document.getElementById('app');['C1','C2','C3'].forEach(function(key){var cz=DATA[key];
+ var h2=document.createElement('h2');h2.innerHTML=cz.title+" <span class='n'>· "+cz.meta+"</span>";app.appendChild(h2);
+ var mt=document.createElement('div');mt.className='note';mt.textContent=cz.note;app.appendChild(mt);
+ var dlall=document.createElement('button');dlall.className='dlall';dlall.textContent='Скачать все 7 PNG';app.appendChild(dlall);
+ var row=document.createElement('div');row.className='row';app.appendChild(row);var cvs=[];
+ cz.slides.forEach(function(sl,i){var card=document.createElement('div');card.className='card';
+  var cv=document.createElement('canvas');cv.width=W;cv.height=Hh;card.appendChild(cv);
+  var b=document.createElement('button');b.textContent='Скачать PNG '+(i+1);card.appendChild(b);
+  draw(cv.getContext('2d'),sl,i+1);
+  var fname=key+'_'+(i+1<10?'0'+(i+1):(i+1))+'.png';
+  b.onclick=function(){cv.toBlob(function(bl){var a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=fname;a.click();});};
+  cvs.push([cv,fname]);row.appendChild(card);});
+ dlall.onclick=function(){cvs.forEach(function(p,i){setTimeout(function(){p[0].toBlob(function(bl){var a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=p[1];a.click();});},i*350);});};
+ var cap=document.createElement('div');cap.className='cap';var bb=document.createElement('b');bb.textContent='Подпись к посту (hy)';cap.appendChild(bb);cap.appendChild(document.createTextNode(cz.cap));app.appendChild(cap);
+});}
+if(document.fonts&&document.fonts.ready){
+ Promise.all([document.fonts.load('900 100px "Noto Serif Armenian"'),document.fonts.load('700 40px "Noto Serif Armenian"'),document.fonts.load('400 40px "Noto Serif Armenian"'),document.fonts.load('700 30px "Noto Sans Armenian"')]).then(build).catch(build);
+ setTimeout(function(){if(!document.querySelector('canvas'))build();},1800);
+}else{window.addEventListener('load',build);}
+</script></body></html>
