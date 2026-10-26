@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Контент-план StoneMarket</title>
 <style>body{margin:0;background:#FAF9F5;color:#141413;font:15px/1.5 Inter,system-ui,sans-serif}@media (prefers-color-scheme:dark){body{background:#1A1A19;color:#F1F0EA}}#l{padding:40px 16px;text-align:center}</style></head>
 <body><div id="l">Загрузка контент-плана…</div><script>
-(async()=>{try{const parts=await Promise.all([0,1,2,3,4,5].map(async i=>{const r=await fetch('sm3/stonemarket.'+i+'.bin?v=3',{cache:'no-cache'});if(!r.ok)throw new Error(r.status);return r.blob();}));
+(async()=>{try{const parts=await Promise.all([0,1,2,3,4,5].map(async i=>{const r=await fetch('sm4/stonemarket.'+i+'.bin?v=4',{cache:'no-cache'});if(!r.ok)throw new Error(r.status);return r.blob();}));
 const html=await new Response(new Blob(parts).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text();
 document.open();document.write(html);document.close();}
 catch(e){document.getElementById('l').textContent='Не удалось загрузить контент-план. Обновите страницу в Chrome, Safari или Edge последней версии.';console.error(e);}})();
