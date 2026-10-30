@@ -171,6 +171,30 @@ function initCovers(COVERS,QUOTE){ try{ var g=document.getElementById('gC'); if(
  COVERS.forEach(function(c){drawCover(mk(g,CW,CH,'cover_'+pad(c.idx)+'.png','v').getContext('2d'),c);}); }
  var q=document.getElementById('gQ'); if(q&&!q.children.length&&QUOTE){ drawQuote(mk(q,W,H,'quote_card.png').getContext('2d'),QUOTE); }
  }catch(e){} }
+// ---- Stone Talks episode cover (template; any WxH) ----
+function drawTalks(x,c,w,h){ var vert=h>w; x.fillStyle=C.dark;x.fillRect(0,0,w,h);
+ glow(x,w,0,Math.round(w*0.42),0.20); glow(x,0,h,Math.round(w*0.34),0.15);
+ var pad=vert?96:80; x.textBaseline='top';
+ x.fillStyle=C.lime; x.font="700 34px Oswald";
+ x.fillText(vert?'ПОДКАСТ':'ПОДКАСТ · THE VOICE OF STONE', pad, vert?230:70);
+ var hs=150, topY=vert?300:150;
+ x.font='700 '+hs+'px Oswald'; x.fillStyle=C.white; x.fillText('STONE', pad, topY);
+ if(vert){ x.fillStyle=C.lime; x.fillText('TALKS', pad, topY+hs); }
+ else { var sw=x.measureText('STONE ').width; x.fillStyle=C.lime; x.fillText('TALKS', pad+sw, topY); }
+ var epY=vert?760:360;
+ x.fillStyle=C.white; x.font='700 '+(vert?60:56)+'px Oswald'; x.fillText(c.ep, pad, epY);
+ x.fillStyle=C.mutedD; x.font="500 40px 'Noto Sans'"; x.fillText(c.guest, pad, epY+80);
+ var hostY=vert?1180:560;
+ x.fillStyle=C.white; x.font="600 "+(vert?36:34)+"px 'Noto Sans'"; x.fillText(c.host, pad, hostY);
+ if(vert){ x.fillStyle=C.lime; x.font="500 30px 'Noto Sans'"; x.fillText('The Voice of Stone', pad, hostY+56); }
+ x.fillStyle='#8a8a8a'; x.font="500 22px 'Noto Sans'";
+ x.fillText(c.note, pad, h-(vert?64:60)); }
+
+function initTalks(TALKS){ try{ var g=document.getElementById('gT'); if(g&&!g.children.length&&TALKS){
+ var v=mk(g,1080,1920,'stonetalks_1080x1920.png','v'); drawTalks(v.getContext('2d'),TALKS,1080,1920);
+ var yt=mk(g,1280,720,'stonetalks_1280x720.png','yt'); drawTalks(yt.getContext('2d'),TALKS,1280,720);
+ }}catch(e){} }
+
 function boot(cb){ if(document.fonts&&document.fonts.ready){
   var want=['400 60px Anton','700 60px Archivo','600 44px Archivo',
    "900 60px 'Noto Sans Armenian'","600 44px 'Noto Sans Armenian'",
