@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ИНЕССА · дизайн-дашборд · 02.11.2026</title>
+<title>ИНЕССА · дизайн-дашборд · 03.11.2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;700&family=Noto+Sans+Armenian:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700&family=Noto+Sans+Armenian:wght@400;500;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0E0E0E;--card:#161616;--lime:#C6F03C;--muted:#9a9a9a;--line:#262626}
 *{box-sizing:border-box}
@@ -23,6 +23,7 @@ h2.cn small{display:block;font-family:"Archivo","Noto Sans Armenian";font-weight
 .meta span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:#ddd}
 .meta span.hl{border-color:var(--lime);color:var(--lime)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;margin-top:6px}
+.grid.q{grid-template-columns:repeat(auto-fill,minmax(260px,320px))}
 .slot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}
 .slot canvas{width:100%;height:auto;border-radius:8px;display:block;background:#000}
 .slot .row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}
@@ -42,105 +43,146 @@ footer a{color:var(--lime);text-decoration:none;margin-right:10px}
 <body>
 <div class="wrap">
 <header class="top">
-<h1>🎨 ИНЕССА · <b>дизайн-дашборд дня</b> · 02.11.2026</h1>
+<h1>🎨 ИНЕССА · <b>дизайн-дашборд дня</b> · 03.11.2026</h1>
 <p>Комплект вирусных визуалов для Instagram. Слайды 4:5 (1080×1350) рисуются на &lt;canvas&gt; брендовыми шрифтами — кнопка «PNG» скачивает эталон. <b>The Voice of Stone</b> · отдел маркетинга Тарона Бадаляна.</p>
 </header>
 <div id="app"></div>
 <footer>
 <div>Реальный контент · премиальный тон · публикует Мери после согласования с Тароном. Инесса в Instagram не публикует.</div>
-<div style="margin-top:8px">Архив: <a href="archive/2026-11-01.html">2026-11-01</a> · <a href="archive/2026-10-31.html">2026-10-31</a> · <a href="archive/2026-10-30.html">2026-10-30</a> · <a href="archive/2026-10-29.html">2026-10-29</a> · <a href="archive/2026-10-28.html">2026-10-28</a> · <a href="archive/2026-10-27.html">2026-10-27</a> · <a href="archive/2026-10-26.html">2026-10-26</a> · журнал: <a href="https://github.com/worktaronbadalyan-hub/inessa-design/blob/main/stonetalks/carousel-log.md">carousel-log.md</a></div>
-<div style="margin-top:8px">Шрифты: Anton (латиница: вордмарк, цифры) · Noto Sans Armenian 900/500 (арм. заголовки и тело). Стиль: #0E0E0E / #C6F03C / #FFFFFF. ⚠ Армянский текст перед публикацией вычитывают Сюзи/Тарон.</div>
+<div style="margin-top:8px">Архив: <a href="archive/2026-11-02.html">2026-11-02</a> · <a href="archive/2026-11-01.html">2026-11-01</a> · <a href="archive/2026-10-31.html">2026-10-31</a> · <a href="archive/2026-10-30.html">2026-10-30</a> · <a href="archive/2026-10-29.html">2026-10-29</a> · <a href="archive/2026-10-28.html">2026-10-28</a> · <a href="archive/2026-10-27.html">2026-10-27</a> · журнал: <a href="https://github.com/worktaronbadalyan-hub/inessa-design/blob/main/stonetalks/carousel-log.md">carousel-log.md</a></div>
+<div style="margin-top:8px">Шрифты: Anton (латиница) · Oswald (кириллица/англ. акценты) · Noto Sans Armenian 900/700/500 (арм. заголовки и тело) · Archivo (вордмарк). Стиль: #0E0E0E / #C6F03C / #FFFFFF. ⚠ Армянский текст перед публикацией вычитывают Сюзи/Тарон.</div>
 </footer>
 </div>
 <script>
 var LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",MUTED_D="#969696",MUTED_L="#5a5a5a";
+var DATE="2026-11-03";
 var DATA={
-a:{account:"taron",title:"Карусель А · по брифу Мадлен — личный @badalyan.taron",
- meta:["02.11 · @badalyan.taron","HY (армянский)","P3 · ИИ/тренинги","Demo Walkthrough","Хук H18","Собственники/директора","Цель: DM «ԱՆԱԼԻԶ»"],
- cap:"Շատ տնօրեններ կարծում են՝ ԱԲ-ն գործարկելու համար պետք է առանձին բաժին ու ծրագրավորող։\n\nԻրականում պետք է ընդամենը 5 բան, և դրանք արդեն քո ընկերությունում են՝ մեկ կրկնվող գործ, մեկ պատասխանատու մարդ, հստակ հրահանգ, թվերի մարդկային ստուգում և պարզ մեկնարկ։\n\nԻմ քարի ընկերությունում հենց այսպես է աշխատում՝ փոքր թիմ և ԱԲ-գործակալներ, առանց ծրագրավորողների։ Սա AI for small business-ի ամենապարզ ճանապարհն է։\n\nՈւզո՞ւմ ես իմանալ՝ որ գործն առաջինը տալ ԱԲ-ին։ Գրիր «ԱՆԱԼԻԶ» Direct-ում՝ կստանաս անվճար 5 հարցանոց էքսպրես-վերլուծություն։\n\n#ԱրհեստականԲանականություն #ԲիզնեսՀայաստան #ԹվայինՓոխակերպում",
+a:{account:"taron",title:"Карусель А · ФЛАГМАН по брифу Мадлен — личный @badalyan.taron",
+ meta:["03.11 · @badalyan.taron","HY (армянский)","ФЛАГМАН · P1 ИИ→тренинги","Rant Callout","Хук H20","Собственники/директора","Цель: лид/DM «ՎԵՐԼՈՒԾՈՒՄ»"],
+ cap:"Ի՞նչ է կատարվում ձեր ընկերությունում այն շաբաթ, երբ դուք գրասենյակում չեք։\n\nՍովորական թիմում ամեն ինչ կանգ է առնում՝ որոշումները սպասում են տնօրենի վերադարձին։\n\nՄեր մարքեթինգի բաժինն այս շաբաթ աշխատում է ԱԲ-գործակալներով՝ պլան, տեքստ, դիզայն, հաճախորդների որոնում։ Մարդը ստուգում է այնտեղ, որտեղ ԱԲ-ն սխալվում է՝ թվեր, տվյալներ, հաճախորդներին ուղղված նամակներ։\n\nՍա ԱԲ թրեյնինգ է թիմերի համար՝ ոչ թե դասախոսություն, այլ 3 ժամ քո խնդիրների վրա։ Գրի՛ր Direct-ում «ՎԵՐԼՈՒԾՈՒՄ»՝ կուղարկեմ անվճար էքսպրես-վերլուծությունը։\n\n#ԱԲթրեյնինգ #ԲիզնեսՀայաստան #ԱրհեստականԲանականություն",
  firstc:"Առաջին մեկնաբանություն՝ անվճար էքսպրես-վերլուծություն և ԱԲ-թրեյնինգների փաթեթներ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/",
- alt:"Մուգ ֆոնին լայմ շեշտադրումով «ԱԲ ԲԱԺԻՆ ՊԵՏՔ ՉԷ · ՊԵՏՔ Է 5 ԲԱՆ» վերնագիր; 5 քայլ՝ ԱԲ-ն բիզնեսում գործարկելու համար առանց ԱԲ-բաժնի։",
+ alt:"Մուգ սլայդ լայմ շեշտադրմամբ, խոշոր հայերեն վերնագիր՝ «Լավագույն ստուգումը՝ տնօրենը բացակա», ներքևում՝ Taron Badalyan — The Voice of Stone, էջ 01/07։",
  slides:[
-  {idx:1,kind:"hook",dark:1,big:["ԱԲ ԲԱԺԻՆ","ՊԵՏՔ ՉԷ"],bigSize:118,sub:"ՊԵՏՔ Է ԸՆԴԱՄԵՆԸ 5 ԲԱՆ",subAcc:1,small:"Որտեղ սկսել ԱԲ-ից՝ առանց ծրագրավորողի",glow:"tr"},
-  {idx:2,kind:"content",dark:0,badge:"ՔԱՅԼ 1",head:"ՄԵԿ ԿՐԿՆՎՈՂ ԳՈՐԾ",headSize:62,body:"Ընտրիր մեկ գործ, որ կրկնվում է ամեն շաբաթ՝ հաշվետվություն, գնառաջարկ, նամակ։ Ոչ թե ամեն ինչ, այլ մեկը։"},
-  {idx:3,kind:"content",dark:1,badge:"ՔԱՅԼ 2",head:"ՄԵԿ ՊԱՏԱՍԽԱՆԱՏՈՒ ՄԱՐԴ",headSize:56,body:"Մեկ մարդ, ով ընդունում է արդյունքը։ Առանց տիրոջ՝ գործը կախվում է օդում։"},
-  {idx:4,kind:"content",dark:0,badge:"ՔԱՅԼ 3",head:"ՀԱՍԿԱՆԱԼԻ ՀՐԱՀԱՆԳ",headSize:60,bad:"Վատ՝ «գրիր գեղեցիկ» — ԱԲ-ն կռահում է ու շեղվում։",good:"Լավ՝ դեր, խնդիր, օրինակ՝ մեկ հստակ հրահանգ։"},
-  {idx:5,kind:"content",dark:1,badge:"ՔԱՅԼ 4",head:"ԹՎԵՐԸ ՍՏՈՒԳՈՒՄ Է ՄԱՐԴԸ",headSize:54,body:"ԱԲ-ն պատրաստում է, մարդը ստուգում է թվերը՝ ուղարկելուց առաջ։ Ամեն անգամ։"},
-  {idx:6,kind:"content",dark:0,badge:"ՔԱՅԼ 5",head:"ՍԿՍԻՐ 5 ՀԱՐՑԻՑ",headSize:62,body:"5 հարցանոց էքսպրես-վերլուծությունը ցույց է տալիս, թե որ գործը առաջինը տալ ԱԲ-ին։"},
-  {idx:7,kind:"cta",dark:1,eyebrow:"ԱՆՎՃԱՐ ԷՔՍՊՐԵՍ-ՎԵՐԼՈՒԾՈՒԹՅՈՒՆ",head:"ԳՐԻՐ «ԱՆԱԼԻԶ» DIRECT-ՈՒՄ",headSize:64,body:"Կստանաս 5 հարց, որ ցույց կտա՝ որտեղ ԱԲ-ն քեզ ամենաշատն է օգնելու։",cta:"DIRECT → ԱՆԱԼԻԶ",footer:"Taron Badalyan — The Voice of Stone"}
+  {idx:1,kind:"hook",dark:1,kicker:"ԹԻՄԻ ԱԲ-ԲԱԺԻՆ",big:["ԼԱՎԱԳՈՒՅՆ","*ՍՏՈՒԳՈՒՄԸ՝*","ՏՆՕՐԵՆԸ","*ԲԱՑԱԿԱ*"],hsize:86,foot:"H20 · перевёрнутая истина"},
+  {idx:2,kind:"content",dark:0,tag:"ՍՈՎՈՐԱԿԱՆ ԸՆԿԵՐՈՒԹՅՈՒՆ",title:"Երբ տնօրենը բացակա է՝ ամեն ինչ *կանգ է առնում*",tsize:54,body:"Որոշումները կուտակվում են և սպասում նրա վերադարձին։"},
+  {idx:3,kind:"content",dark:1,tag:"ՄԵԶ ՄՈՏ ՀԱԿԱՌԱԿՆ Է",title:"ԱԲ-գործակալների բաժինը մեկ շաբաթում տալիս է *արդյունք*",tsize:54,body:"Պլան, տեքստ, դիզայն, հաճախորդների որոնում։ Մարդը միայն հաստատում է։"},
+  {idx:4,kind:"content",dark:0,tag:"ԳԱՂՏՆԻՔԸ",title:"Ոչ թե «խելացի ԱԲ», այլ *մեկ խնդիր՝ մեկ գործակալ*",tsize:54,body:"Ամեն գործակալ ունի մեկ առաջադրանք և մեկ մարդ, ով ընդունում է աշխատանքը։"},
+  {idx:5,kind:"content",dark:1,tag:"ՈՐՏԵՂ ԱԲ-Ն ՍԽԱԼՎՈՒՄ Է",title:"Թվերը, տվյալները, նամակները ստուգում է *մարդը*",tsize:54,body:"Ուղարկելուց առաջ՝ միշտ մարդու ստուգումը, ոչ թե ԱԲ-ի վերջին խոսքը։"},
+  {idx:6,kind:"content",dark:0,tag:"ՍԱ ՀԵՆՑ ԹՐԵՅՆԻՆԳՆ Է",title:"Ոչ թե դասախոսություն, այլ *3 ժամ* քո խնդիրների վրա",tsize:54,body:"Թիմը ԱԲ-ն դնում է իր առօրյա առաջադրանքների վրա, ոչ թե ընդհանուր տեսության։"},
+  {idx:7,kind:"cta",dark:1,kicker:"ԱՆՎՃԱՐ",title:"Գրի՛ր Direct-ում՝ *ՎԵՐԼՈՒԾՈՒՄ*",tsize:64,body:"Կուղարկեմ քո թիմի անվճար էքսպրես-վերլուծությունը։"}
  ]},
 b:{account:"taron",title:"Карусель Б · своя тема — личный @badalyan.taron",
- meta:["02.11 · @badalyan.taron","HY (армянский)","P2 · камень/материалы","Value-Stack","Хук H14","Дизайн/ремонт","Цель: сохранения"],
- cap:"Բաց մարմարն ու տրավերտինը չեն բծանում գույնի պատճառով։ Խնդիրը ծակոտկենությունն է ու խնամքը։\n\nՊաշտպանիչ իմպրեգնացիա տարին մեկ, թափվածը սրբել անմիջապես, թթուն չշփել աբրազիվով, իսկ աշխատանքային գոտում ընտրել մատ (honed) մակերես՝ ահա պարզ կանոնները։\n\nԱյսպես բաց մարմար սեղանագլուխը տարիներ մնում է մաքուր ու հանգիստ՝ առանց ընտրությունից զղջալու։\n\nՊահիր այս գրառումը հաջորդ վերանորոգման համար։\n\n#Մարմար #ՔարեՍեղան #ԻնտերիերիԴիզայն",
+ meta:["03.11 · @badalyan.taron","HY (армянский)","P2 камень/материалы","Demo Walkthrough","Хук H22","Дизайнеры/ремонт","Цель: сохранения"],
+ cap:"Սխալ չափված քարե սեղանը նորից չես կտրի՝ սալը մեկ ամբողջական կտոր է։\n\nԱմենից հաճախ սխալը ոչ թե քարի մեջ է, այլ պատվերի՝ չափը մոտավոր, կարի տեղը չխոսված, եզրը պատահական։\n\nԱյս 5 քայլը պատվերը դարձնում են ճշգրիտ՝ չափ, լվացարանի տեղ, եզրի պրոֆիլ, կարի տեղ, հաստություն ու հենարան։ Քարե խոհանոցի սեղանն այդպես նստում է տեղում առաջին անգամից։\n\nՊահի՛ր գրառումը, որ վերանորոգման ժամանակ ձեռքի տակ լինի։\n\n#քարեսեղան #ինտերիերիդիզայն #վերանորոգում",
  firstc:"",
- alt:"Մուգ ֆոնին «ԲԱՑ ՔԱՐԸ ՇՈ՞ՒՏ Է ԲԾԱՆՈՒՄ · 5 ԿԱՆՈՆ» վերնագիր; բաց մարմարի ու տրավերտինի խնամքի 5 կանոն։",
+ alt:"Մուգ սլայդ լայմ շեշտադրմամբ, հայերեն վերնագիր՝ «Ամենաարագ ճանապարհը ճշգրիտ սեղանի», քարե սեղան պատվիրելու 5 քայլ, էջ 01/07։",
  slides:[
-  {idx:1,kind:"hook",dark:1,big:["ԲԱՑ ՔԱՐԸ","ՇՈ՞ՒՏ Է ԲԾԱՆՈՒՄ"],bigSize:100,sub:"5 ԿԱՆՈՆ, ՈՐ ՉԶՂՋԱՍ",subAcc:1,small:"Մարմար ու տրավերտին՝ բաց երանգներ ինտերիերում",glow:"br"},
-  {idx:2,kind:"content",dark:0,badge:"1",head:"ԲԱՆԸ ԾԱԿՈՏԿԵՆՈՒԹՅՈՒՆՆ Է",headSize:52,body:"Բաց մարմարն ու տրավերտինը ծակոտկեն են՝ հեղուկը ներծծվում է։ Խնդիրը պաշտպանությունն է, ոչ գույնը։"},
-  {idx:3,kind:"content",dark:1,badge:"2",head:"ՏԱՐԵԿԱՆ ՄԵԿ ԱՆԳԱՄ ԻՄՊՐԵԳՆԱՑԻԱ",headSize:46,body:"Խոհանոցի մակերեսը տարին մեկ ծածկիր պաշտպանիչ իմպրեգնանտով (sealing)՝ ծակոտիները փակելու համար։"},
-  {idx:4,kind:"content",dark:0,badge:"3",head:"ԹԹՈՒՆ ԹՈՂՆՈՒՄ Է ՄԱՏ ՀԵՏՔ",headSize:50,body:"Կիտրոն, գինի, սուրճ՝ մարմարին թողնում են մատ «այրվածք» (etch)։ Սա ռեակցիա է, ոչ կեղտ՝ մի՛ քսիր աբրազիվ։"},
-  {idx:5,kind:"content",dark:1,badge:"4",head:"ԹԱՓՎԱԾԸ ՍՐԲԻՐ ԱՆՄԻՋԱՊԵՍ",headSize:52,body:"Ներծծվում է րոպեների, ոչ ժամերի մեջ։ Արագ սրբելը որոշում է՝ կմնա՞ բիծ, թե ոչ։"},
-  {idx:6,kind:"content",dark:0,badge:"5",head:"ՄԱՏ ՄԱԿԵՐԵՍԸ ԹԱՔՑՆՈՒՄ Է ՀԵՏՔԸ",headSize:46,body:"Honed (մատ) մակերեսը թաքցնում է մանր հետքերը՝ ավելի լավ, քան փայլունը։ Փայլը՝ պատին, ոչ աշխատանքային գոտուն։"},
-  {idx:7,kind:"cta",dark:1,eyebrow:"ՀԱՋՈՐԴ ՎԵՐԱՆՈՐՈԳՄԱՆ ՀԱՄԱՐ",head:"ՊԱՀԻՐ ԱՅՍ 5 ԿԱՆՈՆԸ",headSize:80,body:"Բաց քարը գեղեցիկ է ու դիմացկուն, երբ գիտես՝ ինչպես խնամել։",cta:"SAVE ↓",footer:"Taron Badalyan — The Voice of Stone"}
+  {idx:1,kind:"hook",dark:1,kicker:"ՔԱՐԵ ՍԵՂԱՆ",big:["ԱՄԵՆԱԱՐԱԳ","*ՃԱՆԱՊԱՐՀԸ*","ՃՇԳՐԻՏ *ՍԵՂԱՆԻ*"],hsize:84,foot:"H22 · самый быстрый способ"},
+  {idx:2,kind:"content",dark:0,tag:"ՔԱՅԼ 1",title:"Չափի՛ր տեղը և ուղարկիր *ճշգրիտ* չափսերը",tsize:56,body:"Ոչ թե մոտավորը. սալը մեկ կտոր է, սխալ չափը նորից չես կտրի։"},
+  {idx:3,kind:"content",dark:1,tag:"ՔԱՅԼ 2",title:"Նշի՛ր լվացարանի և ծորակի *տեղը*",tsize:56,body:"Դրանք կտրվում են նախապես՝ արտադրությունում, ոչ թե տեղում՝ ձեռքով։"},
+  {idx:4,kind:"content",dark:0,tag:"ՔԱՅԼ 3",title:"Ընտրի՛ր եզրի պրոֆիլը *գծագրից*",tsize:56,body:"Ուղիղ, փափուկ թե շեղ եզր՝ որոշում ես դու, ոչ թե պատահականությունը։"},
+  {idx:5,kind:"content",dark:1,tag:"ՔԱՅԼ 4",title:"Պայմանավորվի՛ր *կարի* տեղի մասին",tsize:56,body:"Մեծ սեղանին կարը դնում են այնտեղ, որտեղ աչքը չի ընկնում։"},
+  {idx:6,kind:"content",dark:0,tag:"ՔԱՅԼ 5",title:"Ստուգի՛ր հաստությունն ու *հենարանը*",tsize:56,body:"Ծանր սալը տակից պետք է հենվի, որ ժամանակի հետ չճաքի։"},
+  {idx:7,kind:"cta",dark:1,kicker:"ՊԱՀԻՐ",title:"5 քայլ՝ ճշգրիտ *քարե սեղանի* համար",tsize:66,body:"Պահի՛ր այս գրառումը հաջորդ վերանորոգման համար։"}
  ]}
 };
+var QUOTE={title:"Доп. задача дня · карточка-цитата для LinkedIn (срок 03.11)",
+ meta:["03.11 · LinkedIn","RU + EN","1080×1350","Флагман-цитата"],
+ ru:"Лучшая проверка ИИ-отдела — неделя, когда директора нет в стране",
+ en:"The best test of an AI department is the week the director is away",
+ alt:"Тёмная карточка-цитата с лаймовым акцентом: «Лучшая проверка ИИ-отдела — неделя, когда директора нет в стране» (RU) и перевод EN, подпись Taron Badalyan — The Voice of Stone. 1080×1350, LinkedIn.",
+ note:"Текст цитаты — из брифа Мадлен дословно (RU + EN). «Нет в стране» без упоминания EMBA/ОАЭ. Для ленты LinkedIn 4:5."};
 var W=1080,Ht=1350;
-function F(w,s){return w+" "+s+"px Anton, 'Noto Sans Armenian', sans-serif";}
-function FA(wt,s){return wt+" "+s+"px 'Noto Sans Armenian','Archivo',sans-serif";}
-function wrapText(ctx,t,maxw){var ws=t.split(" "),ls=[],c="";for(var i=0;i<ws.length;i++){var tt=(c?c+" ":"")+ws[i];if(ctx.measureText(tt).width<=maxw){c=tt;}else{if(c)ls.push(c);c=ws[i];}}if(c)ls.push(c);return ls;}
-function drawWrap(ctx,t,x,y,maxw,lh){var ls=wrapText(ctx,t,maxw);for(var i=0;i<ls.length;i++){ctx.fillText(ls[i],x,y);y+=lh;}return y;}
-function glow(ctx,corner){var r=460,cx=corner.indexOf("r")>=0?W:0,cy=corner.indexOf("t")>=0?0:Ht;var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,"rgba(198,240,60,0.20)");g.addColorStop(1,"rgba(198,240,60,0)");ctx.fillStyle=g;ctx.fillRect(0,0,W,Ht);}
-function arrow(ctx,cx,cy,r,col,bg){ctx.fillStyle=col;ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.fill();ctx.strokeStyle=bg;ctx.lineWidth=Math.max(4,r*0.14);ctx.lineCap="round";var s=r*0.5;ctx.beginPath();ctx.moveTo(cx-s,cy);ctx.lineTo(cx+s,cy);ctx.moveTo(cx+s-r*0.32,cy-r*0.32);ctx.lineTo(cx+s,cy);ctx.lineTo(cx+s-r*0.32,cy+r*0.32);ctx.stroke();}
-function pill(ctx,x,y,t,fs,fg,bg){ctx.font=F("",fs);var w=ctx.measureText(t).width+68,h=fs+40;ctx.fillStyle=bg;rr(ctx,x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline="middle";ctx.fillText(t,x+34,y+h/2+2);ctx.textBaseline="alphabetic";return[w,h];}
+function fArmBlack(s){return "900 "+s+"px 'Noto Sans Armenian',sans-serif";}
+function fArmBold(s){return "700 "+s+"px 'Noto Sans Armenian',sans-serif";}
+function fArmMed(s){return "500 "+s+"px 'Noto Sans Armenian','Archivo',sans-serif";}
+function fLat(s){return "400 "+s+"px Anton,sans-serif";}
+function fArch(w,s){return w+" "+s+"px Archivo,sans-serif";}
+function fOsw(w,s){return w+" "+s+"px Oswald,sans-serif";}
+function measure(ctx,t){return ctx.measureText(t).width;}
+function wrapText(ctx,t,maxw){var ws=t.split(" "),ls=[],c="";for(var i=0;i<ws.length;i++){var raw=ws[i];var plain=raw.replace(/\*/g,"");var tt=(c?c+" ":"")+raw;var tp=(c?c.replace(/\*/g,"")+" ":"")+plain;if(measure(ctx,tp)<=maxw){c=tt;}else{if(c)ls.push(c);c=raw;}}if(c)ls.push(c);return ls;}
+function drawHL(ctx,line,x,y,ink){var ws=line.split(" ");var cx=x;for(var i=0;i<ws.length;i++){var raw=ws[i];var lime=raw.charAt(0)=="*"&&raw.charAt(raw.length-1)=="*";var txt=raw.replace(/\*/g,"");ctx.fillStyle=lime?LIME:ink;ctx.fillText(txt,cx,y);cx+=measure(ctx,txt+" ");}}
+function drawWrapHL(ctx,t,x,y,maxw,lh,ink){var ls=wrapText(ctx,t,maxw);for(var i=0;i<ls.length;i++){drawHL(ctx,ls[i],x,y,ink);y+=lh;}return y;}
+function drawWrap(ctx,t,x,y,maxw,lh){var ls=wrapText(ctx,t,maxw);for(var i=0;i<ls.length;i++){ctx.fillText(ls[i].replace(/\*/g,""),x,y);y+=lh;}return y;}
 function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
-function topbar(ctx,idx,account,dark){var tc=dark?WHITE:DARK,sb=dark?MUTED_D:MUTED_L,x=72,y=70;
- if(account=="taron"){var ms=58;ctx.fillStyle=LIME;rr(ctx,x,y,ms,ms,14);ctx.fill();ctx.fillStyle=DARK;ctx.font=F("",30);ctx.textBaseline="middle";ctx.textAlign="center";ctx.fillText("TB",x+ms/2,y+ms/2+1);ctx.textAlign="left";ctx.textBaseline="alphabetic";ctx.fillStyle=tc;ctx.font=F("",30);ctx.fillText("TARON BADALYAN",x+ms+18,y+30);ctx.fillStyle=sb;ctx.font=FA(500,16);ctx.fillText("THE VOICE OF STONE",x+ms+18,y+54);}
- else{ctx.fillStyle=tc;ctx.font=F("",34);ctx.fillText("STONE MARKET",x,y+32);ctx.fillStyle=sb;ctx.font=FA(500,16);ctx.fillText("ARMENIAN STONE SALES",x+2,y+56);}
- ctx.fillStyle=dark?LIME:DARK;ctx.font=F("",26);var pg=("0"+idx).slice(-2)+"/07";ctx.textAlign="right";ctx.fillText(pg,W-72,y+30);ctx.textAlign="left";}
-function render(cv,s,account){var ctx=cv.getContext("2d");cv.width=W;cv.height=Ht;
- var lime=!!s.lime,dark=lime?0:(s.dark?1:0);
- ctx.fillStyle=lime?LIME:(dark?DARK:LIGHT);ctx.fillRect(0,0,W,Ht);
- if(dark&&!lime)glow(ctx,s.glow||"tr");
- var tc=(lime||!dark)?DARK:WHITE,sb=(lime||!dark)?MUTED_L:MUTED_D,acc=lime?DARK:LIME;
- topbar(ctx,s.idx,account,dark&&!lime);
- var x=72,maxw=W-144;ctx.textBaseline="alphabetic";
- if(s.kind=="hook"){var y=360;
-  if(s.eyebrow){ctx.fillStyle=acc;ctx.font=FA(700,30);ctx.fillText(s.eyebrow,x,y);y+=58;}
-  ctx.font=F("",s.bigSize||120);var lh=(s.bigSize||120)*1.02;
-  for(var i=0;i<s.big.length;i++){ctx.fillStyle=(s.accLine===i)?acc:tc;ctx.fillText(s.big[i],x,y);y+=lh;}
-  y+=24;
-  if(s.sub){ctx.font=F("",54);ctx.fillStyle=s.subAcc?acc:tc;y=drawWrap(ctx,s.sub,x,y,maxw,62)+14;}
-  if(s.small){ctx.font=FA(500,34);ctx.fillStyle=sb;y=drawWrap(ctx,s.small,x,y,maxw,46);}
-  arrow(ctx,W-120,Ht-120,46,acc,lime?LIME:(dark?DARK:LIGHT));
- } else if(s.kind=="content"){var y=300;
-  if(s.badge){ctx.font=F("",40);var bw=ctx.measureText(s.badge).width,pad=22,bh=48;ctx.fillStyle=lime?DARK:LIME;rr(ctx,x,y,bw+pad*2,bh+pad,14);ctx.fill();ctx.fillStyle=lime?LIME:DARK;ctx.textBaseline="middle";ctx.fillText(s.badge,x+pad,y+(bh+pad)/2+1);ctx.textBaseline="alphabetic";y+=bh+pad+44;}
-  ctx.font=F("",s.headSize||66);ctx.fillStyle=tc;y=drawWrap(ctx,s.head,x,y,maxw,(s.headSize||66)*1.06)+30;
-  if(s.bad){ctx.font=FA(700,37);ctx.fillStyle=lime?"#7a1e1e":"#c0504a";var by=drawWrap(ctx,"✗ "+s.bad,x,y,maxw,48)+18;ctx.fillStyle=lime?"#1e5a14":"#6aa832";y=drawWrap(ctx,"✓ "+s.good,x,by,maxw,48);}
-  else{ctx.font=FA(500,42);ctx.fillStyle=(dark&&!lime)?sb:tc;y=drawWrap(ctx,s.body,x,y,maxw,56);}
-  arrow(ctx,W-120,Ht-120,44,acc,lime?LIME:(dark?DARK:LIGHT));
- } else {var y=360;
-  if(s.eyebrow){ctx.fillStyle=acc;ctx.font=FA(700,30);ctx.fillText(s.eyebrow,x,y);y+=58;}
-  ctx.font=F("",s.headSize||84);ctx.fillStyle=tc;y=drawWrap(ctx,s.head,x,y,maxw,(s.headSize||84)*1.06)+30;
-  if(s.body){ctx.font=FA(500,40);ctx.fillStyle=sb;y=drawWrap(ctx,s.body,x,y,maxw,54)+44;}
-  pill(ctx,x,y,s.cta,44,lime?LIME:DARK,lime?DARK:LIME);
-  var fy=Ht-150;ctx.strokeStyle=dark?"#333":"#c8c8c6";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,fy-24);ctx.lineTo(W-72,fy-24);ctx.stroke();
-  ctx.fillStyle=(dark&&!lime)?LIME:DARK;ctx.font=FA(700,34);ctx.fillText(s.footer,x,fy+24);
+function glow(ctx,cx,cy){var r=460;var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,"rgba(198,240,60,0.17)");g.addColorStop(1,"rgba(198,240,60,0)");ctx.fillStyle=g;ctx.fillRect(0,0,W,Ht);}
+function halftone(ctx,x0,y0,x1,y1,dark){var gap=26,r=3.5,rows=Math.floor((y1-y0)/gap);for(var j=0;j<=rows;j++){for(var i=0;i<=(x1-x0)/gap;i++){var a=0.42*(1-j/(rows+1));ctx.fillStyle="rgba("+(dark?"198,240,60":"120,150,40")+","+a.toFixed(3)+")";ctx.beginPath();ctx.arc(x0+i*gap,y0+j*gap,r,0,7);ctx.fill();}}}
+function arcAcc(ctx,cx,cy,r,col){ctx.strokeStyle=col;ctx.lineWidth=12;ctx.beginPath();ctx.arc(cx,cy,r,Math.PI*0.83,Math.PI*1.67);ctx.stroke();}
+function arrow(ctx,cx,cy,r,bg){ctx.fillStyle=LIME;ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.fill();ctx.strokeStyle=DARK;ctx.lineWidth=Math.max(6,r*0.15);ctx.lineCap="round";ctx.lineJoin="round";ctx.beginPath();ctx.moveTo(cx-r*0.13,cy-r*0.28);ctx.lineTo(cx+r*0.24,cy);ctx.lineTo(cx-r*0.13,cy+r*0.28);ctx.stroke();}
+function logo(ctx,x,y,s){ctx.fillStyle=LIME;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+s*0.5,y+s*0.32);ctx.lineTo(x,y+s);ctx.lineTo(x-s*0.5,y+s*0.32);ctx.closePath();ctx.fill();ctx.strokeStyle=DARK;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+s);ctx.moveTo(x-s*0.5,y+s*0.32);ctx.lineTo(x+s*0.5,y+s*0.32);ctx.stroke();}
+function pill(ctx,x,y,t,fs,fg,bg,fnt){ctx.font=fnt||fArmBold(fs);var w=measure(ctx,t)+68,h=fs+36;ctx.fillStyle=bg;rr(ctx,x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline="middle";ctx.fillText(t,x+34,y+h/2+1);ctx.textBaseline="alphabetic";return[w,h];}
+function chrome(ctx,idx,dark){var ink=dark?WHITE:DARK,sub=dark?MUTED_D:MUTED_L;
+ glow(ctx,60,60);glow(ctx,W-40,Ht-20);halftone(ctx,W-300,44,W-62,228,dark);
+ logo(ctx,92,70,46);
+ ctx.fillStyle=ink;ctx.font=fArch(600,30);ctx.textBaseline="alphabetic";ctx.fillText("TARON BADALYAN",126,100);
+ ctx.fillStyle=sub;ctx.font=fArch(600,30);var pg=("0"+idx).slice(-2)+"/07";ctx.textAlign="right";ctx.fillText(pg,W-92,100);ctx.textAlign="left";}
+function render(cv,s){var ctx=cv.getContext("2d");cv.width=W;cv.height=Ht;
+ var dark=s.dark?1:0;var ink=dark?WHITE:DARK,sub=dark?MUTED_D:MUTED_L,acc=LIME;
+ ctx.fillStyle=dark?DARK:LIGHT;ctx.fillRect(0,0,W,Ht);
+ chrome(ctx,s.idx,dark);
+ var x=92,maxw=W-184;ctx.textBaseline="alphabetic";
+ if(s.kind=="hook"){
+  pill(ctx,x,250,s.kicker,26,DARK,LIME);
+  var hs=s.hsize||86,lh=hs*1.06,y=372;
+  ctx.font=fArmBlack(hs);
+  for(var i=0;i<s.big.length;i++){drawHL(ctx,s.big[i],x,y,ink);y+=lh;}
+  arcAcc(ctx,W-150,Ht-250,120,LIME);
+  arrow(ctx,W-150,Ht-170,46);
+  ctx.fillStyle=sub;ctx.font=fOsw(500,26);ctx.fillText(s.foot||"",x,Ht-196);
+ } else if(s.kind=="content"){
+  var y=250;
+  if(s.tag){pill(ctx,x,y,s.tag,28,DARK,LIME);y+=96;}
+  var ts=s.tsize||54;ctx.font=fArmBold(ts);
+  y=drawWrapHL(ctx,s.title,x,y,maxw,ts*1.1,ink);
+  y+=20;ctx.strokeStyle=LIME;ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+90,y);ctx.stroke();y+=46;
+  ctx.font=fArmMed(42);ctx.fillStyle=dark?WHITE:"#282828";
+  drawWrap(ctx,s.body,x,y,maxw,56);
+  arrow(ctx,W-150,Ht-170,46);
+ } else {
+  pill(ctx,x,250,s.kicker,26,DARK,LIME);
+  var cs=s.tsize||64,cl=cs*1.08,y2=372;ctx.font=fArmBlack(cs);
+  y2=drawWrapHL(ctx,s.title,x,y2,maxw,cl,ink)+24;
+  ctx.font=fArmMed(40);ctx.fillStyle=ink;
+  y2=drawWrap(ctx,s.body,x,y2,maxw,54);
+  ctx.strokeStyle=sub;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,Ht-250);ctx.lineTo(W-92,Ht-250);ctx.stroke();
+  logo(ctx,x+16,Ht-200,56);
+  ctx.fillStyle=ink;ctx.font=fArch(600,40);ctx.fillText("Taron Badalyan",x+70,Ht-168);
+  ctx.fillStyle=sub;ctx.font=fArch(500,30);ctx.fillText("The Voice of Stone",x+70,Ht-128);
  }
 }
+function renderQuote(cv,q){var ctx=cv.getContext("2d");cv.width=W;cv.height=Ht;var ink=WHITE,sub=MUTED_D,x=92,maxw=W-184;
+ ctx.fillStyle=DARK;ctx.fillRect(0,0,W,Ht);glow(ctx,60,60);glow(ctx,W-40,Ht-20);halftone(ctx,W-320,60,W-70,300,1);
+ logo(ctx,92,80,46);ctx.fillStyle=ink;ctx.font=fArch(600,30);ctx.textBaseline="alphabetic";ctx.fillText("TARON BADALYAN",126,110);
+ ctx.fillStyle=LIME;ctx.font=fOsw(600,240);ctx.fillText("“",72,330);
+ ctx.fillStyle=ink;ctx.font=fOsw(600,72);var y=430;y=drawWrap(ctx,q.ru,x,y,maxw,82)+30;
+ ctx.strokeStyle=LIME;ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+110,y);ctx.stroke();y+=50;
+ ctx.fillStyle=LIME;ctx.font=fLat(46);y=drawWrap(ctx,q.en.toUpperCase(),x,y,maxw,56);
+ ctx.strokeStyle=sub;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,Ht-230);ctx.lineTo(W-92,Ht-230);ctx.stroke();
+ logo(ctx,x+16,Ht-182,54);ctx.fillStyle=ink;ctx.font=fArch(600,38);ctx.fillText("Taron Badalyan",x+70,Ht-150);
+ ctx.fillStyle=sub;ctx.font=fArch(500,28);ctx.fillText("The Voice of Stone",x+70,Ht-112);}
 function dl(cv,fn){cv.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fn;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},3000);},"image/png");}
-var BUILT=false;function build(){if(BUILT)return;BUILT=true;var app=document.getElementById("app");["a","b"].forEach(function(key){var c=DATA[key];var sec=document.createElement("section");sec.className="car";
+var BUILT=false;function build(){if(BUILT)return;BUILT=true;var app=document.getElementById("app");
+["a","b"].forEach(function(key){var c=DATA[key];var sec=document.createElement("section");sec.className="car";
  var h=document.createElement("h2");h.className="cn";h.innerHTML=(key=="a"?"А":"Б")+" — "+c.title.replace(/^.* · /,"")+"<small>"+c.title+"</small>";sec.appendChild(h);
  var m=document.createElement("div");m.className="meta";c.meta.forEach(function(t,i){var sp=document.createElement("span");if(i<=1)sp.className="hl";sp.textContent=t;m.appendChild(sp);});
  var all=document.createElement("button");all.className="dlall";all.textContent="Скачать все 7 PNG";m.appendChild(all);sec.appendChild(m);
  var g=document.createElement("div");g.className="grid";var cvs=[];
- c.slides.forEach(function(s){var slot=document.createElement("div");slot.className="slot";var cv=document.createElement("canvas");render(cv,s,c.account);cvs.push([cv,s.idx]);slot.appendChild(cv);
-  var row=document.createElement("div");row.className="row";var nm=document.createElement("span");nm.className="nm";nm.textContent="Слайд "+s.idx+"/7";var b=document.createElement("button");b.className="dl";b.textContent="PNG";(function(cv,idx){b.onclick=function(){dl(cv,"2026-11-02_"+key+"_slide"+("0"+idx).slice(-2)+".png");};})(cv,s.idx);row.appendChild(nm);row.appendChild(b);slot.appendChild(row);g.appendChild(slot);});
+ c.slides.forEach(function(s){var slot=document.createElement("div");slot.className="slot";var cv=document.createElement("canvas");render(cv,s);cvs.push([cv,s.idx]);slot.appendChild(cv);
+  var row=document.createElement("div");row.className="row";var nm=document.createElement("span");nm.className="nm";nm.textContent="Слайд "+s.idx+"/7";var b=document.createElement("button");b.className="dl";b.textContent="PNG";(function(cv,idx){b.onclick=function(){dl(cv,DATE+"_"+key+"_slide"+("0"+idx).slice(-2)+".png");};})(cv,s.idx);row.appendChild(nm);row.appendChild(b);slot.appendChild(row);g.appendChild(slot);});
  sec.appendChild(g);
- all.onclick=function(){cvs.forEach(function(p,i){setTimeout(function(){dl(p[0],"2026-11-02_"+key+"_slide"+("0"+p[1]).slice(-2)+".png");},i*350);});};
+ all.onclick=function(){cvs.forEach(function(p,i){setTimeout(function(){dl(p[0],DATE+"_"+key+"_slide"+("0"+p[1]).slice(-2)+".png");},i*350);});};
  var cap=document.createElement("div");cap.className="cap";var ct="<h3>Подпись к посту (HY)</h3><pre>"+c.cap.replace(/</g,"&lt;")+"</pre>";if(c.firstc)ct+="<div class='alt'><b>1-й комментарий:</b> "+c.firstc+"</div>";ct+="<div class='alt'><b>Alt-текст обложки:</b> "+c.alt+"</div>";cap.innerHTML=ct;sec.appendChild(cap);
- if(key=="a"){var n=document.createElement("div");n.className="note";n.textContent="⚠ ИИ-карусель по брифу Мадлен (#7, 02.11), каркас Demo Walkthrough, формула H18. По распоряжению Тарона от 31.10 личный аккаунт @badalyan.taron — всегда на армянском: хук и тезисы переведены с RU, смысл и формула сохранены. Типографика без фото (брифом фото не требуется). Армянский текст вычитывают Сюзи/Тарон перед публикацией.";sec.appendChild(n);} else {var n2=document.createElement("div");n2.className="note";n2.textContent="⚠ Своя тема (камень/материалы, P2) — в пару к ИИ-карусели А, микс P3+P2 по блоку «Что сработало». Чередование направлений сдвинуто на день, чтобы не дублировать ИИ-тему А. Типографика без фейковых текстур; реальное макро светлого мрамора/травертина усилит слайды 1 и 6 — снять при возможности. Армянский текст вычитывают Сюзи/Тарон.";sec.appendChild(n2);}
- app.appendChild(sec);});}
-if(document.fonts&&document.fonts.ready){document.fonts.ready.then(build);setTimeout(build,1500);}else{build();}
+ var n=document.createElement("div");n.className="note";n.textContent=(key=="a"?"⚠ ФЛАГМАН по брифу Мадлен (Вт 03.11). Каркас Rant Callout, формула H20 (перевёрнутая истина). Личный @badalyan.taron — всегда армянский (распоряжение Тарона 31.10). [НУЖЕН ФАКТ ОТ ТАРОНА: можно ли упоминать EMBA/ОАЭ] — без разрешения поездка не названа, формулировка «неделя, когда директора нет». Фото флагмана (скрин чата ИИ-команды + контент-дашборд) в материалах нет — сделано типографикой; реальные скрины усилят слайды 3 и 5. Ключевое слово DM «ՎԵՐԼՈՒԾՈՒՄ» (в брифе — РАЗБОР): согласовать единое слово автоответа. Армянский текст вычитывают Сюзи/Тарон.":"⚠ Своя тема (камень/материалы, P2) — в пару к флагману А (ИИ); направления чередуются, тема/каркас/формула не дублируют А и последние 7 дней журнала. Формула H22 (самый быстрый способ) — свежая, в журнале не встречалась. Типографика без фейковых текстур; реальные кадры фабрикации столешницы (чертёж, кромка, шов, монтаж) усилят слайды 2–6. Армянский текст вычитывают Сюзи/Тарон.");sec.appendChild(n);
+ app.appendChild(sec);});
+var qs=document.createElement("section");qs.className="car";
+var qh=document.createElement("h2");qh.className="cn";qh.innerHTML="➕ Доп. задача — карточка-цитата LinkedIn<small>"+QUOTE.title+"</small>";qs.appendChild(qh);
+var qm=document.createElement("div");qm.className="meta";QUOTE.meta.forEach(function(t,i){var sp=document.createElement("span");if(i<=1)sp.className="hl";sp.textContent=t;qm.appendChild(sp);});qs.appendChild(qm);
+var qg=document.createElement("div");qg.className="grid q";var qslot=document.createElement("div");qslot.className="slot";var qcv=document.createElement("canvas");renderQuote(qcv,QUOTE);qslot.appendChild(qcv);
+var qrow=document.createElement("div");qrow.className="row";var qnm=document.createElement("span");qnm.className="nm";qnm.textContent="Карточка 1080×1350";var qb=document.createElement("button");qb.className="dl";qb.textContent="PNG";qb.onclick=function(){dl(qcv,DATE+"_quote_linkedin.png");};qrow.appendChild(qnm);qrow.appendChild(qb);qslot.appendChild(qrow);qg.appendChild(qslot);qs.appendChild(qg);
+var qcap=document.createElement("div");qcap.className="cap";qcap.innerHTML="<h3>Цитата</h3><pre>RU: "+QUOTE.ru+"\nEN: "+QUOTE.en+"</pre><div class='alt'><b>Alt-текст:</b> "+QUOTE.alt+"</div>";qs.appendChild(qcap);
+var qn=document.createElement("div");qn.className="note";qn.textContent="⚠ "+QUOTE.note;qs.appendChild(qn);
+app.appendChild(qs);}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(build);setTimeout(build,1800);}else{build();}
 </script>
 </body>
 </html>
