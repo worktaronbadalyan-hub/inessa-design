@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИНЕССА · дизайн-дашборд · 02.11.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;700&family=Noto+Sans+Armenian:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0E0E;--card:#161616;--lime:#C6F03C;--muted:#9a9a9a;--line:#262626}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#fff;font-family:"Archivo","Noto Sans Armenian",system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 80px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:10px}
+header.top h1{font-family:Anton;font-weight:400;font-size:30px;letter-spacing:.5px;margin:0 0 6px}
+header.top h1 b{color:var(--lime)}
+header.top p{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+section.car{margin:38px 0 10px;border-top:1px solid var(--line);padding-top:24px}
+h2.cn{font-family:Anton;font-weight:400;font-size:26px;margin:0 0 2px;letter-spacing:.5px}
+h2.cn small{display:block;font-family:"Archivo","Noto Sans Armenian";font-weight:500;font-size:13px;color:var(--muted);letter-spacing:0;margin-top:5px;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:8px 10px;margin:12px 0 16px;font-size:13px}
+.meta span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:#ddd}
+.meta span.hl{border-color:var(--lime);color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;margin-top:6px}
+.slot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}
+.slot canvas{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+.slot .row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}
+.slot .nm{font-size:12px;color:var(--muted)}
+.dl{font-family:"Archivo";font-weight:700;font-size:12px;color:#0E0E0E;background:var(--lime);border:0;border-radius:999px;padding:6px 12px;cursor:pointer}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:16px}
+.cap h3{margin:0 0 8px;font-size:13px;color:var(--lime);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.cap pre{white-space:pre-wrap;font-family:"Archivo","Noto Sans Armenian";font-size:14px;line-height:1.55;color:#e7e7e7;margin:0}
+.cap .alt{margin-top:12px;font-size:13px;color:var(--muted)}
+.cap .alt b{color:#cfcfcf}
+.note{color:#f0c419;font-size:13px;margin-top:12px;line-height:1.5}
+.dlall{font-family:"Archivo";font-weight:700;font-size:13px;color:#0E0E0E;background:var(--lime);border:0;border-radius:999px;padding:8px 16px;cursor:pointer;margin-left:10px}
+footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px;line-height:1.6}
+footer a{color:var(--lime);text-decoration:none;margin-right:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<h1>🎨 ИНЕССА · <b>дизайн-дашборд дня</b> · 02.11.2026</h1>
+<p>Комплект вирусных визуалов для Instagram. Слайды 4:5 (1080×1350) рисуются на &lt;canvas&gt; брендовыми шрифтами — кнопка «PNG» скачивает эталон. <b>The Voice of Stone</b> · отдел маркетинга Тарона Бадаляна.</p>
+</header>
+<div id="app"></div>
+<footer>
+<div>Реальный контент · премиальный тон · публикует Мери после согласования с Тароном. Инесса в Instagram не публикует.</div>
+<div style="margin-top:8px">Архив: <a href="archive/2026-11-01.html">2026-11-01</a> · <a href="archive/2026-10-31.html">2026-10-31</a> · <a href="archive/2026-10-30.html">2026-10-30</a> · <a href="archive/2026-10-29.html">2026-10-29</a> · <a href="archive/2026-10-28.html">2026-10-28</a> · <a href="archive/2026-10-27.html">2026-10-27</a> · <a href="archive/2026-10-26.html">2026-10-26</a> · журнал: <a href="https://github.com/worktaronbadalyan-hub/inessa-design/blob/main/stonetalks/carousel-log.md">carousel-log.md</a></div>
+<div style="margin-top:8px">Шрифты: Anton (латиница: вордмарк, цифры) · Noto Sans Armenian 900/500 (арм. заголовки и тело). Стиль: #0E0E0E / #C6F03C / #FFFFFF. ⚠ Армянский текст перед публикацией вычитывают Сюзи/Тарон.</div>
+</footer>
+</div>
+<script>
+var LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",MUTED_D="#969696",MUTED_L="#5a5a5a";
+var DATA={
+a:{account:"taron",title:"Карусель А · по брифу Мадлен — личный @badalyan.taron",
+ meta:["02.11 · @badalyan.taron","HY (армянский)","P3 · ИИ/тренинги","Demo Walkthrough","Хук H18","Собственники/директора","Цель: DM «ԱՆԱԼԻԶ»"],
+ cap:"Շատ տնօրեններ կարծում են՝ ԱԲ-ն գործարկելու համար պետք է առանձին բաժին ու ծրագրավորող։\n\nԻրականում պետք է ընդամենը 5 բան, և դրանք արդեն քո ընկերությունում են՝ մեկ կրկնվող գործ, մեկ պատասխանատու մարդ, հստակ հրահանգ, թվերի մարդկային ստուգում և պարզ մեկնարկ։\n\nԻմ քարի ընկերությունում հենց այսպես է աշխատում՝ փոքր թիմ և ԱԲ-գործակալներ, առանց ծրագրավորողների։ Սա AI for small business-ի ամենապարզ ճանապարհն է։\n\nՈւզո՞ւմ ես իմանալ՝ որ գործն առաջինը տալ ԱԲ-ին։ Գրիր «ԱՆԱԼԻԶ» Direct-ում՝ կստանաս անվճար 5 հարցանոց էքսպրես-վերլուծություն։\n\n#ԱրհեստականԲանականություն #ԲիզնեսՀայաստան #ԹվայինՓոխակերպում",
+ firstc:"Առաջին մեկնաբանություն՝ անվճար էքսպրես-վերլուծություն և ԱԲ-թրեյնինգների փաթեթներ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/",
+ alt:"Մուգ ֆոնին լայմ շեշտադրումով «ԱԲ ԲԱԺԻՆ ՊԵՏՔ ՉԷ · ՊԵՏՔ Է 5 ԲԱՆ» վերնագիր; 5 քայլ՝ ԱԲ-ն բիզնեսում գործարկելու համար առանց ԱԲ-բաժնի։",
+ slides:[
+  {idx:1,kind:"hook",dark:1,big:["ԱԲ ԲԱԺԻՆ","ՊԵՏՔ ՉԷ"],bigSize:118,sub:"ՊԵՏՔ Է ԸՆԴԱՄԵՆԸ 5 ԲԱՆ",subAcc:1,small:"Որտեղ սկսել ԱԲ-ից՝ առանց ծրագրավորողի",glow:"tr"},
+  {idx:2,kind:"content",dark:0,badge:"ՔԱՅԼ 1",head:"ՄԵԿ ԿՐԿՆՎՈՂ ԳՈՐԾ",headSize:62,body:"Ընտրիր մեկ գործ, որ կրկնվում է ամեն շաբաթ՝ հաշվետվություն, գնառաջարկ, նամակ։ Ոչ թե ամեն ինչ, այլ մեկը։"},
+  {idx:3,kind:"content",dark:1,badge:"ՔԱՅԼ 2",head:"ՄԵԿ ՊԱՏԱՍԽԱՆԱՏՈՒ ՄԱՐԴ",headSize:56,body:"Մեկ մարդ, ով ընդունում է արդյունքը։ Առանց տիրոջ՝ գործը կախվում է օդում։"},
+  {idx:4,kind:"content",dark:0,badge:"ՔԱՅԼ 3",head:"ՀԱՍԿԱՆԱԼԻ ՀՐԱՀԱՆԳ",headSize:60,bad:"Վատ՝ «գրիր գեղեցիկ» — ԱԲ-ն կռահում է ու շեղվում։",good:"Լավ՝ դեր, խնդիր, օրինակ՝ մեկ հստակ հրահանգ։"},
+  {idx:5,kind:"content",dark:1,badge:"ՔԱՅԼ 4",head:"ԹՎԵՐԸ ՍՏՈՒԳՈՒՄ Է ՄԱՐԴԸ",headSize:54,body:"ԱԲ-ն պատրաստում է, մարդը ստուգում է թվերը՝ ուղարկելուց առաջ։ Ամեն անգամ։"},
+  {idx:6,kind:"content",dark:0,badge:"ՔԱՅԼ 5",head:"ՍԿՍԻՐ 5 ՀԱՐՑԻՑ",headSize:62,body:"5 հարցանոց էքսպրես-վերլուծությունը ցույց է տալիս, թե որ գործը առաջինը տալ ԱԲ-ին։"},
+  {idx:7,kind:"cta",dark:1,eyebrow:"ԱՆՎՃԱՐ ԷՔՍՊՐԵՍ-ՎԵՐԼՈՒԾՈՒԹՅՈՒՆ",head:"ԳՐԻՐ «ԱՆԱԼԻԶ» DIRECT-ՈՒՄ",headSize:64,body:"Կստանաս 5 հարց, որ ցույց կտա՝ որտեղ ԱԲ-ն քեզ ամենաշատն է օգնելու։",cta:"DIRECT → ԱՆԱԼԻԶ",footer:"Taron Badalyan — The Voice of Stone"}
+ ]},
+b:{account:"taron",title:"Карусель Б · своя тема — личный @badalyan.taron",
+ meta:["02.11 · @badalyan.taron","HY (армянский)","P2 · камень/материалы","Value-Stack","Хук H14","Дизайн/ремонт","Цель: сохранения"],
+ cap:"Բաց մարմարն ու տրավերտինը չեն բծանում գույնի պատճառով։ Խնդիրը ծակոտկենությունն է ու խնամքը։\n\nՊաշտպանիչ իմպրեգնացիա տարին մեկ, թափվածը սրբել անմիջապես, թթուն չշփել աբրազիվով, իսկ աշխատանքային գոտում ընտրել մատ (honed) մակերես՝ ահա պարզ կանոնները։\n\nԱյսպես բաց մարմար սեղանագլուխը տարիներ մնում է մաքուր ու հանգիստ՝ առանց ընտրությունից զղջալու։\n\nՊահիր այս գրառումը հաջորդ վերանորոգման համար։\n\n#Մարմար #ՔարեՍեղան #ԻնտերիերիԴիզայն",
+ firstc:"",
+ alt:"Մուգ ֆոնին «ԲԱՑ ՔԱՐԸ ՇՈ՞ՒՏ Է ԲԾԱՆՈՒՄ · 5 ԿԱՆՈՆ» վերնագիր; բաց մարմարի ու տրավերտինի խնամքի 5 կանոն։",
+ slides:[
+  {idx:1,kind:"hook",dark:1,big:["ԲԱՑ ՔԱՐԸ","ՇՈ՞ՒՏ Է ԲԾԱՆՈՒՄ"],bigSize:100,sub:"5 ԿԱՆՈՆ, ՈՐ ՉԶՂՋԱՍ",subAcc:1,small:"Մարմար ու տրավերտին՝ բաց երանգներ ինտերիերում",glow:"br"},
+  {idx:2,kind:"content",dark:0,badge:"1",head:"ԲԱՆԸ ԾԱԿՈՏԿԵՆՈՒԹՅՈՒՆՆ Է",headSize:52,body:"Բաց մարմարն ու տրավերտինը ծակոտկեն են՝ հեղուկը ներծծվում է։ Խնդիրը պաշտպանությունն է, ոչ գույնը։"},
+  {idx:3,kind:"content",dark:1,badge:"2",head:"ՏԱՐԵԿԱՆ ՄԵԿ ԱՆԳԱՄ ԻՄՊՐԵԳՆԱՑԻԱ",headSize:46,body:"Խոհանոցի մակերեսը տարին մեկ ծածկիր պաշտպանիչ իմպրեգնանտով (sealing)՝ ծակոտիները փակելու համար։"},
+  {idx:4,kind:"content",dark:0,badge:"3",head:"ԹԹՈՒՆ ԹՈՂՆՈՒՄ Է ՄԱՏ ՀԵՏՔ",headSize:50,body:"Կիտրոն, գինի, սուրճ՝ մարմարին թողնում են մատ «այրվածք» (etch)։ Սա ռեակցիա է, ոչ կեղտ՝ մի՛ քսիր աբրազիվ։"},
+  {idx:5,kind:"content",dark:1,badge:"4",head:"ԹԱՓՎԱԾԸ ՍՐԲԻՐ ԱՆՄԻՋԱՊԵՍ",headSize:52,body:"Ներծծվում է րոպեների, ոչ ժամերի մեջ։ Արագ սրբելը որոշում է՝ կմնա՞ բիծ, թե ոչ։"},
+  {idx:6,kind:"content",dark:0,badge:"5",head:"ՄԱՏ ՄԱԿԵՐԵՍԸ ԹԱՔՑՆՈՒՄ Է ՀԵՏՔԸ",headSize:46,body:"Honed (մատ) մակերեսը թաքցնում է մանր հետքերը՝ ավելի լավ, քան փայլունը։ Փայլը՝ պատին, ոչ աշխատանքային գոտուն։"},
+  {idx:7,kind:"cta",dark:1,eyebrow:"ՀԱՋՈՐԴ ՎԵՐԱՆՈՐՈԳՄԱՆ ՀԱՄԱՐ",head:"ՊԱՀԻՐ ԱՅՍ 5 ԿԱՆՈՆԸ",headSize:80,body:"Բաց քարը գեղեցիկ է ու դիմացկուն, երբ գիտես՝ ինչպես խնամել։",cta:"SAVE ↓",footer:"Taron Badalyan — The Voice of Stone"}
+ ]}
+};
+var W=1080,Ht=1350;
+function F(w,s){return w+" "+s+"px Anton, 'Noto Sans Armenian', sans-serif";}
+function FA(wt,s){return wt+" "+s+"px 'Noto Sans Armenian','Archivo',sans-serif";}
+function wrapText(ctx,t,maxw){var ws=t.split(" "),ls=[],c="";for(var i=0;i<ws.length;i++){var tt=(c?c+" ":"")+ws[i];if(ctx.measureText(tt).width<=maxw){c=tt;}else{if(c)ls.push(c);c=ws[i];}}if(c)ls.push(c);return ls;}
+function drawWrap(ctx,t,x,y,maxw,lh){var ls=wrapText(ctx,t,maxw);for(var i=0;i<ls.length;i++){ctx.fillText(ls[i],x,y);y+=lh;}return y;}
+function glow(ctx,corner){var r=460,cx=corner.indexOf("r")>=0?W:0,cy=corner.indexOf("t")>=0?0:Ht;var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,"rgba(198,240,60,0.20)");g.addColorStop(1,"rgba(198,240,60,0)");ctx.fillStyle=g;ctx.fillRect(0,0,W,Ht);}
+function arrow(ctx,cx,cy,r,col,bg){ctx.fillStyle=col;ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.fill();ctx.strokeStyle=bg;ctx.lineWidth=Math.max(4,r*0.14);ctx.lineCap="round";var s=r*0.5;ctx.beginPath();ctx.moveTo(cx-s,cy);ctx.lineTo(cx+s,cy);ctx.moveTo(cx+s-r*0.32,cy-r*0.32);ctx.lineTo(cx+s,cy);ctx.lineTo(cx+s-r*0.32,cy+r*0.32);ctx.stroke();}
+function pill(ctx,x,y,t,fs,fg,bg){ctx.font=F("",fs);var w=ctx.measureText(t).width+68,h=fs+40;ctx.fillStyle=bg;rr(ctx,x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline="middle";ctx.fillText(t,x+34,y+h/2+2);ctx.textBaseline="alphabetic";return[w,h];}
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function topbar(ctx,idx,account,dark){var tc=dark?WHITE:DARK,sb=dark?MUTED_D:MUTED_L,x=72,y=70;
+ if(account=="taron"){var ms=58;ctx.fillStyle=LIME;rr(ctx,x,y,ms,ms,14);ctx.fill();ctx.fillStyle=DARK;ctx.font=F("",30);ctx.textBaseline="middle";ctx.textAlign="center";ctx.fillText("TB",x+ms/2,y+ms/2+1);ctx.textAlign="left";ctx.textBaseline="alphabetic";ctx.fillStyle=tc;ctx.font=F("",30);ctx.fillText("TARON BADALYAN",x+ms+18,y+30);ctx.fillStyle=sb;ctx.font=FA(500,16);ctx.fillText("THE VOICE OF STONE",x+ms+18,y+54);}
+ else{ctx.fillStyle=tc;ctx.font=F("",34);ctx.fillText("STONE MARKET",x,y+32);ctx.fillStyle=sb;ctx.font=FA(500,16);ctx.fillText("ARMENIAN STONE SALES",x+2,y+56);}
+ ctx.fillStyle=dark?LIME:DARK;ctx.font=F("",26);var pg=("0"+idx).slice(-2)+"/07";ctx.textAlign="right";ctx.fillText(pg,W-72,y+30);ctx.textAlign="left";}
+function render(cv,s,account){var ctx=cv.getContext("2d");cv.width=W;cv.height=Ht;
+ var lime=!!s.lime,dark=lime?0:(s.dark?1:0);
+ ctx.fillStyle=lime?LIME:(dark?DARK:LIGHT);ctx.fillRect(0,0,W,Ht);
+ if(dark&&!lime)glow(ctx,s.glow||"tr");
+ var tc=(lime||!dark)?DARK:WHITE,sb=(lime||!dark)?MUTED_L:MUTED_D,acc=lime?DARK:LIME;
+ topbar(ctx,s.idx,account,dark&&!lime);
+ var x=72,maxw=W-144;ctx.textBaseline="alphabetic";
+ if(s.kind=="hook"){var y=360;
+  if(s.eyebrow){ctx.fillStyle=acc;ctx.font=FA(700,30);ctx.fillText(s.eyebrow,x,y);y+=58;}
+  ctx.font=F("",s.bigSize||120);var lh=(s.bigSize||120)*1.02;
+  for(var i=0;i<s.big.length;i++){ctx.fillStyle=(s.accLine===i)?acc:tc;ctx.fillText(s.big[i],x,y);y+=lh;}
+  y+=24;
+  if(s.sub){ctx.font=F("",54);ctx.fillStyle=s.subAcc?acc:tc;y=drawWrap(ctx,s.sub,x,y,maxw,62)+14;}
+  if(s.small){ctx.font=FA(500,34);ctx.fillStyle=sb;y=drawWrap(ctx,s.small,x,y,maxw,46);}
+  arrow(ctx,W-120,Ht-120,46,acc,lime?LIME:(dark?DARK:LIGHT));
+ } else if(s.kind=="content"){var y=300;
+  if(s.badge){ctx.font=F("",40);var bw=ctx.measureText(s.badge).width,pad=22,bh=48;ctx.fillStyle=lime?DARK:LIME;rr(ctx,x,y,bw+pad*2,bh+pad,14);ctx.fill();ctx.fillStyle=lime?LIME:DARK;ctx.textBaseline="middle";ctx.fillText(s.badge,x+pad,y+(bh+pad)/2+1);ctx.textBaseline="alphabetic";y+=bh+pad+44;}
+  ctx.font=F("",s.headSize||66);ctx.fillStyle=tc;y=drawWrap(ctx,s.head,x,y,maxw,(s.headSize||66)*1.06)+30;
+  if(s.bad){ctx.font=FA(700,37);ctx.fillStyle=lime?"#7a1e1e":"#c0504a";var by=drawWrap(ctx,"✗ "+s.bad,x,y,maxw,48)+18;ctx.fillStyle=lime?"#1e5a14":"#6aa832";y=drawWrap(ctx,"✓ "+s.good,x,by,maxw,48);}
+  else{ctx.font=FA(500,42);ctx.fillStyle=(dark&&!lime)?sb:tc;y=drawWrap(ctx,s.body,x,y,maxw,56);}
+  arrow(ctx,W-120,Ht-120,44,acc,lime?LIME:(dark?DARK:LIGHT));
+ } else {var y=360;
+  if(s.eyebrow){ctx.fillStyle=acc;ctx.font=FA(700,30);ctx.fillText(s.eyebrow,x,y);y+=58;}
+  ctx.font=F("",s.headSize||84);ctx.fillStyle=tc;y=drawWrap(ctx,s.head,x,y,maxw,(s.headSize||84)*1.06)+30;
+  if(s.body){ctx.font=FA(500,40);ctx.fillStyle=sb;y=drawWrap(ctx,s.body,x,y,maxw,54)+44;}
+  pill(ctx,x,y,s.cta,44,lime?LIME:DARK,lime?DARK:LIME);
+  var fy=Ht-150;ctx.strokeStyle=dark?"#333":"#c8c8c6";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,fy-24);ctx.lineTo(W-72,fy-24);ctx.stroke();
+  ctx.fillStyle=(dark&&!lime)?LIME:DARK;ctx.font=FA(700,34);ctx.fillText(s.footer,x,fy+24);
+ }
+}
+function dl(cv,fn){cv.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fn;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},3000);},"image/png");}
+var BUILT=false;function build(){if(BUILT)return;BUILT=true;var app=document.getElementById("app");["a","b"].forEach(function(key){var c=DATA[key];var sec=document.createElement("section");sec.className="car";
+ var h=document.createElement("h2");h.className="cn";h.innerHTML=(key=="a"?"А":"Б")+" — "+c.title.replace(/^.* · /,"")+"<small>"+c.title+"</small>";sec.appendChild(h);
+ var m=document.createElement("div");m.className="meta";c.meta.forEach(function(t,i){var sp=document.createElement("span");if(i<=1)sp.className="hl";sp.textContent=t;m.appendChild(sp);});
+ var all=document.createElement("button");all.className="dlall";all.textContent="Скачать все 7 PNG";m.appendChild(all);sec.appendChild(m);
+ var g=document.createElement("div");g.className="grid";var cvs=[];
+ c.slides.forEach(function(s){var slot=document.createElement("div");slot.className="slot";var cv=document.createElement("canvas");render(cv,s,c.account);cvs.push([cv,s.idx]);slot.appendChild(cv);
+  var row=document.createElement("div");row.className="row";var nm=document.createElement("span");nm.className="nm";nm.textContent="Слайд "+s.idx+"/7";var b=document.createElement("button");b.className="dl";b.textContent="PNG";(function(cv,idx){b.onclick=function(){dl(cv,"2026-11-02_"+key+"_slide"+("0"+idx).slice(-2)+".png");};})(cv,s.idx);row.appendChild(nm);row.appendChild(b);slot.appendChild(row);g.appendChild(slot);});
+ sec.appendChild(g);
+ all.onclick=function(){cvs.forEach(function(p,i){setTimeout(function(){dl(p[0],"2026-11-02_"+key+"_slide"+("0"+p[1]).slice(-2)+".png");},i*350);});};
+ var cap=document.createElement("div");cap.className="cap";var ct="<h3>Подпись к посту (HY)</h3><pre>"+c.cap.replace(/</g,"&lt;")+"</pre>";if(c.firstc)ct+="<div class='alt'><b>1-й комментарий:</b> "+c.firstc+"</div>";ct+="<div class='alt'><b>Alt-текст обложки:</b> "+c.alt+"</div>";cap.innerHTML=ct;sec.appendChild(cap);
+ if(key=="a"){var n=document.createElement("div");n.className="note";n.textContent="⚠ ИИ-карусель по брифу Мадлен (#7, 02.11), каркас Demo Walkthrough, формула H18. По распоряжению Тарона от 31.10 личный аккаунт @badalyan.taron — всегда на армянском: хук и тезисы переведены с RU, смысл и формула сохранены. Типографика без фото (брифом фото не требуется). Армянский текст вычитывают Сюзи/Тарон перед публикацией.";sec.appendChild(n);} else {var n2=document.createElement("div");n2.className="note";n2.textContent="⚠ Своя тема (камень/материалы, P2) — в пару к ИИ-карусели А, микс P3+P2 по блоку «Что сработало». Чередование направлений сдвинуто на день, чтобы не дублировать ИИ-тему А. Типографика без фейковых текстур; реальное макро светлого мрамора/травертина усилит слайды 1 и 6 — снять при возможности. Армянский текст вычитывают Сюзи/Тарон.";sec.appendChild(n2);}
+ app.appendChild(sec);});}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(build);setTimeout(build,1500);}else{build();}
+</script>
+</body>
+</html>
