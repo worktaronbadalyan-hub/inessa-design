@@ -207,6 +207,8 @@ label.fl{display:grid;gap:6px;font-size:13px;font-weight:600;color:#2d360c}
 .fl input:focus,.fl select:focus,.fl textarea:focus{outline:2px solid #0d0e0b;outline-offset:0;background:#fff}
 .fl textarea{resize:vertical;min-height:84px}
 .err{border-color:#b3261e!important;background:#fff1ef!important}
+.ferr{font-size:12.5px;font-weight:600;color:#9d1d16;min-height:0}
+.ferr:empty{display:none}
 .sendrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
 .sendrow .btn{background:#0d0e0b;color:var(--lime)}
 .sendrow .btn.alt{background:transparent;color:#0d0e0b;border:2px solid #0d0e0b}
@@ -635,7 +637,7 @@ footer a{color:var(--fg)}
       <h2 style="margin-top:14px" data-i="tr_h2">Տարոն Բադալյան</h2>
       <ul>
         <li data-i="tr1">Պրակտիկ, ոչ թե տեսաբան՝ կառուցում եմ AI գործակալներ, որոնք այսօր աշխատում են իրական ընկերություններում</li>
-        <li data-i="tr2">Petro Stone Group-ի հիմնադիր, Հայաստանի քարամշակողների միության նախագահ</li>
+        <li data-i="tr2">Petro Stone Group-ի հիմնադիր, Հայաստանի Քարարտադրողների միության նախագահ</li>
         <li data-i="tr3">Բիզնեսի կառավարման մագիստրոս (EMBA)</li>
         <li data-i="tr4">Սովորեցնում եմ միայն այն, ինչ ինքս եմ կիրառում ամեն օր</li>
       </ul>
@@ -654,8 +656,8 @@ footer a{color:var(--fg)}
       </div>
       <form id="bookForm" novalidate>
         <div class="f2">
-          <label class="fl"><span data-i="l_name">Անուն</span><input id="b_name" type="text" autocomplete="name"></label>
-          <label class="fl"><span data-i="l_contact">Հեռախոս կամ Telegram</span><input id="b_contact" type="text" autocomplete="tel" placeholder="374 … / @username"></label>
+          <label class="fl"><span data-i="l_name">Անուն ազգանուն</span><input id="b_name" type="text" autocomplete="name" data-ph="ph_name" required><small class="ferr" id="e_name"></small></label>
+          <label class="fl"><span data-i="l_contact">Հեռախոսահամար</span><input id="b_contact" type="tel" inputmode="tel" autocomplete="tel" placeholder="+374 XX XXX XXX" required><small class="ferr" id="e_phone"></small></label>
         </div>
         <div class="f2">
           <label class="fl"><span data-i="l_format">Ձևաչափ</span>
@@ -719,11 +721,11 @@ f1h:"Ղեկավարը թիմի հետ",f1p:"Երբ տնօրենը նստած է 
 f2h:"Ձեր տվյալների վրա",f2p:"Աշխատում ենք ընկերության իրական ֆայլերի և գործընթացների հետ, ոչ թե ուսումնական օրինակների։",
 f3h:"Թրեյնինգից՝ ներդրում",f3p:"Թրեյնինգից հետո կարող ենք կառուցել AI գործակալներ ձեր գործընթացների համար։",
 how_eyebrow:"Ինչպես է անցնում",how_h2:"Չորս քայլ",st1h:"15 րոպե զանգ",st1p:"Հասկանում ենք ձեր խնդիրները և մակարդակը։",st2h:"Ծրագիր",st2p:"Կազմում ենք ծրագիրը ձեր կամ ձեր թիմի համար։",st3h:"Թրեյնինգ",st3p:"Պրակտիկա ձեր իրական կեյսերի վրա։",st4h:"Ներդրում",st4p:"Աջակցություն և AI գործակալներ ձեր գործընթացներում։",
-tr_eyebrow:"Ով է վարում",tr_h2:"Տարոն Բադալյան",tr1:"Պրակտիկ, ոչ թե տեսաբան՝ կառուցում եմ AI գործակալներ, որոնք այսօր աշխատում են իրական ընկերություններում",tr2:"Petro Stone Group-ի հիմնադիր, Հայաստանի քարամշակողների միության նախագահ",tr3:"Բիզնեսի կառավարման մագիստրոս (EMBA)",tr4:"Սովորեցնում եմ միայն այն, ինչ ինքս եմ կիրառում ամեն օր",
+tr_eyebrow:"Ով է վարում",tr_h2:"Տարոն Բադալյան",tr1:"Պրակտիկ, ոչ թե տեսաբան՝ կառուցում եմ AI գործակալներ, որոնք այսօր աշխատում են իրական ընկերություններում",tr2:"Petro Stone Group-ի հիմնադիր, Հայաստանի Քարարտադրողների միության նախագահ",tr3:"Բիզնեսի կառավարման մագիստրոս (EMBA)",tr4:"Սովորեցնում եմ միայն այն, ինչ ինքս եմ կիրառում ամեն օր",
 b_eyebrow:"Ամրագրում",b_h2:"Ինչպես ամրագրել ձեր տեղը",b_lead:"Լրացրեք ձևը և ուղարկեք WhatsApp-ով, Telegram-ով կամ էլ. փոստով։ Կպատասխանեմ աշխատանքային օրվա ընթացքում և կառաջարկեմ 15 րոպեանոց զանգ։",b_limit:"Ամսական՝ առավելագույնը 4 անհատական հաճախորդ",
-l_name:"Անուն",l_contact:"Հեռախոս կամ Telegram",l_format:"Ձևաչափ",o_solo:"Անհատական 1:1",o_team:"Թիմային",o_unsure:"Դեռ չգիտեմ",l_size:"Ընկերություն և թիմի չափ",ph_size:"Օրինակ՝ «Ընկերություն», 12 հոգի",l_task:"Ո՞ր խնդիրն եք ուզում արագ լուծել AI-ով",ph_task:"Օրինակ՝ շաբաթական հաշվետվություններ սեփականատիրոջ համար",
+l_name:"Անուն ազգանուն",l_contact:"Հեռախոսահամար",ph_name:"Օրինակ՝ Արամ Պետրոսյան",e_name:"Գրեք անունը և ազգանունը",e_phone:"Գրեք հեռախոսահամարը երկրի կոդով, օրինակ՝ +374 77 123456",e_phone_cc:"Նշեք երկրի կոդը՝ +374 77 123456, ոչ թե 077 123456",e_task:"Գրեք, թե որ խնդիրն եք ուզում լուծել",tg_note:"Հայտը պատճենված է։ Telegram-ում սեղմեք «Paste / Տեղադրել» և ուղարկեք։",l_format:"Ձևաչափ",o_solo:"Անհատական 1:1",o_team:"Թիմային",o_unsure:"Դեռ չգիտեմ",l_size:"Ընկերություն և թիմի չափ",ph_size:"Օրինակ՝ «Ընկերություն», 12 հոգի",l_task:"Ո՞ր խնդիրն եք ուզում արագ լուծել AI-ով",ph_task:"Օրինակ՝ շաբաթական հաշվետվություններ սեփականատիրոջ համար",
 send_mail:"Էլ. փոստ ↗",b_note:"Կբացվի չատ ինձ հետ՝ պատրաստի հայտով։ Մնում է սեղմել «Ուղարկել»։",b_err:"Լրացրեք անունը, կոնտակտը և խնդիրը։",out_t:"Եթե չատը չբացվեց, պատճենեք հայտը և ուղարկեք ինձ ձեռքով.",copy:"Պատճենել հայտը",copied:"Պատճենված է",
-m_title:"Հայտ AI թրեյնինգի",m_name:"Անուն",m_contact:"Կոնտակտ",m_format:"Ձևաչափ",m_size:"Ընկերություն / թիմ",m_task:"Խնդիր"},
+m_title:"Հայտ AI թրեյնինգի",m_name:"Անուն ազգանուն",m_contact:"Հեռախոս",m_format:"Ձևաչափ",m_size:"Ընկերություն / թիմ",m_task:"Խնդիր"},
 ru:{nav_formats:"Форматы",nav_case:"Кейс",nav_trainer:"Тренер",cta_book:"Записаться",
 hero_eyebrow:"ИИ-тренинг · онлайн и офлайн",hero_h1:"Научитесь работать с ИИ на своих реальных задачах — лично или всей командой",
 g1:"индивидуально: 3 уровня",g2:"для команд: 3 формата",g3:"практика на ваших задачах",cta_book_seat:"Забронировать место",cta_prices:"Форматы и цены",scroll:"Листайте",
@@ -748,11 +750,11 @@ f1h:"Руководитель вместе с командой",f1p:"Когда 
 f2h:"На ваших данных",f2p:"Работаем с реальными файлами и процессами компании, а не с учебными примерами.",
 f3h:"От тренинга к внедрению",f3p:"После тренинга можем собрать ИИ-агентов под ваши процессы.",
 how_eyebrow:"Как проходит",how_h2:"Четыре шага",st1h:"Звонок 15 минут",st1p:"Понимаем ваши задачи и уровень.",st2h:"Программа",st2p:"Собираем программу под вас или вашу команду.",st3h:"Тренинг",st3p:"Практика на ваших реальных кейсах.",st4h:"Внедрение",st4p:"Поддержка и ИИ-агенты в ваших процессах.",
-tr_eyebrow:"Кто ведёт",tr_h2:"Тарон Бадалян",tr1:"Практик, а не теоретик: строю ИИ-агентов, которые сегодня работают в реальных компаниях",tr2:"Основатель Petro Stone Group, глава Союза камнеобработчиков Армении",tr3:"Магистр делового администрирования (EMBA)",tr4:"Учу только тому, что сам применяю каждый день",
+tr_eyebrow:"Кто ведёт",tr_h2:"Тарон Бадалян",tr1:"Практик, а не теоретик: строю ИИ-агентов, которые сегодня работают в реальных компаниях",tr2:"Основатель Petro Stone Group, председатель Союза камнепроизводителей Армении",tr3:"Магистр делового администрирования (EMBA)",tr4:"Учу только тому, что сам применяю каждый день",
 b_eyebrow:"Запись",b_h2:"Как забронировать место",b_lead:"Заполните форму и отправьте в WhatsApp, Telegram или на почту. Отвечу в течение рабочего дня и предложу 15-минутный звонок.",b_limit:"Не больше 4 индивидуальных клиентов в месяц",
-l_name:"Имя",l_contact:"Телефон или Telegram",l_format:"Формат",o_solo:"Индивидуально 1:1",o_team:"Для команды",o_unsure:"Пока не знаю",l_size:"Компания и размер команды",ph_size:"Например: «Компания», 12 человек",l_task:"Какую задачу хотите быстрее решать с ИИ?",ph_task:"Например: еженедельные отчёты для собственника",
+l_name:"Имя и фамилия",l_contact:"Номер телефона",ph_name:"Например: Арам Петросян",e_name:"Напишите имя и фамилию",e_phone:"Укажите номер с кодом страны, например +374 77 123456",e_phone_cc:"Добавьте код страны: +374 77 123456, а не 077 123456",e_task:"Напишите, какую задачу хотите решить",tg_note:"Заявка скопирована. В Telegram нажмите «Вставить» и отправьте.",l_format:"Формат",o_solo:"Индивидуально 1:1",o_team:"Для команды",o_unsure:"Пока не знаю",l_size:"Компания и размер команды",ph_size:"Например: «Компания», 12 человек",l_task:"Какую задачу хотите быстрее решать с ИИ?",ph_task:"Например: еженедельные отчёты для собственника",
 send_mail:"Почта ↗",b_note:"Откроется чат со мной с готовой заявкой. Останется нажать «Отправить».",b_err:"Заполните имя, контакт и задачу.",out_t:"Если чат не открылся, скопируйте заявку и отправьте мне вручную:",copy:"Скопировать заявку",copied:"Скопировано",
-m_title:"Заявка на ИИ-тренинг",m_name:"Имя",m_contact:"Контакт",m_format:"Формат",m_size:"Компания / команда",m_task:"Задача"},
+m_title:"Заявка на ИИ-тренинг",m_name:"Имя и фамилия",m_contact:"Телефон",m_format:"Формат",m_size:"Компания / команда",m_task:"Задача"},
 en:{nav_formats:"Formats",nav_case:"Case",nav_trainer:"Trainer",cta_book:"Book",
 hero_eyebrow:"AI training · online & on-site",hero_h1:"Learn to work with AI on your real tasks — one-on-one or with your whole team",
 g1:"one-on-one: 3 levels",g2:"teams: 3 formats",g3:"hands-on with your tasks",cta_book_seat:"Book your seat",cta_prices:"Formats & prices",scroll:"Scroll",
@@ -777,11 +779,11 @@ f1h:"Leaders with their team",f1p:"When the CEO sits with the team, AI becomes a
 f2h:"On your data",f2p:"We work with the company’s real files and processes, not textbook examples.",
 f3h:"From training to rollout",f3p:"After the training we can build AI agents for your processes.",
 how_eyebrow:"How it works",how_h2:"Four steps",st1h:"15-minute call",st1p:"We learn your tasks and your level.",st2h:"Program",st2p:"We build the program for you or your team.",st3h:"Training",st3p:"Practice on your real cases.",st4h:"Rollout",st4p:"Support and AI agents in your processes.",
-tr_eyebrow:"Your trainer",tr_h2:"Taron Badalyan",tr1:"An operator, not a theorist: I build AI agents that run in real companies today",tr2:"Founder of Petro Stone Group, head of the Union of Stone Processors of Armenia",tr3:"Master of Business Administration (EMBA)",tr4:"I teach only what I use myself every day",
+tr_eyebrow:"Your trainer",tr_h2:"Taron Badalyan",tr1:"An operator, not a theorist: I build AI agents that run in real companies today",tr2:"Founder of Petro Stone Group, President of the Union of Stone Producers of Armenia",tr3:"Master of Business Administration (EMBA)",tr4:"I teach only what I use myself every day",
 b_eyebrow:"Booking",b_h2:"How to book your seat",b_lead:"Fill in the form and send it via WhatsApp, Telegram or email. I reply within a working day and suggest a 15-minute call.",b_limit:"At most 4 one-on-one clients a month",
-l_name:"Name",l_contact:"Phone or Telegram",l_format:"Format",o_solo:"One-on-one",o_team:"Team",o_unsure:"Not sure yet",l_size:"Company and team size",ph_size:"e.g. “Company”, 12 people",l_task:"Which task do you want AI to speed up?",ph_task:"e.g. weekly reports for the owner",
+l_name:"Full name",l_contact:"Phone number",ph_name:"e.g. Aram Petrosyan",e_name:"Enter your first and last name",e_phone:"Enter your number with country code, e.g. +374 77 123456",e_phone_cc:"Add the country code: +374 77 123456, not 077 123456",e_task:"Tell me which task you want to solve",tg_note:"Request copied. In Telegram press Paste and send.",l_format:"Format",o_solo:"One-on-one",o_team:"Team",o_unsure:"Not sure yet",l_size:"Company and team size",ph_size:"e.g. “Company”, 12 people",l_task:"Which task do you want AI to speed up?",ph_task:"e.g. weekly reports for the owner",
 send_mail:"Email ↗",b_note:"A chat with me opens with your request filled in. Just press Send.",b_err:"Fill in your name, contact and task.",out_t:"If the chat didn’t open, copy the request and send it to me directly:",copy:"Copy request",copied:"Copied",
-m_title:"AI training request",m_name:"Name",m_contact:"Contact",m_format:"Format",m_size:"Company / team",m_task:"Task"}
+m_title:"AI training request",m_name:"Full name",m_contact:"Phone",m_format:"Format",m_size:"Company / team",m_task:"Task"}
 };
 var lang='hy';
 try{var s=localStorage.getItem('tb_lang');if(s&&D[s])lang=s;}catch(e){}
@@ -934,16 +936,38 @@ var form=document.getElementById('bookForm'),fmtSel=document.getElementById('b_f
 fmtSel.addEventListener('change',function(){sizeWrap.hidden=fmtSel.value!=='team';});
 form.querySelectorAll('button[type=submit]').forEach(function(b){b.addEventListener('click',function(){via=b.dataset.via;});});
 function v(id){return document.getElementById(id).value.trim();}
+function phoneCheck(raw){
+  var s=raw.replace(/[\s\-().]/g,'');
+  if(!s)return {err:'e_phone'};
+  if(/^00/.test(s))s='+'+s.slice(2);
+  var plus=s.charAt(0)==='+',d=plus?s.slice(1):s;
+  if(!/^\d+$/.test(d))return {err:'e_phone'};
+  if(d.charAt(0)==='0')return {err:'e_phone_cc'};
+  if(d.length<11||d.length>15)return {err:d.length<11&&d.length>=8?'e_phone_cc':'e_phone'};
+  var pretty='+'+d;
+  if(/^374\d{8}$/.test(d))pretty='+374 '+d.slice(3,5)+' '+d.slice(5);
+  return {ok:true,pretty:pretty};
+}
+['b_name','b_contact','b_task'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.classList.remove('err');var e=document.getElementById(id==='b_name'?'e_name':id==='b_contact'?'e_phone':'x');if(e)e.textContent='';});});
 form.addEventListener('submit',function(e){
   e.preventDefault();
-  var ok=true;['b_name','b_contact','b_task'].forEach(function(id){var el=document.getElementById(id),bad=!el.value.trim();el.classList.toggle('err',bad);if(bad)ok=false;});
+  var ok=true,first=null;
+  function mark(id,eid,msgKey){var el=document.getElementById(id),bad=!!msgKey;el.classList.toggle('err',bad);el.setAttribute('aria-invalid',bad);if(eid){document.getElementById(eid).textContent=bad?t(msgKey):'';}if(bad){ok=false;if(!first)first=el;}}
+  var nm=v('b_name').replace(/\s+/g,' ');
+  var parts=nm.split(' ').filter(function(w){return w.replace(/[^\p{L}]/gu,'').length>=2;});
+  mark('b_name','e_name',parts.length>=2?'':'e_name');
+  var ph=phoneCheck(v('b_contact'));
+  mark('b_contact','e_phone',ph.err);
+  if(ph.ok)document.getElementById('b_contact').value=ph.pretty;
+  mark('b_task',null,v('b_task')?'':'e_task');
   var note=document.getElementById('formNote');
-  if(!ok){note.textContent=t('b_err');return;}
-  note.textContent=t('b_note');
+  if(!ok){note.textContent=t('b_err');first.focus();return;}
+  note.textContent=via==='tg'?t('tg_note'):t('b_note');
   var fmtTxt=fmtSel.options[fmtSel.selectedIndex].textContent;
   var msg=t('m_title')+'\n'+t('m_name')+': '+v('b_name')+'\n'+t('m_contact')+': '+v('b_contact')+'\n'+t('m_format')+': '+fmtTxt+(fmtSel.value==='team'&&v('b_size')?'\n'+t('m_size')+': '+v('b_size'):'')+'\n'+t('m_task')+': '+v('b_task');
   document.getElementById('outText').value=msg;
-  var url=via==='mail'?'mailto:worktaronbadalyan@gmail.com?subject='+encodeURIComponent(t('m_title')+' · '+v('b_name'))+'&body='+encodeURIComponent(msg):via==='wa'?'https://wa.me/37443153000?text='+encodeURIComponent(msg):'https://t.me/taronbadalyan?text='+encodeURIComponent(msg);
+  var url=via==='mail'?'mailto:worktaronbadalyan@gmail.com?subject='+encodeURIComponent(t('m_title')+' · '+v('b_name'))+'&body='+encodeURIComponent(msg):via==='wa'?'https://wa.me/37443153000?text='+encodeURIComponent(msg):'https://t.me/taronbadalyan';
+  if(via==='tg'&&navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(msg).catch(function(){});}
   var a=document.createElement('a');a.href=url;if(via!=='mail'){a.target='_blank';a.rel='noopener';}document.body.appendChild(a);a.click();a.remove();
   document.getElementById('out').hidden=false;
 });
