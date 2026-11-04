@@ -952,6 +952,13 @@ function phoneCheck(raw){
   if(/^374\d{8}$/.test(d))pretty='+374 '+d.slice(3,5)+' '+d.slice(5);
   return {ok:true,pretty:pretty};
 }
+(function(){var pc=document.getElementById('b_contact');
+  pc.setAttribute('maxlength','20');
+  function clean(){var v=pc.value,c=v.replace(/[^\d+\s\-()]/g,'');var plus=c.trim().charAt(0)==='+';c=c.replace(/\+/g,'');c=(plus?'+':'')+c.replace(/^\s+/,'');if(c!==v){var p=pc.selectionStart-(v.length-c.length);pc.value=c;try{pc.setSelectionRange(p,p);}catch(e){}}}
+  pc.addEventListener('input',clean);
+  pc.addEventListener('focus',function(){if(!pc.value)pc.value='+';});
+  pc.addEventListener('blur',function(){if(pc.value==='+')pc.value='';});
+})();
 ['b_name','b_contact','b_task'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.classList.remove('err');var e=document.getElementById(id==='b_name'?'e_name':id==='b_contact'?'e_phone':'x');if(e)e.textContent='';});});
 form.addEventListener('submit',function(e){
   e.preventDefault();
