@@ -1,0 +1,46 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инесса · дизайн-дашборд дня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Noto+Sans+Armenian:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b0b;color:#eee;font-family:'Archivo',system-ui,Arial,sans-serif}
+header{padding:34px 24px 10px;max-width:1200px;margin:auto}
+h1{font-family:'Anton';font-weight:400;letter-spacing:.5px;font-size:30px;margin:0}
+h1 b{color:#C6F03C}
+.sub{color:#9a9a9a;margin:6px 0 0;font-size:15px}
+main{max-width:1200px;margin:auto;padding:10px 24px 60px}
+section{border-top:1px solid #1e1e1e;padding:26px 0}
+h2{font-family:'Anton';font-weight:400;font-size:22px;margin:0 0 2px}
+h2 span{color:#C6F03C;font-family:'Archivo';font-size:14px;margin-left:8px}
+.meta{color:#8f8f8f;font-size:13px;margin:0 0 16px}
+.row{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
+.sw{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}
+canvas.slide{width:224px;height:280px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+canvas.kp{width:100%;max-width:960px;height:auto;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+button{background:#1b1b1b;color:#C6F03C;border:1px solid #333;border-radius:8px;padding:7px 10px;font-size:12px;cursor:pointer;font-family:'Archivo'}
+button:hover{background:#262626}
+.dall{margin-top:14px;background:#C6F03C;color:#0b0b0b;border:none;font-weight:700;padding:9px 16px}
+details{margin-top:14px;color:#cfcfcf}summary{cursor:pointer;color:#C6F03C;font-size:14px}
+pre.cap{white-space:pre-wrap;background:#141414;border:1px solid #242424;border-radius:10px;padding:14px;font-family:'Archivo';font-size:14px;line-height:1.5;color:#e7e7e7}
+.alt{font-size:13px;color:#a7a7a7}
+footer{max-width:1200px;margin:auto;padding:24px;color:#777;font-size:13px;border-top:1px solid #1e1e1e}
+footer a{color:#C6F03C;text-decoration:none;margin-right:14px}
+.nav a{color:#C6F03C;text-decoration:none;font-size:14px;margin-right:16px}
+</style></head><body>
+<header>
+<div class="nav"><a href="index.html">Карусели 4:5</a><a href="covers.html">Обложки Reels 9:16</a></div>
+<h1><b>ИНЕССА</b> · дизайн-дашборд дня</h1>
+<p class="sub">Дата: <span id="date"></span> · 2 карусели × 7 слайдов (@badalyan.taron, армянский) · рендер на canvas, кнопки скачивают PNG 1080×1350.</p>
+</header>
+<main id="cars"></main>
+<footer>Архив: <a href="archive/2026-11-04.html">11-04</a> <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> <a href="archive/2026-10-27.html">10-27</a> · The Voice of Stone</footer>
+<script>
+const LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",INK="#111";
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function wrap(c,t,f,mw){c.font=f;let ws=t.split(" "),ls=[],cur="";for(const w of ws){let tt=(cur+" "+w).trim();if(c.measureText(tt).width<=mw)cur=tt;else{if(cur)ls.push(cur);cur=w}}if(cur)ls.push(cur);return ls;}
+function arm(w,s){return w+" "+s+"px 'Noto Sans Armenian'";}
+function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,2000,2000);}
+function halftone(c,x0,y0,x1,y1,col){c.fillStyle=col;for(let y=y0;y<y1;y+=24)for(let x=x0;x<x1;x+=24){c.beginPath();c.arc(x,y,2,0,7);c.fill();}}
+function arrow(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=DARK;c.lineWidth=9;c.lineCap="round";let a=r*0.9;c.beginPath();c.moveTo(cx-a*0.4,cy);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy-a*0.34);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy+a*0.34);c.lineTo(cx+a*0.42,cy);c.stroke();}
+function brand(c,acc,mark,fg){let x=96,y=92;if(mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+15,y-16);c.lineTo(x+30,y);c.lineTo(x+15,y+16);c.lineTo(x,y);c.closePath();c.fill();var tx=x+44;}else{c.fillStyle=LIME;c.fillRe
