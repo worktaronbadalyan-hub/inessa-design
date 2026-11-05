@@ -17,6 +17,7 @@ h2 span{color:#C6F03C;font-family:'Archivo';font-size:14px;margin-left:8px}
 .row{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
 .sw{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}
 canvas.slide{width:224px;height:280px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+canvas.kp{width:100%;max-width:960px;height:auto;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
 button{background:#1b1b1b;color:#C6F03C;border:1px solid #333;border-radius:8px;padding:7px 10px;font-size:12px;cursor:pointer;font-family:'Archivo'}
 button:hover{background:#262626}
 .dall{margin-top:14px;background:#C6F03C;color:#0b0b0b;border:none;font-weight:700;padding:9px 16px}
@@ -30,16 +31,16 @@ footer a{color:#C6F03C;text-decoration:none;margin-right:14px}
 <header>
 <div class="nav"><a href="index.html">Карусели 4:5</a><a href="covers.html">Обложки Reels 9:16</a></div>
 <h1><b>ИНЕССА</b> · дизайн-дашборд дня</h1>
-<p class="sub">Дата: <span id="date"></span> · 2 карусели × 7 слайдов · рендер на canvas, кнопки скачивают PNG 1080×1350.</p>
+<p class="sub">Дата: <span id="date"></span> · 2 карусели × 7 слайдов (@badalyan.taron, армянский) · рендер на canvas, кнопки скачивают PNG 1080×1350.</p>
 </header>
 <main id="cars"></main>
-<footer>Архив: <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> <a href="archive/2026-10-27.html">10-27</a> · The Voice of Stone</footer>
+<footer>Архив: <a href="archive/2026-11-04.html">11-04</a> <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> <a href="archive/2026-10-27.html">10-27</a> · The Voice of Stone</footer>
 <script>
 const LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",INK="#111";
 function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
 function wrap(c,t,f,mw){c.font=f;let ws=t.split(" "),ls=[],cur="";for(const w of ws){let tt=(cur+" "+w).trim();if(c.measureText(tt).width<=mw)cur=tt;else{if(cur)ls.push(cur);cur=w}}if(cur)ls.push(cur);return ls;}
 function arm(w,s){return w+" "+s+"px 'Noto Sans Armenian'";}
-function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,1080,2000);}
+function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,2000,2000);}
 function halftone(c,x0,y0,x1,y1,col){c.fillStyle=col;for(let y=y0;y<y1;y+=24)for(let x=x0;x<x1;x+=24){c.beginPath();c.arc(x,y,2,0,7);c.fill();}}
 function arrow(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=DARK;c.lineWidth=9;c.lineCap="round";let a=r*0.9;c.beginPath();c.moveTo(cx-a*0.4,cy);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy-a*0.34);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy+a*0.34);c.lineTo(cx+a*0.42,cy);c.stroke();}
 function brand(c,acc,mark,fg){let x=96,y=92;if(mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+15,y-16);c.lineTo(x+30,y);c.lineTo(x+15,y+16);c.lineTo(x,y);c.closePath();c.fill();var tx=x+44;}else{c.fillStyle=LIME;c.fillRect(x,y-18,10,34);var tx=x+28;}c.fillStyle=fg;c.font="30px Anton";c.textBaseline="alphabetic";c.fillText(acc,tx,y+10);}
@@ -79,23 +80,34 @@ function drawSlide(cv,car,i){
   c.fillStyle=fg;c.font=car.mark?arm("600",36):"40px Anton";c.fillText(s.foot,96,1200);
  }
 }
-function drawCover(cv,co){
- const c=cv.getContext("2d");c.clearRect(0,0,1080,1920);
- c.fillStyle=DARK;c.fillRect(0,0,1080,1920);
- glow(c,1040,160,340,0.3);glow(c,40,1720,300,0.16);
- halftone(c,820,1300,1010,1500,"#222");
- let x=96,y=140;if(co.mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+17,y-17);c.lineTo(x+34,y);c.lineTo(x+17,y+17);c.lineTo(x,y);c.closePath();c.fill();var tx=x+48;}else{c.fillStyle=LIME;c.fillRect(x,y-18,12,34);var tx=x+30;}
- c.fillStyle=WHITE;c.font="34px Anton";c.textBaseline="alphabetic";c.fillText(co.account,tx,y+10);
- c.fillStyle=LIME;c.font="500 38px Oswald";c.fillText(co.kicker,96,y+150);
- let mw=(1080-230)-96,hy=620;
- for(const line of [co.l1,co.l2]){let fs=128;c.font="700 "+fs+"px Oswald";while(c.measureText(line).width>mw&&fs>60){fs-=4;c.font="700 "+fs+"px Oswald";}c.fillStyle=WHITE;c.fillText(line,96,hy);hy+=fs+22;}
- c.fillStyle=LIME;c.fillRect(96,hy+6,160,14);
- arrow(c,148,1250,48);c.fillStyle="#8A8A8A";c.font="500 32px Oswald";c.fillText("REELS COVER",220,1262);
+function drawKP(cv,kp){
+ const c=cv.getContext("2d");c.clearRect(0,0,1920,1080);
+ c.fillStyle=DARK;c.fillRect(0,0,1920,1080);
+ glow(c,1820,80,420,0.26);glow(c,80,1040,360,0.14);
+ halftone(c,1560,820,1810,1000,"#262626");
+ c.textBaseline="alphabetic";c.textAlign="left";
+ let x=110,y=120;c.fillStyle=LIME;c.beginPath();c.moveTo(x+17,y-17);c.lineTo(x+34,y);c.lineTo(x+17,y+17);c.lineTo(x,y);c.closePath();c.fill();
+ c.fillStyle=WHITE;c.font="34px Anton";c.fillText("TARON BADALYAN",x+48,y+10);
+ c.fillStyle=WHITE;c.font=arm("800",76);c.fillText(kp.title,110,260);
+ c.fillStyle=LIME;c.font=arm("600",40);c.fillText(kp.subtitle,110,330);
+ c.fillStyle=LIME;c.fillRect(110,360,120,8);
+ let n=kp.formats.length,gap=40,cw=(1920-220-(n-1)*gap)/n,cy=430,ch=500;
+ for(let i=0;i<n;i++){let f=kp.formats[i],cx=110+i*(cw+gap);
+  c.fillStyle="#161616";rr(c,cx,cy,cw,ch,18);c.fill();
+  c.fillStyle=LIME;rr(c,cx,cy,cw,12,6);c.fill();
+  c.fillStyle=LIME;c.font="60px Anton";c.fillText(f.name,cx+40,cy+110);
+  c.fillStyle=WHITE;c.font=arm("600",40);c.fillText(f.dur,cx+40,cy+175);
+  c.fillStyle="#3a3a3a";c.fillRect(cx+40,cy+205,cw-80,2);
+  let fb=arm("500",36),ls=wrap(c,f.desc,fb,cw-80),ly=cy+270;
+  c.font=fb;c.fillStyle="#d8d8d8";for(const l of ls){c.fillText(l,cx+40,ly);ly+=50;}
+ }
+ c.fillStyle="#8A8A8A";c.font=arm("500",30);c.fillText(kp.foot,110,1010);
+ c.fillStyle=LIME;c.fillRect(1700,1000,120,10);
 }
 function dl(cv,name){cv.toBlob(b=>{let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();},"image/png");}
 </script>
 <script>
-const D={"date":"2026-11-04","carousels":[{"id":"A","account":"STONE MARKET","handle":"@stonemarket.am","mark":false,"framework":"Demo Walkthrough","hook":"H21","lang":"HY","caption":"Ինչո՞ւ ընտրել պահեստի չափերից, եթե սեղանը կարող է սարքվել քո չափով։\n\nTerrazzo սեղանը չենք կտրում պատրաստ սալից — չափի տակ պատրաստում ենք կաղապար և լցնում։ Այսպես ձևն ու եզրը դառնում են ճիշտ քո նախագծի տակ։\n\nԳույնը՝ Green, Beige կամ Burgundy։ Հաստությունն ու չափը՝ ըստ քո գծագրի։\n\nԳրիր Direct՝ հաշվենք քո չափը։\n\n#terrazzo #stonemarket #ինտերիեր","alt":"Մուգ ֆոնի վրա լայմ գույնի վերնագիր՝ «Նոր կաղապար․ չափը դու ես որոշում», հետո terrazzo սեղանի պատրաստման 5 քայլ։","first_comment":"","slides":[{"type":"hook","bg":"dark","title_white":"ՆՈՐ ԿԱՂԱՊԱՐ.","title_lime":"ՉԱՓԸ ԴՈՒ ԵՍ ՈՐՈՇՈՒՄ","sub":"terrazzo սեղան՝ քո չափսով"},{"type":"step","bg":"light","step":"ՔԱՅԼ 1","head":"ՈՒՂԱՐԿՈՒՄ ԵՍ ՉԱՓՆ ՈՒ ՁԵՎԸ","body":"Սեղանի կամ վահանակի չափն ու ձևը, որ ոչ մի պահեստում չկա։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 2","head":"ՊԱՏՐԱՍՏՈՒՄ ԵՆՔ ԿԱՂԱՊԱՐ","body":"Չենք կտրում պատրաստ սալից — լցնում ենք կաղապարի մեջ։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 3","head":"ԼՑՈՒՄ ԵՆՔ ՏԵՐԱՑՈՆ","body":"Գույնը՝ Green, Beige կամ Burgundy — ընտրում ես նախագծի տակ։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 4","head":"ՀՂԿՈՒՄ ԵՆՔ ՀԱՅԵԼՈՒ ՊԵՍ","body":"Եզրը՝ ըստ քո գծագրի, ոչ ստանդարտ կլոր։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 5","head":"ՍՏԱՆՈՒՄ ԵՍ ՊԱՏՐԱՍՏ ԻՐԸ","body":"Հաստությունն ու չափը՝ ճիշտ քո նախագծի տակ։"},{"type":"cta","bg":"dark","head":"ՔՈ ՉԱՓՍՈՎ ՏԵՐԱՑՈ ՍԵՂԱՆ","pill":"ԳՐԻՐ DIRECT — ՀԱՇՎԵՆՔ ՉԱՓԸ","foot":"STONE MARKET"}]},{"id":"B","account":"TARON BADALYAN","handle":"@badalyan.taron","mark":true,"framework":"Value-Stack","hook":"H11","lang":"HY","caption":"Ո՞ր 5 տեղում ԱԲ-ն պետք է անպայման անցնի մարդու ստուգումը։\n\nԱԲ-ին չի կարելի կուրորեն վստահել — բայց դա պատճառ չէ հրաժարվելու։ Թվերը, հաճախորդին ուղղված նամակը, փաստերը, պայմանագրի կետերը և վերջին ուղարկելը մնում են մարդու ձեռքին։\n\nՀենց սա է թրեյնինգը՝ ոչ թե դասախոսություն ԱԲ-ի մասին, այլ թիմի իրական խնդիրների վրա դրված գործիք։\n\nԳրիր Direct՝ ՎԵՐԼՈՒԾՈՒՄ, կուղարկեմ անվճար էքսպրես-վերլուծություն։\n\n#AIforbusiness #Armenia #TaronBadalyan","alt":"Մուգ ֆոնի վրա չակերտներով հարց՝ «ԱԲ-ին չի կարելի վստահել», հետո 5 տեղ, որտեղ մարդը ստուգում է ԱԲ-ի աշխատանքը։","first_comment":"Անվճար էքսպրես-վերլուծություն և 3 ֆորմատ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/","slides":[{"type":"hook","bg":"dark","title_white":"«ԱԲ-ԻՆ ՉԻ ԿԱՐԵԼԻ","title_lime":"ՎՍՏԱՀԵԼ»","sub":"5 տեղ, որ միշտ ստուգում է մարդը"},{"type":"step","bg":"light","step":"1","head":"ԹՎԵՐՆ ՈՒ ԳՆԵՐԸ","body":"ԱԲ-ը սխալվում է հաշվարկում — ուղարկելուց առաջ ստուգում է մարդը։"},{"type":"step","bg":"dark","step":"2","head":"ՀԱՃԱԽՈՐԴԻՆ ՆԱՄԱԿԸ","body":"ԱԲ-ը գրում է սևագիրը, տոնը հաստատում է մարդը։"},{"type":"step","bg":"light","step":"3","head":"ՓԱՍՏԵՐՆ ՈՒ ԱՆՈՒՆՆԵՐԸ","body":"ԱԲ-ը երբեմն հորինում է — ստուգիր սկզբնաղբյուրով։"},{"type":"step","bg":"dark","step":"4","head":"ՊԱՅՄԱՆԱԳՐԻ ԿԵՏԵՐԸ","body":"Իրավական ձևակերպումը կարդում է մարդը՝ ստորագրելուց առաջ։"},{"type":"step","bg":"light","step":"5","head":"ՎԵՐՋԻՆ ՈՒՂԱՐԿԵԼԸ","body":"Ուղարկելու կոճակը սեղմում է մարդը, ոչ թե ագենտը։"},{"type":"cta","bg":"dark","head":"ՈՒԶՈ՞ՒՄ ԵՍ ՍԱ ՔՈ ԲԱԺՆՈՒՄ","pill":"ԳՐԻՐ DIRECT՝ ՎԵՐԼՈՒԾՈՒՄ","foot":"Taron Badalyan — The Voice of Stone","subcta":"անվճար էքսպրես-վերլուծություն"}]}],"covers":[{"id":"R1","account":"STONE MARKET","mark":false,"l1":"ЧТО ОСТАЁТСЯ","l2":"ОТ БЛОКА","kicker":"STONE · TERRAZZO"},{"id":"R2","account":"STONE MARKET","mark":false,"l1":"КАК СЛЭБ","l2":"СТАНОВИТСЯ ЗЕРКАЛОМ","kicker":"STONE · PROCESS"},{"id":"R3","account":"TARON BADALYAN","mark":true,"l1":"ДИРЕКТОРА НЕТ","l2":"В СТРАНЕ","kicker":"AI · КОМАНДА"}]};
+const D={"date":"2026-11-05","carousels":[{"id":"A","account":"TARON BADALYAN","handle":"@badalyan.taron","mark":true,"framework":"Hack List","hook":"H6","lang":"HY","caption":"Թիմդ փորձե՞ց AI-ն, երկու շաբաթ ոգևորվեց, հետո լուռ վերադարձավ հին Excel-ին։\n\nԱմենահաճախ պատճառը մեկն է՝ ամբողջ թիմին տվել են ChatGPT, բայց ոչ մի կոնկրետ կրկնվող խնդիր։ Գործիք կա, գործ՝ չկա։\n\nԵրբ ամեն գործակալ ստանում է մեկ խնդիր և մեկ մարդ-ընդունող, որ ստուգում է արդյունքը, AI-ն դադարում է խաղալիք լինելուց։ Թվերը, տվյալները, հաճախորդին ուղղված նամակը մարդը ստուգում է ուղարկելուց առաջ։\n\nՀենց սա է թիմերի համար AI թրեյնինգը՝ ոչ թե դասախոսություն, այլ ժամեր, որոնց ընթացքում թիմը AI-ն դնում է իր իրական խնդիրների վրա։\n\nԳրիր Direct՝ ՎԵՐԼՈՒԾՈՒՄ, կուղարկեմ անվճար էքսպրես-վերլուծություն քո թիմի համար։\n\n#արհեստականբանականություն #թիմ #Հայաստան","alt":"Մուգ ֆոնի վրա լայմ շեշտ՝ «Թիմը թողնում է AI-ն», ներքևում՝ 5 պատճառ, և սա ձեր մեղքը չէ։ 7 սլայդ՝ 5 պատճառով։","first_comment":"Անվճար էքսպրես-վերլուծություն և 3 ֆորմատ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/","slides":[{"type":"hook","bg":"dark","title_white":"ԹԻՄԸ ԹՈՂՆՈՒՄ Է","title_lime":"AI-Ն","sub":"5 պատճառ, և սա ձեր մեղքը չէ"},{"type":"step","bg":"light","step":"ՊԱՏՃԱՌ 1","head":"ՉԱԹ ՏՎԵՑԻՆ, ՈՉ ԹԵ ԱՌԱՋԱԴՐԱՆՔ","body":"Ամբողջ թիմին բացեցին ChatGPT, բայց ոչ մի կրկնվող խնդիր չտվեցին։ Գործիքը կա, գործը՝ ոչ։"},{"type":"step","bg":"dark","step":"ՊԱՏՃԱՌ 2","head":"ՉԿԱ ՄԱՐԴ, ՈՐ ՍՏՈՒԳԻ ԱՐԴՅՈՒՆՔԸ","body":"Ոչ ոք պատասխանատու չէ AI-ի արդյունքի համար։ Առանց ընդունողի՝ սխալն ուղիղ գնում է հաճախորդին։"},{"type":"step","bg":"light","step":"ՊԱՏՃԱՌ 3","head":"ՉՈՐՈՇԵՑԻՆ, ՈՐՏԵՂ Է AI-Ն ՍԽԱԼՎՈՒՄ","body":"Թվեր, տվյալներ, հաճախորդին նամակ՝ այստեղ AI-ն սխալվում է։ Որտեղ ստուգել՝ պայմանավորվեք նախապես։"},{"type":"step","bg":"dark","step":"ՊԱՏՃԱՌ 4","head":"ՍՈՎՈՐԵՑՐԻՆ «ԸՆԴՀԱՆՈՒՐ AI»","body":"Վերացական դասը չի մնում։ Մնում է այն, ինչ թիմն արել է իր իրական ֆայլերով՝ իր խնդրի վրա։"},{"type":"step","bg":"light","step":"ՊԱՏՃԱՌ 5","head":"ՉՎԵՐԱԴԱՐՁԱՆ 2 ՇԱԲԱԹ ԱՆՑ","body":"Ոչ ոք չստուգեց՝ ինչ մնաց աշխատանքում։ Առանց վերադարձի՝ թիմը սահում է հին սովորությանը։"},{"type":"cta","bg":"dark","head":"ԱՅՍ 5 ՊԱՏՃԱՌԸ ՈՒՂՂԵԼԻ ԵՆ","pill":"ԳՐԻՐ DIRECT՝ ՎԵՐԼՈՒԾՈՒՄ","foot":"Taron Badalyan — The Voice of Stone","subcta":"անվճար էքսպրես-վերլուծություն քո թիմի համար"}]},{"id":"B","account":"TARON BADALYAN","handle":"@badalyan.taron","mark":true,"framework":"Value-Stack","hook":"H8","lang":"HY","caption":"Նույն սալը, որ ընտրեցիր ցուցասրահում, միշտ չէ, որ հասնում է քո խոհանոց։\n\nԲնական քարը ապրանք չէ, որ երկու նույնական օրինակ ունենա։ Համարը, հաստությունը, ճաքերի տեղը՝ ամեն սալ ուրիշ է։\n\nԱյս 5 հարցը մատակարարին տալը տևում է 5 րոպե, բայց փրկում է սխալ պատվերից, որ հետո ուղղել հնարավոր չէ։ Բնական քար խոհանոցի սեղանի համար ընտրելիս՝ թիվն ու ֆոտոն որոշում են ամեն ինչ։\n\nՊահիր այս ցանկը հաջորդ գնումի համար։\n\n#բնականքար #ինտերիեր #սեղանիքար","alt":"Մուգ ֆոնի վրա լայմ շեշտ՝ «Առ այս 5 հարցը մատակարարին», ներքևում՝ քարի սալ պատվիրելու 5-կետանոց ստուգաթերթ։","first_comment":"","slides":[{"type":"hook","bg":"dark","title_white":"ԱՌ ԱՅՍ 5 ՀԱՐՑԸ","title_lime":"ՄԱՏԱԿԱՐԱՐԻՆ","sub":"նախ քարի սալը վճարելը"},{"type":"step","bg":"light","step":"1","head":"ՀԵՆՑ ԱՅՍ ՍԱԼԻ ՖՈՏՕՆ","body":"Խնդրիր հենց այդ սալի լուսանկարը՝ իր համարով, ոչ թե կատալոգից։ Բնական քարը երկու նույնական սալ չունի։"},{"type":"step","bg":"dark","step":"2","head":"ՀԱՍՏՈՒԹՅՈՒՆՆ ՈՒ ԵԶՐԸ","body":"Քանի՞ մմ է սալը և եզրերն արդեն հղկվա՞ծ են։ 20 մմ-ն ու 30 մմ-ը տարբեր գին ու տեսք են։"},{"type":"step","bg":"light","step":"3","head":"ԵՐԿՐՈՐԴ ՀԱՄԸՆԿՆՈՂ ՍԱԼԸ","body":"Մեծ մակերեսի կամ book-match-ի համար պետք է նույն բլոկի երկրորդ սալը։ Հարցրու սկզբում, ոչ մոնտաժին։"},{"type":"step","bg":"dark","step":"4","head":"ՈՐՏԵՂ ԵՆ ՃԱՔԵՐՆ ՈՒ ԼՑԱԿՆԵՐԸ","body":"Ամեն բնական սալ ունի ճաք կամ լցակ։ Հարցրու՝ որտեղ են ընկնում, որ չհայտնվեն սեղանի կենտրոնում։ Սա բաց են թողնում բոլորը։"},{"type":"step","bg":"light","step":"5","head":"ՈՎ Է ԿՏՐՈՒՄ ԵՎ ՊԱՏԱՍԽԱՆԱՏՈՒ","body":"Ճշտիր՝ ով է չափում, կտրում և ով է ծածկում, եթե սալը կոտրվի մոնտաժին։ Պայմանը՝ թղթի վրա։"},{"type":"cta","bg":"dark","head":"ՆՈՒՅՆ ՍԱԼԸ, ՈՐ ՏԵՍԱՐ՝ ՔՈ ՍԵՂԱՆԻՆ","pill":"ՊԱՀԻՐ ՀԱՋՈՐԴ ԳՆՈՒՄԻ ՀԱՄԱՐ","foot":"Taron Badalyan — The Voice of Stone"}]}],"kp":{"title":"AI ԹՐԵՅՆԻՆԳ ԹԻՄԵՐԻ ՀԱՄԱՐ","subtitle":"3 ՖՈՐՄԱՏ · ԸՆՏՐԻՐ ԹԻՄԻ ՉԱՓՈՎ","formats":[{"name":"START","dur":"3 ԺԱՄ","desc":"Թիմը AI-ն դնում է մեկ կրկնվող խնդրի վրա"},{"name":"GROWTH","dur":"6 ԺԱՄ","desc":"Մի քանի խնդիր ըստ բաժինների + մարդ-ընդունող"},{"name":"TRANSFORMATION","dur":"3 ՕՐ","desc":"AI-պրոցեսներ ամբողջ թիմում՝ ստուգում և վերադարձ"}],"foot":"worktaronbadalyan-hub.github.io/inessa-design/ai-training  ·  The Voice of Stone"}};
 function slideCanvas(car,i){let cv=document.createElement("canvas");cv.width=1080;cv.height=1350;cv.className="slide";drawSlide(cv,car,i);let wrap=document.createElement("div");wrap.className="sw";wrap.appendChild(cv);let b=document.createElement("button");b.textContent="PNG "+String(i+1).padStart(2,"0");b.onclick=()=>dl(cv,D.date+"_"+car.id+"_"+String(i+1).padStart(2,"0")+".png");wrap.appendChild(b);return wrap;}
 let BUILT=false;
 function build(){
@@ -116,7 +128,16 @@ function build(){
   sec.appendChild(det);
   root.appendChild(sec);
  }
+ if(D.kp){
+  let sec=document.createElement("section");
+  sec.innerHTML=`<h2>Доп. задача дня · Слайд КП <span>1920×1080</span></h2><p class="meta">3 формата ИИ-тренинга (START / GROWTH / TRANSFORMATION), без цен · армянский</p>`;
+  let cv=document.createElement("canvas");cv.width=1920;cv.height=1080;cv.className="kp";drawKP(cv,D.kp);
+  sec.appendChild(cv);
+  let b=document.createElement("button");b.className="dall";b.textContent="Скачать PNG (КП)";b.onclick=()=>dl(cv,D.date+"_KP_formats.png");
+  sec.appendChild(document.createElement("br"));sec.appendChild(b);
+  root.appendChild(sec);
+ }
 }
-if(document.fonts&&document.fonts.ready){document.fonts.load("800 80px 'Noto Sans Armenian'").then(()=>document.fonts.load("40px Anton")).then(()=>document.fonts.ready).then(build);setTimeout(build,1200);}else build();
+if(document.fonts&&document.fonts.ready){document.fonts.load("800 80px 'Noto Sans Armenian'").then(()=>document.fonts.load("600 40px 'Noto Sans Armenian'")).then(()=>document.fonts.load("40px Anton")).then(()=>document.fonts.ready).then(build);setTimeout(build,1500);}else build();
 </script>
 </body></html>
