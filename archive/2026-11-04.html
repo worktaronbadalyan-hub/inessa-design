@@ -1,0 +1,122 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инесса · дизайн-дашборд дня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Noto+Sans+Armenian:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b0b;color:#eee;font-family:'Archivo',system-ui,Arial,sans-serif}
+header{padding:34px 24px 10px;max-width:1200px;margin:auto}
+h1{font-family:'Anton';font-weight:400;letter-spacing:.5px;font-size:30px;margin:0}
+h1 b{color:#C6F03C}
+.sub{color:#9a9a9a;margin:6px 0 0;font-size:15px}
+main{max-width:1200px;margin:auto;padding:10px 24px 60px}
+section{border-top:1px solid #1e1e1e;padding:26px 0}
+h2{font-family:'Anton';font-weight:400;font-size:22px;margin:0 0 2px}
+h2 span{color:#C6F03C;font-family:'Archivo';font-size:14px;margin-left:8px}
+.meta{color:#8f8f8f;font-size:13px;margin:0 0 16px}
+.row{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
+.sw{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}
+canvas.slide{width:224px;height:280px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+button{background:#1b1b1b;color:#C6F03C;border:1px solid #333;border-radius:8px;padding:7px 10px;font-size:12px;cursor:pointer;font-family:'Archivo'}
+button:hover{background:#262626}
+.dall{margin-top:14px;background:#C6F03C;color:#0b0b0b;border:none;font-weight:700;padding:9px 16px}
+details{margin-top:14px;color:#cfcfcf}summary{cursor:pointer;color:#C6F03C;font-size:14px}
+pre.cap{white-space:pre-wrap;background:#141414;border:1px solid #242424;border-radius:10px;padding:14px;font-family:'Archivo';font-size:14px;line-height:1.5;color:#e7e7e7}
+.alt{font-size:13px;color:#a7a7a7}
+footer{max-width:1200px;margin:auto;padding:24px;color:#777;font-size:13px;border-top:1px solid #1e1e1e}
+footer a{color:#C6F03C;text-decoration:none;margin-right:14px}
+.nav a{color:#C6F03C;text-decoration:none;font-size:14px;margin-right:16px}
+</style></head><body>
+<header>
+<div class="nav"><a href="index.html">Карусели 4:5</a><a href="covers.html">Обложки Reels 9:16</a></div>
+<h1><b>ИНЕССА</b> · дизайн-дашборд дня</h1>
+<p class="sub">Дата: <span id="date"></span> · 2 карусели × 7 слайдов · рендер на canvas, кнопки скачивают PNG 1080×1350.</p>
+</header>
+<main id="cars"></main>
+<footer>Архив: <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> <a href="archive/2026-10-27.html">10-27</a> · The Voice of Stone</footer>
+<script>
+const LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",INK="#111";
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function wrap(c,t,f,mw){c.font=f;let ws=t.split(" "),ls=[],cur="";for(const w of ws){let tt=(cur+" "+w).trim();if(c.measureText(tt).width<=mw)cur=tt;else{if(cur)ls.push(cur);cur=w}}if(cur)ls.push(cur);return ls;}
+function arm(w,s){return w+" "+s+"px 'Noto Sans Armenian'";}
+function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,1080,2000);}
+function halftone(c,x0,y0,x1,y1,col){c.fillStyle=col;for(let y=y0;y<y1;y+=24)for(let x=x0;x<x1;x+=24){c.beginPath();c.arc(x,y,2,0,7);c.fill();}}
+function arrow(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=DARK;c.lineWidth=9;c.lineCap="round";let a=r*0.9;c.beginPath();c.moveTo(cx-a*0.4,cy);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy-a*0.34);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy+a*0.34);c.lineTo(cx+a*0.42,cy);c.stroke();}
+function brand(c,acc,mark,fg){let x=96,y=92;if(mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+15,y-16);c.lineTo(x+30,y);c.lineTo(x+15,y+16);c.lineTo(x,y);c.closePath();c.fill();var tx=x+44;}else{c.fillStyle=LIME;c.fillRect(x,y-18,10,34);var tx=x+28;}c.fillStyle=fg;c.font="30px Anton";c.textBaseline="alphabetic";c.fillText(acc,tx,y+10);}
+function pag(c,i,t,fg){c.fillStyle=fg;c.font="30px Anton";let s=String(i).padStart(2,"0")+"/"+String(t).padStart(2,"0");c.textAlign="right";c.fillText(s,1080-96,102);c.textAlign="left";}
+function lines(c,ls,f,x,y,fill,lh){c.font=f;c.fillStyle=fill;for(const l of ls){c.fillText(l,x,y);y+=lh;}return y;}
+function drawSlide(cv,car,i){
+ const c=cv.getContext("2d");c.clearRect(0,0,1080,1350);
+ const s=car.slides[i],dark=s.bg==="dark",fg=dark?WHITE:INK,bg=dark?DARK:LIGHT,tot=car.slides.length;
+ c.fillStyle=bg;c.fillRect(0,0,1080,1350);
+ glow(c,1040,40,300,dark?0.28:0.18);glow(c,60,1290,240,dark?0.18:0.12);
+ halftone(c,830,1100,1010,1280,dark?"#2A2A2A":"#DADAD6");
+ c.textBaseline="alphabetic";c.textAlign="left";
+ brand(c,car.account,car.mark,fg);pag(c,i+1,tot,fg);
+ if(s.type==="hook"){
+  let y=380;let f=arm("800",118);
+  y=lines(c,wrap(c,s.title_white,f,1080-192),f,96,y,fg,132);
+  y=lines(c,wrap(c,s.title_lime,f,1080-192),f,96,y+6,LIME,132);
+  c.fillStyle=LIME;c.fillRect(96,y+24,70,8);
+  c.font=arm("600",40);c.fillStyle=fg;c.fillText(s.sub,96,y+92);
+  arrow(c,1080-96-10,1200,52);
+ }else if(s.type==="step"){
+  let py=300,num=/^\d+$/.test(s.step),hx=96,hy;
+  if(num){c.fillStyle=LIME;c.font="150px Anton";c.fillText(s.step,96,py+118);hy=py+200;}
+  else{c.font=arm("600",34);let tw=c.measureText(s.step).width,pad=28,ph=74;c.fillStyle=LIME;rr(c,96,py,tw+2*pad,ph,ph/2);c.fill();c.fillStyle=DARK;c.fillText(s.step,96+pad,py+ph/2+12);hy=py+ph+64;}
+  let fh=arm("800",72);let yy=lines(c,wrap(c,s.head,fh,1080-192),fh,hx,hy,fg,84);
+  c.fillStyle=LIME;c.fillRect(96,yy+10,120,6);
+  let fb=arm("500",42);lines(c,wrap(c,s.body,fb,1080-192),fb,96,yy+72,fg,58);
+  arrow(c,1080-96-10,1200,52);
+ }else{
+  let y=420,fh=arm("800",84);y=lines(c,wrap(c,s.head,fh,1080-192),fh,96,y,fg,98);
+  let pf=arm("600",40),tw=(c.font=pf,c.measureText(s.pill).width),pad=40,ph=108,mw=1080-192;
+  if(tw+2*pad>mw){pf=arm("600",33);c.font=pf;tw=c.measureText(s.pill).width;}
+  c.fillStyle=LIME;rr(c,96,y+36,Math.min(tw+2*pad,mw),ph,ph/2);c.fill();
+  c.fillStyle=DARK;c.font=pf;c.fillText(s.pill,96+pad,y+36+ph/2+14);
+  let yb=y+36+ph+66;if(s.subcta){c.fillStyle=fg;c.font=arm("500",38);c.fillText(s.subcta,96,yb);}
+  c.fillStyle=LIME;c.fillRect(96,1150,70,8);
+  c.fillStyle=fg;c.font=car.mark?arm("600",36):"40px Anton";c.fillText(s.foot,96,1200);
+ }
+}
+function drawCover(cv,co){
+ const c=cv.getContext("2d");c.clearRect(0,0,1080,1920);
+ c.fillStyle=DARK;c.fillRect(0,0,1080,1920);
+ glow(c,1040,160,340,0.3);glow(c,40,1720,300,0.16);
+ halftone(c,820,1300,1010,1500,"#222");
+ let x=96,y=140;if(co.mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+17,y-17);c.lineTo(x+34,y);c.lineTo(x+17,y+17);c.lineTo(x,y);c.closePath();c.fill();var tx=x+48;}else{c.fillStyle=LIME;c.fillRect(x,y-18,12,34);var tx=x+30;}
+ c.fillStyle=WHITE;c.font="34px Anton";c.textBaseline="alphabetic";c.fillText(co.account,tx,y+10);
+ c.fillStyle=LIME;c.font="500 38px Oswald";c.fillText(co.kicker,96,y+150);
+ let mw=(1080-230)-96,hy=620;
+ for(const line of [co.l1,co.l2]){let fs=128;c.font="700 "+fs+"px Oswald";while(c.measureText(line).width>mw&&fs>60){fs-=4;c.font="700 "+fs+"px Oswald";}c.fillStyle=WHITE;c.fillText(line,96,hy);hy+=fs+22;}
+ c.fillStyle=LIME;c.fillRect(96,hy+6,160,14);
+ arrow(c,148,1250,48);c.fillStyle="#8A8A8A";c.font="500 32px Oswald";c.fillText("REELS COVER",220,1262);
+}
+function dl(cv,name){cv.toBlob(b=>{let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();},"image/png");}
+</script>
+<script>
+const D={"date":"2026-11-04","carousels":[{"id":"A","account":"STONE MARKET","handle":"@stonemarket.am","mark":false,"framework":"Demo Walkthrough","hook":"H21","lang":"HY","caption":"Ինչո՞ւ ընտրել պահեստի չափերից, եթե սեղանը կարող է սարքվել քո չափով։\n\nTerrazzo սեղանը չենք կտրում պատրաստ սալից — չափի տակ պատրաստում ենք կաղապար և լցնում։ Այսպես ձևն ու եզրը դառնում են ճիշտ քո նախագծի տակ։\n\nԳույնը՝ Green, Beige կամ Burgundy։ Հաստությունն ու չափը՝ ըստ քո գծագրի։\n\nԳրիր Direct՝ հաշվենք քո չափը։\n\n#terrazzo #stonemarket #ինտերիեր","alt":"Մուգ ֆոնի վրա լայմ գույնի վերնագիր՝ «Նոր կաղապար․ չափը դու ես որոշում», հետո terrazzo սեղանի պատրաստման 5 քայլ։","first_comment":"","slides":[{"type":"hook","bg":"dark","title_white":"ՆՈՐ ԿԱՂԱՊԱՐ.","title_lime":"ՉԱՓԸ ԴՈՒ ԵՍ ՈՐՈՇՈՒՄ","sub":"terrazzo սեղան՝ քո չափսով"},{"type":"step","bg":"light","step":"ՔԱՅԼ 1","head":"ՈՒՂԱՐԿՈՒՄ ԵՍ ՉԱՓՆ ՈՒ ՁԵՎԸ","body":"Սեղանի կամ վահանակի չափն ու ձևը, որ ոչ մի պահեստում չկա։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 2","head":"ՊԱՏՐԱՍՏՈՒՄ ԵՆՔ ԿԱՂԱՊԱՐ","body":"Չենք կտրում պատրաստ սալից — լցնում ենք կաղապարի մեջ։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 3","head":"ԼՑՈՒՄ ԵՆՔ ՏԵՐԱՑՈՆ","body":"Գույնը՝ Green, Beige կամ Burgundy — ընտրում ես նախագծի տակ։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 4","head":"ՀՂԿՈՒՄ ԵՆՔ ՀԱՅԵԼՈՒ ՊԵՍ","body":"Եզրը՝ ըստ քո գծագրի, ոչ ստանդարտ կլոր։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 5","head":"ՍՏԱՆՈՒՄ ԵՍ ՊԱՏՐԱՍՏ ԻՐԸ","body":"Հաստությունն ու չափը՝ ճիշտ քո նախագծի տակ։"},{"type":"cta","bg":"dark","head":"ՔՈ ՉԱՓՍՈՎ ՏԵՐԱՑՈ ՍԵՂԱՆ","pill":"ԳՐԻՐ DIRECT — ՀԱՇՎԵՆՔ ՉԱՓԸ","foot":"STONE MARKET"}]},{"id":"B","account":"TARON BADALYAN","handle":"@badalyan.taron","mark":true,"framework":"Value-Stack","hook":"H11","lang":"HY","caption":"Ո՞ր 5 տեղում ԱԲ-ն պետք է անպայման անցնի մարդու ստուգումը։\n\nԱԲ-ին չի կարելի կուրորեն վստահել — բայց դա պատճառ չէ հրաժարվելու։ Թվերը, հաճախորդին ուղղված նամակը, փաստերը, պայմանագրի կետերը և վերջին ուղարկելը մնում են մարդու ձեռքին։\n\nՀենց սա է թրեյնինգը՝ ոչ թե դասախոսություն ԱԲ-ի մասին, այլ թիմի իրական խնդիրների վրա դրված գործիք։\n\nԳրիր Direct՝ ՎԵՐԼՈՒԾՈՒՄ, կուղարկեմ անվճար էքսպրես-վերլուծություն։\n\n#AIforbusiness #Armenia #TaronBadalyan","alt":"Մուգ ֆոնի վրա չակերտներով հարց՝ «ԱԲ-ին չի կարելի վստահել», հետո 5 տեղ, որտեղ մարդը ստուգում է ԱԲ-ի աշխատանքը։","first_comment":"Անվճար էքսպրես-վերլուծություն և 3 ֆորմատ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/","slides":[{"type":"hook","bg":"dark","title_white":"«ԱԲ-ԻՆ ՉԻ ԿԱՐԵԼԻ","title_lime":"ՎՍՏԱՀԵԼ»","sub":"5 տեղ, որ միշտ ստուգում է մարդը"},{"type":"step","bg":"light","step":"1","head":"ԹՎԵՐՆ ՈՒ ԳՆԵՐԸ","body":"ԱԲ-ը սխալվում է հաշվարկում — ուղարկելուց առաջ ստուգում է մարդը։"},{"type":"step","bg":"dark","step":"2","head":"ՀԱՃԱԽՈՐԴԻՆ ՆԱՄԱԿԸ","body":"ԱԲ-ը գրում է սևագիրը, տոնը հաստատում է մարդը։"},{"type":"step","bg":"light","step":"3","head":"ՓԱՍՏԵՐՆ ՈՒ ԱՆՈՒՆՆԵՐԸ","body":"ԱԲ-ը երբեմն հորինում է — ստուգիր սկզբնաղբյուրով։"},{"type":"step","bg":"dark","step":"4","head":"ՊԱՅՄԱՆԱԳՐԻ ԿԵՏԵՐԸ","body":"Իրավական ձևակերպումը կարդում է մարդը՝ ստորագրելուց առաջ։"},{"type":"step","bg":"light","step":"5","head":"ՎԵՐՋԻՆ ՈՒՂԱՐԿԵԼԸ","body":"Ուղարկելու կոճակը սեղմում է մարդը, ոչ թե ագենտը։"},{"type":"cta","bg":"dark","head":"ՈՒԶՈ՞ՒՄ ԵՍ ՍԱ ՔՈ ԲԱԺՆՈՒՄ","pill":"ԳՐԻՐ DIRECT՝ ՎԵՐԼՈՒԾՈՒՄ","foot":"Taron Badalyan — The Voice of Stone","subcta":"անվճար էքսպրես-վերլուծություն"}]}],"covers":[{"id":"R1","account":"STONE MARKET","mark":false,"l1":"ЧТО ОСТАЁТСЯ","l2":"ОТ БЛОКА","kicker":"STONE · TERRAZZO"},{"id":"R2","account":"STONE MARKET","mark":false,"l1":"КАК СЛЭБ","l2":"СТАНОВИТСЯ ЗЕРКАЛОМ","kicker":"STONE · PROCESS"},{"id":"R3","account":"TARON BADALYAN","mark":true,"l1":"ДИРЕКТОРА НЕТ","l2":"В СТРАНЕ","kicker":"AI · КОМАНДА"}]};
+function slideCanvas(car,i){let cv=document.createElement("canvas");cv.width=1080;cv.height=1350;cv.className="slide";drawSlide(cv,car,i);let wrap=document.createElement("div");wrap.className="sw";wrap.appendChild(cv);let b=document.createElement("button");b.textContent="PNG "+String(i+1).padStart(2,"0");b.onclick=()=>dl(cv,D.date+"_"+car.id+"_"+String(i+1).padStart(2,"0")+".png");wrap.appendChild(b);return wrap;}
+let BUILT=false;
+function build(){
+ if(BUILT)return;BUILT=true;
+ document.getElementById("date").textContent=D.date;
+ const root=document.getElementById("cars");
+ for(const car of D.carousels){
+  let sec=document.createElement("section");
+  sec.innerHTML=`<h2>Карусель ${car.id} · ${car.account} <span>${car.handle}</span></h2>
+   <p class="meta">${car.framework} · хук ${car.hook} · ${car.lang} · ${car.slides.length} слайдов</p>`;
+  let row=document.createElement("div");row.className="row";
+  for(let i=0;i<car.slides.length;i++)row.appendChild(slideCanvas(car,i));
+  sec.appendChild(row);
+  let dall=document.createElement("button");dall.className="dall";dall.textContent="Скачать все PNG ("+car.id+")";
+  dall.onclick=()=>{row.querySelectorAll("canvas").forEach((cv,i)=>setTimeout(()=>dl(cv,D.date+"_"+car.id+"_"+String(i+1).padStart(2,"0")+".png"),i*250));};
+  sec.appendChild(dall);
+  let det=document.createElement("details");det.innerHTML=`<summary>Подпись + alt-текст</summary><pre class="cap">${car.caption.replace(/</g,"&lt;")}</pre><p class="alt"><b>ALT:</b> ${car.alt}</p>`+(car.first_comment?`<p class="alt"><b>1-й комментарий:</b> ${car.first_comment}</p>`:"");
+  sec.appendChild(det);
+  root.appendChild(sec);
+ }
+}
+if(document.fonts&&document.fonts.ready){document.fonts.load("800 80px 'Noto Sans Armenian'").then(()=>document.fonts.load("40px Anton")).then(()=>document.fonts.ready).then(build);setTimeout(build,1200);}else build();
+</script>
+</body></html>
