@@ -1,0 +1,24 @@
+ href="archive/2026-11-05.html">11-05</a> <a href="archive/2026-11-04.html">11-04</a> <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> · The Voice of Stone</footer>
+<script>
+const LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",INK="#111";
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function wrap(c,t,f,mw){c.font=f;let ws=t.split(" "),ls=[],cur="";for(const w of ws){let tt=(cur+" "+w).trim();if(c.measureText(tt).width<=mw)cur=tt;else{if(cur)ls.push(cur);cur=w}}if(cur)ls.push(cur);return ls;}
+function arm(w,s){return w+" "+s+"px 'Noto Sans Armenian'";}
+function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,2000,2000);}
+function halftone(c,x0,y0,x1,y1,col){c.fillStyle=col;for(let y=y0;y<y1;y+=24)for(let x=x0;x<x1;x+=24){c.beginPath();c.arc(x,y,2,0,7);c.fill();}}
+function arrow(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=DARK;c.lineWidth=9;c.lineCap="round";let a=r*0.9;c.beginPath();c.moveTo(cx-a*0.4,cy);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy-a*0.34);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy+a*0.34);c.lineTo(cx+a*0.42,cy);c.stroke();}
+function brand(c,acc,mark,fg){let x=96,y=92;if(mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+15,y-16);c.lineTo(x+30,y);c.lineTo(x+15,y+16);c.lineTo(x,y);c.closePath();c.fill();var tx=x+44;}else{c.fillStyle=LIME;c.fillRect(x,y-18,10,34);var tx=x+28;}c.fillStyle=fg;c.font="30px Anton";c.textBaseline="alphabetic";c.fillText(acc,tx,y+10);}
+function pag(c,i,t,fg){c.fillStyle=fg;c.font="30px Anton";let s=String(i).padStart(2,"0")+"/"+String(t).padStart(2,"0");c.textAlign="right";c.fillText(s,1080-96,102);c.textAlign="left";}
+function lines(c,ls,f,x,y,fill,lh){c.font=f;c.fillStyle=fill;for(const l of ls){c.fillText(l,x,y);y+=lh;}return y;}
+function drawSlide(cv,car,i){
+ const c=cv.getContext("2d");c.clearRect(0,0,1080,1350);
+ const s=car.slides[i],dark=s.bg==="dark",fg=dark?WHITE:INK,bg=dark?DARK:LIGHT,tot=car.slides.length;
+ c.fillStyle=bg;c.fillRect(0,0,1080,1350);
+ glow(c,1040,40,300,dark?0.28:0.18);glow(c,60,1290,240,dark?0.18:0.12);
+ halftone(c,830,1100,1010,1280,dark?"#2A2A2A":"#DADAD6");
+ c.textBaseline="alphabetic";c.textAlign="left";
+ brand(c,car.account,car.mark,fg);pag(c,i+1,tot,fg);
+ if(s.type==="hook"){
+  let y=380;let f=arm("800",118);
+  y=lines(c,wrap(c,s.title_white,f,1080-192),f,96,y,fg,132);
+  y=lines(c,wrap(c,s.title_lime,f,1080-192),f,96,y+
