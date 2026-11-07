@@ -1,0 +1,143 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инесса · дизайн-дашборд дня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Noto+Sans+Armenian:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b0b;color:#eee;font-family:'Archivo',system-ui,Arial,sans-serif}
+header{padding:34px 24px 10px;max-width:1200px;margin:auto}
+h1{font-family:'Anton';font-weight:400;letter-spacing:.5px;font-size:30px;margin:0}
+h1 b{color:#C6F03C}
+.sub{color:#9a9a9a;margin:6px 0 0;font-size:15px}
+main{max-width:1200px;margin:auto;padding:10px 24px 60px}
+section{border-top:1px solid #1e1e1e;padding:26px 0}
+h2{font-family:'Anton';font-weight:400;font-size:22px;margin:0 0 2px}
+h2 span{color:#C6F03C;font-family:'Archivo';font-size:14px;margin-left:8px}
+.meta{color:#8f8f8f;font-size:13px;margin:0 0 16px}
+.row{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
+.sw{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}
+canvas.slide{width:224px;height:280px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+canvas.kp{width:100%;max-width:960px;height:auto;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+button{background:#1b1b1b;color:#C6F03C;border:1px solid #333;border-radius:8px;padding:7px 10px;font-size:12px;cursor:pointer;font-family:'Archivo'}
+button:hover{background:#262626}
+.dall{margin-top:14px;background:#C6F03C;color:#0b0b0b;border:none;font-weight:700;padding:9px 16px}
+details{margin-top:14px;color:#cfcfcf}summary{cursor:pointer;color:#C6F03C;font-size:14px}
+pre.cap{white-space:pre-wrap;background:#141414;border:1px solid #242424;border-radius:10px;padding:14px;font-family:'Archivo';font-size:14px;line-height:1.5;color:#e7e7e7}
+.alt{font-size:13px;color:#a7a7a7}
+footer{max-width:1200px;margin:auto;padding:24px;color:#777;font-size:13px;border-top:1px solid #1e1e1e}
+footer a{color:#C6F03C;text-decoration:none;margin-right:14px}
+.nav a{color:#C6F03C;text-decoration:none;font-size:14px;margin-right:16px}
+</style></head><body>
+<header>
+<div class="nav"><a href="index.html">Карусели 4:5</a><a href="covers.html">Обложки Reels 9:16</a></div>
+<h1><b>ИНЕССА</b> · дизайн-дашборд дня</h1>
+<p class="sub">Дата: <span id="date"></span> · 2 карусели: A — Союз камнеобработчиков (6 слайдов, HY), B — @badalyan.taron (7 слайдов, HY) · рендер на canvas, кнопки скачивают PNG 1080×1350.</p>
+</header>
+<main id="cars"></main>
+<footer>Архив: <a href="archive/2026-11-05.html">11-05</a> <a href="archive/2026-11-04.html">11-04</a> <a href="archive/2026-11-02.html">11-02</a> <a href="archive/2026-11-01.html">11-01</a> <a href="archive/2026-10-31.html">10-31</a> <a href="archive/2026-10-30.html">10-30</a> <a href="archive/2026-10-29.html">10-29</a> <a href="archive/2026-10-28.html">10-28</a> · The Voice of Stone</footer>
+<script>
+const LIME="#C6F03C",DARK="#0E0E0E",LIGHT="#F0F0EE",WHITE="#fff",INK="#111";
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function wrap(c,t,f,mw){c.font=f;let ws=t.split(" "),ls=[],cur="";for(const w of ws){let tt=(cur+" "+w).trim();if(c.measureText(tt).width<=mw)cur=tt;else{if(cur)ls.push(cur);cur=w}}if(cur)ls.push(cur);return ls;}
+function arm(w,s){return w+" "+s+"px 'Noto Sans Armenian'";}
+function glow(c,x,y,r,a){let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,"rgba(198,240,60,"+a+")");g.addColorStop(1,"rgba(198,240,60,0)");c.fillStyle=g;c.fillRect(0,0,2000,2000);}
+function halftone(c,x0,y0,x1,y1,col){c.fillStyle=col;for(let y=y0;y<y1;y+=24)for(let x=x0;x<x1;x+=24){c.beginPath();c.arc(x,y,2,0,7);c.fill();}}
+function arrow(c,cx,cy,r){c.fillStyle=LIME;c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.strokeStyle=DARK;c.lineWidth=9;c.lineCap="round";let a=r*0.9;c.beginPath();c.moveTo(cx-a*0.4,cy);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy-a*0.34);c.lineTo(cx+a*0.42,cy);c.moveTo(cx+a*0.08,cy+a*0.34);c.lineTo(cx+a*0.42,cy);c.stroke();}
+function brand(c,acc,mark,fg){let x=96,y=92;if(mark){c.fillStyle=LIME;c.beginPath();c.moveTo(x+15,y-16);c.lineTo(x+30,y);c.lineTo(x+15,y+16);c.lineTo(x,y);c.closePath();c.fill();var tx=x+44;}else{c.fillStyle=LIME;c.fillRect(x,y-18,10,34);var tx=x+28;}c.fillStyle=fg;c.font="30px Anton";c.textBaseline="alphabetic";c.fillText(acc,tx,y+10);}
+function pag(c,i,t,fg){c.fillStyle=fg;c.font="30px Anton";let s=String(i).padStart(2,"0")+"/"+String(t).padStart(2,"0");c.textAlign="right";c.fillText(s,1080-96,102);c.textAlign="left";}
+function lines(c,ls,f,x,y,fill,lh){c.font=f;c.fillStyle=fill;for(const l of ls){c.fillText(l,x,y);y+=lh;}return y;}
+function drawSlide(cv,car,i){
+ const c=cv.getContext("2d");c.clearRect(0,0,1080,1350);
+ const s=car.slides[i],dark=s.bg==="dark",fg=dark?WHITE:INK,bg=dark?DARK:LIGHT,tot=car.slides.length;
+ c.fillStyle=bg;c.fillRect(0,0,1080,1350);
+ glow(c,1040,40,300,dark?0.28:0.18);glow(c,60,1290,240,dark?0.18:0.12);
+ halftone(c,830,1100,1010,1280,dark?"#2A2A2A":"#DADAD6");
+ c.textBaseline="alphabetic";c.textAlign="left";
+ brand(c,car.account,car.mark,fg);pag(c,i+1,tot,fg);
+ if(s.type==="hook"){
+  let y=380;let f=arm("800",118);
+  y=lines(c,wrap(c,s.title_white,f,1080-192),f,96,y,fg,132);
+  y=lines(c,wrap(c,s.title_lime,f,1080-192),f,96,y+6,LIME,132);
+  c.fillStyle=LIME;c.fillRect(96,y+24,70,8);
+  c.font=arm("600",40);c.fillStyle=fg;c.fillText(s.sub,96,y+92);
+  arrow(c,1080-96-10,1200,52);
+ }else if(s.type==="step"){
+  let py=300,num=/^\d+$/.test(s.step),hx=96,hy;
+  if(num){c.fillStyle=LIME;c.font="150px Anton";c.fillText(s.step,96,py+118);hy=py+200;}
+  else{c.font=arm("600",34);let tw=c.measureText(s.step).width,pad=28,ph=74;c.fillStyle=LIME;rr(c,96,py,tw+2*pad,ph,ph/2);c.fill();c.fillStyle=DARK;c.fillText(s.step,96+pad,py+ph/2+12);hy=py+ph+64;}
+  let fh=arm("800",72);let yy=lines(c,wrap(c,s.head,fh,1080-192),fh,hx,hy,fg,84);
+  c.fillStyle=LIME;c.fillRect(96,yy+10,120,6);
+  let fb=arm("500",42);lines(c,wrap(c,s.body,fb,1080-192),fb,96,yy+72,fg,58);
+  arrow(c,1080-96-10,1200,52);
+ }else{
+  let y=420,fh=arm("800",84);y=lines(c,wrap(c,s.head,fh,1080-192),fh,96,y,fg,98);
+  let pf=arm("600",40),tw=(c.font=pf,c.measureText(s.pill).width),pad=40,ph=108,mw=1080-192;
+  if(tw+2*pad>mw){pf=arm("600",33);c.font=pf;tw=c.measureText(s.pill).width;}
+  c.fillStyle=LIME;rr(c,96,y+36,Math.min(tw+2*pad,mw),ph,ph/2);c.fill();
+  c.fillStyle=DARK;c.font=pf;c.fillText(s.pill,96+pad,y+36+ph/2+14);
+  let yb=y+36+ph+66;if(s.subcta){c.fillStyle=fg;c.font=arm("500",38);c.fillText(s.subcta,96,yb);}
+  c.fillStyle=LIME;c.fillRect(96,1150,70,8);
+  c.fillStyle=fg;c.font=car.mark?arm("600",36):"40px Anton";c.fillText(s.foot,96,1200);
+ }
+}
+function drawKP(cv,kp){
+ const c=cv.getContext("2d");c.clearRect(0,0,1920,1080);
+ c.fillStyle=DARK;c.fillRect(0,0,1920,1080);
+ glow(c,1820,80,420,0.26);glow(c,80,1040,360,0.14);
+ halftone(c,1560,820,1810,1000,"#262626");
+ c.textBaseline="alphabetic";c.textAlign="left";
+ let x=110,y=120;c.fillStyle=LIME;c.beginPath();c.moveTo(x+17,y-17);c.lineTo(x+34,y);c.lineTo(x+17,y+17);c.lineTo(x,y);c.closePath();c.fill();
+ c.fillStyle=WHITE;c.font="34px Anton";c.fillText("TARON BADALYAN",x+48,y+10);
+ c.fillStyle=WHITE;c.font=arm("800",76);c.fillText(kp.title,110,260);
+ c.fillStyle=LIME;c.font=arm("600",40);c.fillText(kp.subtitle,110,330);
+ c.fillStyle=LIME;c.fillRect(110,360,120,8);
+ let n=kp.formats.length,gap=40,cw=(1920-220-(n-1)*gap)/n,cy=430,ch=500;
+ for(let i=0;i<n;i++){let f=kp.formats[i],cx=110+i*(cw+gap);
+  c.fillStyle="#161616";rr(c,cx,cy,cw,ch,18);c.fill();
+  c.fillStyle=LIME;rr(c,cx,cy,cw,12,6);c.fill();
+  c.fillStyle=LIME;c.font="60px Anton";c.fillText(f.name,cx+40,cy+110);
+  c.fillStyle=WHITE;c.font=arm("600",40);c.fillText(f.dur,cx+40,cy+175);
+  c.fillStyle="#3a3a3a";c.fillRect(cx+40,cy+205,cw-80,2);
+  let fb=arm("500",36),ls=wrap(c,f.desc,fb,cw-80),ly=cy+270;
+  c.font=fb;c.fillStyle="#d8d8d8";for(const l of ls){c.fillText(l,cx+40,ly);ly+=50;}
+ }
+ c.fillStyle="#8A8A8A";c.font=arm("500",30);c.fillText(kp.foot,110,1010);
+ c.fillStyle=LIME;c.fillRect(1700,1000,120,10);
+}
+function dl(cv,name){cv.toBlob(b=>{let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();},"image/png");}
+</script>
+<script>
+const D={"date":"2026-11-06","carousels":[{"id":"A","account":"UNION OF STONE MANUFACTURERS","handle":"@unionofstonemanufacturers","mark":false,"framework":"Value-Stack","hook":"H13","lang":"HY","caption":"Գինը առաջին հարցը չէ, որ լուրջ գնորդը տալիս է։ Առաջինը նա կարդում է 4 տող։\n\nՑեղ ու հանք, չափվող ցուցանիշներ, չափս ու հաստություն, ժամկետ ու ծավալ — սրանք քարի տեխ. տողերն են։ Ով դրանք տալիս է պարզ, վստահություն է ստանում։\n\nԵթե ողջ ոլորտը նույն 4 տողը տա գնորդին, շուկան դառնում է ավելի ազնիվ, իսկ հայկական քարը՝ ավելի ուժեղ։\n\nՀետևիր @unionofstonemanufacturers։\n\n#քար #տրավերտին #StoneUnion","alt":"Մուգ ու բաց սլայդներով 6-սլայդանոց կարուսել լայմ շեշտադրումով. քարի տեխ. տվյալների 4 տող գնորդի համար։","first_comment":"","slides":[{"type":"hook","bg":"dark","title_white":"ՔԱՐԱԳՈՐԾ, ԳՆԻՑ ԱՌԱՋ՝","title_lime":"4 ՏՈՂ","sub":"Տեխ. տվյալների 4 տողը, որ գնորդը կարդում է գնից շուտ"},{"type":"step","bg":"light","step":"ՏՈՂ 1","head":"ՑԵՂՆ ՈՒ ՀԱՆՔԸ","body":"Ոչ թե «մարմար», այլ՝ ո՞ր քարը և որտեղի՛ց (օր. տրավերտին, Արագած)։ Գնորդը պետք է իմանա ճշգրիտ ցեղն ու հանքը։"},{"type":"step","bg":"dark","step":"ՏՈՂ 2","head":"ՉԱՓՎՈՂ ՑՈՒՑԱՆԻՇՆԵՐ","body":"Ջրակլանում, ամրություն, սառնադիմացկունություն։ Այս թվերն են ասում՝ որտեղ կարելի է դնել քարը՝ դրսում, թաց գոտում, հատակին։"},{"type":"step","bg":"light","step":"ՏՈՂ 3","head":"ՉԱՓՍ ՈՒ ՀԱՍՏՈՒԹՅՈՒՆ","body":"Սալի իրական չափսն ու հաստությունը՝ մմ-ով, ոչ թե «մեծ»։ Գնորդն իմանում է՝ ինչ ես իրականում առաքում։"},{"type":"step","bg":"dark","step":"ՏՈՂ 4","head":"ԺԱՄԿԵՏ ՈՒ ԾԱՎԱԼ","body":"Որքա՞ն և ո՞ր ժամկետում ես առաքում։ Սա այն տողն է, որ ողջ ոլորտը պարտավոր է տալ գնորդին նույն ձևով։"},{"type":"cta","bg":"light","head":"4 ՏՈՂԸ՝ ԳՆԻՑ ԱՌԱՋ","pill":"ՀԵՏԵՎԻՐ ՄԵԶ","foot":"UNION OF STONE MANUFACTURERS","subcta":"@unionofstonemanufacturers"}]},{"id":"B","account":"TARON BADALYAN","handle":"@badalyan.taron","mark":true,"framework":"Demo Walkthrough","hook":"H4","lang":"HY","caption":"Ի՞նչ գործից սկսել ԱԲ-ն թիմում։ Պատասխանը մեկ շաբաթ է տևում, ոչ թե ամիսներ։\n\nՍխալը մեկն է՝ «ChatGPT բոլորին» տալը։ Աշխատում է հակառակը՝ մեկ կրկնվող գործ, մեկ ստուգող մարդ, ու ԱԲ-ն պատրաստում է սևագիրը։\n\nՈրտեղ ԱԲ-ն սխալվում է՝ թվեր ու տվյալներ, մարդը ստուգում է ուղարկելուց առաջ։ Սա է արհեստական բանականությունը բիզնեսում՝ առանց մեծ բաժնի։\n\nԳրիր ՍՏՈՒԳՈՒՄ Direct-ում՝ անվճար էքսպրես-վերլուծության համար։\n\n#ԱԲ #բիզնես #AItraining","alt":"Մուգ ու բաց սլայդներով 7-սլայդանոց կարուսել լայմ շեշտադրումով. 5 քայլ՝ կրկնվող գործը ԱԲ-ին հանձնելու համար։","first_comment":"Անվճար էքսպրես-վերլուծություն և 3 ֆորմատ (START / GROWTH / TRANSFORMATION)՝ https://worktaronbadalyan-hub.github.io/inessa-design/ai-training/","slides":[{"type":"hook","bg":"dark","title_white":"ՕՐԻ ՓՈԽԱՐԵՆ՝","title_lime":"ՐՈՊԵՆԵՐ","sub":"Առաջին կրկնվող գործը՝ ԱԲ-ի վրա, այս շաբաթ · 5 քայլ"},{"type":"step","bg":"light","step":"ՔԱՅԼ 1","head":"ՄԵԿ ԳՈՐԾ, ՈՉ «ԱՄԵՆ ԻՆՉ»","body":"Ընտրիր մեկ կրկնվող գործ՝ օր. կոմերցիոն առաջարկի սևագիր։ Ոչ թե «ChatGPT բոլորին»։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 2","head":"ՀԱՎԱՔԻՐ ՔՈ 3–5 ՕՐԻՆԱԿԸ","body":"Տուր ԱԲ-ին քո անցած աշխատանքի 3–5 օրինակ՝ քո ֆայլերը, ոչ թե «ընդհանուր» կաղապար։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 3","head":"ՆՇԱՆԱԿԻՐ ՍՏՈՒԳՈՂ ՄԱՐԴ","body":"Մեկ մարդ, որ ստուգում է արդյունքը նախքան ուղարկելը։ Առանց ընդունողի՝ գործը չի աշխատի։"},{"type":"step","bg":"dark","step":"ՔԱՅԼ 4","head":"ՆՇԻՐ, ՈՐՏԵՂ ԱԲ-Ն ՍԽԱԼՎՈՒՄ Է","body":"Թվեր, տվյալներ, հաճախորդի անուններ՝ այս տեղերը մարդը միշտ ստուգում է ձեռքով, ուղարկելուց առաջ։"},{"type":"step","bg":"light","step":"ՔԱՅԼ 5","head":"ՄԵԿ ՇԱԲԱԹ ԱՆՑ՝ ՍՏՈՒԳԻՐ","body":"Նայիր՝ ինչն է իրականում մնացել աշխատանքում։ Պահում ես միայն այն, ինչ արդեն խնայում է օրդ։"},{"type":"cta","bg":"dark","head":"ՍԵՎԱԳԻՐԸ՝ ՐՈՊԵՆԵՐՈՒՄ","pill":"ԳՐԻՐ ՍՏՈՒԳՈՒՄ DIRECT-ՈՒՄ","foot":"Taron Badalyan — The Voice of Stone","subcta":"անվճար էքսպրես-վերլուծություն"}]}],"kp":null};
+function slideCanvas(car,i){let cv=document.createElement("canvas");cv.width=1080;cv.height=1350;cv.className="slide";drawSlide(cv,car,i);let wrap=document.createElement("div");wrap.className="sw";wrap.appendChild(cv);let b=document.createElement("button");b.textContent="PNG "+String(i+1).padStart(2,"0");b.onclick=()=>dl(cv,D.date+"_"+car.id+"_"+String(i+1).padStart(2,"0")+".png");wrap.appendChild(b);return wrap;}
+let BUILT=false;
+function build(){
+ if(BUILT)return;BUILT=true;
+ document.getElementById("date").textContent=D.date;
+ const root=document.getElementById("cars");
+ for(const car of D.carousels){
+  let sec=document.createElement("section");
+  sec.innerHTML=`<h2>Карусель ${car.id} · ${car.account} <span>${car.handle}</span></h2>
+   <p class="meta">${car.framework} · хук ${car.hook} · ${car.lang} · ${car.slides.length} слайдов</p>`;
+  let row=document.createElement("div");row.className="row";
+  for(let i=0;i<car.slides.length;i++)row.appendChild(slideCanvas(car,i));
+  sec.appendChild(row);
+  let dall=document.createElement("button");dall.className="dall";dall.textContent="Скачать все PNG ("+car.id+")";
+  dall.onclick=()=>{row.querySelectorAll("canvas").forEach((cv,i)=>setTimeout(()=>dl(cv,D.date+"_"+car.id+"_"+String(i+1).padStart(2,"0")+".png"),i*250));};
+  sec.appendChild(dall);
+  let det=document.createElement("details");det.innerHTML=`<summary>Подпись + alt-текст</summary><pre class="cap">${car.caption.replace(/</g,"&lt;")}</pre><p class="alt"><b>ALT:</b> ${car.alt}</p>`+(car.first_comment?`<p class="alt"><b>1-й комментарий:</b> ${car.first_comment}</p>`:"");
+  sec.appendChild(det);
+  root.appendChild(sec);
+ }
+ if(D.kp){
+  let sec=document.createElement("section");
+  sec.innerHTML=`<h2>Доп. задача дня · Слайд КП <span>1920×1080</span></h2><p class="meta">3 формата ИИ-тренинга (START / GROWTH / TRANSFORMATION), без цен · армянский</p>`;
+  let cv=document.createElement("canvas");cv.width=1920;cv.height=1080;cv.className="kp";drawKP(cv,D.kp);
+  sec.appendChild(cv);
+  let b=document.createElement("button");b.className="dall";b.textContent="Скачать PNG (КП)";b.onclick=()=>dl(cv,D.date+"_KP_formats.png");
+  sec.appendChild(document.createElement("br"));sec.appendChild(b);
+  root.appendChild(sec);
+ }
+}
+if(document.fonts&&document.fonts.ready){document.fonts.load("800 80px 'Noto Sans Armenian'").then(()=>document.fonts.load("600 40px 'Noto Sans Armenian'")).then(()=>document.fonts.load("40px Anton")).then(()=>document.fonts.ready).then(build);setTimeout(build,1500);}else build();
+</script>
+</body></html>
